@@ -10,7 +10,7 @@ ARG EXTRAS=""
 ARG EMBED_MODEL="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 # Estágio 1: só dependências exatas do lockfile (e o modelo, no híbrido), num venv isolado.
-FROM python:3.12-slim@sha256:aa943ce411423c7582288f18707ff66eddcbaeb510502d747a72aeb34f30d159 AS build
+FROM python:3.15-slim@sha256:94d3426f1def7db4a106a232ac121bfd975393e5dfd40a619b955fae45fe7913 AS build
 ARG EXTRAS
 ARG EMBED_MODEL
 COPY requirements.lock requirements-hybrid.lock /tmp/
@@ -27,7 +27,7 @@ RUN --mount=type=secret,id=proxy_ca,required=false \
     fi
 
 # Estágio 2: runtime sem pytest/ruff, sem compilador, usuário não-root.
-FROM python:3.12-slim@sha256:aa943ce411423c7582288f18707ff66eddcbaeb510502d747a72aeb34f30d159
+FROM python:3.15-slim@sha256:94d3426f1def7db4a106a232ac121bfd975393e5dfd40a619b955fae45fe7913
 ARG EMBED_MODEL
 ENV PATH=/opt/venv/bin:$PATH \
     PYTHONPATH=/app/src \
