@@ -48,15 +48,15 @@
 {"text": "The receipt printer is not working", "intent": "troubleshoot"}
 {"text": "Vai chover em São Paulo amanhã?", "intent": "general"}
 {"text": "What's the temperature in Recife right now?", "intent": "general"}
-{"text": "Qual a cotação do dólar hoje?", "intent": "general"}
+{"text": "Cotação atual do dólar comercial, por favor", "intent": "general"}
 {"text": "How much is the dollar against the real today?", "intent": "general"}
 {"text": "Quais as notícias de hoje?", "intent": "general"}
 {"text": "What are today's top headlines?", "intent": "general"}
 {"text": "Como está o clima em Curitiba?", "intent": "general"}
-{"text": "Is it going to rain in Rio this weekend?", "intent": "general"}
-{"text": "Quero falar com um atendente", "intent": "human_request"}
+{"text": "Weekend rain forecast for Rio de Janeiro", "intent": "general"}
+{"text": "Me transfere para um atendente humano", "intent": "human_request"}
 {"text": "I want to talk to a human", "intent": "human_request"}
 {"text": "Me passa para uma pessoa de verdade", "intent": "human_request"}
 {"text": "Can I speak with a representative?", "intent": "human_request"}
 {"text": "Preciso de atendimento humano", "intent": "human_request"}
-{"text": "Get me a real person please", "intent": "human_request"}
+{"text": "Transfer me to a human representative", "intent": "human_request"}

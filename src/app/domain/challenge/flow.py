@@ -68,7 +68,7 @@ _WEAK_DATA = re.compile(r"\b(my sales|minhas vendas|my money|meu dinheiro|my mac
 # Pergunta sobre produto/regra sem pedir dado: "preciso de / como funciona / posso / o que é".
 _KNOWLEDGE = re.compile(r"\b(preciso (de|ter)|como funciona|como (eu )?(fa[cç]o|recebo|uso|vendo)|posso|pode|o que [eé]"
                         r"|qual a diferen[cç]a|diferen[cç]a|quantas|quanto custa|tem como|existe|aceita"
-                        r"|do i need|how does|how do|how can|can i|is it possible|what is|what's the difference"
+                        r"|i need|how does|how do|how can|can i|is it possible|what is|what's the difference"
                         r"|what are|difference|explain|tell me about|how many|does getnet|do you)\b", _I)
 _FOLLOWUP = re.compile(r"^\W*(e|and|mas|but)?\W*(ele|ela|isso|esse|essa|esse a[ií]|o outro|a outra|it|that|that one"
                        r"|this one|the other one|e a[ií]|and then|e agora|and now)\b", _I)
