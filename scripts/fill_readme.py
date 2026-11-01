@@ -39,7 +39,7 @@ def timeline(root: Path = ROOT) -> str:
     if not rows:
         return "_Sem commits ainda._"
     first, last = datetime.fromisoformat(rows[0][0]), datetime.fromisoformat(rows[-1][0])
-    lines = ["| hora | min | commit |", "|---|---:|---|"]
+    lines = ["| hora (UTC; Brasília = UTC−3) | min | commit |", "|---|---:|---|"]
     for ts, subject in rows:
         t = datetime.fromisoformat(ts)
         lines.append(f"| {t:%H:%M:%S} | {(t - first).total_seconds() / 60:.0f} | {subject} |")

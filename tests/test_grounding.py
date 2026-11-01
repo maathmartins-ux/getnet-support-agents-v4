@@ -71,3 +71,11 @@ def test_promise_backed_by_the_source_is_not_flagged():
     source = "Pix Garantido: o valor é garantido pelo banco emissor."
     assert risk_flags("O valor é garantido pelo banco emissor (fonte [1]).", [source]) == []
     assert risk_flags("O pedido 1002 foi enviado.", ["pedido 1002 enviado"]) == []
+
+
+def test_scale_glued_to_number_is_supported():
+    """Getnet v4 (01/11/2026): o site escreve "R$ 80mil"; a resposta "R$ 80 mil" era acusada como número sem base."""
+    from app.grounding import unsupported_numbers
+
+    assert unsupported_numbers("Free above R$ 80 mil a month", ["Acima de R$ 80mil por mês"]) == []
+    assert unsupported_numbers("Free above R$ 81 mil a month", ["Acima de R$ 80mil por mês"]) == ["81"]

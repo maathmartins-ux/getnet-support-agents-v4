@@ -205,6 +205,8 @@ def _general(ctx: Context) -> AgentResult:
             text = "".join(b.text for b in reply.content if b.type == "text").strip()
             if text:
                 evidence, sources = _web_evidence(reply.content)
+                if evidence:  # a data vai no prompt (general.md): dado nosso; busca com erro segue sem evidência
+                    evidence.append(f"Hoje é {_today()}")
                 return AgentResult("faq", "ok", text=text, sources=sources, facts={"web_search": True},
                                    evidence=evidence)
         except LLMError:

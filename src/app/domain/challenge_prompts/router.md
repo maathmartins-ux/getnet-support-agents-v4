@@ -32,7 +32,9 @@ Exemplos (paráfrases, não são os casos de avaliação):
 
 plan: knowledge = ["faq"]; general = ["faq"]; support = ["records"]; troubleshoot = ["records", "faq"];
 multi = ["faq", "records"]; human_request = ["escalation"].
-language: "pt" ou "en" — o idioma da mensagem.
+language: "pt" ou "en" — o idioma em que a MENSAGEM atual está escrita, pela gramática da frase. Termo de produto em
+português dentro de frase inglesa não muda nada: "Is there a fee (tarifa) for Pix refunds?" → en. Não use o idioma
+do histórico nem dos exemplos rotulados.
 confidence: 0–1; use < 0.5 quando a mensagem couber em duas intents.
 Dado pessoal citado de passagem ([CPF], [EMAIL], [TELEFONE]) sem pedido sobre a conta NÃO é support.
 Use o histórico só para resolver referências ("ele", "isso", "and that one?"): uma fala curta de seguimento

@@ -24,7 +24,9 @@ from decimal import Decimal, InvalidOperation
 _CITATION = re.compile(r"\[\d+\]")
 _LIST_MARK = re.compile(r"^\s*\d+[.)]\s", re.MULTILINE)
 # dígitos não colados em letra/hífen antes; depois, nem letra/hífen, exceto um sufixo h, x ou %
-_NUM = re.compile(r"(?<![\w-])\d+(?:[.,]\d+)*(?:(?![\w-])|(?=[hx%](?![\w])))")
+# "R$ 80mil" (sem espaço, como no site da Getnet) também é número: a escala colada entra pelo lookahead
+_NUM = re.compile(r"(?<![\w-])\d+(?:[.,]\d+)*(?:(?![\w-])|(?=[hx%](?![\w]))"
+                  r"|(?=(?:mil|milh|bilh|thousand|million|billion)\w*\b))", re.IGNORECASE)
 _THOUSANDS = re.compile(r"\d{1,3}(?:\.\d{3})+")
 _EN_THOUSANDS = re.compile(r"\d{1,3}(?:,\d{3})+")
 _ISO_DATE = re.compile(r"(?<![\w-])(\d{4})-(\d{1,2})-(\d{1,2})(?=T\d|[^\w-]|$)")
