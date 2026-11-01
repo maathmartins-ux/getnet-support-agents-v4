@@ -126,7 +126,10 @@ def _get_transactions(user_id: str, status: str | None = None, transaction_id: s
             return _NOT_FOUND
     if status:
         txs = [t for t in txs if t["status"] == status]
-    return {"ok": True, "data": {"count": len(txs), "transactions": txs}}
+    approved = [t for t in txs if t["status"] == "aprovada"]
+    return {"ok": True, "data": {"count": len(txs), "approved_count": len(approved),
+                                 "approved_total": round(sum(t["amount"] for t in approved), 2),
+                                 "declined_count": len(txs) - len(approved), "transactions": txs}}
 
 
 def _terminal(user_id: str, terminal_id: str) -> dict | None:
@@ -233,7 +236,9 @@ _RESTART = re.compile(r"\b(reinici\w*|reinicie|restart\w*|reboot\w*|religu\w*)",
 _ANTICIP = re.compile(r"\b(antecip\w*|anticipat\w*|advance)", re.IGNORECASE)
 _CHARGEBACK = re.compile(r"\b(contest\w*|chargeback|dispute|n[aã]o reconhe\w*)", re.IGNORECASE)
 _SETTLE = re.compile(r"\b(dep[oó]sit\w*|cai\b|caem|cair|receb\w*|settle\w*|liquida\w*|deposited|paid out|"
-                     r"saldo|balance|quando entra)", re.IGNORECASE)
+                     r"saldo|balance|quando entra|quanto (?:eu )?vendi|how much did i sell|ontem|yesterday)",
+                     re.IGNORECASE)
+_DECLINE = re.compile(r"\b(recus\w*|declin\w*|negad\w*)", re.IGNORECASE)
 _TX_WORDS = re.compile(r"\b(transa\w*|recus\w*|declin\w*|negad\w*|vendi|venda|vendas|sales?|c[oó]digo)",
                        re.IGNORECASE)
 _TERMINAL = re.compile(r"\b(maquininha|m[aá]quina|terminal|pos|conect\w*|connect\w*|internet|wi-?fi|chip|sinal|"
@@ -270,6 +275,8 @@ def _pick_tool(text: str) -> str:
         return "open_chargeback"
     if _ANTICIP.search(text) and not re.search(r"\b(como funciona|how does|what is|o que [eé])\b", text, re.I):
         return "request_anticipation"
+    if _DECLINE.search(text):  # sintoma numa transação: lê as recusas
+        return "get_transactions"
     if _SETTLE.search(text):
         return "get_settlements"
     if _TX_WORDS.search(text) or _TX_RE.search(text):
@@ -412,33 +419,47 @@ def records_offline(ctx, a):
     if tool == "get_transactions":
         txid = _TX_RE.search(ctx.text)
         args = {"transaction_id": txid.group(1).upper()} if txid else {}
-        if not txid and re.search(r"\b(recus\w*|declin\w*|negad\w*|erro|error)", ctx.text, re.I):
+        if not txid and (_DECLINE.search(ctx.text) or re.search(r"\b(erro|error)", ctx.text, re.I)):
             args = {"status": "recusada"}
         res = run("get_transactions", args)
         if not res.get("ok"):
             return run.done(t(ctx, f"Não encontrei a transação {args.get('transaction_id')} na sua conta.",
                               f"I couldn't find transaction {args.get('transaction_id')} on your account."),
                             facts={"transaction_not_found": args.get("transaction_id")})
-        txs = res["data"]["transactions"]
-        declined = [x for x in txs if x["status"] == "recusada"]
-        if declined:
-            pt = "; ".join(f"{x['transaction_id']} ({_brl(x['amount'])}) recusada com código {x['decline_code']}, "
+        d = res["data"]
+        declined = [x for x in d["transactions"] if x["status"] == "recusada"]
+        en_reason = {"51": "insufficient funds on the cardholder's account", "05": "not authorized by the card issuer"}
+        dec_pt = "; ".join(f"{x['transaction_id']} ({_brl(x['amount'])}) recusada com código {x['decline_code']}, "
                            f"{x['decline_reason']}" for x in declined)
-            en_reason = {"51": "insufficient funds on the cardholder's account",
-                         "05": "not authorized by the card issuer"}
-            en = "; ".join(f"{x['transaction_id']} ({_brl(x['amount'])}) declined with code {x['decline_code']}, "
+        dec_en = "; ".join(f"{x['transaction_id']} ({_brl(x['amount'])}) declined with code {x['decline_code']}, "
                            f"{en_reason.get(x['decline_code'], x['decline_reason'])}" for x in declined)
-            return run.done(t(ctx, f"Encontrei {len(declined)} recusa(s) recente(s): {pt}. São recusas do banco do "
-                                   "cartão, não defeito da maquininha: peça outro cartão ou outra forma de pagamento.",
-                              f"I found {len(declined)} recent decline(s): {en}. These come from the card's bank, "
-                              "not from your card machine: ask for another card or payment method."),
-                            facts={"declines": [{"transaction_id": x["transaction_id"], "code": x["decline_code"],
-                                                 "reason": x["decline_reason"]} for x in declined],
-                                   "query_hints": [f"código de recusa {x['decline_code']}" for x in declined]})
-        total = round(sum(x["amount"] for x in txs), 2)
-        return run.done(t(ctx, f"Você tem {len(txs)} transação(ões) aprovada(s) recente(s), somando {_brl(total)}.",
-                          f"You have {len(txs)} recent approved transaction(s), adding up to {_brl(total)}."),
-                        facts={"transactions_total": total})
+        app_pt = (f"{d['approved_count']} aprovada(s), somando {_brl(d['approved_total'])}"
+                  if d["approved_count"] else "")
+        app_en = (f"{d['approved_count']} approved, adding up to {_brl(d['approved_total'])}"
+                  if d["approved_count"] else "")
+        if args.get("transaction_id") and not declined:
+            x = d["transactions"][0]
+            return run.done(t(ctx, f"A transação {x['transaction_id']} ({_brl(x['amount'])}, {_ddmm(x['date'])}) foi "
+                                   "aprovada e pode ser contestada se você não a reconhecer.",
+                              f"Transaction {x['transaction_id']} ({_brl(x['amount'])}, {_ddmm(x['date'])}) was "
+                              "approved and can be disputed if you don't recognize it."),
+                            facts={"transaction_id": x["transaction_id"], "status": x["status"]})
+        pt_parts = [p for p in (app_pt and f"Transações recentes: {app_pt}",
+                                dec_pt and f"Recusas: {dec_pt}") if p]
+        en_parts = [p for p in (app_en and f"Recent transactions: {app_en}",
+                                dec_en and f"Declines: {dec_en}") if p]
+        if declined:
+            pt_parts.append("As recusas vêm do banco do cartão, não de defeito da maquininha: peça outro cartão "
+                            "ou outra forma de pagamento")
+            en_parts.append("Declines come from the card's bank, not from a fault in your card machine: ask for "
+                            "another card or payment method")
+        if not pt_parts:
+            pt_parts, en_parts = ["Não há transações recentes na sua conta"], ["There are no recent transactions"]
+        return run.done(t(ctx, ". ".join(pt_parts) + ".", ". ".join(en_parts) + "."),
+                        facts={"approved_total": d["approved_total"],
+                               "declines": [{"transaction_id": x["transaction_id"], "code": x["decline_code"],
+                                             "reason": x["decline_reason"]} for x in declined],
+                               "query_hints": [f"código de recusa {x['decline_code']}" for x in declined]})
 
     # get_terminal_status
     tid = _TERM_RE.search(ctx.text)

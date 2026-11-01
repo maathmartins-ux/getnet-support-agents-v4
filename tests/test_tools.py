@@ -177,3 +177,27 @@ def test_offline_anticipation_above_available_is_refused(T):
 def test_offline_restart_without_id_picks_the_terminal_with_problem(T):
     r = agents.records_agent(ctx("Reinicia minha maquininha", "pt"))
     assert r.pending_action and json.dumps(r.tool_calls[-1].args) == '{"terminal_id": "T1988B"}'
+
+
+def test_confirm_runs_normal_risk_and_high_risk_waits_for_operator(T):
+    restart, _ = actions.run_tool("restart_terminal", {"terminal_id": "T1988B"}, "cliente1988", "c1")
+    assert actions.confirm_action(restart["action_id"], "cliente2024") == {"ok": False, "error": "not_found"}
+    assert actions.confirm_action(restart["action_id"], "cliente1988")["data"]["status"] == "restart_sent"
+    cb, _ = actions.run_tool("open_chargeback", {"transaction_id": "TX1004"}, "cliente1988", "c1")
+    waiting = actions.confirm_action(cb["action_id"], "cliente1988")
+    assert waiting["awaiting_operator"] and waiting["ticket_id"]
+    done = actions.decide_action(cb["action_id"], "op", approve=True)
+    assert done["result"]["data"]["status"] == "chargeback_opened"
+
+
+def test_offline_chargeback_uses_transaction_from_history(T):
+    c = ctx("Quero contestar ela, não reconheço", "pt")
+    c.history = [{"role": "user", "content": "O que é a transação TX1004?"}]
+    r = agents.records_agent(c)
+    assert r.pending_action and r.tool_calls[-1].args == {"transaction_id": "TX1004"}
+
+
+def test_offline_single_approved_transaction_pt(T):
+    r = agents.records_agent(ctx("Me mostra a transação TX1004", "pt"))
+    assert "TX1004" in r.text and "aprovada" in r.text and "R$ 350,00" in r.text and r.pending_action is None
+    _grounded(r)
