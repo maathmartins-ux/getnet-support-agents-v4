@@ -534,8 +534,9 @@ Spec em [docs/SPEC.md](docs/SPEC.md), commitada antes do código. ADRs em [docs/
 | 20:14:25 | 16 | ao vivo: número com escala colada (R$ 80mil), data de hoje como evidência da web, idioma pela frase |
 | 20:17:14 | 19 | router: idioma sem ambiguidade vem da contagem de palavras; resultados ao vivo parciais; limites no README |
 | 20:21:54 | 24 | resultados ao vivo completos (5 splits, pass^3, código final) + offline + README gerado |
+| 20:31:48 | 34 | vídeo legendado (docs/video/walkthrough.mp4, respostas reais com LLM) + juiz final (kappa 0,957) + README |
 
-Do primeiro ao último commit: **24 min**.
+Do primeiro ao último commit: **34 min**.
 <!-- timeline:end -->
 
 ## 8. Scaffold declarado (kit) e o que foi feito no relógio
@@ -568,7 +569,7 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `Dockerfile` | 52 | 0 | 0 | 0 |
 | `Makefile` | 27 | 0 | 0 | 0 |
 | `OWNERSHIP.json` | 88 | 1 | 0 | 1 |
-| `README.md` | 147 | 491 | 25 | 1 |
+| `README.md` | 147 | 492 | 25 | 1 |
 | `data` | 34 | 347 | 33 | 4 |
 | `data/crm` | 0 | 30 | 0 | 0 |
 | `data/intent_examples.d` | 0 | 95 | 0 | 0 |
@@ -577,7 +578,7 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `docker-compose.yml` | 11 | 1 | 1 | 1 |
 | `docs` | 32 | 616 | 18 | 1 |
 | `docs/adr` | 42 | 215 | 0 | 0 |
-| `docs/video` | 0 | 25 | 0 | 0 |
+| `docs/video` | 0 | 200 | 0 | 0 |
 | `evals` | 964 | 80 | 29 | 4 |
 | `evals/cases.d` | 0 | 104 | 0 | 0 |
 | `evals/judge_calibration.d` | 0 | 46 | 0 | 0 |
@@ -592,7 +593,7 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `tests` | 3677 | 700 | 1 | 3 |
 | `tests/fixtures` | 66 | 0 | 0 | 0 |
 
-Total: **11837** linhas do kit (commit `ab57b4e`) e **4048** escritas no relógio (25% do total). Arquivos do kit alterados no relógio: 21. Fora da conta, por serem gerados: 60392 linhas em `evals/results/`.
+Total: **11837** linhas do kit (commit `ab57b4e`) e **4224** escritas no relógio (26% do total). Arquivos do kit alterados no relógio: 21. Fora da conta, por serem gerados: 60831 linhas em `evals/results/`.
 <!-- kit:end -->
 
 ## 9. Limitações e próximos passos
