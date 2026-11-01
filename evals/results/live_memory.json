@@ -1,0 +1,5289 @@
+{
+  "mode": "in-process",
+  "provider": "anthropic",
+  "live": true,
+  "split": "memory",
+  "status": "aborted_max_usd",
+  "spent_usd": 0.501261,
+  "max_usd": 0.5215,
+  "llm_errors": 0,
+  "gate": 0.9,
+  "intent_acc": 0.8333,
+  "intent_ci": {
+    "k": 10,
+    "n": 12,
+    "lo": 55.2,
+    "hi": 95.3
+  },
+  "isolation": "db_per_case",
+  "coverage_min_score": {
+    "effective": 8.554,
+    "source": "MIN_SCORE"
+  },
+  "gated_splits": [
+    "memory"
+  ],
+  "ungated_splits": [
+    "hard",
+    "heldout"
+  ],
+  "passed": false,
+  "metrics": {
+    "memory": {
+      "cases": 12,
+      "intent_acc": 83.3,
+      "handoff_acc": 91.7,
+      "handoff_outcome_acc": 91.7,
+      "blocked_acc": null,
+      "language_acc": 91.7,
+      "tools_acc": 100.0,
+      "pending_action_acc": null,
+      "replanned_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 58.3,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 26920.9,
+      "p95_ms": 31162.9,
+      "cost_usd": 0.501261,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 10,
+          "n": 12,
+          "lo": 55.2,
+          "hi": 95.3
+        },
+        "handoff_acc": {
+          "k": 11,
+          "n": 12,
+          "lo": 64.6,
+          "hi": 98.5
+        },
+        "handoff_outcome_acc": {
+          "k": 11,
+          "n": 12,
+          "lo": 64.6,
+          "hi": 98.5
+        },
+        "language_acc": {
+          "k": 11,
+          "n": 12,
+          "lo": 64.6,
+          "hi": 98.5
+        },
+        "tools_acc": {
+          "k": 6,
+          "n": 6,
+          "lo": 61.0,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 7,
+          "n": 12,
+          "lo": 32.0,
+          "hi": 80.7
+        }
+      }
+    },
+    "ALL": {
+      "cases": 12,
+      "intent_acc": 83.3,
+      "handoff_acc": 91.7,
+      "handoff_outcome_acc": 91.7,
+      "blocked_acc": null,
+      "language_acc": 91.7,
+      "tools_acc": 100.0,
+      "pending_action_acc": null,
+      "replanned_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 58.3,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 26920.9,
+      "p95_ms": 31162.9,
+      "cost_usd": 0.501261,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 10,
+          "n": 12,
+          "lo": 55.2,
+          "hi": 95.3
+        },
+        "handoff_acc": {
+          "k": 11,
+          "n": 12,
+          "lo": 64.6,
+          "hi": 98.5
+        },
+        "handoff_outcome_acc": {
+          "k": 11,
+          "n": 12,
+          "lo": 64.6,
+          "hi": 98.5
+        },
+        "language_acc": {
+          "k": 11,
+          "n": 12,
+          "lo": 64.6,
+          "hi": 98.5
+        },
+        "tools_acc": {
+          "k": 6,
+          "n": 6,
+          "lo": 61.0,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 7,
+          "n": 12,
+          "lo": 32.0,
+          "hi": 80.7
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "q-mem-01",
+      "split": "memory",
+      "message": "E a de anteontem?",
+      "ms": 16360.8,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A venda de anteontem (30/10) foi uma só, no crédito:\n\n- **TX1004 (crédito):** R$ 350,00. O depósito está previsto para **30/11**, e o status é \"previsto\".\n\nOs depósitos seguem dias úteis.\n\nEsse valor faz parte dos R$ 1.730,00 que você pode antecipar. Se quiser antecipar, posso preparar o pedido. Ele só vale depois que você confirmar e um operador aprovar.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "last_7_days"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"last_7_days\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023593,
+      "run": 0
+    },
+    {
+      "id": "q-mem-02",
+      "split": "memory",
+      "message": "And the ones from the day before?",
+      "ms": 14274.7,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": false,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Você teve uma venda em 30/10, anteontem:\n\n- **TX1004:** R$ 350,00 no crédito. O depósito está previsto para 30/11, e o status é \"previsto\".\n\nNão há outras vendas de 30/10 na sua agenda.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "last_7_days"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"last_7_days\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.020732,
+      "run": 0
+    },
+    {
+      "id": "q-mem-03",
+      "split": "memory",
+      "message": "E a outra maquininha?",
+      "ms": 22521.8,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": false,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A outra maquininha, a **T1988A (Get Smart)**, está funcionando bem:\n- Ela usa Wi-Fi, e o sinal está ok.\n- Está online, com último contato há 2 minutos.\n- A bobina está ok e ela não está bloqueada.\n\nA **T1988B (Get Clássica)** é a que continua com o problema:\n- Ela usa chip e está sem sinal.\n- Está offline, com último contato há cerca de 3 horas.\n\nEnquanto a T1988B não voltar, você pode vender pela T1988A. Posso propor o reinício remoto da T1988B. Ele só é feito se você confirmar. Quer que eu proponha?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988A"
+          },
+          "ok": true
+        },
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [
+        "3"
+      ],
+      "cost_usd": 0.02474,
+      "run": 0
+    },
+    {
+      "id": "q-mem-04",
+      "split": "memory",
+      "message": "And the other machine?",
+      "ms": 28308.3,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**T1988A (Get Smart)** is working normally:\n- It's online over Wi-Fi with good signal, and its last contact was 2 minutes ago.\n- The paper roll is OK, and it isn't blocked.\n- All 8 recent transactions went through T1988A. Six were approved, totaling R$ 1.995,50.\n- Two were declined on 01/11. Both were issuer decisions, not connection problems:\n  - TX1007 (R$ 210,00, credit): code 51, insufficient balance.\n  - TX1008 (R$ 75,00, debit): code 05, not authorized by the issuer.\n\nThe offline terminal is **T1988B**. You can take payments on T1988A in the meantime.\n\nIf T1988B uses a chip, the sources give these steps (sup-duvidas-05, sup-get-tap-12):\n1. With the machine off, open the back cover. Insert the chip in the SIM1 or SIM2 slot, metal side facing down.\n2. Close the cover and turn it on. Wait for the data network to connect. When it shows 2G or 3G, it's ready.\n3. Run a communication test to check the chip's connectivity. The source cuts off before the test steps, so I can't list them.\n\nThe sources don't cover Wi-Fi setup or restarting a terminal.\n\nI can propose a restart of T1988B. You would need to confirm it, and I wouldn't run it until you do. Do you want me to?",
+      "source_ids": [
+        "sup-duvidas-05",
+        "sup-get-tap-12"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-05",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-get-tap-12",
+          "title": "Arquivos Get Tap - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-tap/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "get_transactions",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": true, \"data\": {\"count\": 8, \"approved_count\": 6, \"approved_total\": 1995.5, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}, {\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}, {\"transaction_id\": \"TX1001\", \"date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}, {\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
+        "Dúvidas e Perguntas Frequentes | Getnet: A Get Smart aceita pagamento com auxilio emergencial? A Get Smart aceita pagamento com auxilio emergencial? Sim, basta fazer o processo de pagamento com , selecionando a opção débito. Como insiro o Chip na minha máquina? Como insiro o Chip na minha máquina? Siga os passos a seguir: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:",
+        "Arquivos Get Tap - Getnet: É preciso ter acesso a internet para utilizar o Get Tap? É preciso ter acesso a internet para utilizar o Get Tap? Sim, para utilizar o Get Tap é necessário ter conexão com a internet. Quantos Get Tap posso ter? Quantos Get Tap posso ter? A quantidade máxima está sujeita a avaliação, porém cada perfil poderá ter apenas um dispositivo/celular com o Get Tap."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.041827,
+      "run": 0
+    },
+    {
+      "id": "q-mem-05",
+      "split": "memory",
+      "message": "E a Get Clássica?",
+      "ms": 17295.8,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei na base como a Get Clássica funciona (recursos e operação). Só achei as condições de aluguel:\n\n- Se você fatura mais de R$ 20 mil por mês, a Get Clássica não tem aluguel.\n- Se fatura menos que isso, o valor de utilização é R$ 79,90 por mês.\n- Voucher (VA/VR) e Crediário não contam no faturamento para a isenção do aluguel.\n\nFontes: maq-todas-as-maquininhas-tabela-01, maq-todas-as-maquininhas-06.\n\nSe quiser, posso abrir um atendimento com um especialista para explicar o funcionamento dela.",
+      "source_ids": [
+        "maq-todas-as-maquininhas-tabela-01",
+        "maq-todas-as-maquininhas-06",
+        "prod-home-02"
+      ],
+      "sources": [
+        {
+          "id": "maq-todas-as-maquininhas-tabela-01",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "prod-home-02",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátis: Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel Caso não atinja os faturamentos do quadro acima, segue o valor de utilização: Venda pelo celular R$ 0,00/mês Get Clássica R$ 79,90/mês Get Smart R$ 129,90/mês",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Maquininha + conta integrada Getnet Recomendado para PF ou CNPJ que querem alavancar seus negócios vendendo mais sem pagar aluguel Onde você recebe Get Conta com cartão grátis Venda o quanto quiser de graça pelo celular 12x R$ 9,90 ou 118,80 à vista | Get Mini 12x R$ 7,90 ou 94,80 à vista | Get Clássica *Termos e condições Taxa única para as bandeiras Condições válidas para recebimento na Get Conta Caso não atinja os faturamentos do quadro acima, segue o valor de utilização:"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.019804,
+      "run": 0
+    },
+    {
+      "id": "q-mem-06",
+      "split": "memory",
+      "message": "What about the Get Clássica?",
+      "ms": 13617.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq",
+        "escalation"
+      ],
+      "replans": [
+        "faq->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "I couldn't find any information about the Get Clássica in the Getnet sources, so I didn't want to guess. I've passed your question to a human agent (ticket T-5ce3b192). They'll reply in this conversation.",
+      "source_ids": [
+        "prod-home-08",
+        "maq-todas-as-maquininhas-08",
+        "maq-todas-as-maquininhas-06"
+      ],
+      "sources": [
+        {
+          "id": "prod-home-08",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-08",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Deeper Confecções Cliente Get Clássica, Get Pay, Antecipação de Vendas e Plataforma Digital As taxas são excelentes e o atendimento ao cliente é muito bom. Virgínia Arruda Loja Virgínia Arruda​ Cliente Get Pay Taxa competitiva, bom relacionamento com o cliente, transações rápidas e com segurança. Raimundo Santos Cliente Get Smart e Plataforma Digital Com atendimento personalizado, soluções diversificadas e uma plataforma robusta, conseguimos oferecer a melhor experiência aos nossos clientes.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Associação Brasileira da Industria do Vestuário Cliente Get Clássica Hoje tenho acompanhado o mercado e sei que temos concorrências com tecnologia que também podem oferecer facilidades para o Tarundu, mas o atendimento e relacionamento quando preciso faz a diferença. Tarundu (Campos do Jordão) Cliente Get Smart Vi mais simplicidade onde mais me preocupava, que era saber quanto entrou e quanto vou receber e bater isso com nossas vendas diárias. Isso me fez ter um problema a menos para resolver.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "I've handed this to a human agent (ticket T-5ce3b192). The reply will show up in this conversation."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016514,
+      "run": 0
+    },
+    {
+      "id": "q-mem-07",
+      "split": "memory",
+      "message": "E a do dólar?",
+      "ms": 29219.5,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "O dólar aparece com estas cotações nas fontes consultadas:\n\n- **R$ 5,42**, segundo a Avenue, em 30/10/2026 às 13h04.\n- **R$ 5,44**, segundo o Dólar Hoje, em 01/11/2026.\n\nHoje é domingo e o mercado está fechado. Por isso, a última cotação oficial é a de sexta-feira. Para o valor de referência oficial, consulte o Banco Central.\n\nFontes: avenue.us/dolar-hoje, dolarhoje.com e infomoney.com.br/ferramentas/cambio.",
+      "source_ids": [
+        "https://avenue.us/dolar-hoje/",
+        "https://investidor10.com.br/moedas/usd/",
+        "https://ambito.com/finanzas/dolar-hoy-cuanto-cotiza-este-domingo-1-noviembre-n6340186",
+        "https://www.infomoney.com.br/ferramentas/cambio/",
+        "https://www.dolarhoje.net.br/",
+        "https://dolarhoje.com/",
+        "https://apps.apple.com/us/app/id6745558516",
+        "https://br.tradingview.com/symbols/CME-6L1%21/ideas/page-42",
+        "https://apps.apple.com/us/app/id1516702956"
+      ],
+      "sources": [
+        {
+          "id": "https://avenue.us/dolar-hoje/",
+          "title": "Dólar Hoje: Cotação em tempo real - Avenue",
+          "url": "https://avenue.us/dolar-hoje/"
+        },
+        {
+          "id": "https://investidor10.com.br/moedas/usd/",
+          "title": "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10",
+          "url": "https://investidor10.com.br/moedas/usd/"
+        },
+        {
+          "id": "https://ambito.com/finanzas/dolar-hoy-cuanto-cotiza-este-domingo-1-noviembre-n6340186",
+          "title": "Dólar hoy: a cuánto cotiza este domingo 1 de noviembre",
+          "url": "https://ambito.com/finanzas/dolar-hoy-cuanto-cotiza-este-domingo-1-noviembre-n6340186"
+        },
+        {
+          "id": "https://www.infomoney.com.br/ferramentas/cambio/",
+          "title": "Conversor de Moeda - Câmbio",
+          "url": "https://www.infomoney.com.br/ferramentas/cambio/"
+        },
+        {
+          "id": "https://www.dolarhoje.net.br/",
+          "title": "Dólar comercial hoje - preço do dolar - valor - cotação",
+          "url": "https://www.dolarhoje.net.br/"
+        },
+        {
+          "id": "https://dolarhoje.com/",
+          "title": "Dólar Hoje: Cotação Comercial e Turismo. Valor e Preço!",
+          "url": "https://dolarhoje.com/"
+        },
+        {
+          "id": "https://apps.apple.com/us/app/id6745558516",
+          "title": "Dolar hoje: Cotação atual",
+          "url": "https://apps.apple.com/us/app/id6745558516"
+        },
+        {
+          "id": "https://br.tradingview.com/symbols/CME-6L1%21/ideas/page-42",
+          "title": "Brazilian Real Futures",
+          "url": "https://br.tradingview.com/symbols/CME-6L1%21/ideas/page-42"
+        },
+        {
+          "id": "https://apps.apple.com/us/app/id1516702956",
+          "title": "Dólar Agora",
+          "url": "https://apps.apple.com/us/app/id1516702956"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dólar Hoje: Cotação em tempo real - Avenue (5 days ago)",
+        "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10 (17 days ago)",
+        "Dólar hoy: a cuánto cotiza este domingo 1 de noviembre (0 days ago)",
+        "Conversor de Moeda - Câmbio (479 days ago)",
+        "Dólar comercial hoje - preço do dolar - valor - cotação (675 days ago)",
+        "Dólar Hoje: Cotação Comercial e Turismo. Valor e Preço! (675 days ago)",
+        "Dolar hoje: Cotação atual (s/ data)",
+        "Brazilian Real Futures (s/ data)",
+        "Dólar Agora (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [
+        "30/10/2026",
+        "5,42",
+        "5,44"
+      ],
+      "cost_usd": 0.076654,
+      "run": 0
+    },
+    {
+      "id": "q-mem-08",
+      "split": "memory",
+      "message": "And the dollar?",
+      "ms": 31162.9,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "The latest figure I found puts the commercial dollar at **R$ 5.45** (sell rate). Remessa Online recorded it on 10/30/2026 at 4:29 pm. Markets are closed today (Sunday), so this is probably Friday's last quote.\n\nOther sources differ a little. Avenue shows R$ 5.42. For the official rate, check the Banco Central do Brasil (PTAX).\n\nSources: Remessa Online (remessaonline.com.br/cotacao/cotacao-dolar) and Avenue (avenue.us/dolar-hoje).",
+      "source_ids": [
+        "https://wise.com/br/currency-converter/dolar-hoje",
+        "https://avenue.us/dolar-hoje/",
+        "https://investidor10.com.br/moedas/usd/",
+        "https://br.investing.com/currencies/usd-brl",
+        "https://www.dolarhoje.net.br/",
+        "https://www.remessaonline.com.br/cotacao/cotacao-dolar",
+        "https://boca.com.br/economia/dolar/cotacao-dolar-hoje-01-11",
+        "https://gruporioclarosp.com.br/economia/dolar-dispara-915-na-semana-e-bolsa-tem-pior-queda-desde-2020",
+        "https://apps.apple.com/us/app/id6745558516"
+      ],
+      "sources": [
+        {
+          "id": "https://wise.com/br/currency-converter/dolar-hoje",
+          "title": "Dólar hoje: confira a cotação em tempo real do Dólar hoje",
+          "url": "https://wise.com/br/currency-converter/dolar-hoje"
+        },
+        {
+          "id": "https://avenue.us/dolar-hoje/",
+          "title": "Dólar Hoje: Cotação em tempo real - Avenue",
+          "url": "https://avenue.us/dolar-hoje/"
+        },
+        {
+          "id": "https://investidor10.com.br/moedas/usd/",
+          "title": "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10",
+          "url": "https://investidor10.com.br/moedas/usd/"
+        },
+        {
+          "id": "https://br.investing.com/currencies/usd-brl",
+          "title": "Dólar Hoje",
+          "url": "https://br.investing.com/currencies/usd-brl"
+        },
+        {
+          "id": "https://www.dolarhoje.net.br/",
+          "title": "Dólar comercial hoje - preço do dolar - valor - cotação",
+          "url": "https://www.dolarhoje.net.br/"
+        },
+        {
+          "id": "https://www.remessaonline.com.br/cotacao/cotacao-dolar",
+          "title": "Dólar americano Hoje (USD)",
+          "url": "https://www.remessaonline.com.br/cotacao/cotacao-dolar"
+        },
+        {
+          "id": "https://boca.com.br/economia/dolar/cotacao-dolar-hoje-01-11",
+          "title": "Cotação do dólar hoje: dólar comercial fecha em alta após semana volátil e preocupa mercado fiscal",
+          "url": "https://boca.com.br/economia/dolar/cotacao-dolar-hoje-01-11"
+        },
+        {
+          "id": "https://gruporioclarosp.com.br/economia/dolar-dispara-915-na-semana-e-bolsa-tem-pior-queda-desde-2020",
+          "title": "Dólar dispara 9,15% na semana e bolsa tem pior queda desde 2020 - Grupo Rio Claro SP",
+          "url": "https://gruporioclarosp.com.br/economia/dolar-dispara-915-na-semana-e-bolsa-tem-pior-queda-desde-2020"
+        },
+        {
+          "id": "https://apps.apple.com/us/app/id6745558516",
+          "title": "Dolar hoje: Cotação atual",
+          "url": "https://apps.apple.com/us/app/id6745558516"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dólar hoje: confira a cotação em tempo real do Dólar hoje (4 days ago)",
+        "Dólar Hoje: Cotação em tempo real - Avenue (5 days ago)",
+        "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10 (17 days ago)",
+        "Dólar Hoje (4 days ago)",
+        "Dólar comercial hoje - preço do dolar - valor - cotação (675 days ago)",
+        "Dólar americano Hoje (USD) (2 days ago)",
+        "Cotação do dólar hoje: dólar comercial fecha em alta após semana volátil e preocupa mercado fiscal (0 days ago)",
+        "Dólar dispara 9,15% na semana e bolsa tem pior queda desde 2020 - Grupo Rio Claro SP (1 days ago)",
+        "Dolar hoje: Cotação atual (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "10/30/2026",
+        "5.45",
+        "29",
+        "5.42"
+      ],
+      "cost_usd": 0.076892,
+      "run": 0
+    },
+    {
+      "id": "q-mem-09",
+      "split": "memory",
+      "message": "E a TX1008?",
+      "ms": 21077.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": false,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A venda TX1008 (R$ 75,00, débito, 01/11) foi recusada com o **código 05: não autorizada pelo emissor**.\n\n- **Causa:** o banco do cliente negou a compra. Não foi problema da maquininha.\n- **Maquininha T1988A:** está online, com Wi-Fi ok, bobina ok e sem bloqueio. O último contato foi há 2 minutos. Você não precisa reiniciar.\n- **O que fazer:** peça ao cliente para falar com o banco emissor. Ele também pode tentar outro cartão ou pagar por Pix.\n- **Contestação:** uma transação recusada não pode ser contestada.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1008"
+          },
+          "ok": true
+        },
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988A"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 1, \"transactions\": [{\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}]}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.02819,
+      "run": 0
+    },
+    {
+      "id": "q-mem-10",
+      "split": "memory",
+      "message": "Por que ela foi recusada?",
+      "ms": 28374.2,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Encontrei duas vendas recusadas, e as duas foram em 01/11. Não dá para saber qual é a mais recente, porque os dados não trazem horário.\n\n- **TX1007** (crédito, R$ 210,00): o código 51 indica saldo insuficiente do portador.\n- **TX1008** (débito, R$ 75,00): o código 05 indica que o emissor não autorizou a venda.\n\nAs duas recusas vieram do banco do cliente. A maquininha T1988A (Get Smart) não causou o problema. Ela está online, com Wi-Fi e bobina ok, sem bloqueio, e fez o último contato há 2 minutos.\n\n**O que fazer:**\n- O cliente pode tentar outro cartão ou outra forma de pagamento.\n- Para saber o motivo exato da recusa no débito, ele precisa falar com o banco emissor.\n- Recusas não podem ser contestadas.\n\nOs dados vieram do seu registro de vendas. Não achei no site da Getnet uma fonte sobre o significado dos códigos, então essa parte não tem fonte citada.\n\nMe diga qual é a venda, se quiser detalhar uma delas.",
+      "source_ids": [
+        "sup-crediario-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-crediario-03",
+          "title": "Arquivos crediário - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/crediario/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "status": "recusada"
+          },
+          "ok": true
+        },
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 2, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.03571,
+      "run": 0
+    },
+    {
+      "id": "q-mem-11",
+      "split": "memory",
+      "message": "E em Curitiba?",
+      "ms": 26920.9,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Sim, a previsão é de chuva em Curitiba amanhã (02/11/2026).\n\n- **HG Brasil** (previsão de 01/11/2026): 100% de chance de chuva, temperatura entre 16°C e 28°C e volume previsto de 20,86 mm.\n- **SIMEPAR**: 98% de probabilidade de chuva.\n\nFontes: [HG Brasil](https://hgbrasil.com/weather/places/brazil/pr/curitiba) e [SIMEPAR](https://www.simepar.br/simepar/forecast_by_counties/4106902).",
+      "source_ids": [
+        "https://www.simepar.br/simepar/forecast_by_counties/4106902",
+        "https://hgbrasil.com/weather/places/brazil/pr/curitiba",
+        "https://www.climaeradar.com.br/previsao-tempo/curitiba/5551853",
+        "https://previsao.inmet.gov.br/4106902",
+        "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/271/curitiba-pr",
+        "https://www.accuweather.com/pt/br/curitiba/44944/weather-forecast/44944",
+        "https://www.meteored.com.br/curitiba.htm",
+        "https://bemparana.com.br/noticias/parana/curitiba-tera-calorzinho-no-almoco-e-chuva-a-tarde-veja-previsao-do-tempo-no-interior",
+        "https://en.wikipedia.org/wiki/Mister_Brazil_CNB_2026"
+      ],
+      "sources": [
+        {
+          "id": "https://www.simepar.br/simepar/forecast_by_counties/4106902",
+          "title": "SIMEPAR - Previsão do Tempo - Curitiba/PR",
+          "url": "https://www.simepar.br/simepar/forecast_by_counties/4106902"
+        },
+        {
+          "id": "https://hgbrasil.com/weather/places/brazil/pr/curitiba",
+          "title": "Previsão do tempo em Curitiba, PR: hoje e amanhã",
+          "url": "https://hgbrasil.com/weather/places/brazil/pr/curitiba"
+        },
+        {
+          "id": "https://www.climaeradar.com.br/previsao-tempo/curitiba/5551853",
+          "title": "Tempo Curitiba - Previsão de hoje, amanhã e dos próximos 14 dias",
+          "url": "https://www.climaeradar.com.br/previsao-tempo/curitiba/5551853"
+        },
+        {
+          "id": "https://previsao.inmet.gov.br/4106902",
+          "title": "Curitiba-PR - 20/10/2026 - INMET :: Previsão",
+          "url": "https://previsao.inmet.gov.br/4106902"
+        },
+        {
+          "id": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/271/curitiba-pr",
+          "title": "Clima e Previsão do Tempo para 15 Dias em Curitiba (PR)",
+          "url": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/271/curitiba-pr"
+        },
+        {
+          "id": "https://www.accuweather.com/pt/br/curitiba/44944/weather-forecast/44944",
+          "title": "Previsão meteorológica de 3 dias em Curitiba, Paraná, Brasil",
+          "url": "https://www.accuweather.com/pt/br/curitiba/44944/weather-forecast/44944"
+        },
+        {
+          "id": "https://www.meteored.com.br/curitiba.htm",
+          "title": "Previsão do tempo Curitiba PR. 14 dias - Meteored Brasil",
+          "url": "https://www.meteored.com.br/curitiba.htm"
+        },
+        {
+          "id": "https://bemparana.com.br/noticias/parana/curitiba-tera-calorzinho-no-almoco-e-chuva-a-tarde-veja-previsao-do-tempo-no-interior",
+          "title": "Curitiba tem 'calorzinho' no almoço e chuva à tarde; Veja previsão do tempo no Interior",
+          "url": "https://bemparana.com.br/noticias/parana/curitiba-tera-calorzinho-no-almoco-e-chuva-a-tarde-veja-previsao-do-tempo-no-interior"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Mister_Brazil_CNB_2026",
+          "title": "Mister Brazil CNB 2026",
+          "url": "https://en.wikipedia.org/wiki/Mister_Brazil_CNB_2026"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "SIMEPAR - Previsão do Tempo - Curitiba/PR (16 days ago)",
+        "Previsão do tempo em Curitiba, PR: hoje e amanhã (0 days ago)",
+        "Tempo Curitiba - Previsão de hoje, amanhã e dos próximos 14 dias (314 days ago)",
+        "Curitiba-PR - 20/10/2026 - INMET :: Previsão (40 days ago)",
+        "Clima e Previsão do Tempo para 15 Dias em Curitiba (PR) (51 days ago)",
+        "Previsão meteorológica de 3 dias em Curitiba, Paraná, Brasil (s/ data)",
+        "Previsão do tempo Curitiba PR. 14 dias - Meteored Brasil (s/ data)",
+        "Curitiba tem 'calorzinho' no almoço e chuva à tarde; Veja previsão do tempo no Interior (0 days ago)",
+        "Mister Brazil CNB 2026 (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [
+        "02/11/2026",
+        "100",
+        "28",
+        "20,86",
+        "98",
+        "4106902"
+      ],
+      "cost_usd": 0.078907,
+      "run": 0
+    },
+    {
+      "id": "q-mem-12",
+      "split": "memory",
+      "message": "And in Curitiba?",
+      "ms": 28007.0,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Rain looks likely in Curitiba tomorrow (11/02/2026). Yr's forecast says it will be cloudy in the morning, with rain in the afternoon and about 1.2 mm of precipitation.\n\nThat page was last updated around 10/30/2026, so the forecast may have changed. For a current forecast, check INMET (inmet.gov.br), the official Brazilian weather service.\n\nSource: Yr (https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0)",
+      "source_ids": [
+        "https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0",
+        "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
+        "https://www.yr.no/en/forecast/daily-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba",
+        "https://www.yr.no/en/forecast/daily-table/2-6301852/Brazil/Paran%C3%A1/S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais/Curitiba%20Airport",
+        "https://www.theweather.com/curitiba.htm",
+        "https://www.weather25.com/south-america/brazil/parana/curitiba?page=month&month=November",
+        "https://bemparana.com.br/noticias/parana/novembro-comeca-com-chuvarada-e-curitiba-e-proximos-dias-devem-ter-mais-aguaceiro",
+        "https://www.timeanddate.com/weather/brazil/curitiba",
+        "https://www.timeanddate.com/weather/@3462176"
+      ],
+      "sources": [
+        {
+          "id": "https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0",
+          "title": "Yr - Curitiba - Hourly weather forecast",
+          "url": "https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0"
+        },
+        {
+          "id": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
+          "title": "Weather Forecast and Prayer Timings for Monday, November 2, 2026",
+          "url": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881"
+        },
+        {
+          "id": "https://www.yr.no/en/forecast/daily-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba",
+          "title": "Long term weather forecast for Curitiba",
+          "url": "https://www.yr.no/en/forecast/daily-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba"
+        },
+        {
+          "id": "https://www.yr.no/en/forecast/daily-table/2-6301852/Brazil/Paran%C3%A1/S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais/Curitiba%20Airport",
+          "title": "Long term weather forecast for Curitiba Airport",
+          "url": "https://www.yr.no/en/forecast/daily-table/2-6301852/Brazil/Paran%C3%A1/S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais/Curitiba%20Airport"
+        },
+        {
+          "id": "https://www.theweather.com/curitiba.htm",
+          "title": "Curitiba, PR Weather 14 days - Meteored US",
+          "url": "https://www.theweather.com/curitiba.htm"
+        },
+        {
+          "id": "https://www.weather25.com/south-america/brazil/parana/curitiba?page=month&month=November",
+          "title": "Curitiba weather in November 2026",
+          "url": "https://www.weather25.com/south-america/brazil/parana/curitiba?page=month&month=November"
+        },
+        {
+          "id": "https://bemparana.com.br/noticias/parana/novembro-comeca-com-chuvarada-e-curitiba-e-proximos-dias-devem-ter-mais-aguaceiro",
+          "title": "Novembro começa com chuvarada e, Curitiba e próximos dias devem ter mais aguaceiro",
+          "url": "https://bemparana.com.br/noticias/parana/novembro-comeca-com-chuvarada-e-curitiba-e-proximos-dias-devem-ter-mais-aguaceiro"
+        },
+        {
+          "id": "https://www.timeanddate.com/weather/brazil/curitiba",
+          "title": "www.timeanddate.com",
+          "url": "https://www.timeanddate.com/weather/brazil/curitiba"
+        },
+        {
+          "id": "https://www.timeanddate.com/weather/@3462176",
+          "title": "www.timeanddate.com",
+          "url": "https://www.timeanddate.com/weather/@3462176"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Yr - Curitiba - Hourly weather forecast (s/ data)",
+        "Weather Forecast and Prayer Timings for Monday, November 2, 2026 (0 days ago)",
+        "Long term weather forecast for Curitiba (s/ data)",
+        "Long term weather forecast for Curitiba Airport (s/ data)",
+        "Curitiba, PR Weather 14 days - Meteored US (445 days ago)",
+        "Curitiba weather in November 2026 (s/ data)",
+        "Novembro começa com chuvarada e, Curitiba e próximos dias devem ter mais aguaceiro (0 days ago)",
+        "www.timeanddate.com (s/ data)",
+        "www.timeanddate.com (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "11/02/2026",
+        "10/30/2026",
+        "1.2"
+      ],
+      "cost_usd": 0.057698,
+      "run": 0
+    }
+  ],
+  "failures": [
+    {
+      "id": "q-mem-02",
+      "split": "memory",
+      "message": "And the ones from the day before?",
+      "ms": 14274.7,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": false,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Você teve uma venda em 30/10, anteontem:\n\n- **TX1004:** R$ 350,00 no crédito. O depósito está previsto para 30/11, e o status é \"previsto\".\n\nNão há outras vendas de 30/10 na sua agenda.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "last_7_days"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"last_7_days\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.020732,
+      "run": 0
+    },
+    {
+      "id": "q-mem-03",
+      "split": "memory",
+      "message": "E a outra maquininha?",
+      "ms": 22521.8,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": false,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A outra maquininha, a **T1988A (Get Smart)**, está funcionando bem:\n- Ela usa Wi-Fi, e o sinal está ok.\n- Está online, com último contato há 2 minutos.\n- A bobina está ok e ela não está bloqueada.\n\nA **T1988B (Get Clássica)** é a que continua com o problema:\n- Ela usa chip e está sem sinal.\n- Está offline, com último contato há cerca de 3 horas.\n\nEnquanto a T1988B não voltar, você pode vender pela T1988A. Posso propor o reinício remoto da T1988B. Ele só é feito se você confirmar. Quer que eu proponha?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988A"
+          },
+          "ok": true
+        },
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [
+        "3"
+      ],
+      "cost_usd": 0.02474,
+      "run": 0
+    },
+    {
+      "id": "q-mem-06",
+      "split": "memory",
+      "message": "What about the Get Clássica?",
+      "ms": 13617.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq",
+        "escalation"
+      ],
+      "replans": [
+        "faq->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "I couldn't find any information about the Get Clássica in the Getnet sources, so I didn't want to guess. I've passed your question to a human agent (ticket T-5ce3b192). They'll reply in this conversation.",
+      "source_ids": [
+        "prod-home-08",
+        "maq-todas-as-maquininhas-08",
+        "maq-todas-as-maquininhas-06"
+      ],
+      "sources": [
+        {
+          "id": "prod-home-08",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-08",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Deeper Confecções Cliente Get Clássica, Get Pay, Antecipação de Vendas e Plataforma Digital As taxas são excelentes e o atendimento ao cliente é muito bom. Virgínia Arruda Loja Virgínia Arruda​ Cliente Get Pay Taxa competitiva, bom relacionamento com o cliente, transações rápidas e com segurança. Raimundo Santos Cliente Get Smart e Plataforma Digital Com atendimento personalizado, soluções diversificadas e uma plataforma robusta, conseguimos oferecer a melhor experiência aos nossos clientes.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Associação Brasileira da Industria do Vestuário Cliente Get Clássica Hoje tenho acompanhado o mercado e sei que temos concorrências com tecnologia que também podem oferecer facilidades para o Tarundu, mas o atendimento e relacionamento quando preciso faz a diferença. Tarundu (Campos do Jordão) Cliente Get Smart Vi mais simplicidade onde mais me preocupava, que era saber quanto entrou e quanto vou receber e bater isso com nossas vendas diárias. Isso me fez ter um problema a menos para resolver.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "I've handed this to a human agent (ticket T-5ce3b192). The reply will show up in this conversation."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016514,
+      "run": 0
+    },
+    {
+      "id": "q-mem-07",
+      "split": "memory",
+      "message": "E a do dólar?",
+      "ms": 29219.5,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "O dólar aparece com estas cotações nas fontes consultadas:\n\n- **R$ 5,42**, segundo a Avenue, em 30/10/2026 às 13h04.\n- **R$ 5,44**, segundo o Dólar Hoje, em 01/11/2026.\n\nHoje é domingo e o mercado está fechado. Por isso, a última cotação oficial é a de sexta-feira. Para o valor de referência oficial, consulte o Banco Central.\n\nFontes: avenue.us/dolar-hoje, dolarhoje.com e infomoney.com.br/ferramentas/cambio.",
+      "source_ids": [
+        "https://avenue.us/dolar-hoje/",
+        "https://investidor10.com.br/moedas/usd/",
+        "https://ambito.com/finanzas/dolar-hoy-cuanto-cotiza-este-domingo-1-noviembre-n6340186",
+        "https://www.infomoney.com.br/ferramentas/cambio/",
+        "https://www.dolarhoje.net.br/",
+        "https://dolarhoje.com/",
+        "https://apps.apple.com/us/app/id6745558516",
+        "https://br.tradingview.com/symbols/CME-6L1%21/ideas/page-42",
+        "https://apps.apple.com/us/app/id1516702956"
+      ],
+      "sources": [
+        {
+          "id": "https://avenue.us/dolar-hoje/",
+          "title": "Dólar Hoje: Cotação em tempo real - Avenue",
+          "url": "https://avenue.us/dolar-hoje/"
+        },
+        {
+          "id": "https://investidor10.com.br/moedas/usd/",
+          "title": "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10",
+          "url": "https://investidor10.com.br/moedas/usd/"
+        },
+        {
+          "id": "https://ambito.com/finanzas/dolar-hoy-cuanto-cotiza-este-domingo-1-noviembre-n6340186",
+          "title": "Dólar hoy: a cuánto cotiza este domingo 1 de noviembre",
+          "url": "https://ambito.com/finanzas/dolar-hoy-cuanto-cotiza-este-domingo-1-noviembre-n6340186"
+        },
+        {
+          "id": "https://www.infomoney.com.br/ferramentas/cambio/",
+          "title": "Conversor de Moeda - Câmbio",
+          "url": "https://www.infomoney.com.br/ferramentas/cambio/"
+        },
+        {
+          "id": "https://www.dolarhoje.net.br/",
+          "title": "Dólar comercial hoje - preço do dolar - valor - cotação",
+          "url": "https://www.dolarhoje.net.br/"
+        },
+        {
+          "id": "https://dolarhoje.com/",
+          "title": "Dólar Hoje: Cotação Comercial e Turismo. Valor e Preço!",
+          "url": "https://dolarhoje.com/"
+        },
+        {
+          "id": "https://apps.apple.com/us/app/id6745558516",
+          "title": "Dolar hoje: Cotação atual",
+          "url": "https://apps.apple.com/us/app/id6745558516"
+        },
+        {
+          "id": "https://br.tradingview.com/symbols/CME-6L1%21/ideas/page-42",
+          "title": "Brazilian Real Futures",
+          "url": "https://br.tradingview.com/symbols/CME-6L1%21/ideas/page-42"
+        },
+        {
+          "id": "https://apps.apple.com/us/app/id1516702956",
+          "title": "Dólar Agora",
+          "url": "https://apps.apple.com/us/app/id1516702956"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dólar Hoje: Cotação em tempo real - Avenue (5 days ago)",
+        "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10 (17 days ago)",
+        "Dólar hoy: a cuánto cotiza este domingo 1 de noviembre (0 days ago)",
+        "Conversor de Moeda - Câmbio (479 days ago)",
+        "Dólar comercial hoje - preço do dolar - valor - cotação (675 days ago)",
+        "Dólar Hoje: Cotação Comercial e Turismo. Valor e Preço! (675 days ago)",
+        "Dolar hoje: Cotação atual (s/ data)",
+        "Brazilian Real Futures (s/ data)",
+        "Dólar Agora (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [
+        "30/10/2026",
+        "5,42",
+        "5,44"
+      ],
+      "cost_usd": 0.076654,
+      "run": 0
+    },
+    {
+      "id": "q-mem-08",
+      "split": "memory",
+      "message": "And the dollar?",
+      "ms": 31162.9,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "The latest figure I found puts the commercial dollar at **R$ 5.45** (sell rate). Remessa Online recorded it on 10/30/2026 at 4:29 pm. Markets are closed today (Sunday), so this is probably Friday's last quote.\n\nOther sources differ a little. Avenue shows R$ 5.42. For the official rate, check the Banco Central do Brasil (PTAX).\n\nSources: Remessa Online (remessaonline.com.br/cotacao/cotacao-dolar) and Avenue (avenue.us/dolar-hoje).",
+      "source_ids": [
+        "https://wise.com/br/currency-converter/dolar-hoje",
+        "https://avenue.us/dolar-hoje/",
+        "https://investidor10.com.br/moedas/usd/",
+        "https://br.investing.com/currencies/usd-brl",
+        "https://www.dolarhoje.net.br/",
+        "https://www.remessaonline.com.br/cotacao/cotacao-dolar",
+        "https://boca.com.br/economia/dolar/cotacao-dolar-hoje-01-11",
+        "https://gruporioclarosp.com.br/economia/dolar-dispara-915-na-semana-e-bolsa-tem-pior-queda-desde-2020",
+        "https://apps.apple.com/us/app/id6745558516"
+      ],
+      "sources": [
+        {
+          "id": "https://wise.com/br/currency-converter/dolar-hoje",
+          "title": "Dólar hoje: confira a cotação em tempo real do Dólar hoje",
+          "url": "https://wise.com/br/currency-converter/dolar-hoje"
+        },
+        {
+          "id": "https://avenue.us/dolar-hoje/",
+          "title": "Dólar Hoje: Cotação em tempo real - Avenue",
+          "url": "https://avenue.us/dolar-hoje/"
+        },
+        {
+          "id": "https://investidor10.com.br/moedas/usd/",
+          "title": "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10",
+          "url": "https://investidor10.com.br/moedas/usd/"
+        },
+        {
+          "id": "https://br.investing.com/currencies/usd-brl",
+          "title": "Dólar Hoje",
+          "url": "https://br.investing.com/currencies/usd-brl"
+        },
+        {
+          "id": "https://www.dolarhoje.net.br/",
+          "title": "Dólar comercial hoje - preço do dolar - valor - cotação",
+          "url": "https://www.dolarhoje.net.br/"
+        },
+        {
+          "id": "https://www.remessaonline.com.br/cotacao/cotacao-dolar",
+          "title": "Dólar americano Hoje (USD)",
+          "url": "https://www.remessaonline.com.br/cotacao/cotacao-dolar"
+        },
+        {
+          "id": "https://boca.com.br/economia/dolar/cotacao-dolar-hoje-01-11",
+          "title": "Cotação do dólar hoje: dólar comercial fecha em alta após semana volátil e preocupa mercado fiscal",
+          "url": "https://boca.com.br/economia/dolar/cotacao-dolar-hoje-01-11"
+        },
+        {
+          "id": "https://gruporioclarosp.com.br/economia/dolar-dispara-915-na-semana-e-bolsa-tem-pior-queda-desde-2020",
+          "title": "Dólar dispara 9,15% na semana e bolsa tem pior queda desde 2020 - Grupo Rio Claro SP",
+          "url": "https://gruporioclarosp.com.br/economia/dolar-dispara-915-na-semana-e-bolsa-tem-pior-queda-desde-2020"
+        },
+        {
+          "id": "https://apps.apple.com/us/app/id6745558516",
+          "title": "Dolar hoje: Cotação atual",
+          "url": "https://apps.apple.com/us/app/id6745558516"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dólar hoje: confira a cotação em tempo real do Dólar hoje (4 days ago)",
+        "Dólar Hoje: Cotação em tempo real - Avenue (5 days ago)",
+        "Cotação do Dólar Hoje, conversor e histórico de cotações - Investidor10 (17 days ago)",
+        "Dólar Hoje (4 days ago)",
+        "Dólar comercial hoje - preço do dolar - valor - cotação (675 days ago)",
+        "Dólar americano Hoje (USD) (2 days ago)",
+        "Cotação do dólar hoje: dólar comercial fecha em alta após semana volátil e preocupa mercado fiscal (0 days ago)",
+        "Dólar dispara 9,15% na semana e bolsa tem pior queda desde 2020 - Grupo Rio Claro SP (1 days ago)",
+        "Dolar hoje: Cotação atual (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "10/30/2026",
+        "5.45",
+        "29",
+        "5.42"
+      ],
+      "cost_usd": 0.076892,
+      "run": 0
+    },
+    {
+      "id": "q-mem-09",
+      "split": "memory",
+      "message": "E a TX1008?",
+      "ms": 21077.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": false,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A venda TX1008 (R$ 75,00, débito, 01/11) foi recusada com o **código 05: não autorizada pelo emissor**.\n\n- **Causa:** o banco do cliente negou a compra. Não foi problema da maquininha.\n- **Maquininha T1988A:** está online, com Wi-Fi ok, bobina ok e sem bloqueio. O último contato foi há 2 minutos. Você não precisa reiniciar.\n- **O que fazer:** peça ao cliente para falar com o banco emissor. Ele também pode tentar outro cartão ou pagar por Pix.\n- **Contestação:** uma transação recusada não pode ser contestada.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1008"
+          },
+          "ok": true
+        },
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988A"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 1, \"transactions\": [{\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}]}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.02819,
+      "run": 0
+    },
+    {
+      "id": "q-mem-11",
+      "split": "memory",
+      "message": "E em Curitiba?",
+      "ms": 26920.9,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Sim, a previsão é de chuva em Curitiba amanhã (02/11/2026).\n\n- **HG Brasil** (previsão de 01/11/2026): 100% de chance de chuva, temperatura entre 16°C e 28°C e volume previsto de 20,86 mm.\n- **SIMEPAR**: 98% de probabilidade de chuva.\n\nFontes: [HG Brasil](https://hgbrasil.com/weather/places/brazil/pr/curitiba) e [SIMEPAR](https://www.simepar.br/simepar/forecast_by_counties/4106902).",
+      "source_ids": [
+        "https://www.simepar.br/simepar/forecast_by_counties/4106902",
+        "https://hgbrasil.com/weather/places/brazil/pr/curitiba",
+        "https://www.climaeradar.com.br/previsao-tempo/curitiba/5551853",
+        "https://previsao.inmet.gov.br/4106902",
+        "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/271/curitiba-pr",
+        "https://www.accuweather.com/pt/br/curitiba/44944/weather-forecast/44944",
+        "https://www.meteored.com.br/curitiba.htm",
+        "https://bemparana.com.br/noticias/parana/curitiba-tera-calorzinho-no-almoco-e-chuva-a-tarde-veja-previsao-do-tempo-no-interior",
+        "https://en.wikipedia.org/wiki/Mister_Brazil_CNB_2026"
+      ],
+      "sources": [
+        {
+          "id": "https://www.simepar.br/simepar/forecast_by_counties/4106902",
+          "title": "SIMEPAR - Previsão do Tempo - Curitiba/PR",
+          "url": "https://www.simepar.br/simepar/forecast_by_counties/4106902"
+        },
+        {
+          "id": "https://hgbrasil.com/weather/places/brazil/pr/curitiba",
+          "title": "Previsão do tempo em Curitiba, PR: hoje e amanhã",
+          "url": "https://hgbrasil.com/weather/places/brazil/pr/curitiba"
+        },
+        {
+          "id": "https://www.climaeradar.com.br/previsao-tempo/curitiba/5551853",
+          "title": "Tempo Curitiba - Previsão de hoje, amanhã e dos próximos 14 dias",
+          "url": "https://www.climaeradar.com.br/previsao-tempo/curitiba/5551853"
+        },
+        {
+          "id": "https://previsao.inmet.gov.br/4106902",
+          "title": "Curitiba-PR - 20/10/2026 - INMET :: Previsão",
+          "url": "https://previsao.inmet.gov.br/4106902"
+        },
+        {
+          "id": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/271/curitiba-pr",
+          "title": "Clima e Previsão do Tempo para 15 Dias em Curitiba (PR)",
+          "url": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/271/curitiba-pr"
+        },
+        {
+          "id": "https://www.accuweather.com/pt/br/curitiba/44944/weather-forecast/44944",
+          "title": "Previsão meteorológica de 3 dias em Curitiba, Paraná, Brasil",
+          "url": "https://www.accuweather.com/pt/br/curitiba/44944/weather-forecast/44944"
+        },
+        {
+          "id": "https://www.meteored.com.br/curitiba.htm",
+          "title": "Previsão do tempo Curitiba PR. 14 dias - Meteored Brasil",
+          "url": "https://www.meteored.com.br/curitiba.htm"
+        },
+        {
+          "id": "https://bemparana.com.br/noticias/parana/curitiba-tera-calorzinho-no-almoco-e-chuva-a-tarde-veja-previsao-do-tempo-no-interior",
+          "title": "Curitiba tem 'calorzinho' no almoço e chuva à tarde; Veja previsão do tempo no Interior",
+          "url": "https://bemparana.com.br/noticias/parana/curitiba-tera-calorzinho-no-almoco-e-chuva-a-tarde-veja-previsao-do-tempo-no-interior"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Mister_Brazil_CNB_2026",
+          "title": "Mister Brazil CNB 2026",
+          "url": "https://en.wikipedia.org/wiki/Mister_Brazil_CNB_2026"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "SIMEPAR - Previsão do Tempo - Curitiba/PR (16 days ago)",
+        "Previsão do tempo em Curitiba, PR: hoje e amanhã (0 days ago)",
+        "Tempo Curitiba - Previsão de hoje, amanhã e dos próximos 14 dias (314 days ago)",
+        "Curitiba-PR - 20/10/2026 - INMET :: Previsão (40 days ago)",
+        "Clima e Previsão do Tempo para 15 Dias em Curitiba (PR) (51 days ago)",
+        "Previsão meteorológica de 3 dias em Curitiba, Paraná, Brasil (s/ data)",
+        "Previsão do tempo Curitiba PR. 14 dias - Meteored Brasil (s/ data)",
+        "Curitiba tem 'calorzinho' no almoço e chuva à tarde; Veja previsão do tempo no Interior (0 days ago)",
+        "Mister Brazil CNB 2026 (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [
+        "02/11/2026",
+        "100",
+        "28",
+        "20,86",
+        "98",
+        "4106902"
+      ],
+      "cost_usd": 0.078907,
+      "run": 0
+    },
+    {
+      "id": "q-mem-12",
+      "split": "memory",
+      "message": "And in Curitiba?",
+      "ms": 28007.0,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Rain looks likely in Curitiba tomorrow (11/02/2026). Yr's forecast says it will be cloudy in the morning, with rain in the afternoon and about 1.2 mm of precipitation.\n\nThat page was last updated around 10/30/2026, so the forecast may have changed. For a current forecast, check INMET (inmet.gov.br), the official Brazilian weather service.\n\nSource: Yr (https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0)",
+      "source_ids": [
+        "https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0",
+        "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
+        "https://www.yr.no/en/forecast/daily-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba",
+        "https://www.yr.no/en/forecast/daily-table/2-6301852/Brazil/Paran%C3%A1/S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais/Curitiba%20Airport",
+        "https://www.theweather.com/curitiba.htm",
+        "https://www.weather25.com/south-america/brazil/parana/curitiba?page=month&month=November",
+        "https://bemparana.com.br/noticias/parana/novembro-comeca-com-chuvarada-e-curitiba-e-proximos-dias-devem-ter-mais-aguaceiro",
+        "https://www.timeanddate.com/weather/brazil/curitiba",
+        "https://www.timeanddate.com/weather/@3462176"
+      ],
+      "sources": [
+        {
+          "id": "https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0",
+          "title": "Yr - Curitiba - Hourly weather forecast",
+          "url": "https://www.yr.no/en/forecast/hourly-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba?i=0"
+        },
+        {
+          "id": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
+          "title": "Weather Forecast and Prayer Timings for Monday, November 2, 2026",
+          "url": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881"
+        },
+        {
+          "id": "https://www.yr.no/en/forecast/daily-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba",
+          "title": "Long term weather forecast for Curitiba",
+          "url": "https://www.yr.no/en/forecast/daily-table/2-3464975/Brazil/Paran%C3%A1/Curitiba/Curitiba"
+        },
+        {
+          "id": "https://www.yr.no/en/forecast/daily-table/2-6301852/Brazil/Paran%C3%A1/S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais/Curitiba%20Airport",
+          "title": "Long term weather forecast for Curitiba Airport",
+          "url": "https://www.yr.no/en/forecast/daily-table/2-6301852/Brazil/Paran%C3%A1/S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais/Curitiba%20Airport"
+        },
+        {
+          "id": "https://www.theweather.com/curitiba.htm",
+          "title": "Curitiba, PR Weather 14 days - Meteored US",
+          "url": "https://www.theweather.com/curitiba.htm"
+        },
+        {
+          "id": "https://www.weather25.com/south-america/brazil/parana/curitiba?page=month&month=November",
+          "title": "Curitiba weather in November 2026",
+          "url": "https://www.weather25.com/south-america/brazil/parana/curitiba?page=month&month=November"
+        },
+        {
+          "id": "https://bemparana.com.br/noticias/parana/novembro-comeca-com-chuvarada-e-curitiba-e-proximos-dias-devem-ter-mais-aguaceiro",
+          "title": "Novembro começa com chuvarada e, Curitiba e próximos dias devem ter mais aguaceiro",
+          "url": "https://bemparana.com.br/noticias/parana/novembro-comeca-com-chuvarada-e-curitiba-e-proximos-dias-devem-ter-mais-aguaceiro"
+        },
+        {
+          "id": "https://www.timeanddate.com/weather/brazil/curitiba",
+          "title": "www.timeanddate.com",
+          "url": "https://www.timeanddate.com/weather/brazil/curitiba"
+        },
+        {
+          "id": "https://www.timeanddate.com/weather/@3462176",
+          "title": "www.timeanddate.com",
+          "url": "https://www.timeanddate.com/weather/@3462176"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Yr - Curitiba - Hourly weather forecast (s/ data)",
+        "Weather Forecast and Prayer Timings for Monday, November 2, 2026 (0 days ago)",
+        "Long term weather forecast for Curitiba (s/ data)",
+        "Long term weather forecast for Curitiba Airport (s/ data)",
+        "Curitiba, PR Weather 14 days - Meteored US (445 days ago)",
+        "Curitiba weather in November 2026 (s/ data)",
+        "Novembro começa com chuvarada e, Curitiba e próximos dias devem ter mais aguaceiro (0 days ago)",
+        "www.timeanddate.com (s/ data)",
+        "www.timeanddate.com (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "11/02/2026",
+        "10/30/2026",
+        "1.2"
+      ],
+      "cost_usd": 0.057698,
+      "run": 0
+    }
+  ],
+  "stability": {
+    "runs": 3,
+    "pass_at_1": 0.3333,
+    "pass_hat_k": 0.3333,
+    "ci": {
+      "pass_at_1": {
+        "k": 4,
+        "n": 12,
+        "lo": 13.8,
+        "hi": 60.9
+      },
+      "pass_hat_k": {
+        "k": 4,
+        "n": 12,
+        "lo": 13.8,
+        "hi": 60.9
+      }
+    },
+    "unstable": [],
+    "by_case": {
+      "q-mem-01": {
+        "passes": 1,
+        "runs": 1
+      },
+      "q-mem-02": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-03": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-04": {
+        "passes": 1,
+        "runs": 1
+      },
+      "q-mem-05": {
+        "passes": 1,
+        "runs": 1
+      },
+      "q-mem-06": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-07": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-08": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-09": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-10": {
+        "passes": 1,
+        "runs": 1
+      },
+      "q-mem-11": {
+        "passes": 0,
+        "runs": 1
+      },
+      "q-mem-12": {
+        "passes": 0,
+        "runs": 1
+      }
+    }
+  },
+  "failure_matrix": {
+    "by_check": {
+      "language": {
+        "memory": 1
+      },
+      "intent": {
+        "memory": 2
+      },
+      "numbers": {
+        "memory": 5
+      },
+      "handoff": {
+        "memory": 1
+      },
+      "handoff_outcome": {
+        "memory": 1
+      }
+    },
+    "intent_confusion": {
+      "troubleshoot": {
+        "support": 2
+      }
+    },
+    "intent_matrix": {
+      "support": {
+        "support": 2
+      },
+      "troubleshoot": {
+        "support": 2,
+        "troubleshoot": 2
+      },
+      "knowledge": {
+        "knowledge": 2
+      },
+      "general": {
+        "general": 4
+      }
+    }
+  },
+  "gate_calibration": {
+    "positives": 50,
+    "negatives": 16,
+    "excluded_negatives": [],
+    "criterion": "max pos_answered com neg_refused >= 0.85; empate → menor limiar",
+    "neg_refusal_min": 0.85,
+    "current": 8.554,
+    "current_source": "MIN_SCORE",
+    "at_current": {
+      "threshold": 8.554,
+      "pos_answered": 0.72,
+      "neg_refused": 0.812,
+      "balanced_acc": 0.766,
+      "meets_floor": false,
+      "pos_ci": {
+        "k": 36,
+        "n": 50,
+        "lo": 58.3,
+        "hi": 82.5
+      },
+      "neg_ci": {
+        "k": 13,
+        "n": 16,
+        "lo": 57.0,
+        "hi": 93.4
+      }
+    },
+    "best": {
+      "threshold": 8.643,
+      "pos_answered": 0.72,
+      "neg_refused": 0.875,
+      "balanced_acc": 0.797,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 36,
+        "n": 50,
+        "lo": 58.3,
+        "hi": 82.5
+      },
+      "neg_ci": {
+        "k": 14,
+        "n": 16,
+        "lo": 64.0,
+        "hi": 96.5
+      }
+    },
+    "table": [
+      {
+        "threshold": 0.0,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 0.234,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.366,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.382,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.406,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 3.819,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.037,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.133,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.138,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.156,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.309,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.561,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.586,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.693,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.731,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 4.823,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 5.132,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 5.156,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.298,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.387,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.478,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.551,
+        "pos_answered": 0.72,
+        "neg_refused": 0.312,
+        "balanced_acc": 0.516,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 16,
+          "lo": 14.2,
+          "hi": 55.6
+        }
+      },
+      {
+        "threshold": 5.581,
+        "pos_answered": 0.72,
+        "neg_refused": 0.312,
+        "balanced_acc": 0.516,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 16,
+          "lo": 14.2,
+          "hi": 55.6
+        }
+      },
+      {
+        "threshold": 5.589,
+        "pos_answered": 0.72,
+        "neg_refused": 0.375,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 6,
+          "n": 16,
+          "lo": 18.5,
+          "hi": 61.4
+        }
+      },
+      {
+        "threshold": 5.616,
+        "pos_answered": 0.72,
+        "neg_refused": 0.375,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 6,
+          "n": 16,
+          "lo": 18.5,
+          "hi": 61.4
+        }
+      },
+      {
+        "threshold": 5.803,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.884,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.919,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.927,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.937,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.991,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.045,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.135,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.137,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.25,
+        "pos_answered": 0.72,
+        "neg_refused": 0.562,
+        "balanced_acc": 0.641,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 16,
+          "lo": 33.2,
+          "hi": 76.9
+        }
+      },
+      {
+        "threshold": 6.344,
+        "pos_answered": 0.72,
+        "neg_refused": 0.562,
+        "balanced_acc": 0.641,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 16,
+          "lo": 33.2,
+          "hi": 76.9
+        }
+      },
+      {
+        "threshold": 6.622,
+        "pos_answered": 0.72,
+        "neg_refused": 0.625,
+        "balanced_acc": 0.672,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 16,
+          "lo": 38.6,
+          "hi": 81.5
+        }
+      },
+      {
+        "threshold": 6.826,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 6.869,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 6.906,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.105,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.426,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.593,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.765,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 7.999,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.103,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.258,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.278,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.478,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.486,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.554,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.591,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.643,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.722,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.956,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.983,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.031,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.033,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.148,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.31,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.421,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.537,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.686,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.835,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.844,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.936,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.082,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.087,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.373,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.478,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.499,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.544,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.598,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.773,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.983,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.989,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.108,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.109,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.133,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.286,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.342,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.344,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.473,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.658,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.698,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.746,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.828,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.83,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.102,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.147,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.251,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.261,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.384,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.54,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.637,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.873,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.909,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.181,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.344,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.359,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.419,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.615,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.742,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.77,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.897,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.933,
+        "pos_answered": 0.58,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.79,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.167,
+        "pos_answered": 0.58,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.79,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.174,
+        "pos_answered": 0.56,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.78,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 28,
+          "n": 50,
+          "lo": 42.3,
+          "hi": 68.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.245,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.418,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.465,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.506,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.543,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.619,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.65,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.705,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.735,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.77,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.79,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.83,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.922,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.117,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.373,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.761,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.762,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.843,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.863,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.873,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.95,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.984,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.106,
+        "pos_answered": 0.44,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.72,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 22,
+          "n": 50,
+          "lo": 31.2,
+          "hi": 57.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.272,
+        "pos_answered": 0.44,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.72,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 22,
+          "n": 50,
+          "lo": 31.2,
+          "hi": 57.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.436,
+        "pos_answered": 0.42,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.71,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 21,
+          "n": 50,
+          "lo": 29.4,
+          "hi": 55.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.547,
+        "pos_answered": 0.42,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.71,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 21,
+          "n": 50,
+          "lo": 29.4,
+          "hi": 55.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.589,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.613,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.64,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.769,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.811,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.92,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.925,
+        "pos_answered": 0.38,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.69,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 19,
+          "n": 50,
+          "lo": 25.9,
+          "hi": 51.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.236,
+        "pos_answered": 0.36,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.68,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 18,
+          "n": 50,
+          "lo": 24.1,
+          "hi": 49.9
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.409,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.52,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.981,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.247,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.698,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.968,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.201,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.224,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.238,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.243,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.755,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.102,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.262,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.266,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.413,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.759,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.854,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.187,
+        "pos_answered": 0.28,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.64,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 14,
+          "n": 50,
+          "lo": 17.5,
+          "hi": 41.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.442,
+        "pos_answered": 0.24,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.62,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 12,
+          "n": 50,
+          "lo": 14.3,
+          "hi": 37.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.511,
+        "pos_answered": 0.22,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.61,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 11,
+          "n": 50,
+          "lo": 12.8,
+          "hi": 35.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.953,
+        "pos_answered": 0.22,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.61,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 11,
+          "n": 50,
+          "lo": 12.8,
+          "hi": 35.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.25,
+        "pos_answered": 0.2,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.6,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 10,
+          "n": 50,
+          "lo": 11.2,
+          "hi": 33.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.33,
+        "pos_answered": 0.2,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.6,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 10,
+          "n": 50,
+          "lo": 11.2,
+          "hi": 33.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.484,
+        "pos_answered": 0.18,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.59,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 9,
+          "n": 50,
+          "lo": 9.8,
+          "hi": 30.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.529,
+        "pos_answered": 0.16,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.58,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 8,
+          "n": 50,
+          "lo": 8.3,
+          "hi": 28.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.721,
+        "pos_answered": 0.16,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.58,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 8,
+          "n": 50,
+          "lo": 8.3,
+          "hi": 28.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.795,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.939,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 23.417,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.041,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.162,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.312,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.36,
+        "pos_answered": 0.12,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.56,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 50,
+          "lo": 5.6,
+          "hi": 23.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.635,
+        "pos_answered": 0.1,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 5,
+          "n": 50,
+          "lo": 4.3,
+          "hi": 21.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 25.435,
+        "pos_answered": 0.1,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 5,
+          "n": 50,
+          "lo": 4.3,
+          "hi": 21.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 25.962,
+        "pos_answered": 0.08,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.54,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 50,
+          "lo": 3.2,
+          "hi": 18.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.2,
+        "pos_answered": 0.08,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.54,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 50,
+          "lo": 3.2,
+          "hi": 18.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.283,
+        "pos_answered": 0.06,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.53,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 3,
+          "n": 50,
+          "lo": 2.1,
+          "hi": 16.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 28.684,
+        "pos_answered": 0.04,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.52,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 50,
+          "lo": 1.1,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 29.514,
+        "pos_answered": 0.02,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.51,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 50,
+          "lo": 0.4,
+          "hi": 10.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 32.181,
+        "pos_answered": 0.0,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.5,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 0,
+          "n": 50,
+          "lo": 0.0,
+          "hi": 7.1
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      }
+    ],
+    "retriever": "bm25"
+  },
+  "retrieval": {
+    "cases": 50,
+    "positives": 50,
+    "negatives": 16,
+    "recall@3": 0.486,
+    "mrr": 0.61,
+    "hit@3": 0.72,
+    "hit@3_ci": {
+      "k": 36,
+      "n": 50,
+      "lo": 58.3,
+      "hi": 82.5
+    },
+    "retriever": "bm25",
+    "requested": "bm25"
+  }
+}

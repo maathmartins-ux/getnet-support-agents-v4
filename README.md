@@ -7,7 +7,7 @@ Sistema multiagente que atende lojistas da Getnet num único `POST /chat` (pt ou
 | Rodar | `docker compose up -d --build` → `http://localhost:8000/docs` · console do operador em `/operator` |
 | Testar | `python scripts/check.py --docker --scale` (lint, testes, eval com gate, build, imagem sem extras, smoke do container, 2 réplicas atrás de balanceador) |
 | CI | [`.github/workflows/ci.yml`](.github/workflows/ci.yml): lint, testes, eval offline com gate, build, smoke do container e 2 réplicas; o último run verde fica na aba Actions do repositório |
-| Vídeo | [walkthrough na página de Releases](../../releases/tag/video) (MP4 + legendas; narração por IA a partir do roteiro do autor, telas e números reais) |
+| Vídeo | [docs/video/walkthrough.mp4](docs/video/walkthrough.mp4) (legendado, sem narração; respostas reais do `POST /chat` com LLM e números lidos de `evals/results/`; roteiro em [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)) |
 
 ## 0. Para quem avalia em 5 minutos
 
@@ -45,7 +45,7 @@ balanceador): `python scripts/check.py --docker --scale`. Sem Docker: `python sc
   `POST /handoffs/{id}/reply` com `X-Operator-Token`. A resposta entra na conversa do cliente e o
   próximo turno já a enxerga. Opcional: Telegram (`TELEGRAM_*` no `.env`) avisa o caso e aceita
   `/responder T-xxxx texto` pelo webhook `/telegram/webhook`.
-- **Ao vivo:** `powershell -File scripts/live_eval.ps1 -MaxUsd 3` (eval por split com teto de US$,
+- **Ao vivo:** `scripts/live_eval.sh --max-usd 3` (ou `powershell -File scripts/live_eval.ps1 -MaxUsd 3`; eval por split com teto de US$,
   juiz e README). Extras opcionais fora da imagem: `.[hybrid]` (busca híbrida) e `.[otel]` (OpenTelemetry).
 
 ## 2. Arquitetura
@@ -179,21 +179,299 @@ Números gerados por `python scripts/fill_readme.py` a partir de `evals/results/
 ### Offline (gate do CI)
 
 <!-- eval:begin -->
+Modo: `in-process` · provedor `offline`
+
+| Métrica | official | replan | parallel | approval | official-var | memory | guardrail | hard | heldout | ALL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| cases | 10 | 20 | 8 | 8 | 32 | 13 | 38 | 21 | 24 | 174 |
+| intent_acc | 100.0 [IC95 72.2–100.0; n=10] | 100.0 [IC95 83.9–100.0; n=20] | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 67.6–100.0; n=8] | 93.8 [IC95 79.9–98.3; n=32] | 84.6 [IC95 57.8–95.7; n=13] | 97.4 [IC95 86.5–99.5; n=38] | 71.4 [IC95 50.0–86.2; n=21] | 75.0 [IC95 55.1–88.0; n=24] | 90.2 [IC95 84.9–93.8; n=174] |
+| handoff_acc | 100.0 [IC95 72.2–100.0; n=10] | 60.0 [IC95 38.7–78.1; n=20] | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 67.6–100.0; n=8] | 93.8 [IC95 79.9–98.3; n=32] | 92.3 [IC95 66.7–98.6; n=13] | 100.0 [IC95 89.3–100.0; n=32] | 94.4 [IC95 74.2–99.0; n=18] | 81.8 [IC95 61.5–92.7; n=22] | 90.2 [IC95 84.7–93.9; n=163] |
+| handoff_outcome_acc | 100.0 [IC95 72.2–100.0; n=10] | 60.0 [IC95 38.7–78.1; n=20] | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 67.6–100.0; n=8] | 93.8 [IC95 79.9–98.3; n=32] | 92.3 [IC95 66.7–98.6; n=13] | 100.0 [IC95 89.3–100.0; n=32] | 94.4 [IC95 74.2–99.0; n=18] | 81.8 [IC95 61.5–92.7; n=22] | 90.2 [IC95 84.7–93.9; n=163] |
+| blocked_acc | — | — | — | — | — | — | 100.0 [IC95 90.8–100.0; n=38] | 0.0 [IC95 0.0–79.3; n=1] | 50.0 [IC95 9.5–90.5; n=2] | 95.1 [IC95 83.9–98.7; n=41] |
+| language_acc | 50.0 [IC95 23.7–76.3; n=10] | 100.0 [IC95 83.9–100.0; n=20] | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 67.6–100.0; n=8] | 78.1 [IC95 61.2–89.0; n=32] | 92.3 [IC95 66.7–98.6; n=13] | 83.3 [IC95 43.6–97.0; n=6] | 90.5 [IC95 71.1–97.3; n=21] | 90.9 [IC95 72.2–97.5; n=22] | 87.1 [IC95 80.6–91.7; n=140] |
+| tools_acc | 100.0 [IC95 43.9–100.0; n=3] | — | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 67.6–100.0; n=8] | 88.9 [IC95 56.5–98.0; n=9] | 66.7 [IC95 30.0–90.3; n=6] | — | 75.0 [IC95 40.9–92.9; n=8] | 83.3 [IC95 55.2–95.3; n=12] | 87.0 [IC95 75.6–93.6; n=54] |
+| pending_action_acc | — | — | — | 100.0 [IC95 67.6–100.0; n=8] | — | — | — | — | 100.0 [IC95 43.9–100.0; n=3] | 100.0 [IC95 74.1–100.0; n=11] |
+| replanned_acc | — | 60.0 [IC95 38.7–78.1; n=20] | — | — | — | — | — | — | — | 60.0 [IC95 38.7–78.1; n=20] |
+| no_leak_acc | — | — | — | — | — | — | 100.0 [IC95 34.2–100.0; n=2] | — | — | 100.0 [IC95 34.2–100.0; n=2] |
+| numbers_acc | 100.0 [IC95 72.2–100.0; n=10] | 100.0 [IC95 83.9–100.0; n=20] | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 67.6–100.0; n=8] | 100.0 [IC95 89.3–100.0; n=32] | 100.0 [IC95 77.2–100.0; n=13] | 100.0 [IC95 61.0–100.0; n=6] | 100.0 [IC95 83.9–100.0; n=20] | 100.0 [IC95 85.7–100.0; n=23] | 100.0 [IC95 97.3–100.0; n=140] |
+| language_undetected | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| recall@3 | — | — | — | — | — | — | — | — | — | — |
+| mrr | — | — | — | — | — | — | — | — | — | — |
+| p50_ms | 22.6 | 25.3 | 30.4 | 17.4 | 17.1 | 38.5 | 4.6 | 19.8 | 28.0 | 19.8 |
+| p95_ms | 292.6 | 51.6 | 56.8 | 23.4 | 23.9 | 51.2 | 21.7 | 29.2 | 35.7 | 42.7 |
+| cost_usd | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| crashes | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Gate (splits approval, guardrail, memory, official, official-var, parallel, replan): intent 96.1% [IC95 91.2–98.3; n=129] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Falhas por checagem × split: blocked hard 1, heldout 1 · handoff hard 1, heldout 4, memory 1, official-var 2, replan 8 · handoff_outcome hard 1, heldout 4, memory 1, official-var 2, replan 8 · intent guardrail 1, hard 6, heldout 6, memory 2, official-var 2 · language guardrail 1, hard 2, heldout 2, memory 1, official 5, official-var 7 · replanned replan 8 · tools hard 2, heldout 2, memory 2, official-var 1
+Confusão de intenção (esperada → obtida): blocked → support 1 · general → knowledge 2 · knowledge → support 1, blocked 1, troubleshoot 1 · multi → troubleshoot 2, support 1, knowledge 1 · support → knowledge 2, multi 1 · troubleshoot → knowledge 3, support 1
+
+Matriz de confusão do router (todos os splits):
+
+| esperada \ obtida | blocked | general | human_request | knowledge | multi | support | troubleshoot | acerto |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| blocked | **33** | · | · | · | · | 1 | · | 97% |
+| general | · | **17** | · | 2 | · | · | · | 89% |
+| human_request | · | · | **4** | · | · | · | · | 100% |
+| knowledge | 1 | · | · | **57** | · | 1 | 1 | 95% |
+| multi | · | · | · | 1 | **9** | 1 | 2 | 69% |
+| support | · | · | · | 2 | 1 | **20** | · | 87% |
+| troubleshoot | · | · | · | 3 | · | 1 | **17** | 81% |
+
+Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
+
+Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 <!-- eval:end -->
 
 ### Ao vivo (LLM real, por split)
 
 <!-- eval-live:begin -->
+### Split `approval` — `live_approval.json`
+
+Provedor `anthropic` · status `aborted_max_usd` · gasto US$ 0.026346 (teto 0.0202)
+
+| Métrica | approval | ALL |
+|---|---:|---:|
+| cases | 1 | 1 |
+| intent_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| handoff_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| handoff_outcome_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| blocked_acc | — | — |
+| language_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| tools_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| pending_action_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| replanned_acc | — | — |
+| no_leak_acc | — | — |
+| numbers_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| language_undetected | 0 | 0 |
+| recall@3 | — | — |
+| mrr | — | — |
+| p50_ms | 7784.9 | 7784.9 |
+| p95_ms | 7784.9 | 7784.9 |
+| cost_usd | 0.026346 | 0.026346 |
+| crashes | 0 | 0 |
+
+Gate (splits approval): intent 100.0% [IC95 20.7–100.0; n=1] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Matriz de confusão do router (todos os splits):
+
+| esperada \ obtida | support | acerto |
+|---|---:|---:|
+| support | **1** | 100% |
+
+Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
+
+Estabilidade (3 rodadas): pass@1 100.0% [IC95 20.7–100.0; n=1] · pass^3 100.0% [IC95 20.7–100.0; n=1] · instáveis: —
+
+Ao vivo: status `aborted_max_usd` · gasto US$ 0.026346 (teto 0.0202) · erros de LLM 0
+
+Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+
+### Split `memory` — `live_memory.json`
+
+Provedor `anthropic` · status `aborted_max_usd` · gasto US$ 0.501261 (teto 0.5215)
+
+| Métrica | memory | ALL |
+|---|---:|---:|
+| cases | 12 | 12 |
+| intent_acc | 83.3 [IC95 55.2–95.3; n=12] | 83.3 [IC95 55.2–95.3; n=12] |
+| handoff_acc | 91.7 [IC95 64.6–98.5; n=12] | 91.7 [IC95 64.6–98.5; n=12] |
+| handoff_outcome_acc | 91.7 [IC95 64.6–98.5; n=12] | 91.7 [IC95 64.6–98.5; n=12] |
+| blocked_acc | — | — |
+| language_acc | 91.7 [IC95 64.6–98.5; n=12] | 91.7 [IC95 64.6–98.5; n=12] |
+| tools_acc | 100.0 [IC95 61.0–100.0; n=6] | 100.0 [IC95 61.0–100.0; n=6] |
+| pending_action_acc | — | — |
+| replanned_acc | — | — |
+| no_leak_acc | — | — |
+| numbers_acc | 58.3 [IC95 32.0–80.7; n=12] | 58.3 [IC95 32.0–80.7; n=12] |
+| language_undetected | 0 | 0 |
+| recall@3 | — | — |
+| mrr | — | — |
+| p50_ms | 26920.9 | 26920.9 |
+| p95_ms | 31162.9 | 31162.9 |
+| cost_usd | 0.501261 | 0.501261 |
+| crashes | 0 | 0 |
+
+Gate (splits memory): intent 83.3% [IC95 55.2–95.3; n=12] (mínimo 90%) → **FAIL**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Falhas por checagem × split: handoff memory 1 · handoff_outcome memory 1 · intent memory 2 · language memory 1 · numbers memory 5
+Confusão de intenção (esperada → obtida): troubleshoot → support 2
+
+Matriz de confusão do router (todos os splits):
+
+| esperada \ obtida | general | knowledge | support | troubleshoot | acerto |
+|---|---:|---:|---:|---:|---:|
+| general | **4** | · | · | · | 100% |
+| knowledge | · | **2** | · | · | 100% |
+| support | · | · | **2** | · | 100% |
+| troubleshoot | · | · | 2 | **2** | 50% |
+
+Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
+
+Estabilidade (3 rodadas): pass@1 33.3% [IC95 13.8–60.9; n=12] · pass^3 33.3% [IC95 13.8–60.9; n=12] · instáveis: —
+
+Ao vivo: status `aborted_max_usd` · gasto US$ 0.501261 (teto 0.5215) · erros de LLM 0
+
+Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+
+### Split `official` — `live_official.json`
+
+Provedor `anthropic` · status `complete` · gasto US$ 0.869273 (teto 3.0)
+
+| Métrica | official | ALL |
+|---|---:|---:|
+| cases | 30 | 30 |
+| intent_acc | 100.0 [IC95 88.6–100.0; n=30] | 100.0 [IC95 88.6–100.0; n=30] |
+| handoff_acc | 96.7 [IC95 83.3–99.4; n=30] | 96.7 [IC95 83.3–99.4; n=30] |
+| handoff_outcome_acc | 96.7 [IC95 83.3–99.4; n=30] | 96.7 [IC95 83.3–99.4; n=30] |
+| blocked_acc | — | — |
+| language_acc | 93.3 [IC95 78.7–98.2; n=30] | 93.3 [IC95 78.7–98.2; n=30] |
+| tools_acc | 100.0 [IC95 70.1–100.0; n=9] | 100.0 [IC95 70.1–100.0; n=9] |
+| pending_action_acc | — | — |
+| replanned_acc | — | — |
+| no_leak_acc | — | — |
+| numbers_acc | 66.7 [IC95 48.8–80.8; n=30] | 66.7 [IC95 48.8–80.8; n=30] |
+| language_undetected | 0 | 0 |
+| recall@3 | — | — |
+| mrr | — | — |
+| p50_ms | 9398.6 | 9398.6 |
+| p95_ms | 15445.5 | 15445.5 |
+| cost_usd | 0.869273 | 0.869273 |
+| crashes | 0 | 0 |
+
+Gate (splits official): intent 100.0% [IC95 88.6–100.0; n=30] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Falhas por checagem × split: handoff official 1 · handoff_outcome official 1 · language official 2 · numbers official 10
+
+Matriz de confusão do router (todos os splits):
+
+| esperada \ obtida | general | knowledge | support | troubleshoot | acerto |
+|---|---:|---:|---:|---:|---:|
+| general | **6** | · | · | · | 100% |
+| knowledge | · | **15** | · | · | 100% |
+| support | · | · | **3** | · | 100% |
+| troubleshoot | · | · | · | **6** | 100% |
+
+Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
+
+Estabilidade (3 rodadas): pass@1 60.0% [IC95 42.3–75.4; n=30] · pass^3 30.0% [IC95 10.8–60.3; n=10] · instáveis: official-01, official-03, official-05, official-06, official-08
+
+Ao vivo: status `complete` · gasto US$ 0.869273 (teto 3.0) · erros de LLM 0
+
+Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+
+### Split `parallel` — `live_parallel.json`
+
+Provedor `anthropic` · status `complete` · gasto US$ 0.723621 (teto 1.2451)
+
+| Métrica | parallel | ALL |
+|---|---:|---:|
+| cases | 24 | 24 |
+| intent_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
+| handoff_acc | 87.5 [IC95 69.0–95.7; n=24] | 87.5 [IC95 69.0–95.7; n=24] |
+| handoff_outcome_acc | 87.5 [IC95 69.0–95.7; n=24] | 87.5 [IC95 69.0–95.7; n=24] |
+| blocked_acc | — | — |
+| language_acc | 95.8 [IC95 79.8–99.3; n=24] | 95.8 [IC95 79.8–99.3; n=24] |
+| tools_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
+| pending_action_acc | — | — |
+| replanned_acc | — | — |
+| no_leak_acc | — | — |
+| numbers_acc | 95.8 [IC95 79.8–99.3; n=24] | 95.8 [IC95 79.8–99.3; n=24] |
+| language_undetected | 0 | 0 |
+| recall@3 | — | — |
+| mrr | — | — |
+| p50_ms | 9283.0 | 9283.0 |
+| p95_ms | 10093.7 | 10093.7 |
+| cost_usd | 0.723621 | 0.723621 |
+| crashes | 0 | 0 |
+
+Gate (splits parallel): intent 100.0% [IC95 86.2–100.0; n=24] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Falhas por checagem × split: handoff parallel 3 · handoff_outcome parallel 3 · language parallel 1 · numbers parallel 1
+
+Matriz de confusão do router (todos os splits):
+
+| esperada \ obtida | multi | acerto |
+|---|---:|---:|
+| multi | **24** | 100% |
+
+Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
+
+Estabilidade (3 rodadas): pass@1 79.2% [IC95 59.5–90.8; n=24] · pass^3 62.5% [IC95 30.6–86.3; n=8] · instáveis: parallel-01, parallel-02
+
+Ao vivo: status `complete` · gasto US$ 0.723621 (teto 1.2451) · erros de LLM 0
+
+Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+
+### Split `replan` — `live_replan.json`
+
+Provedor `anthropic` · status `complete` · gasto US$ 0.885597 (teto 2.1307)
+
+| Métrica | replan | ALL |
+|---|---:|---:|
+| cases | 60 | 60 |
+| intent_acc | 100.0 [IC95 94.0–100.0; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
+| handoff_acc | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] |
+| handoff_outcome_acc | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] |
+| blocked_acc | — | — |
+| language_acc | 100.0 [IC95 94.0–100.0; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
+| tools_acc | — | — |
+| pending_action_acc | — | — |
+| replanned_acc | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] |
+| no_leak_acc | — | — |
+| numbers_acc | 100.0 [IC95 94.0–100.0; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
+| language_undetected | 0 | 0 |
+| recall@3 | — | — |
+| mrr | — | — |
+| p50_ms | 6973.2 | 6973.2 |
+| p95_ms | 9732.5 | 9732.5 |
+| cost_usd | 0.885597 | 0.885597 |
+| crashes | 0 | 0 |
+
+Gate (splits replan): intent 100.0% [IC95 94.0–100.0; n=60] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Falhas por checagem × split: handoff replan 3 · handoff_outcome replan 3 · replanned replan 3
+
+Matriz de confusão do router (todos os splits):
+
+| esperada \ obtida | knowledge | acerto |
+|---|---:|---:|
+| knowledge | **60** | 100% |
+
+Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
+
+Estabilidade (3 rodadas): pass@1 95.0% [IC95 86.3–98.3; n=60] · pass^3 90.0% [IC95 69.9–97.2; n=20] · instáveis: replan-05, replan-18
+
+Ao vivo: status `complete` · gasto US$ 0.885597 (teto 2.1307) · erros de LLM 1
+
+Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 <!-- eval-live:end -->
 
 ### Juiz LLM sobre as respostas ao vivo
 
 <!-- judge:begin -->
+_Juiz não rodado._
 <!-- judge:end -->
 
 ### Replanejamento
 
 <!-- replan:begin -->
+| fonte | casos | replanned_acc | handoff_acc | handoff_outcome_acc | intent_acc |
+|---|---:|---:|---:|---:|---:|
+| offline | 20 | 60.0 [IC95 38.7–78.1; n=20] | 60.0 [IC95 38.7–78.1; n=20] | 60.0 [IC95 38.7–78.1; n=20] | 100.0 [IC95 83.9–100.0; n=20] |
+| ao vivo (live_replan.json) | 60 | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
+| offline SEM replanejamento | 20 | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 100.0 [IC95 83.9–100.0; n=20] |
+| ao vivo SEM replanejamento | 20 | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 100.0 [IC95 83.9–100.0; n=20] |
+
+- `replan-02` (offline): faq:no_source->escalation
+- `replan-03` (offline): faq:no_source->escalation
+- `replan-06` (offline): faq:no_source->escalation
+- `replan-07` (offline): faq:no_source->escalation
+- `replan-08` (offline): faq:no_source->escalation
+
+Ablação (offline): desfecho certo no split replan **60.0% com** × **0.0% sem** replanejamento (mesmos 20 casos).
+Ablação (ao vivo): desfecho certo no split replan **95.0% com** × **0.0% sem** replanejamento (mesmos 60 casos).
 <!-- replan:end -->
 
 ## 6. Spec e rastreabilidade
@@ -203,6 +481,45 @@ Spec em [docs/SPEC.md](docs/SPEC.md), commitada antes do código. ADRs em [docs/
 ## 7. Linha do tempo (git log)
 
 <!-- timeline:begin -->
+| hora (UTC; Brasília = UTC−3) | min | commit |
+|---|---:|---|
+| 19:57:56 | 0 | chore: scaffold from entregar-desafio-cronometrado kit v3.7.0 |
+| 19:58:25 | 0 | preflight: domínio do desafio (challenge/ flow + tools + limiar), loja de exemplo fora do produto |
+| 19:58:56 | 1 | spec: SPEC Getnet v4 (taxonomia com desempates, AC-04 knowledge, 2 fontes do site, tools e CRM congelados) + 46 casos (official 10, replan 20, parallel 8, approval 8) |
+| 19:59:16 | 1 | posse: README com a frente D (texto); números só pelo fill_readme na integração |
+| 20:00:32 | 3 | heldout: 24 casos cegos (autor leu só o enunciado e a SPEC; fora do gate; nunca editado) |
+| 20:00:53 | 3 | teste de contaminação do held-out audita também as regras do domínio (challenge/flow.py), não só o motor |
+| 20:00:56 | 3 | fork q: 104 casos (official-var 32, memory 13, guardrail 38, hard 21) |
+| 20:01:12 | 3 | fork r: taxonomia Getnet no flow.py + 62 exemplos k-NN + testes do router (intent official/replan/parallel/approval 100%) |
+| 20:01:13 | 3 | fork t: 6 tools do Customer Support Agent, CRM fictício com datas relativas, records offline e prompt |
+| 20:01:22 | 3 | fork r: testes do supervisor Getnet (records erro→faq→humano, general nunca escala, DEPENDS troubleshoot) 5/5 |
+| 20:01:30 | 4 | fork q: 33 exemplos de intenção e 46 rótulos do juiz (23 positivos; RAG, CRM e web) |
+| 20:01:37 | 4 | docs(d): README Getnet (agentes, taxonomia, fluxo, RAG, régua com limites) + ADRs 0003-0007 |
+| 20:01:39 | 4 | fork r: prompts Getnet (router com desempates, supervisor lê status e general nunca escala, general cita fonte e data, guardrail e resume do lojista); intent 100% nos 4 splits |
+| 20:01:45 | 4 | fork t: recusa antes de recebimento, transações aprovadas+recusadas com contagem da tool, testes de confirmação/operador e memória |
+| 20:01:45 | 4 | fork r: pronto (intent official 100%, replan 100%, parallel 100%, approval 100%) |
+| 20:01:52 | 4 | fork t: pronto (29 testes; tools_acc 19/19 no records direto, 0.0 no eval até o router da frente R) |
+| 20:01:55 | 4 | merge fork/r: roteamento (intent 100% em official, replan, parallel e approval offline) |
+| 20:02:19 | 4 | docs(d): ARCHITECTURE (3 diagramas), OBSERVABILITY, RUNBOOK, roteiro do vídeo |
+| 20:02:20 | 4 | fork k: corpus (420 trechos de www.getnet.net/en + site.getnet.com.br), glossário, 50+16 perguntas de retrieval, prompt faq |
+| 20:02:32 | 5 | fork d: pronto |
+| 20:02:40 | 5 | held-out limpo: tira 1 regra e 4 exemplos que coincidiam com frases do cego (autores independentes); intent segue 100% em official/replan/parallel/approval |
+| 20:02:40 | 5 | merge fork/t: 6 ferramentas do CRM (3 leitura, 3 escrita com confirmação), records offline em frase pt/en |
+| 20:02:40 | 5 | fork q: testes de contrato HTTP (25) e de controles do threat model (26) |
+| 20:02:58 | 5 | merge fork/d: README sem marcadores, ARCHITECTURE (3 diagramas), OBSERVABILITY, RUNBOOK, ADRs 0003-0007, roteiro do vídeo |
+| 20:03:01 | 5 | compose em AUTH_MODE=demo por padrão (payload literal do enunciado; required segue testado) |
+| 20:03:30 | 6 | fork q: EVAL_STRATEGY e THREAT_MODEL (STRIDE + OWASP LLM 2025, ameaça → controle → arquivo → teste) |
+| 20:03:37 | 6 | fork k: glossário (74 termos pt->en) e rótulos de retrieval conferidos no corpus (25 pares pt/en + 16 negativas) |
+| 20:03:38 | 6 | fork k: pronto (420 trechos; Recall@3 0.318; MRR 0.42) |
+| 20:03:43 | 6 | fork q: pronto (104 casos; 51 testes) |
+| 20:03:53 | 6 | merge fork/k: corpus de 420 trechos (www.getnet.net/en indicada no enunciado + site.getnet.com.br), glossário 74 termos, 66 perguntas de retrieval em pares pt/en |
+| 20:04:00 | 6 | merge fork/q: 104 casos (official-var, memory, guardrail, hard), 46 rótulos do juiz, 51 testes de contrato HTTP e de controles, EVAL_STRATEGY e THREAT_MODEL |
+| 20:04:48 | 7 | integração: retrieval medido com a mesma consulta do agente (glossário pt↔en); guardrail pega dado de outro lojista/cliente NNNN e 'ignorar as regras'; held-out limpo (2 exemplos coincidentes trocados) |
+| 20:06:36 | 9 | calibra MIN_SCORE 8.554 (run_evals --calibrate-gate: responde 70% com fonte, recusa 87,5% sem fonte) |
+| 20:10:59 | 13 | corpus: tabela de maquininhas (Get Clássica x Get Smart) entra no índice (AC-01) |
+| 20:14:25 | 16 | ao vivo: número com escala colada (R$ 80mil), data de hoje como evidência da web, idioma pela frase |
+
+Do primeiro ao último commit: **16 min**.
 <!-- timeline:end -->
 
 ## 8. Scaffold declarado (kit) e o que foi feito no relógio
@@ -224,6 +541,42 @@ específico do desafio (spec, base de conhecimento, ferramentas do domínio, cas
 regras do router e do supervisor) foi escrito no relógio. A medida, tirada do git:
 
 <!-- kit:begin -->
+| pasta | linhas do kit | + no relógio | − no relógio | arquivos do kit alterados |
+|---|---:|---:|---:|---:|
+| `.claude` | 121 | 0 | 0 | 0 |
+| `.dockerignore` | 14 | 0 | 0 | 0 |
+| `.env.example` | 30 | 0 | 0 | 0 |
+| `.github` | 41 | 0 | 0 | 0 |
+| `.gitignore` | 7 | 0 | 0 | 0 |
+| `.gitleaks.toml` | 14 | 0 | 0 | 0 |
+| `Dockerfile` | 52 | 0 | 0 | 0 |
+| `Makefile` | 27 | 0 | 0 | 0 |
+| `OWNERSHIP.json` | 88 | 1 | 0 | 1 |
+| `README.md` | 147 | 114 | 23 | 1 |
+| `data` | 34 | 347 | 33 | 4 |
+| `data/crm` | 0 | 30 | 0 | 0 |
+| `data/intent_examples.d` | 0 | 95 | 0 | 0 |
+| `data/knowledge` | 0 | 424 | 0 | 0 |
+| `docker-compose.scale.yml` | 28 | 0 | 0 | 0 |
+| `docker-compose.yml` | 11 | 1 | 1 | 1 |
+| `docs` | 32 | 614 | 18 | 1 |
+| `docs/adr` | 42 | 215 | 0 | 0 |
+| `docs/video` | 0 | 25 | 0 | 0 |
+| `evals` | 964 | 80 | 29 | 4 |
+| `evals/cases.d` | 0 | 104 | 0 | 0 |
+| `evals/judge_calibration.d` | 0 | 46 | 0 | 0 |
+| `evals/retrieval.d` | 0 | 66 | 0 | 0 |
+| `ops` | 114 | 0 | 0 | 0 |
+| `pyproject.toml` | 44 | 0 | 0 | 0 |
+| `requirements-dev.lock` | 248 | 0 | 0 | 0 |
+| `requirements-hybrid.lock` | 278 | 0 | 0 | 0 |
+| `requirements.lock` | 145 | 0 | 0 | 0 |
+| `scripts` | 1668 | 1 | 1 | 2 |
+| `src/app` | 3945 | 788 | 5 | 3 |
+| `tests` | 3677 | 691 | 1 | 2 |
+| `tests/fixtures` | 66 | 0 | 0 | 0 |
+
+Total: **11837** linhas do kit (commit `ab57b4e`) e **3642** escritas no relógio (24% do total). Arquivos do kit alterados no relógio: 19. Fora da conta, por serem gerados: 0 linhas em `evals/results/`.
 <!-- kit:end -->
 
 ## 9. Limitações e próximos passos
@@ -233,6 +586,13 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 - Rate limit, métricas e cache em memória do processo; com réplicas, mover para Redis e Prometheus remoto.
 - Réplicas só no mesmo host (SQLite em volume compartilhado, [ADR 0002](docs/adr/0002-replicas-mesmo-host.md)); em vários hosts, Postgres atrás de `Store`.
 - O corpus é um recorte das duas fontes, sem coleta agendada; páginas atrás de login e PDFs ficam de fora.
+- O site não traz comparação de recursos entre Get Clássica e Get Smart, só preço mensal e faixas de isenção
+  (`maq-todas-as-maquininhas-tabela-01`): o AC-01 responde isso e oferece o humano para o resto. O ingest cortava
+  essa tabela (célula curta, linha repetida); a correção está em [docs/SOURCES.md](docs/SOURCES.md).
+- Offline (sem chave), o Knowledge Agent devolve o trecho literal do site, em português mesmo para pergunta em
+  inglês; por isso `language_acc` offline do `official` é menor que o ao vivo, onde o LLM redige no idioma da pergunta.
+- A busca web cifra o corpo das páginas: a checagem numérica só enxerga os trechos citados; número de clima ou
+  câmbio fora da citação aparece em `unsupported_numbers` (sinalizado, não bloqueado).
 - O juiz LLM foi calibrado com um rotulador (o autor); kappa entre dois rotuladores fica para depois.
 - O held-out cego mede a generalização do Router mas fica fora do gate; o ao vivo roda com amostra pequena por custo.
 - Fora do relógio: deploy em nuvem gerenciada, dashboard Grafana, rotação de chave JWT (JWKS).

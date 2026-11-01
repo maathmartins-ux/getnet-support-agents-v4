@@ -65,3 +65,12 @@ def test_llm_failure_falls_back_to_rules(monkeypatch, script):
     llm, _ = fake_llm(script, model="claude-haiku-5-5", effort="low")
     use(monkeypatch, llm)
     assert route("Quero falar com um atendente", []).intent == "human_request"
+
+
+def test_clear_language_overrides_only_unambiguous_sentences():
+    """Getnet v4 ao vivo: termo pt entre parênteses numa frase inglesa não pode virar resposta em português."""
+    from app.router import clear_language
+
+    assert clear_language("How does receivables advance (antecipação) work with Getnet?") == "en"
+    assert clear_language("Como funciona a antecipação das minhas vendas na Getnet?") == "pt"
+    assert clear_language("Get Smart?") is None

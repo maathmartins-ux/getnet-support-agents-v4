@@ -1,0 +1,5771 @@
+{
+  "mode": "in-process",
+  "provider": "anthropic",
+  "live": true,
+  "split": "replan",
+  "status": "complete",
+  "spent_usd": 0.299267,
+  "max_usd": 0.5,
+  "llm_errors": 0,
+  "gate": 0.9,
+  "intent_acc": 1.0,
+  "intent_ci": {
+    "k": 20,
+    "n": 20,
+    "lo": 83.9,
+    "hi": 100.0
+  },
+  "isolation": "db_per_case",
+  "coverage_min_score": {
+    "effective": 8.554,
+    "source": "MIN_SCORE"
+  },
+  "gated_splits": [
+    "replan"
+  ],
+  "ungated_splits": [
+    "hard",
+    "heldout"
+  ],
+  "passed": true,
+  "metrics": {
+    "replan": {
+      "cases": 20,
+      "intent_acc": 100.0,
+      "handoff_acc": 0.0,
+      "handoff_outcome_acc": 0.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": null,
+      "pending_action_acc": null,
+      "replanned_acc": 0.0,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 7355.2,
+      "p95_ms": 8921.5,
+      "cost_usd": 0.299267,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 0,
+          "n": 20,
+          "lo": 0.0,
+          "hi": 16.1
+        },
+        "handoff_outcome_acc": {
+          "k": 0,
+          "n": 20,
+          "lo": 0.0,
+          "hi": 16.1
+        },
+        "language_acc": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        },
+        "replanned_acc": {
+          "k": 0,
+          "n": 20,
+          "lo": 0.0,
+          "hi": 16.1
+        },
+        "numbers_acc": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        }
+      }
+    },
+    "ALL": {
+      "cases": 20,
+      "intent_acc": 100.0,
+      "handoff_acc": 0.0,
+      "handoff_outcome_acc": 0.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": null,
+      "pending_action_acc": null,
+      "replanned_acc": 0.0,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 7355.2,
+      "p95_ms": 8921.5,
+      "cost_usd": 0.299267,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 0,
+          "n": 20,
+          "lo": 0.0,
+          "hi": 16.1
+        },
+        "handoff_outcome_acc": {
+          "k": 0,
+          "n": 20,
+          "lo": 0.0,
+          "hi": 16.1
+        },
+        "language_acc": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        },
+        "replanned_acc": {
+          "k": 0,
+          "n": 20,
+          "lo": 0.0,
+          "hi": 16.1
+        },
+        "numbers_acc": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "replan-01",
+      "split": "replan",
+      "message": "A Getnet aceita pagamento em criptomoeda na maquininha Get Smart?",
+      "ms": 8707.2,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nas fontes da Getnet nenhuma informação sobre aceitação de pagamento em criptomoeda na Get Smart. Por isso, não posso confirmar que ela aceita nem que não aceita.\n\nTentei abrir um caso com um atendente humano, mas o sistema não permitiu. Para ter uma resposta oficial, fale com o atendimento da Getnet pelo site ou pelo app. Posso tentar de novo se você quiser.",
+      "source_ids": [
+        "sup-get-smart-07",
+        "sup-get-smart-06",
+        "maq-todas-as-maquininhas-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-07",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-06",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-03",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: Você pode efetuar pagamentos crédito, débito, voucher, crediário, split de pagamento, QR Code e NFC (aproximação). Os sistemas de gestão permitem também contabilizar os pagamentos em dinheiro. Quais bandeiras são aceitas na Get Smart? Quais bandeiras são aceitas na Get Smart? Pessoa Física: Mastercard | Visa | American Express | Elo | Hipercard | Hiper | Pessoa Jurídica: Alelo | Pluxee | Ticket | VR | Ben A Get Smart não trabalha com recarga.",
+        "Arquivos Get Smart - Getnet: Aproxime o cartão na parte superior central do terminal, em uma distância inferior a 1cm. Após processo da transação, aparecerá uma mensagem de sucesso e a opção de impressão de comprovante de transação. Quais tipos de pagamentos são aceitos na Get Smart? Quais tipos de pagamentos são aceitos na Get Smart?",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Prepare seu negócio para vender mais na Black Friday com as maquininhas Getnet Aceite cartões em moedas estrangeiras Receba pagamentos pelo Pix de forma rápida e segura Conta e cartão grátis Recebimento em 2 dias úteis ESCOLHA SUA MAQUININHA Sua escolha inteligente para vender mais em 2026: Maquininha + conta integrada Getnet Onde você recebe Get Conta com cartão grátis Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel *Termos e condições Selecione para ver as taxas Acima de R$ 10 mil Acima de R$ 20 mil Acima de R$ 40 mil"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016787,
+      "run": 0
+    },
+    {
+      "id": "replan-02",
+      "split": "replan",
+      "message": "Qual a taxa da Getnet para vendas no exterior em dólar australiano?",
+      "ms": 7954.7,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei na base da Getnet a taxa para vendas no exterior em dólar australiano, e não vou inventar um valor. Também não consegui abrir um caso com um atendente humano agora, porque o sistema bloqueou o encaminhamento.\n\nPara ter a taxa correta, fale com um atendente pelos canais oficiais da Getnet ou consulte o site oficial. Se quiser, tento o encaminhamento de novo.",
+      "source_ids": [
+        "maq-todas-as-maquininhas-03",
+        "maq-todas-as-maquininhas-05",
+        "maq-todas-as-maquininhas-06"
+      ],
+      "sources": [
+        {
+          "id": "maq-todas-as-maquininhas-03",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-05",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Prepare seu negócio para vender mais na Black Friday com as maquininhas Getnet Aceite cartões em moedas estrangeiras Receba pagamentos pelo Pix de forma rápida e segura Conta e cartão grátis Recebimento em 2 dias úteis ESCOLHA SUA MAQUININHA Sua escolha inteligente para vender mais em 2026: Maquininha + conta integrada Getnet Onde você recebe Get Conta com cartão grátis Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel *Termos e condições Selecione para ver as taxas Acima de R$ 10 mil Acima de R$ 20 mil Acima de R$ 40 mil",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Escolha a melhor forma para finalizar sua contratação Falar com Especialista Continuar no site * Horario de funcionamento: Seg à sex das 7h as 23h Sábado das 9h as 15h Recebeu sua maquininha de outra pessoa? Cadastre-se aqui para ativá-la em seu nome Se você já adquiriu sua maquininha em nosso site, não precisa realizar este cadastro QUERO ME CADASTRAR Impulsione suas vendas de onde estiver Leve sua maquininha e ganhe os serviços abaixo para acelerar suas vendas Comece a vender agora e pague apenas a taxa de transação Simule suas vendas Aqui, você encontra taxas especiais para todas as bandeiras de cartões.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.017622,
+      "run": 0
+    },
+    {
+      "id": "replan-03",
+      "split": "replan",
+      "message": "Does Getnet offer car insurance for merchants?",
+      "ms": 7467.8,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm that Getnet offers car insurance for merchants. The Getnet content I checked (value-added solutions) doesn't mention it, so I won't say yes or no.\n\nI also tried to pass your question to a human agent, but the system wouldn't allow the handoff, so no case was opened. To get a definite answer, you can contact Getnet support directly or check the official Getnet website.",
+      "source_ids": [
+        "en-value-added-solutions-05",
+        "en-value-added-solutions-01"
+      ],
+      "sources": [
+        {
+          "id": "en-value-added-solutions-05",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        },
+        {
+          "id": "en-value-added-solutions-01",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet - Value added services: More value for our merchants Provides the peace of mind of covering the loss of incomes if you can not operate. With just one contract all the merchant POS in every store are covered. Allow your international customers to pay in their card currency wherever they may be. An additional layer of security for online credit and debit card transactions.",
+        "Getnet - Value added services: Value Added Solutions Add value to your business Our aggregated offer of value added service for physical and digital acquiring solutions will make you choose Getnet Financing is investing Dynamic working capital Access to working capital is one of our key tools to help merchants overcome punctual cash needs. By offering personalized amounts based on your sales and by facilitating the repayment through percentages of sales we simplify operations whilst increasing your peace of mind."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.014511,
+      "run": 0
+    },
+    {
+      "id": "replan-04",
+      "split": "replan",
+      "message": "A Getnet tem programa de milhas para lojistas?",
+      "ms": 5676.7,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que confirme um programa de milhas para lojistas, então não posso dizer que existe. Também não consegui abrir um atendimento com um atendente humano agora. Para ter certeza, veja o site oficial da Getnet (getnet.com.br) ou fale com o seu gerente de contas ou com a central de atendimento.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.012537,
+      "run": 0
+    },
+    {
+      "id": "replan-05",
+      "split": "replan",
+      "message": "Qual o telefone do gerente da minha agência do Banco do Brasil?",
+      "ms": 7236.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei essa informação. O telefone do gerente da sua agência do Banco do Brasil não consta nas fontes da Getnet e não tenho como consultá-lo.\n\nVocê pode consegui-lo por um destes canais oficiais:\n- **App do Banco do Brasil ou Internet Banking:** a área de gerente ou agência costuma trazer os contatos.\n- **Central de Atendimento BB:** o número está no verso do seu cartão e em bb.com.br.\n- **Agência:** o contato direto está na página da agência em bb.com.br.\n\nSe a dúvida for sobre recebimentos da Getnet na sua conta do BB, posso ajudar com isso.",
+      "source_ids": [
+        "sup-duvidas-21",
+        "sup-pix-mais-respostas-15",
+        "sup-antecipacao-de-vendas-14"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-21",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-pix-mais-respostas-15",
+          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
+        },
+        {
+          "id": "sup-antecipacao-de-vendas-14",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dúvidas e Perguntas Frequentes | Getnet: Para alterar a senha do Aplicativo Getnet Brasil, basta acessar a “Esqueci a senha” no Aplicativo Getnet Brasil ou no Portal Minha Conta Qual é a taxa cobrada para os cartões de benefícios e regionais? Qual é a taxa cobrada para os cartões de benefícios e regionais? As taxas dos cartões de benefícios e regionais são negociados diretamente com as bandeiras. Para isso, basta você selecionar neste a bandeira desejada que apresentaremos todos os telefones disponíveis para você entrar em contato.",
+        "Arquivos Mais respostas sobre o Pix​ - Getnet: Como adicionar um Contato de Confiança? Para cadastrar um contato de confiança na sua Get Conta, siga os passos abaixo: 1. Acesse a área Pix e selecione a opção \"Meus Limites\". 2. Em seguida, selecione \"Contatos de Confiança\". 3. Informe o nome, CPF e dados bancários (banco, agência e conta) do contato que deseja cadastrar.",
+        "Arquivos antecipação de vendas - Getnet: Quais canais posso utilizar para antecipar as vendas? Quais canais posso utilizar para antecipar as vendas? Público: Clientes Correntistas Santander. Rede de Agências: o cliente pode antecipar os recebíveis com o gerente de sua conta. Internet Banking: o cliente pode antecipar os recebíveis através do Internet Banking. Empresarial: desde que tenha este canal habilitado."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013234,
+      "run": 0
+    },
+    {
+      "id": "replan-06",
+      "split": "replan",
+      "message": "Does Getnet sell solar panels to merchants?",
+      "ms": 7355.2,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm whether Getnet sells solar panels to merchants. The Getnet content I can search has nothing on it. The closest sections I checked were the value-added solutions pages (en-value-added-solutions-04 and -05), and they don't mention solar panels.\n\nI also couldn't open a case with a human agent, because the transfer to that team was blocked. For a definite answer, please contact Getnet support directly or ask your account manager.",
+      "source_ids": [
+        "en-value-added-solutions-04",
+        "en-value-added-solutions-05"
+      ],
+      "sources": [
+        {
+          "id": "en-value-added-solutions-04",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        },
+        {
+          "id": "en-value-added-solutions-05",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet - Value added services: Omnichannel conciliation A single, integrated view of cash flow, which increases efficiency of financial reviews, transaction and fee queries. Your online shop is our business We create your online store with everything you need to sell, collect, send and manage online orders. We create your online store with everything you need to sell, collect, send and manage online orders.",
+        "Getnet - Value added services: More value for our merchants Provides the peace of mind of covering the loss of incomes if you can not operate. With just one contract all the merchant POS in every store are covered. Allow your international customers to pay in their card currency wherever they may be. An additional layer of security for online credit and debit card transactions."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.015173,
+      "run": 0
+    },
+    {
+      "id": "replan-07",
+      "split": "replan",
+      "message": "A Getnet financia a compra de imóveis comerciais?",
+      "ms": 6508.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que diga se ela financia a compra de imóveis comerciais. Por isso não vou confirmar nem negar. Também não consegui abrir um atendimento com um atendente humano agora.\n\nPara tirar a dúvida, você pode consultar o site oficial da Getnet ou falar com o seu gerente de contas. Se quiser, posso tentar de novo encaminhar o caso para um atendente.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013426,
+      "run": 0
+    },
+    {
+      "id": "replan-08",
+      "split": "replan",
+      "message": "Qual a política da Getnet para lojistas em Marte?",
+      "ms": 8507.1,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma política da Getnet para lojistas em Marte nas fontes oficiais, então não posso confirmar que ela exista. Também não consegui encaminhar sua pergunta a um atendente humano, porque o sistema bloqueou o encaminhamento.\n\nPara esse tipo de dúvida, o melhor é consultar o site oficial da Getnet (getnet.com.br) ou falar com o atendimento comercial. Se tiver outra dúvida sobre produtos ou serviços da Getnet, posso ajudar.",
+      "source_ids": [
+        "sup-link-de-pagamento-07"
+      ],
+      "sources": [
+        {
+          "id": "sup-link-de-pagamento-07",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Link de pagamento - Getnet: Sim, as transações de Link de Pagamento devem obrigatoriamente passar pelo antifraude. Independente do pacote ou tamanho do cliente. O lojista precisa ter um site ativo para poder utilizar o Link de Pagamento? O lojista precisa ter um site ativo para poder utilizar o Link de Pagamento? Não. Mesmo que o lojista não tenha um site, ele consegue gerar o Link de Pagamento. Nesse caso, no campo url, ele deverá informar o endereço https://minhaconta.getnet.com.br Apenas clientes pessoas jurídicas podem usar Link de Pagamento?"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016098,
+      "run": 0
+    },
+    {
+      "id": "replan-09",
+      "split": "replan",
+      "message": "Can I use the Get Smart to print boarding passes for airlines?",
+      "ms": 6915.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm whether the Get Smart can print airline boarding passes. I found no source that covers it, so I won't guess. I also tried to open a case with a human agent, but the system didn't allow it.\n\nFor a reliable answer, please contact Getnet support directly or check the official Get Smart documentation on the Getnet website.",
+      "source_ids": [
+        "sup-get-smart-08",
+        "sup-get-smart-10",
+        "sup-get-smart-07"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-08",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-07",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: Quais os diferenciais de uma Get Smart? Quais os diferenciais de uma Get Smart? Com um sistema de gestão integrado ele permite que não tenha a necessidade de deslocamento para consultar um estoque, o mesmo pode ser consultado diretamente na máquina. Ele permite um balcão mais limpo, onde não é necessário ter um computador e uma impressora fiscal, ele faz ambas funções. Ele permite mais rapidez no atendimento diminuindo o tempo de espera do cliente, você pode fazer o pedido, fechar a conta e emitir o cupom fiscal tudo diretamente no terminal. Com ele você tem uma conciliação com pagamentos em todas modalidades, crédito, debito, crediário, QR Code ou dinheiro. Os sistemas de gestão homologados possuem conciliação completa.",
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "Arquivos Get Smart - Getnet: Você pode efetuar pagamentos crédito, débito, voucher, crediário, split de pagamento, QR Code e NFC (aproximação). Os sistemas de gestão permitem também contabilizar os pagamentos em dinheiro. Quais bandeiras são aceitas na Get Smart? Quais bandeiras são aceitas na Get Smart? Pessoa Física: Mastercard | Visa | American Express | Elo | Hipercard | Hiper | Pessoa Jurídica: Alelo | Pluxee | Ticket | VR | Ben A Get Smart não trabalha com recarga."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.015437,
+      "run": 0
+    },
+    {
+      "id": "replan-10",
+      "split": "replan",
+      "message": "A Getnet oferece consórcio de motos?",
+      "ms": 6652.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que confirme a oferta de consórcio de motos, então não posso dizer que ela oferece. Também não consegui abrir um atendimento com um atendente humano, porque o sistema bloqueou o encaminhamento.\n\nPara confirmar, consulte o site oficial da Getnet (getnet.com.br) ou fale com os canais de atendimento oficiais. Se quiser, tento o encaminhamento de novo.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013737,
+      "run": 0
+    },
+    {
+      "id": "replan-11",
+      "split": "replan",
+      "message": "Qual o prazo de garantia estendida de geladeiras vendidas pela Getnet?",
+      "ms": 8748.9,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma informação oficial sobre garantia estendida de geladeiras vendidas pela Getnet. Por isso não vou informar um prazo. Também não consegui abrir um atendimento com um atendente humano, porque o sistema não permitiu.\n\nVocê pode confirmar pelos canais oficiais da Getnet, como o site ou a central de atendimento. Se a dúvida for sobre as maquininhas da Getnet, me diga qual modelo e eu consulto.",
+      "source_ids": [
+        "prod-home-05",
+        "maq-todas-as-maquininhas-06",
+        "sup-antecipacao-de-vendas-05"
+      ],
+      "sources": [
+        {
+          "id": "prod-home-05",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "sup-antecipacao-de-vendas-05",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Taxas menores para você Não precisa de maquininha Aceite débito, crédito à vista ou parcelado Fácil de instalar, não requer infraestrutura, nem grandes investimentos! Centralização das vendas no balcão Aceite mais de 80 bandeiras de cartão Conciliação automática das vendas Suporte especializado Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "Arquivos antecipação de vendas - Getnet: O que é gravame e o que ele muda na minha forma de receber dinheiro? O que é gravame e o que ele muda na minha forma de receber dinheiro? Gravame é a garantia que você dá para a Getnet de pagamento do seu empréstimo. Isso significa que você passará a receber todas as vendas que realizar na Getnet e em outras adquirentes em sua Get Conta, no limite do saldo devedor do empréstimo. A garantia te ajuda a organizar seu pagamento de empréstimo e verificar em uma única conta o extrato de todos os valores de suas vendas e descontos realizados."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.017534,
+      "run": 0
+    },
+    {
+      "id": "replan-12",
+      "split": "replan",
+      "message": "Does Getnet have a loyalty program with airline miles?",
+      "ms": 7001.3,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm whether Getnet has a loyalty program with airline miles. I found no source that covers it, so I won't guess. For an official answer, check the Getnet website or ask your account manager.\n\nMy attempt to open a case with a human agent also failed, because the system didn't allow it. If you want, ask again and I'll retry the escalation.",
+      "source_ids": [
+        "en-health-and-beauty-08",
+        "en-travel-09"
+      ],
+      "sources": [
+        {
+          "id": "en-health-and-beauty-08",
+          "title": "Health & Beauty",
+          "url": "https://www.getnet.net/en/your-business/industries/health-and-beauty"
+        },
+        {
+          "id": "en-travel-09",
+          "title": "Travel",
+          "url": "https://www.getnet.net/en/your-business/industries/travel"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Health & Beauty: Memberships, loyalty programmes and recurring services. Payment links and remote payment options. Reduced administration and simplified day-to-day operations. Customer experiences that encourage retention and repeat bookings. Loyalty, convenience and repeat visits Wellness Centres Memberships, engagement and recurring revenue.",
+        "Travel: Unified insights. Real-time reporting across transactions, partners and providers Transport Operators (Airlines, Mobility) Fast, contactless payments. Optimised for high-throughput transit environments. Digital payment gateways. Enable modern ticketing, and digital transport experiences. Onboard payment acceptance. Card payments anywhere, online or offline, via POS. Low-friction security. Fraud protection designed for fast, low-touch transactions. Ready to take control of your payments? Discover how Getnet can help you simplify the journey."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.014424,
+      "run": 0
+    },
+    {
+      "id": "replan-13",
+      "split": "replan",
+      "message": "A Getnet emite certificado digital e-CNPJ para o lojista?",
+      "ms": 7593.7,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que confirme se ela emite certificado digital e-CNPJ. Por isso não posso afirmar que sim nem que não.\n\nNão consegui abrir um caso com um atendente humano porque o sistema bloqueou a transferência. Se quiser uma confirmação, fale com o atendimento Getnet pelos canais oficiais ou consulte o site da Getnet. Para emitir o e-CNPJ, você também pode procurar uma Autoridade Certificadora credenciada pela ICP-Brasil.",
+      "source_ids": [
+        "prod-home-11",
+        "sup-get-smart-10",
+        "prod-conta-digital-01"
+      ],
+      "sources": [
+        {
+          "id": "prod-home-11",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        },
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "prod-conta-digital-01",
+          "title": "Getnet | Maquininha + Conta Digital - GetnetMaquininha + Conta Digital - Getnet",
+          "url": "https://site.getnet.com.br/conta-digital/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Como consultar CNPJ: passo a passo para verificar a situação de uma empresa Se você é MEI, tem um pequeno negócio ou está pensando em fechar parcerias comerciais, é essencial saber como consultar o CNPJ (Cadastro Nacional da Pessoa Jurídica) de uma empresa. Essa consulta é gratuita, rápida e pode evitar dores de cabeça no futuro. Nós podemos te ajudar a vender mais Quero ser atendido por Prático e rápido Quero ser cliente Quero ser atendido por Prático e rápido",
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "Getnet | Maquininha + Conta Digital - GetnetMaquininha + Conta Digital - Getnet: Com a conta digital, vai dar negócio Você no controle da operação Cartão virtual grátis Receba todos os pagamentos na mesma conta Antecipação de recebíveis Mais benefícios Escolha o melhor produto e abra a sua conta A Getnet tem soluções físicas e digitais para alavancar o seu negócio. Link de pagamento Confira os benefícios da Get Conta Saiba mais sobre os principais benefícios da conta Getnet."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016516,
+      "run": 0
+    },
+    {
+      "id": "replan-14",
+      "split": "replan",
+      "message": "Quanto custa o plano odontológico da Getnet para funcionários?",
+      "ms": 8921.5,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma informação oficial sobre o preço de um plano odontológico da Getnet para funcionários. Não vou estimar um valor.\n\nTambém não consegui encaminhar o caso a um atendente humano agora, porque o sistema bloqueou o encaminhamento. Se quiser, tente pedir atendimento humano de novo. Você também pode consultar os canais oficiais no site da Getnet.",
+      "source_ids": [
+        "sup-duvidas-29",
+        "sup-duvidas-30",
+        "sup-link-de-pagamento-12"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-29",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-duvidas-30",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-link-de-pagamento-12",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dúvidas e Perguntas Frequentes | Getnet: O processo seletivo é exclusivo para candidatura externa? O processo seletivo é exclusivo para candidatura externa? Não, colaboradora também pode participar, desde que atenda os requisitos divulgados, de tempo de empresa, cargo. Quem é de outra cidade, terá ajuda moradia ou ajuda de custo para mudança?",
+        "Dúvidas e Perguntas Frequentes | Getnet: Quem é de outra cidade, terá ajuda moradia ou ajuda de custo para mudança? O custo de mudança e moradia é de total responsabilidade da candidata aprovada. Como faço para gerar um cartão virtual? Como faço para gerar um cartão virtual? Para gerar um cartão virtual, é só acessar o Aplicativo Getnet Brasil:",
+        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016743,
+      "run": 0
+    },
+    {
+      "id": "replan-15",
+      "split": "replan",
+      "message": "Does Getnet provide legal advice for tax disputes?",
+      "ms": 6781.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't find an official Getnet source on whether it provides legal advice for tax disputes, so I can't confirm either way. I also couldn't open a case with a human agent, because that handoff was blocked.\n\nFor a reliable answer, please contact Getnet support directly through the official channels on getnet.com.br. For advice on a specific tax dispute, you can also talk to a lawyer or accountant.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.012401,
+      "run": 0
+    },
+    {
+      "id": "replan-16",
+      "split": "replan",
+      "message": "A Getnet tem maquininha que aceita cheque?",
+      "ms": 7644.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial que diga que a Getnet tem maquininha que aceita cheque, então não posso confirmar. Também não consegui abrir o caso com um atendente humano, porque o sistema bloqueou o encaminhamento.\n\nVocê pode confirmar com o atendimento da Getnet pelos canais oficiais ou no site. Se quiser, tento o encaminhamento de novo.",
+      "source_ids": [
+        "sup-operacional-05",
+        "sup-duvidas-68",
+        "prod-home-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-operacional-05",
+          "title": "Arquivos operacional - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/operacional/"
+        },
+        {
+          "id": "sup-duvidas-68",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "prod-home-03",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos operacional - Getnet: 4. Crédito não processado: quando o portador do cartão cancela a transação junto ao seu estabelecimento e o crédito (estorno) não foi lançado em sua fatura. 5. Pagamento por meio alternativo: quando o portador do cartão alega que efetuou o pagamento da transação por outro meio (outro cartão, cheque ou dinheiro).",
+        "Dúvidas e Perguntas Frequentes | Getnet: Não será considerada uma duplicidade caso seu estabelecimento apresente dois comprovantes distintos. 4. Crédito não processado: quando o portador do cartão cancela a transação junto ao seu estabelecimento e o crédito (estorno) não foi lançado em sua fatura. 5. Pagamento por meio alternativo: quando o portador do cartão alega que efetuou o pagamento da transação por outro meio (outro cartão, cheque ou dinheiro).",
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Venda pelo celular Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Soluções de pagamento completas para preparar o seu negócio para a Black Friday Link de pagamento Venda pelas redes sociais com o link de pagamento. Sem mensalidade Aceite débito, crédito ou Pix Opção de inclusão de frete Aceite pagamentos e venda na velocidade e segurança Getnet."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016227,
+      "run": 0
+    },
+    {
+      "id": "replan-17",
+      "split": "replan",
+      "message": "Qual o regulamento do sorteio de carros da Getnet de 2019?",
+      "ms": 7117.6,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial com o regulamento do sorteio de carros da Getnet de 2019, então não consigo informar o conteúdo dele. Também não consegui abrir um caso com um atendente humano, porque o sistema bloqueou essa transição.\n\nPara conseguir o regulamento, você pode:\n- consultar o site oficial da Getnet (getnet.com.br);\n- falar com a Getnet pelos canais oficiais de atendimento e pedir o regulamento dessa campanha.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013307,
+      "run": 0
+    },
+    {
+      "id": "replan-18",
+      "split": "replan",
+      "message": "Can Getnet mail my Get Smart to Portugal?",
+      "ms": 6778.6,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm that. Getnet's sources don't say whether a Get Smart can be shipped to Portugal.\n\n- You can order a Get Smart through the website, the Call Center at 4020-4011, or your Santander manager (source: sup-get-smart-13).\n- Getnet does have a presence in Portugal, among other countries (source: en-home-05).\n\nTo find out about shipping there, I'd contact the Call Center at 4020-4011 or your Santander manager. I can also open a case with a human agent if you'd like.",
+      "source_ids": [
+        "sup-get-smart-13",
+        "sup-get-smart-10",
+        "en-home-05"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-13",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "en-home-05",
+          "title": "Getnet - Home",
+          "url": "https://www.getnet.net/en"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: Como pedir uma Get Smart? Como pedir uma Get Smart? Você pode pedir pelo site através do https://site.getnet.com.br/maquininha/get-smart/ , por meio do nosso Call Center, no número: 4020-4011 ou solicite com seu gerente Santander. As vendas que eu fizer na Get Smart estarão no conciliador que eu já uso?",
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "Getnet - Home: Unlock new revenue Innovative payment solutions, tools and integrations to enhance efficiency and scalability. Start succeeding today Partner with us and get support every step of the way. local expertise We provide tailored solutions and support for every merchant. With presence in Brazil, Mexico, Chile, Argentina, Uruguay, Colombia, Spain, and Portugal."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.012616,
+      "run": 0
+    },
+    {
+      "id": "replan-19",
+      "split": "replan",
+      "message": "A Getnet faz câmbio de euro em espécie na agência?",
+      "ms": 8242.5,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que diga se ela faz câmbio de euro em espécie em agência, então não posso confirmar. Também não consegui abrir um atendimento com um atendente humano: o sistema bloqueou o encaminhamento.\n\nPara ter a resposta, consulte os canais oficiais no site da Getnet ou fale com o atendimento da Getnet.",
+      "source_ids": [
+        "sup-pix-mais-respostas-18"
+      ],
+      "sources": [
+        {
+          "id": "sup-pix-mais-respostas-18",
+          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Mais respostas sobre o Pix​ - Getnet: A função Pix Saque permite que o cliente saque uma quantia em dinheiro utilizando o Pix. Por exemplo, o cliente vai até um estabelecimento credenciado, como uma padaria ou um mercado, e informa o valor que gostaria de sacar. O atendente gera um QR Code via Pix para o cliente escanear e, após o pagamento, dá o dinheiro em espécie para o cliente.​ Já a função Pix Troco permite que o cliente receba dinheiro em espécie como troco do pagamento digital. Por exemplo, o cliente vai até um estabelecimento credenciado, como um mercado, e faz uma compra de R$20,00. O cliente faz um Pix de R$30,00 para o estabelecimento e recebe R$10,00 em espécie como troco.​ Existem taxas de Pix utilizando a Get Conta?"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.01613,
+      "run": 0
+    },
+    {
+      "id": "replan-20",
+      "split": "replan",
+      "message": "Qual o horário de funcionamento da loja física da Getnet em Manaus?",
+      "ms": 6667.2,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei o horário de funcionamento da loja física da Getnet em Manaus nas fontes disponíveis, e não consegui abrir um atendimento humano agora. Prefiro não informar um horário que eu não possa confirmar.\n\nPara ter a informação correta, consulte os canais oficiais no site da Getnet (getnet.com.br) ou fale com a central de atendimento. Se quiser, tento de novo o contato com um atendente.",
+      "source_ids": [
+        "sup-antecipacao-de-vendas-17"
+      ],
+      "sources": [
+        {
+          "id": "sup-antecipacao-de-vendas-17",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos antecipação de vendas - Getnet: - Extratos por período; - Antecipação por período. Em que horários posso consultar ou realizar a antecipação de vendas? Em que horários posso consultar ou realizar a antecipação de vendas? De segunda a sexta-feira, das 9h às 21h, exceto em feriados (horário para correntistas Santander). Caso não seja correntista Santander, veja o quadro abaixo para verificação do horário de realização/consulta da antecipação de vendas:"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.014807,
+      "run": 0
+    }
+  ],
+  "failures": [
+    {
+      "id": "replan-01",
+      "split": "replan",
+      "message": "A Getnet aceita pagamento em criptomoeda na maquininha Get Smart?",
+      "ms": 8707.2,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nas fontes da Getnet nenhuma informação sobre aceitação de pagamento em criptomoeda na Get Smart. Por isso, não posso confirmar que ela aceita nem que não aceita.\n\nTentei abrir um caso com um atendente humano, mas o sistema não permitiu. Para ter uma resposta oficial, fale com o atendimento da Getnet pelo site ou pelo app. Posso tentar de novo se você quiser.",
+      "source_ids": [
+        "sup-get-smart-07",
+        "sup-get-smart-06",
+        "maq-todas-as-maquininhas-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-07",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-06",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-03",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: Você pode efetuar pagamentos crédito, débito, voucher, crediário, split de pagamento, QR Code e NFC (aproximação). Os sistemas de gestão permitem também contabilizar os pagamentos em dinheiro. Quais bandeiras são aceitas na Get Smart? Quais bandeiras são aceitas na Get Smart? Pessoa Física: Mastercard | Visa | American Express | Elo | Hipercard | Hiper | Pessoa Jurídica: Alelo | Pluxee | Ticket | VR | Ben A Get Smart não trabalha com recarga.",
+        "Arquivos Get Smart - Getnet: Aproxime o cartão na parte superior central do terminal, em uma distância inferior a 1cm. Após processo da transação, aparecerá uma mensagem de sucesso e a opção de impressão de comprovante de transação. Quais tipos de pagamentos são aceitos na Get Smart? Quais tipos de pagamentos são aceitos na Get Smart?",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Prepare seu negócio para vender mais na Black Friday com as maquininhas Getnet Aceite cartões em moedas estrangeiras Receba pagamentos pelo Pix de forma rápida e segura Conta e cartão grátis Recebimento em 2 dias úteis ESCOLHA SUA MAQUININHA Sua escolha inteligente para vender mais em 2026: Maquininha + conta integrada Getnet Onde você recebe Get Conta com cartão grátis Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel *Termos e condições Selecione para ver as taxas Acima de R$ 10 mil Acima de R$ 20 mil Acima de R$ 40 mil"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016787,
+      "run": 0
+    },
+    {
+      "id": "replan-02",
+      "split": "replan",
+      "message": "Qual a taxa da Getnet para vendas no exterior em dólar australiano?",
+      "ms": 7954.7,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei na base da Getnet a taxa para vendas no exterior em dólar australiano, e não vou inventar um valor. Também não consegui abrir um caso com um atendente humano agora, porque o sistema bloqueou o encaminhamento.\n\nPara ter a taxa correta, fale com um atendente pelos canais oficiais da Getnet ou consulte o site oficial. Se quiser, tento o encaminhamento de novo.",
+      "source_ids": [
+        "maq-todas-as-maquininhas-03",
+        "maq-todas-as-maquininhas-05",
+        "maq-todas-as-maquininhas-06"
+      ],
+      "sources": [
+        {
+          "id": "maq-todas-as-maquininhas-03",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-05",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Prepare seu negócio para vender mais na Black Friday com as maquininhas Getnet Aceite cartões em moedas estrangeiras Receba pagamentos pelo Pix de forma rápida e segura Conta e cartão grátis Recebimento em 2 dias úteis ESCOLHA SUA MAQUININHA Sua escolha inteligente para vender mais em 2026: Maquininha + conta integrada Getnet Onde você recebe Get Conta com cartão grátis Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel *Termos e condições Selecione para ver as taxas Acima de R$ 10 mil Acima de R$ 20 mil Acima de R$ 40 mil",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Escolha a melhor forma para finalizar sua contratação Falar com Especialista Continuar no site * Horario de funcionamento: Seg à sex das 7h as 23h Sábado das 9h as 15h Recebeu sua maquininha de outra pessoa? Cadastre-se aqui para ativá-la em seu nome Se você já adquiriu sua maquininha em nosso site, não precisa realizar este cadastro QUERO ME CADASTRAR Impulsione suas vendas de onde estiver Leve sua maquininha e ganhe os serviços abaixo para acelerar suas vendas Comece a vender agora e pague apenas a taxa de transação Simule suas vendas Aqui, você encontra taxas especiais para todas as bandeiras de cartões.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.017622,
+      "run": 0
+    },
+    {
+      "id": "replan-03",
+      "split": "replan",
+      "message": "Does Getnet offer car insurance for merchants?",
+      "ms": 7467.8,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm that Getnet offers car insurance for merchants. The Getnet content I checked (value-added solutions) doesn't mention it, so I won't say yes or no.\n\nI also tried to pass your question to a human agent, but the system wouldn't allow the handoff, so no case was opened. To get a definite answer, you can contact Getnet support directly or check the official Getnet website.",
+      "source_ids": [
+        "en-value-added-solutions-05",
+        "en-value-added-solutions-01"
+      ],
+      "sources": [
+        {
+          "id": "en-value-added-solutions-05",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        },
+        {
+          "id": "en-value-added-solutions-01",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet - Value added services: More value for our merchants Provides the peace of mind of covering the loss of incomes if you can not operate. With just one contract all the merchant POS in every store are covered. Allow your international customers to pay in their card currency wherever they may be. An additional layer of security for online credit and debit card transactions.",
+        "Getnet - Value added services: Value Added Solutions Add value to your business Our aggregated offer of value added service for physical and digital acquiring solutions will make you choose Getnet Financing is investing Dynamic working capital Access to working capital is one of our key tools to help merchants overcome punctual cash needs. By offering personalized amounts based on your sales and by facilitating the repayment through percentages of sales we simplify operations whilst increasing your peace of mind."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.014511,
+      "run": 0
+    },
+    {
+      "id": "replan-04",
+      "split": "replan",
+      "message": "A Getnet tem programa de milhas para lojistas?",
+      "ms": 5676.7,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que confirme um programa de milhas para lojistas, então não posso dizer que existe. Também não consegui abrir um atendimento com um atendente humano agora. Para ter certeza, veja o site oficial da Getnet (getnet.com.br) ou fale com o seu gerente de contas ou com a central de atendimento.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.012537,
+      "run": 0
+    },
+    {
+      "id": "replan-05",
+      "split": "replan",
+      "message": "Qual o telefone do gerente da minha agência do Banco do Brasil?",
+      "ms": 7236.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei essa informação. O telefone do gerente da sua agência do Banco do Brasil não consta nas fontes da Getnet e não tenho como consultá-lo.\n\nVocê pode consegui-lo por um destes canais oficiais:\n- **App do Banco do Brasil ou Internet Banking:** a área de gerente ou agência costuma trazer os contatos.\n- **Central de Atendimento BB:** o número está no verso do seu cartão e em bb.com.br.\n- **Agência:** o contato direto está na página da agência em bb.com.br.\n\nSe a dúvida for sobre recebimentos da Getnet na sua conta do BB, posso ajudar com isso.",
+      "source_ids": [
+        "sup-duvidas-21",
+        "sup-pix-mais-respostas-15",
+        "sup-antecipacao-de-vendas-14"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-21",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-pix-mais-respostas-15",
+          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
+        },
+        {
+          "id": "sup-antecipacao-de-vendas-14",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dúvidas e Perguntas Frequentes | Getnet: Para alterar a senha do Aplicativo Getnet Brasil, basta acessar a “Esqueci a senha” no Aplicativo Getnet Brasil ou no Portal Minha Conta Qual é a taxa cobrada para os cartões de benefícios e regionais? Qual é a taxa cobrada para os cartões de benefícios e regionais? As taxas dos cartões de benefícios e regionais são negociados diretamente com as bandeiras. Para isso, basta você selecionar neste a bandeira desejada que apresentaremos todos os telefones disponíveis para você entrar em contato.",
+        "Arquivos Mais respostas sobre o Pix​ - Getnet: Como adicionar um Contato de Confiança? Para cadastrar um contato de confiança na sua Get Conta, siga os passos abaixo: 1. Acesse a área Pix e selecione a opção \"Meus Limites\". 2. Em seguida, selecione \"Contatos de Confiança\". 3. Informe o nome, CPF e dados bancários (banco, agência e conta) do contato que deseja cadastrar.",
+        "Arquivos antecipação de vendas - Getnet: Quais canais posso utilizar para antecipar as vendas? Quais canais posso utilizar para antecipar as vendas? Público: Clientes Correntistas Santander. Rede de Agências: o cliente pode antecipar os recebíveis com o gerente de sua conta. Internet Banking: o cliente pode antecipar os recebíveis através do Internet Banking. Empresarial: desde que tenha este canal habilitado."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013234,
+      "run": 0
+    },
+    {
+      "id": "replan-06",
+      "split": "replan",
+      "message": "Does Getnet sell solar panels to merchants?",
+      "ms": 7355.2,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm whether Getnet sells solar panels to merchants. The Getnet content I can search has nothing on it. The closest sections I checked were the value-added solutions pages (en-value-added-solutions-04 and -05), and they don't mention solar panels.\n\nI also couldn't open a case with a human agent, because the transfer to that team was blocked. For a definite answer, please contact Getnet support directly or ask your account manager.",
+      "source_ids": [
+        "en-value-added-solutions-04",
+        "en-value-added-solutions-05"
+      ],
+      "sources": [
+        {
+          "id": "en-value-added-solutions-04",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        },
+        {
+          "id": "en-value-added-solutions-05",
+          "title": "Getnet - Value added services",
+          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet - Value added services: Omnichannel conciliation A single, integrated view of cash flow, which increases efficiency of financial reviews, transaction and fee queries. Your online shop is our business We create your online store with everything you need to sell, collect, send and manage online orders. We create your online store with everything you need to sell, collect, send and manage online orders.",
+        "Getnet - Value added services: More value for our merchants Provides the peace of mind of covering the loss of incomes if you can not operate. With just one contract all the merchant POS in every store are covered. Allow your international customers to pay in their card currency wherever they may be. An additional layer of security for online credit and debit card transactions."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.015173,
+      "run": 0
+    },
+    {
+      "id": "replan-07",
+      "split": "replan",
+      "message": "A Getnet financia a compra de imóveis comerciais?",
+      "ms": 6508.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que diga se ela financia a compra de imóveis comerciais. Por isso não vou confirmar nem negar. Também não consegui abrir um atendimento com um atendente humano agora.\n\nPara tirar a dúvida, você pode consultar o site oficial da Getnet ou falar com o seu gerente de contas. Se quiser, posso tentar de novo encaminhar o caso para um atendente.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013426,
+      "run": 0
+    },
+    {
+      "id": "replan-08",
+      "split": "replan",
+      "message": "Qual a política da Getnet para lojistas em Marte?",
+      "ms": 8507.1,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma política da Getnet para lojistas em Marte nas fontes oficiais, então não posso confirmar que ela exista. Também não consegui encaminhar sua pergunta a um atendente humano, porque o sistema bloqueou o encaminhamento.\n\nPara esse tipo de dúvida, o melhor é consultar o site oficial da Getnet (getnet.com.br) ou falar com o atendimento comercial. Se tiver outra dúvida sobre produtos ou serviços da Getnet, posso ajudar.",
+      "source_ids": [
+        "sup-link-de-pagamento-07"
+      ],
+      "sources": [
+        {
+          "id": "sup-link-de-pagamento-07",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Link de pagamento - Getnet: Sim, as transações de Link de Pagamento devem obrigatoriamente passar pelo antifraude. Independente do pacote ou tamanho do cliente. O lojista precisa ter um site ativo para poder utilizar o Link de Pagamento? O lojista precisa ter um site ativo para poder utilizar o Link de Pagamento? Não. Mesmo que o lojista não tenha um site, ele consegue gerar o Link de Pagamento. Nesse caso, no campo url, ele deverá informar o endereço https://minhaconta.getnet.com.br Apenas clientes pessoas jurídicas podem usar Link de Pagamento?"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016098,
+      "run": 0
+    },
+    {
+      "id": "replan-09",
+      "split": "replan",
+      "message": "Can I use the Get Smart to print boarding passes for airlines?",
+      "ms": 6915.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm whether the Get Smart can print airline boarding passes. I found no source that covers it, so I won't guess. I also tried to open a case with a human agent, but the system didn't allow it.\n\nFor a reliable answer, please contact Getnet support directly or check the official Get Smart documentation on the Getnet website.",
+      "source_ids": [
+        "sup-get-smart-08",
+        "sup-get-smart-10",
+        "sup-get-smart-07"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-08",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-07",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: Quais os diferenciais de uma Get Smart? Quais os diferenciais de uma Get Smart? Com um sistema de gestão integrado ele permite que não tenha a necessidade de deslocamento para consultar um estoque, o mesmo pode ser consultado diretamente na máquina. Ele permite um balcão mais limpo, onde não é necessário ter um computador e uma impressora fiscal, ele faz ambas funções. Ele permite mais rapidez no atendimento diminuindo o tempo de espera do cliente, você pode fazer o pedido, fechar a conta e emitir o cupom fiscal tudo diretamente no terminal. Com ele você tem uma conciliação com pagamentos em todas modalidades, crédito, debito, crediário, QR Code ou dinheiro. Os sistemas de gestão homologados possuem conciliação completa.",
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "Arquivos Get Smart - Getnet: Você pode efetuar pagamentos crédito, débito, voucher, crediário, split de pagamento, QR Code e NFC (aproximação). Os sistemas de gestão permitem também contabilizar os pagamentos em dinheiro. Quais bandeiras são aceitas na Get Smart? Quais bandeiras são aceitas na Get Smart? Pessoa Física: Mastercard | Visa | American Express | Elo | Hipercard | Hiper | Pessoa Jurídica: Alelo | Pluxee | Ticket | VR | Ben A Get Smart não trabalha com recarga."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.015437,
+      "run": 0
+    },
+    {
+      "id": "replan-10",
+      "split": "replan",
+      "message": "A Getnet oferece consórcio de motos?",
+      "ms": 6652.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que confirme a oferta de consórcio de motos, então não posso dizer que ela oferece. Também não consegui abrir um atendimento com um atendente humano, porque o sistema bloqueou o encaminhamento.\n\nPara confirmar, consulte o site oficial da Getnet (getnet.com.br) ou fale com os canais de atendimento oficiais. Se quiser, tento o encaminhamento de novo.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013737,
+      "run": 0
+    },
+    {
+      "id": "replan-11",
+      "split": "replan",
+      "message": "Qual o prazo de garantia estendida de geladeiras vendidas pela Getnet?",
+      "ms": 8748.9,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma informação oficial sobre garantia estendida de geladeiras vendidas pela Getnet. Por isso não vou informar um prazo. Também não consegui abrir um atendimento com um atendente humano, porque o sistema não permitiu.\n\nVocê pode confirmar pelos canais oficiais da Getnet, como o site ou a central de atendimento. Se a dúvida for sobre as maquininhas da Getnet, me diga qual modelo e eu consulto.",
+      "source_ids": [
+        "prod-home-05",
+        "maq-todas-as-maquininhas-06",
+        "sup-antecipacao-de-vendas-05"
+      ],
+      "sources": [
+        {
+          "id": "prod-home-05",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-06",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "sup-antecipacao-de-vendas-05",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Taxas menores para você Não precisa de maquininha Aceite débito, crédito à vista ou parcelado Fácil de instalar, não requer infraestrutura, nem grandes investimentos! Centralização das vendas no balcão Aceite mais de 80 bandeiras de cartão Conciliação automática das vendas Suporte especializado Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Já é nosso cliente? Simule suas vendas em nosso app! Forma de recebimento Faturamento mensal Get Mini com bobina Get Clássica Santander Select Taxa única para compras com: Com a Getnet, você recebe: Taxa única para compras com: Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Palavras de quem acredita que com a Getnet dá negócio O time foi bem engajado para implementar a Getnet como meio de pagamento do nosso e-commerce, construindo uma boa relação e parceria para longo prazo.",
+        "Arquivos antecipação de vendas - Getnet: O que é gravame e o que ele muda na minha forma de receber dinheiro? O que é gravame e o que ele muda na minha forma de receber dinheiro? Gravame é a garantia que você dá para a Getnet de pagamento do seu empréstimo. Isso significa que você passará a receber todas as vendas que realizar na Getnet e em outras adquirentes em sua Get Conta, no limite do saldo devedor do empréstimo. A garantia te ajuda a organizar seu pagamento de empréstimo e verificar em uma única conta o extrato de todos os valores de suas vendas e descontos realizados."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.017534,
+      "run": 0
+    },
+    {
+      "id": "replan-12",
+      "split": "replan",
+      "message": "Does Getnet have a loyalty program with airline miles?",
+      "ms": 7001.3,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm whether Getnet has a loyalty program with airline miles. I found no source that covers it, so I won't guess. For an official answer, check the Getnet website or ask your account manager.\n\nMy attempt to open a case with a human agent also failed, because the system didn't allow it. If you want, ask again and I'll retry the escalation.",
+      "source_ids": [
+        "en-health-and-beauty-08",
+        "en-travel-09"
+      ],
+      "sources": [
+        {
+          "id": "en-health-and-beauty-08",
+          "title": "Health & Beauty",
+          "url": "https://www.getnet.net/en/your-business/industries/health-and-beauty"
+        },
+        {
+          "id": "en-travel-09",
+          "title": "Travel",
+          "url": "https://www.getnet.net/en/your-business/industries/travel"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Health & Beauty: Memberships, loyalty programmes and recurring services. Payment links and remote payment options. Reduced administration and simplified day-to-day operations. Customer experiences that encourage retention and repeat bookings. Loyalty, convenience and repeat visits Wellness Centres Memberships, engagement and recurring revenue.",
+        "Travel: Unified insights. Real-time reporting across transactions, partners and providers Transport Operators (Airlines, Mobility) Fast, contactless payments. Optimised for high-throughput transit environments. Digital payment gateways. Enable modern ticketing, and digital transport experiences. Onboard payment acceptance. Card payments anywhere, online or offline, via POS. Low-friction security. Fraud protection designed for fast, low-touch transactions. Ready to take control of your payments? Discover how Getnet can help you simplify the journey."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.014424,
+      "run": 0
+    },
+    {
+      "id": "replan-13",
+      "split": "replan",
+      "message": "A Getnet emite certificado digital e-CNPJ para o lojista?",
+      "ms": 7593.7,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que confirme se ela emite certificado digital e-CNPJ. Por isso não posso afirmar que sim nem que não.\n\nNão consegui abrir um caso com um atendente humano porque o sistema bloqueou a transferência. Se quiser uma confirmação, fale com o atendimento Getnet pelos canais oficiais ou consulte o site da Getnet. Para emitir o e-CNPJ, você também pode procurar uma Autoridade Certificadora credenciada pela ICP-Brasil.",
+      "source_ids": [
+        "prod-home-11",
+        "sup-get-smart-10",
+        "prod-conta-digital-01"
+      ],
+      "sources": [
+        {
+          "id": "prod-home-11",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        },
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "prod-conta-digital-01",
+          "title": "Getnet | Maquininha + Conta Digital - GetnetMaquininha + Conta Digital - Getnet",
+          "url": "https://site.getnet.com.br/conta-digital/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Como consultar CNPJ: passo a passo para verificar a situação de uma empresa Se você é MEI, tem um pequeno negócio ou está pensando em fechar parcerias comerciais, é essencial saber como consultar o CNPJ (Cadastro Nacional da Pessoa Jurídica) de uma empresa. Essa consulta é gratuita, rápida e pode evitar dores de cabeça no futuro. Nós podemos te ajudar a vender mais Quero ser atendido por Prático e rápido Quero ser cliente Quero ser atendido por Prático e rápido",
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "Getnet | Maquininha + Conta Digital - GetnetMaquininha + Conta Digital - Getnet: Com a conta digital, vai dar negócio Você no controle da operação Cartão virtual grátis Receba todos os pagamentos na mesma conta Antecipação de recebíveis Mais benefícios Escolha o melhor produto e abra a sua conta A Getnet tem soluções físicas e digitais para alavancar o seu negócio. Link de pagamento Confira os benefícios da Get Conta Saiba mais sobre os principais benefícios da conta Getnet."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016516,
+      "run": 0
+    },
+    {
+      "id": "replan-14",
+      "split": "replan",
+      "message": "Quanto custa o plano odontológico da Getnet para funcionários?",
+      "ms": 8921.5,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma informação oficial sobre o preço de um plano odontológico da Getnet para funcionários. Não vou estimar um valor.\n\nTambém não consegui encaminhar o caso a um atendente humano agora, porque o sistema bloqueou o encaminhamento. Se quiser, tente pedir atendimento humano de novo. Você também pode consultar os canais oficiais no site da Getnet.",
+      "source_ids": [
+        "sup-duvidas-29",
+        "sup-duvidas-30",
+        "sup-link-de-pagamento-12"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-29",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-duvidas-30",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-link-de-pagamento-12",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dúvidas e Perguntas Frequentes | Getnet: O processo seletivo é exclusivo para candidatura externa? O processo seletivo é exclusivo para candidatura externa? Não, colaboradora também pode participar, desde que atenda os requisitos divulgados, de tempo de empresa, cargo. Quem é de outra cidade, terá ajuda moradia ou ajuda de custo para mudança?",
+        "Dúvidas e Perguntas Frequentes | Getnet: Quem é de outra cidade, terá ajuda moradia ou ajuda de custo para mudança? O custo de mudança e moradia é de total responsabilidade da candidata aprovada. Como faço para gerar um cartão virtual? Como faço para gerar um cartão virtual? Para gerar um cartão virtual, é só acessar o Aplicativo Getnet Brasil:",
+        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016743,
+      "run": 0
+    },
+    {
+      "id": "replan-15",
+      "split": "replan",
+      "message": "Does Getnet provide legal advice for tax disputes?",
+      "ms": 6781.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't find an official Getnet source on whether it provides legal advice for tax disputes, so I can't confirm either way. I also couldn't open a case with a human agent, because that handoff was blocked.\n\nFor a reliable answer, please contact Getnet support directly through the official channels on getnet.com.br. For advice on a specific tax dispute, you can also talk to a lawyer or accountant.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.012401,
+      "run": 0
+    },
+    {
+      "id": "replan-16",
+      "split": "replan",
+      "message": "A Getnet tem maquininha que aceita cheque?",
+      "ms": 7644.4,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial que diga que a Getnet tem maquininha que aceita cheque, então não posso confirmar. Também não consegui abrir o caso com um atendente humano, porque o sistema bloqueou o encaminhamento.\n\nVocê pode confirmar com o atendimento da Getnet pelos canais oficiais ou no site. Se quiser, tento o encaminhamento de novo.",
+      "source_ids": [
+        "sup-operacional-05",
+        "sup-duvidas-68",
+        "prod-home-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-operacional-05",
+          "title": "Arquivos operacional - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/operacional/"
+        },
+        {
+          "id": "sup-duvidas-68",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "prod-home-03",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos operacional - Getnet: 4. Crédito não processado: quando o portador do cartão cancela a transação junto ao seu estabelecimento e o crédito (estorno) não foi lançado em sua fatura. 5. Pagamento por meio alternativo: quando o portador do cartão alega que efetuou o pagamento da transação por outro meio (outro cartão, cheque ou dinheiro).",
+        "Dúvidas e Perguntas Frequentes | Getnet: Não será considerada uma duplicidade caso seu estabelecimento apresente dois comprovantes distintos. 4. Crédito não processado: quando o portador do cartão cancela a transação junto ao seu estabelecimento e o crédito (estorno) não foi lançado em sua fatura. 5. Pagamento por meio alternativo: quando o portador do cartão alega que efetuou o pagamento da transação por outro meio (outro cartão, cheque ou dinheiro).",
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Venda pelo celular Aceite pagamentos com Pix, QR Code, aproximação e mais de 80 bandeiras Pedir minha maquininha Soluções de pagamento completas para preparar o seu negócio para a Black Friday Link de pagamento Venda pelas redes sociais com o link de pagamento. Sem mensalidade Aceite débito, crédito ou Pix Opção de inclusão de frete Aceite pagamentos e venda na velocidade e segurança Getnet."
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016227,
+      "run": 0
+    },
+    {
+      "id": "replan-17",
+      "split": "replan",
+      "message": "Qual o regulamento do sorteio de carros da Getnet de 2019?",
+      "ms": 7117.6,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial com o regulamento do sorteio de carros da Getnet de 2019, então não consigo informar o conteúdo dele. Também não consegui abrir um caso com um atendente humano, porque o sistema bloqueou essa transição.\n\nPara conseguir o regulamento, você pode:\n- consultar o site oficial da Getnet (getnet.com.br);\n- falar com a Getnet pelos canais oficiais de atendimento e pedir o regulamento dessa campanha.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [],
+      "evidence": [],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013307,
+      "run": 0
+    },
+    {
+      "id": "replan-18",
+      "split": "replan",
+      "message": "Can Getnet mail my Get Smart to Portugal?",
+      "ms": 6778.6,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I couldn't confirm that. Getnet's sources don't say whether a Get Smart can be shipped to Portugal.\n\n- You can order a Get Smart through the website, the Call Center at 4020-4011, or your Santander manager (source: sup-get-smart-13).\n- Getnet does have a presence in Portugal, among other countries (source: en-home-05).\n\nTo find out about shipping there, I'd contact the Call Center at 4020-4011 or your Santander manager. I can also open a case with a human agent if you'd like.",
+      "source_ids": [
+        "sup-get-smart-13",
+        "sup-get-smart-10",
+        "en-home-05"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-13",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        },
+        {
+          "id": "en-home-05",
+          "title": "Getnet - Home",
+          "url": "https://www.getnet.net/en"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: Como pedir uma Get Smart? Como pedir uma Get Smart? Você pode pedir pelo site através do https://site.getnet.com.br/maquininha/get-smart/ , por meio do nosso Call Center, no número: 4020-4011 ou solicite com seu gerente Santander. As vendas que eu fizer na Get Smart estarão no conciliador que eu já uso?",
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "Getnet - Home: Unlock new revenue Innovative payment solutions, tools and integrations to enhance efficiency and scalability. Start succeeding today Partner with us and get support every step of the way. local expertise We provide tailored solutions and support for every merchant. With presence in Brazil, Mexico, Chile, Argentina, Uruguay, Colombia, Spain, and Portugal."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.012616,
+      "run": 0
+    },
+    {
+      "id": "replan-19",
+      "split": "replan",
+      "message": "A Getnet faz câmbio de euro em espécie na agência?",
+      "ms": 8242.5,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei nenhuma fonte oficial da Getnet que diga se ela faz câmbio de euro em espécie em agência, então não posso confirmar. Também não consegui abrir um atendimento com um atendente humano: o sistema bloqueou o encaminhamento.\n\nPara ter a resposta, consulte os canais oficiais no site da Getnet ou fale com o atendimento da Getnet.",
+      "source_ids": [
+        "sup-pix-mais-respostas-18"
+      ],
+      "sources": [
+        {
+          "id": "sup-pix-mais-respostas-18",
+          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos Mais respostas sobre o Pix​ - Getnet: A função Pix Saque permite que o cliente saque uma quantia em dinheiro utilizando o Pix. Por exemplo, o cliente vai até um estabelecimento credenciado, como uma padaria ou um mercado, e informa o valor que gostaria de sacar. O atendente gera um QR Code via Pix para o cliente escanear e, após o pagamento, dá o dinheiro em espécie para o cliente.​ Já a função Pix Troco permite que o cliente receba dinheiro em espécie como troco do pagamento digital. Por exemplo, o cliente vai até um estabelecimento credenciado, como um mercado, e faz uma compra de R$20,00. O cliente faz um Pix de R$30,00 para o estabelecimento e recebe R$10,00 em espécie como troco.​ Existem taxas de Pix utilizando a Get Conta?"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.01613,
+      "run": 0
+    },
+    {
+      "id": "replan-20",
+      "split": "replan",
+      "message": "Qual o horário de funcionamento da loja física da Getnet em Manaus?",
+      "ms": 6667.2,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "replanned": false,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Não encontrei o horário de funcionamento da loja física da Getnet em Manaus nas fontes disponíveis, e não consegui abrir um atendimento humano agora. Prefiro não informar um horário que eu não possa confirmar.\n\nPara ter a informação correta, consulte os canais oficiais no site da Getnet (getnet.com.br) ou fale com a central de atendimento. Se quiser, tento de novo o contato com um atendente.",
+      "source_ids": [
+        "sup-antecipacao-de-vendas-17"
+      ],
+      "sources": [
+        {
+          "id": "sup-antecipacao-de-vendas-17",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Arquivos antecipação de vendas - Getnet: - Extratos por período; - Antecipação por período. Em que horários posso consultar ou realizar a antecipação de vendas? Em que horários posso consultar ou realizar a antecipação de vendas? De segunda a sexta-feira, das 9h às 21h, exceto em feriados (horário para correntistas Santander). Caso não seja correntista Santander, veja o quadro abaixo para verificação do horário de realização/consulta da antecipação de vendas:"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.014807,
+      "run": 0
+    }
+  ],
+  "stability": {
+    "runs": 1,
+    "pass_at_1": 0.0,
+    "pass_hat_k": 0.0,
+    "ci": {
+      "pass_at_1": {
+        "k": 0,
+        "n": 20,
+        "lo": 0.0,
+        "hi": 16.1
+      },
+      "pass_hat_k": {
+        "k": 0,
+        "n": 20,
+        "lo": 0.0,
+        "hi": 16.1
+      }
+    },
+    "unstable": [],
+    "by_case": {
+      "replan-01": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-02": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-03": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-04": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-05": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-06": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-07": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-08": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-09": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-10": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-11": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-12": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-13": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-14": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-15": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-16": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-17": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-18": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-19": {
+        "passes": 0,
+        "runs": 1
+      },
+      "replan-20": {
+        "passes": 0,
+        "runs": 1
+      }
+    }
+  },
+  "failure_matrix": {
+    "by_check": {
+      "handoff": {
+        "replan": 20
+      },
+      "handoff_outcome": {
+        "replan": 20
+      },
+      "replanned": {
+        "replan": 20
+      }
+    },
+    "intent_confusion": {},
+    "intent_matrix": {
+      "knowledge": {
+        "knowledge": 20
+      }
+    }
+  },
+  "gate_calibration": {
+    "positives": 50,
+    "negatives": 16,
+    "excluded_negatives": [],
+    "criterion": "max pos_answered com neg_refused >= 0.85; empate → menor limiar",
+    "neg_refusal_min": 0.85,
+    "current": 8.554,
+    "current_source": "MIN_SCORE",
+    "at_current": {
+      "threshold": 8.554,
+      "pos_answered": 0.72,
+      "neg_refused": 0.812,
+      "balanced_acc": 0.766,
+      "meets_floor": false,
+      "pos_ci": {
+        "k": 36,
+        "n": 50,
+        "lo": 58.3,
+        "hi": 82.5
+      },
+      "neg_ci": {
+        "k": 13,
+        "n": 16,
+        "lo": 57.0,
+        "hi": 93.4
+      }
+    },
+    "best": {
+      "threshold": 8.643,
+      "pos_answered": 0.72,
+      "neg_refused": 0.875,
+      "balanced_acc": 0.797,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 36,
+        "n": 50,
+        "lo": 58.3,
+        "hi": 82.5
+      },
+      "neg_ci": {
+        "k": 14,
+        "n": 16,
+        "lo": 64.0,
+        "hi": 96.5
+      }
+    },
+    "table": [
+      {
+        "threshold": 0.0,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 0.234,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.366,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.382,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.406,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 3.819,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.037,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.133,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.138,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.156,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.309,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.561,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.586,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.693,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.731,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 4.823,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 5.132,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 5.156,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.298,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.387,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.478,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.551,
+        "pos_answered": 0.72,
+        "neg_refused": 0.312,
+        "balanced_acc": 0.516,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 16,
+          "lo": 14.2,
+          "hi": 55.6
+        }
+      },
+      {
+        "threshold": 5.581,
+        "pos_answered": 0.72,
+        "neg_refused": 0.312,
+        "balanced_acc": 0.516,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 16,
+          "lo": 14.2,
+          "hi": 55.6
+        }
+      },
+      {
+        "threshold": 5.589,
+        "pos_answered": 0.72,
+        "neg_refused": 0.375,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 6,
+          "n": 16,
+          "lo": 18.5,
+          "hi": 61.4
+        }
+      },
+      {
+        "threshold": 5.616,
+        "pos_answered": 0.72,
+        "neg_refused": 0.375,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 6,
+          "n": 16,
+          "lo": 18.5,
+          "hi": 61.4
+        }
+      },
+      {
+        "threshold": 5.803,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.884,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.919,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.927,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.937,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.991,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.045,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.135,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.137,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.25,
+        "pos_answered": 0.72,
+        "neg_refused": 0.562,
+        "balanced_acc": 0.641,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 16,
+          "lo": 33.2,
+          "hi": 76.9
+        }
+      },
+      {
+        "threshold": 6.344,
+        "pos_answered": 0.72,
+        "neg_refused": 0.562,
+        "balanced_acc": 0.641,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 16,
+          "lo": 33.2,
+          "hi": 76.9
+        }
+      },
+      {
+        "threshold": 6.622,
+        "pos_answered": 0.72,
+        "neg_refused": 0.625,
+        "balanced_acc": 0.672,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 16,
+          "lo": 38.6,
+          "hi": 81.5
+        }
+      },
+      {
+        "threshold": 6.826,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 6.869,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 6.906,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.105,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.426,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.593,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.765,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 7.999,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.103,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.258,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.278,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.478,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.486,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.554,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.591,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.643,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.722,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.956,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.983,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.031,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.033,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.148,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.31,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.421,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.537,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.686,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.835,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.844,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.936,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.082,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.087,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.373,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.478,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.499,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.544,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.598,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.773,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.983,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.989,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.108,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.109,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.133,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.286,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.342,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.344,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.473,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.658,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.698,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.746,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.828,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.83,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.102,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.147,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.251,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.261,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.384,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.54,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.637,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.873,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.909,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.181,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.344,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.359,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.419,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.615,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.742,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.77,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.897,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.933,
+        "pos_answered": 0.58,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.79,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.167,
+        "pos_answered": 0.58,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.79,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.174,
+        "pos_answered": 0.56,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.78,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 28,
+          "n": 50,
+          "lo": 42.3,
+          "hi": 68.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.245,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.418,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.465,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.506,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.543,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.619,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.65,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.705,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.735,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.77,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.79,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.83,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.922,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.117,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.373,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.761,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.762,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.843,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.863,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.873,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.95,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.984,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.106,
+        "pos_answered": 0.44,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.72,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 22,
+          "n": 50,
+          "lo": 31.2,
+          "hi": 57.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.272,
+        "pos_answered": 0.44,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.72,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 22,
+          "n": 50,
+          "lo": 31.2,
+          "hi": 57.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.436,
+        "pos_answered": 0.42,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.71,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 21,
+          "n": 50,
+          "lo": 29.4,
+          "hi": 55.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.547,
+        "pos_answered": 0.42,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.71,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 21,
+          "n": 50,
+          "lo": 29.4,
+          "hi": 55.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.589,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.613,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.64,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.769,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.811,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.92,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.925,
+        "pos_answered": 0.38,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.69,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 19,
+          "n": 50,
+          "lo": 25.9,
+          "hi": 51.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.236,
+        "pos_answered": 0.36,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.68,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 18,
+          "n": 50,
+          "lo": 24.1,
+          "hi": 49.9
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.409,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.52,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.981,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.247,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.698,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.968,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.201,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.224,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.238,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.243,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.755,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.102,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.262,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.266,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.413,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.759,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.854,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.187,
+        "pos_answered": 0.28,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.64,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 14,
+          "n": 50,
+          "lo": 17.5,
+          "hi": 41.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.442,
+        "pos_answered": 0.24,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.62,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 12,
+          "n": 50,
+          "lo": 14.3,
+          "hi": 37.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.511,
+        "pos_answered": 0.22,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.61,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 11,
+          "n": 50,
+          "lo": 12.8,
+          "hi": 35.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.953,
+        "pos_answered": 0.22,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.61,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 11,
+          "n": 50,
+          "lo": 12.8,
+          "hi": 35.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.25,
+        "pos_answered": 0.2,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.6,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 10,
+          "n": 50,
+          "lo": 11.2,
+          "hi": 33.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.33,
+        "pos_answered": 0.2,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.6,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 10,
+          "n": 50,
+          "lo": 11.2,
+          "hi": 33.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.484,
+        "pos_answered": 0.18,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.59,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 9,
+          "n": 50,
+          "lo": 9.8,
+          "hi": 30.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.529,
+        "pos_answered": 0.16,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.58,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 8,
+          "n": 50,
+          "lo": 8.3,
+          "hi": 28.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.721,
+        "pos_answered": 0.16,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.58,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 8,
+          "n": 50,
+          "lo": 8.3,
+          "hi": 28.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.795,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.939,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 23.417,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.041,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.162,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.312,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.36,
+        "pos_answered": 0.12,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.56,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 50,
+          "lo": 5.6,
+          "hi": 23.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.635,
+        "pos_answered": 0.1,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 5,
+          "n": 50,
+          "lo": 4.3,
+          "hi": 21.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 25.435,
+        "pos_answered": 0.1,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 5,
+          "n": 50,
+          "lo": 4.3,
+          "hi": 21.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 25.962,
+        "pos_answered": 0.08,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.54,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 50,
+          "lo": 3.2,
+          "hi": 18.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.2,
+        "pos_answered": 0.08,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.54,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 50,
+          "lo": 3.2,
+          "hi": 18.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.283,
+        "pos_answered": 0.06,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.53,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 3,
+          "n": 50,
+          "lo": 2.1,
+          "hi": 16.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 28.684,
+        "pos_answered": 0.04,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.52,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 50,
+          "lo": 1.1,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 29.514,
+        "pos_answered": 0.02,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.51,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 50,
+          "lo": 0.4,
+          "hi": 10.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 32.181,
+        "pos_answered": 0.0,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.5,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 0,
+          "n": 50,
+          "lo": 0.0,
+          "hi": 7.1
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      }
+    ],
+    "retriever": "bm25"
+  },
+  "retrieval": {
+    "cases": 50,
+    "positives": 50,
+    "negatives": 16,
+    "recall@3": 0.486,
+    "mrr": 0.61,
+    "hit@3": 0.72,
+    "hit@3_ci": {
+      "k": 36,
+      "n": 50,
+      "lo": 58.3,
+      "hi": 82.5
+    },
+    "retriever": "bm25",
+    "requested": "bm25"
+  }
+}

@@ -1,0 +1,3791 @@
+{
+  "mode": "in-process",
+  "provider": "anthropic",
+  "live": true,
+  "split": "approval",
+  "status": "aborted_max_usd",
+  "spent_usd": 0.026346,
+  "max_usd": 0.0202,
+  "llm_errors": 0,
+  "gate": 0.9,
+  "intent_acc": 1.0,
+  "intent_ci": {
+    "k": 1,
+    "n": 1,
+    "lo": 20.7,
+    "hi": 100.0
+  },
+  "isolation": "db_per_case",
+  "coverage_min_score": {
+    "effective": 8.554,
+    "source": "MIN_SCORE"
+  },
+  "gated_splits": [
+    "approval"
+  ],
+  "ungated_splits": [
+    "hard",
+    "heldout"
+  ],
+  "passed": true,
+  "metrics": {
+    "approval": {
+      "cases": 1,
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": 100.0,
+      "replanned_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 7784.9,
+      "p95_ms": 7784.9,
+      "cost_usd": 0.026346,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "handoff_outcome_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "language_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "tools_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "pending_action_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        }
+      }
+    },
+    "ALL": {
+      "cases": 1,
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": 100.0,
+      "replanned_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 7784.9,
+      "p95_ms": 7784.9,
+      "cost_usd": 0.026346,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "handoff_outcome_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "language_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "tools_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "pending_action_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 1,
+          "n": 1,
+          "lo": 20.7,
+          "hi": 100.0
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "approval-01",
+      "split": "approval",
+      "message": "Quero antecipar todo o valor disponível das minhas vendas.",
+      "ms": 7784.9,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "O valor disponível para antecipar é **R$ 1.730,00**. Ele vem de três vendas no crédito:\n- TX1002: R$ 480,00\n- TX1004: R$ 350,00\n- TX1006: R$ 900,00\n\nAs três estão previstas para 30/11. Vendas no débito e no Pix não entram na antecipação.\n\n**Ainda não antecipei nada.** Para seguir, você precisa confirmar a ação **A-f303f33a**. Depois da sua confirmação, um operador ainda precisa aprovar o pedido.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {},
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-f303f33a\", \"risk\": \"high\", \"args\": {}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.026346,
+      "run": 0
+    }
+  ],
+  "failures": [],
+  "stability": {
+    "runs": 3,
+    "pass_at_1": 1.0,
+    "pass_hat_k": 1.0,
+    "ci": {
+      "pass_at_1": {
+        "k": 1,
+        "n": 1,
+        "lo": 20.7,
+        "hi": 100.0
+      },
+      "pass_hat_k": {
+        "k": 1,
+        "n": 1,
+        "lo": 20.7,
+        "hi": 100.0
+      }
+    },
+    "unstable": [],
+    "by_case": {
+      "approval-01": {
+        "passes": 1,
+        "runs": 1
+      }
+    }
+  },
+  "failure_matrix": {
+    "by_check": {},
+    "intent_confusion": {},
+    "intent_matrix": {
+      "support": {
+        "support": 1
+      }
+    }
+  },
+  "gate_calibration": {
+    "positives": 50,
+    "negatives": 16,
+    "excluded_negatives": [],
+    "criterion": "max pos_answered com neg_refused >= 0.85; empate → menor limiar",
+    "neg_refusal_min": 0.85,
+    "current": 8.554,
+    "current_source": "MIN_SCORE",
+    "at_current": {
+      "threshold": 8.554,
+      "pos_answered": 0.72,
+      "neg_refused": 0.812,
+      "balanced_acc": 0.766,
+      "meets_floor": false,
+      "pos_ci": {
+        "k": 36,
+        "n": 50,
+        "lo": 58.3,
+        "hi": 82.5
+      },
+      "neg_ci": {
+        "k": 13,
+        "n": 16,
+        "lo": 57.0,
+        "hi": 93.4
+      }
+    },
+    "best": {
+      "threshold": 8.643,
+      "pos_answered": 0.72,
+      "neg_refused": 0.875,
+      "balanced_acc": 0.797,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 36,
+        "n": 50,
+        "lo": 58.3,
+        "hi": 82.5
+      },
+      "neg_ci": {
+        "k": 14,
+        "n": 16,
+        "lo": 64.0,
+        "hi": 96.5
+      }
+    },
+    "table": [
+      {
+        "threshold": 0.0,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 0.234,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.366,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.382,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 2.406,
+        "pos_answered": 0.72,
+        "neg_refused": 0.0,
+        "balanced_acc": 0.36,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 0,
+          "n": 16,
+          "lo": 0.0,
+          "hi": 19.4
+        }
+      },
+      {
+        "threshold": 3.819,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.037,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.133,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.138,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.156,
+        "pos_answered": 0.72,
+        "neg_refused": 0.062,
+        "balanced_acc": 0.391,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 1,
+          "n": 16,
+          "lo": 1.1,
+          "hi": 28.3
+        }
+      },
+      {
+        "threshold": 4.309,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.561,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.586,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.693,
+        "pos_answered": 0.72,
+        "neg_refused": 0.125,
+        "balanced_acc": 0.422,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 16,
+          "lo": 3.5,
+          "hi": 36.0
+        }
+      },
+      {
+        "threshold": 4.731,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 4.823,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 5.132,
+        "pos_answered": 0.72,
+        "neg_refused": 0.188,
+        "balanced_acc": 0.454,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 16,
+          "lo": 6.6,
+          "hi": 43.0
+        }
+      },
+      {
+        "threshold": 5.156,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.298,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.387,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.478,
+        "pos_answered": 0.72,
+        "neg_refused": 0.25,
+        "balanced_acc": 0.485,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 16,
+          "lo": 10.2,
+          "hi": 49.5
+        }
+      },
+      {
+        "threshold": 5.551,
+        "pos_answered": 0.72,
+        "neg_refused": 0.312,
+        "balanced_acc": 0.516,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 16,
+          "lo": 14.2,
+          "hi": 55.6
+        }
+      },
+      {
+        "threshold": 5.581,
+        "pos_answered": 0.72,
+        "neg_refused": 0.312,
+        "balanced_acc": 0.516,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 16,
+          "lo": 14.2,
+          "hi": 55.6
+        }
+      },
+      {
+        "threshold": 5.589,
+        "pos_answered": 0.72,
+        "neg_refused": 0.375,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 6,
+          "n": 16,
+          "lo": 18.5,
+          "hi": 61.4
+        }
+      },
+      {
+        "threshold": 5.616,
+        "pos_answered": 0.72,
+        "neg_refused": 0.375,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 6,
+          "n": 16,
+          "lo": 18.5,
+          "hi": 61.4
+        }
+      },
+      {
+        "threshold": 5.803,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.884,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.919,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.927,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.937,
+        "pos_answered": 0.72,
+        "neg_refused": 0.438,
+        "balanced_acc": 0.579,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 16,
+          "lo": 23.1,
+          "hi": 66.8
+        }
+      },
+      {
+        "threshold": 5.991,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.045,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.135,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.137,
+        "pos_answered": 0.72,
+        "neg_refused": 0.5,
+        "balanced_acc": 0.61,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 16,
+          "lo": 28.0,
+          "hi": 72.0
+        }
+      },
+      {
+        "threshold": 6.25,
+        "pos_answered": 0.72,
+        "neg_refused": 0.562,
+        "balanced_acc": 0.641,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 16,
+          "lo": 33.2,
+          "hi": 76.9
+        }
+      },
+      {
+        "threshold": 6.344,
+        "pos_answered": 0.72,
+        "neg_refused": 0.562,
+        "balanced_acc": 0.641,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 16,
+          "lo": 33.2,
+          "hi": 76.9
+        }
+      },
+      {
+        "threshold": 6.622,
+        "pos_answered": 0.72,
+        "neg_refused": 0.625,
+        "balanced_acc": 0.672,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 16,
+          "lo": 38.6,
+          "hi": 81.5
+        }
+      },
+      {
+        "threshold": 6.826,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 6.869,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 6.906,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.105,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.426,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.593,
+        "pos_answered": 0.72,
+        "neg_refused": 0.688,
+        "balanced_acc": 0.704,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 16,
+          "lo": 44.4,
+          "hi": 85.8
+        }
+      },
+      {
+        "threshold": 7.765,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 7.999,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.103,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.258,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.278,
+        "pos_answered": 0.72,
+        "neg_refused": 0.75,
+        "balanced_acc": 0.735,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 16,
+          "lo": 50.5,
+          "hi": 89.8
+        }
+      },
+      {
+        "threshold": 8.478,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.486,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.554,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.591,
+        "pos_answered": 0.72,
+        "neg_refused": 0.812,
+        "balanced_acc": 0.766,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 13,
+          "n": 16,
+          "lo": 57.0,
+          "hi": 93.4
+        }
+      },
+      {
+        "threshold": 8.643,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.722,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.956,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 8.983,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.031,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.033,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.148,
+        "pos_answered": 0.72,
+        "neg_refused": 0.875,
+        "balanced_acc": 0.797,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 16,
+          "lo": 64.0,
+          "hi": 96.5
+        }
+      },
+      {
+        "threshold": 9.31,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.421,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.537,
+        "pos_answered": 0.72,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.829,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 36,
+          "n": 50,
+          "lo": 58.3,
+          "hi": 82.5
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.686,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.835,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.844,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 9.936,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.082,
+        "pos_answered": 0.7,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.819,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 35,
+          "n": 50,
+          "lo": 56.2,
+          "hi": 80.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.087,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.373,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.478,
+        "pos_answered": 0.68,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.809,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 34,
+          "n": 50,
+          "lo": 54.2,
+          "hi": 79.2
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.499,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.544,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.598,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.773,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.983,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 10.989,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.108,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.109,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.133,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.286,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.342,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.344,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.473,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.658,
+        "pos_answered": 0.66,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.799,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 33,
+          "n": 50,
+          "lo": 52.2,
+          "hi": 77.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.698,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.746,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.828,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 11.83,
+        "pos_answered": 0.64,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.789,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 32,
+          "n": 50,
+          "lo": 50.1,
+          "hi": 75.9
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.102,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.147,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.251,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.261,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.384,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.54,
+        "pos_answered": 0.62,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.779,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 31,
+          "n": 50,
+          "lo": 48.2,
+          "hi": 74.1
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.637,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.873,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 12.909,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.181,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.344,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.359,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.419,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.615,
+        "pos_answered": 0.6,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.769,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 30,
+          "n": 50,
+          "lo": 46.2,
+          "hi": 72.4
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.742,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.77,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.897,
+        "pos_answered": 0.58,
+        "neg_refused": 0.938,
+        "balanced_acc": 0.759,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 16,
+          "lo": 71.7,
+          "hi": 98.9
+        }
+      },
+      {
+        "threshold": 13.933,
+        "pos_answered": 0.58,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.79,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.167,
+        "pos_answered": 0.58,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.79,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 29,
+          "n": 50,
+          "lo": 44.2,
+          "hi": 70.6
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.174,
+        "pos_answered": 0.56,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.78,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 28,
+          "n": 50,
+          "lo": 42.3,
+          "hi": 68.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.245,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.418,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.465,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.506,
+        "pos_answered": 0.54,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.77,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 27,
+          "n": 50,
+          "lo": 40.4,
+          "hi": 67.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.543,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.619,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.65,
+        "pos_answered": 0.52,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.76,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 26,
+          "n": 50,
+          "lo": 38.5,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.705,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.735,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.77,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.79,
+        "pos_answered": 0.5,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.75,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 25,
+          "n": 50,
+          "lo": 36.6,
+          "hi": 63.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.83,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 14.922,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.117,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.373,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.761,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.762,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.843,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.863,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.873,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.95,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 15.984,
+        "pos_answered": 0.48,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.74,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 24,
+          "n": 50,
+          "lo": 34.8,
+          "hi": 61.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.106,
+        "pos_answered": 0.44,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.72,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 22,
+          "n": 50,
+          "lo": 31.2,
+          "hi": 57.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.272,
+        "pos_answered": 0.44,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.72,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 22,
+          "n": 50,
+          "lo": 31.2,
+          "hi": 57.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.436,
+        "pos_answered": 0.42,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.71,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 21,
+          "n": 50,
+          "lo": 29.4,
+          "hi": 55.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.547,
+        "pos_answered": 0.42,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.71,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 21,
+          "n": 50,
+          "lo": 29.4,
+          "hi": 55.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.589,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.613,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.64,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.769,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.811,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.92,
+        "pos_answered": 0.4,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.7,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 20,
+          "n": 50,
+          "lo": 27.6,
+          "hi": 53.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.925,
+        "pos_answered": 0.38,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.69,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 19,
+          "n": 50,
+          "lo": 25.9,
+          "hi": 51.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.236,
+        "pos_answered": 0.36,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.68,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 18,
+          "n": 50,
+          "lo": 24.1,
+          "hi": 49.9
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.409,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.52,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 17.981,
+        "pos_answered": 0.34,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.67,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 50,
+          "lo": 22.4,
+          "hi": 47.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.247,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.698,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 18.968,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.201,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.224,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.238,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.243,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.755,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.102,
+        "pos_answered": 0.32,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.66,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 50,
+          "lo": 20.8,
+          "hi": 45.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.262,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.266,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.413,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.759,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.854,
+        "pos_answered": 0.3,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.65,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 15,
+          "n": 50,
+          "lo": 19.1,
+          "hi": 43.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.187,
+        "pos_answered": 0.28,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.64,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 14,
+          "n": 50,
+          "lo": 17.5,
+          "hi": 41.7
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.442,
+        "pos_answered": 0.24,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.62,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 12,
+          "n": 50,
+          "lo": 14.3,
+          "hi": 37.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.511,
+        "pos_answered": 0.22,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.61,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 11,
+          "n": 50,
+          "lo": 12.8,
+          "hi": 35.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 21.953,
+        "pos_answered": 0.22,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.61,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 11,
+          "n": 50,
+          "lo": 12.8,
+          "hi": 35.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.25,
+        "pos_answered": 0.2,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.6,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 10,
+          "n": 50,
+          "lo": 11.2,
+          "hi": 33.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.33,
+        "pos_answered": 0.2,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.6,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 10,
+          "n": 50,
+          "lo": 11.2,
+          "hi": 33.0
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.484,
+        "pos_answered": 0.18,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.59,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 9,
+          "n": 50,
+          "lo": 9.8,
+          "hi": 30.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.529,
+        "pos_answered": 0.16,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.58,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 8,
+          "n": 50,
+          "lo": 8.3,
+          "hi": 28.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.721,
+        "pos_answered": 0.16,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.58,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 8,
+          "n": 50,
+          "lo": 8.3,
+          "hi": 28.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.795,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 22.939,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 23.417,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.041,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.162,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.312,
+        "pos_answered": 0.14,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.57,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 7,
+          "n": 50,
+          "lo": 7.0,
+          "hi": 26.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.36,
+        "pos_answered": 0.12,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.56,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 50,
+          "lo": 5.6,
+          "hi": 23.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 24.635,
+        "pos_answered": 0.1,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 5,
+          "n": 50,
+          "lo": 4.3,
+          "hi": 21.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 25.435,
+        "pos_answered": 0.1,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 5,
+          "n": 50,
+          "lo": 4.3,
+          "hi": 21.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 25.962,
+        "pos_answered": 0.08,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.54,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 50,
+          "lo": 3.2,
+          "hi": 18.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.2,
+        "pos_answered": 0.08,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.54,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 50,
+          "lo": 3.2,
+          "hi": 18.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.283,
+        "pos_answered": 0.06,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.53,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 3,
+          "n": 50,
+          "lo": 2.1,
+          "hi": 16.2
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 28.684,
+        "pos_answered": 0.04,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.52,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 50,
+          "lo": 1.1,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 29.514,
+        "pos_answered": 0.02,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.51,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 50,
+          "lo": 0.4,
+          "hi": 10.5
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 32.181,
+        "pos_answered": 0.0,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.5,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 0,
+          "n": 50,
+          "lo": 0.0,
+          "hi": 7.1
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 16,
+          "lo": 80.6,
+          "hi": 100.0
+        }
+      }
+    ],
+    "retriever": "bm25"
+  },
+  "retrieval": {
+    "cases": 50,
+    "positives": 50,
+    "negatives": 16,
+    "recall@3": 0.486,
+    "mrr": 0.61,
+    "hit@3": 0.72,
+    "hit@3_ci": {
+      "k": 36,
+      "n": 50,
+      "lo": 58.3,
+      "hi": 82.5
+    },
+    "retriever": "bm25",
+    "requested": "bm25"
+  }
+}

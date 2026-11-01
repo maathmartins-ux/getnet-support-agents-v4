@@ -1,6 +1,6 @@
 # Roteiro do vídeo — Getnet Support Agents (~4 min, 10 cenas)
 
-Narração por IA a partir deste roteiro; telas reais. Números entre chaves (`{chave}`) são preenchidos pelo
+Vídeo legendado (sem narração) gerado deste roteiro; respostas reais do `POST /chat` com LLM ligado. Números entre chaves (`{chave}`) são preenchidos pelo
 regente a partir de `evals/results/` (o mesmo que gera a §5 do README); nenhum número é escrito à mão.
 
 | # | Cena | Tempo | Tela | Narração |
@@ -23,4 +23,6 @@ regente a partir de `evals/results/` (o mesmo que gera a §5 do README); nenhum 
 
 ## Gravação
 
-Telas e comandos ficam em `docs/video/` (notas por cena). MP4 e legendas vão para a página de Releases (tag `video`).
+`docs/video/walkthrough.mp4`: slides HTML montados de `evals/results/` commitado e de 5 respostas reais capturadas
+pelo `TestClient` com LLM ligado (`docs/video/demo.json`), gravados com Playwright (1280×720) e convertidos com
+ffmpeg (H.264). Cada número na tela vem do JSON commitado, não de digitação.

@@ -183,11 +183,24 @@ def knn_intent(text: str) -> str | None:
     return get_knn().predict(text)
 
 
-def detect_language(text: str) -> str:
+def _language_votes(text: str) -> tuple[int, int]:
     # Acento vale 1 ponto para pt, não decide sozinho (nome próprio acentuado em frase inglesa).
-    en = len(_EN.findall(text))
-    pt = len(_PT.findall(text)) + min(1, len(_ACCENT.findall(text)))
+    return len(_EN.findall(text)), len(_PT.findall(text)) + min(1, len(_ACCENT.findall(text)))
+
+
+def detect_language(text: str) -> str:
+    en, pt = _language_votes(text)
     return "en" if en > pt else "pt"
+
+
+def clear_language(text: str, margin: int = 2) -> str | None:
+    """Idioma quando as palavras não deixam dúvida (vantagem >= margin); None quando é mistura e o LLM decide.
+
+    Getnet v4 ao vivo (01/11/2026): o Router LLM respondeu "pt" para "How does receivables advance (antecipação)
+    work with Getnet?" em 2 de 3 rodadas; o detector acerta 137 de 140 frases dos casos (pt e en).
+    """
+    en, pt = _language_votes(text)
+    return "en" if en - pt >= margin else "pt" if pt - en >= margin else None
 
 
 def _states_subject(text: str) -> bool:
@@ -257,6 +270,8 @@ def route(text: str, history: list[dict]) -> RouterDecision:
         raw = llm.complete(domain.prompt("router.md"), [{"role": "user", "content": _llm_input(text, history)}],
                            max_tokens=2048, schema=schema()).json()
         raw["confidence"] = min(1.0, max(0.0, float(raw["confidence"])))
+        if lang := clear_language(text):
+            raw["language"] = lang  # frase sem ambiguidade: a contagem de palavras manda, não o histórico em pt
         decision = RouterDecision(**raw)
         if decision.intent not in _plans():
             raise ValueError(f"intent fora do contrato: {decision.intent}")
