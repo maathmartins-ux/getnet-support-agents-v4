@@ -1,0 +1,30 @@
+{
+  "_doc": "CRM fictício (SPEC, ids congelados). Datas relativas: days_ago = dias antes de hoje, resolvidos na leitura. last_contact_min = minutos desde o último contato.",
+  "cliente1988": {
+    "name": "Padaria Pão Quente",
+    "terminals": [
+      {"id": "T1988A", "model": "Get Smart", "connection": "wifi", "signal": "ok", "online": true, "last_contact_min": 2, "paper_roll": "ok", "blocked": false},
+      {"id": "T1988B", "model": "Get Clássica", "connection": "chip", "signal": "sem_sinal", "online": false, "last_contact_min": 190, "paper_roll": "ok", "blocked": false}
+    ],
+    "transactions": [
+      {"id": "TX1001", "days_ago": 1, "method": "debito", "amount": 120.0, "status": "aprovada", "terminal": "T1988A"},
+      {"id": "TX1002", "days_ago": 1, "method": "credito", "amount": 480.0, "status": "aprovada", "terminal": "T1988A"},
+      {"id": "TX1003", "days_ago": 1, "method": "debito", "amount": 85.5, "status": "aprovada", "terminal": "T1988A"},
+      {"id": "TX1004", "days_ago": 2, "method": "credito", "amount": 350.0, "status": "aprovada", "terminal": "T1988A"},
+      {"id": "TX1005", "days_ago": 1, "method": "pix", "amount": 60.0, "status": "aprovada", "terminal": "T1988A"},
+      {"id": "TX1006", "days_ago": 3, "method": "credito", "amount": 900.0, "status": "aprovada", "terminal": "T1988A"},
+      {"id": "TX1007", "days_ago": 0, "method": "credito", "amount": 210.0, "status": "recusada", "code": "51", "reason": "saldo insuficiente do portador", "terminal": "T1988A"},
+      {"id": "TX1008", "days_ago": 0, "method": "debito", "amount": 75.0, "status": "recusada", "code": "05", "reason": "não autorizada pelo emissor", "terminal": "T1988A"}
+    ]
+  },
+  "cliente2024": {
+    "name": "Mercadinho Bom Preço",
+    "terminals": [
+      {"id": "T2024A", "model": "Get Smart", "connection": "wifi", "signal": "ok", "online": true, "last_contact_min": 1, "paper_roll": "baixa", "blocked": false}
+    ],
+    "transactions": [
+      {"id": "TX2001", "days_ago": 1, "method": "credito", "amount": 199.9, "status": "aprovada", "terminal": "T2024A"},
+      {"id": "TX2002", "days_ago": 0, "method": "debito", "amount": 45.0, "status": "recusada", "code": "51", "reason": "saldo insuficiente do portador", "terminal": "T2024A"}
+    ]
+  }
+}
