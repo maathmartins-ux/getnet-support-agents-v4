@@ -456,13 +456,13 @@ Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.6
 ### Juiz LLM sobre as respostas ao vivo
 
 <!-- judge:begin -->
-Modelo `claude-opus-5-5` · status `aborted_max_usd` · arquivos live_official.json, live_parallel.json, live_replan.json · gasto US$ 1.005004
+Modelo `claude-opus-5-5` · status `ran` · arquivos live_official.json, live_replan.json · gasto US$ 1.158696
 
 | split | casos | grounded | helpful | nota média |
 |---|---:|---:|---:|---:|
-| official | 30 | 0.467 [IC95 30.2–63.9; n=30] | 0.8 [IC95 62.7–90.5; n=30] | 3.47 |
-| parallel | 20 | 0.45 [IC95 25.8–65.8; n=20] | 1.0 [IC95 83.9–100.0; n=20] | 3.8 |
-| ALL | 50 | 0.46 [IC95 33.0–59.6; n=50] | 0.88 [IC95 76.2–94.4; n=50] | 3.6 |
+| official | 30 | 0.6 [IC95 42.3–75.4; n=30] | 0.8 [IC95 62.7–90.5; n=30] | 3.63 |
+| replan | 60 | 0.95 [IC95 86.3–98.3; n=60] | 1.0 [IC95 94.0–100.0; n=60] | 4.75 |
+| ALL | 90 | 0.833 [IC95 74.3–89.6; n=90] | 0.933 [IC95 86.2–96.9; n=90] | 4.38 |
 
 Calibração humana: 46 rótulos · concordância **0.978** [IC95 88.7–99.6; n=46] · kappa de Cohen **0.957** · TPR 0.957 [IC95 79.0–99.2; n=23] (23 grounded) · TNR 1.0 [IC95 85.7–100.0; n=23] (23 não grounded) · discordâncias: q-cal-07
 - official: concordância 0.978 [IC95 88.7–99.6; n=46] · kappa 0.957 (46 rótulos)
@@ -533,8 +533,9 @@ Spec em [docs/SPEC.md](docs/SPEC.md), commitada antes do código. ADRs em [docs/
 | 20:10:59 | 13 | corpus: tabela de maquininhas (Get Clássica x Get Smart) entra no índice (AC-01) |
 | 20:14:25 | 16 | ao vivo: número com escala colada (R$ 80mil), data de hoje como evidência da web, idioma pela frase |
 | 20:17:14 | 19 | router: idioma sem ambiguidade vem da contagem de palavras; resultados ao vivo parciais; limites no README |
+| 20:21:54 | 24 | resultados ao vivo completos (5 splits, pass^3, código final) + offline + README gerado |
 
-Do primeiro ao último commit: **19 min**.
+Do primeiro ao último commit: **24 min**.
 <!-- timeline:end -->
 
 ## 8. Scaffold declarado (kit) e o que foi feito no relógio
@@ -567,7 +568,7 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `Dockerfile` | 52 | 0 | 0 | 0 |
 | `Makefile` | 27 | 0 | 0 | 0 |
 | `OWNERSHIP.json` | 88 | 1 | 0 | 1 |
-| `README.md` | 147 | 476 | 25 | 1 |
+| `README.md` | 147 | 491 | 25 | 1 |
 | `data` | 34 | 347 | 33 | 4 |
 | `data/crm` | 0 | 30 | 0 | 0 |
 | `data/intent_examples.d` | 0 | 95 | 0 | 0 |
@@ -591,7 +592,7 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `tests` | 3677 | 700 | 1 | 3 |
 | `tests/fixtures` | 66 | 0 | 0 | 0 |
 
-Total: **11837** linhas do kit (commit `ab57b4e`) e **4033** escritas no relógio (25% do total). Arquivos do kit alterados no relógio: 21. Fora da conta, por serem gerados: 55212 linhas em `evals/results/`.
+Total: **11837** linhas do kit (commit `ab57b4e`) e **4048** escritas no relógio (25% do total). Arquivos do kit alterados no relógio: 21. Fora da conta, por serem gerados: 60392 linhas em `evals/results/`.
 <!-- kit:end -->
 
 ## 9. Limitações e próximos passos

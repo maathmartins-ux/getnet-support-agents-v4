@@ -1,0 +1,175 @@
+[
+ {
+  "label": "Produto (Knowledge + RAG)",
+  "message": "What's the difference between the Get Clássica and the Get Smart?",
+  "response": {
+   "answer": "Here is what the Getnet site says about pricing. It doesn't cover the hardware.\n\n- **Monthly usage fee:** If you don't reach the revenue thresholds, the fee is R$ 79,90 for the Get Clássica and R$ 129,90 for the Get Smart.\n- **Rental waiver:** This depends on your monthly revenue.\n  - Above R$ 20mil, the rental is waived for the Get Clássica.\n  - Above R$ 40mil, it is waived for either the Get Clássica or the Get Smart.\n  - Voucher (VA/VR) and Crediário sales don't count toward that revenue.\n\nThe passages I found don't describe the features of either machine, such as screen or functions. So I can't say how they differ beyond pricing. For that, check the Getnet machine pages.\n\nSources: maq-todas-as-maquininhas-tabela-01, maq-todas-as-maquininhas-03, prod-home-08.",
+   "intent": "knowledge",
+   "route": [
+    "router",
+    "faq"
+   ],
+   "replans": [],
+   "sources": [
+    "https://site.getnet.com.br/todas-as-maquininhas/",
+    "https://site.getnet.com.br/todas-as-maquininhas/",
+    "https://site.getnet.com.br/"
+   ],
+   "tool_calls": [],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "llm",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 12469,
+    "output_tokens": 677,
+    "cost_usd": 0.017052
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "Dado do lojista (Support + tool)",
+  "message": "When will the money from yesterday's sales be deposited?",
+  "response": {
+   "answer": "Yesterday's sales (31/10) total R$ 745,50. This is when each part is expected to be deposited:\n\n- **Debit:** R$ 205,50 (TX1001 and TX1003) is expected on 03/11.\n- **Pix:** R$ 60,00 (TX1005) is expected on 03/11.\n- **Credit:** R$ 480,00 (TX1002) is expected on 30/11.\n\nAll of these have the status \"expected\" (previsto). Deposits follow business days.\n\nThese details come from your account records. No other sources were cited.",
+   "intent": "support",
+   "route": [
+    "router",
+    "records"
+   ],
+   "replans": [],
+   "sources": [],
+   "tool_calls": [
+    "get_settlements"
+   ],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "llm",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 10593,
+    "output_tokens": 524,
+    "cost_usd": 0.020883
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "Maquininha (Support → Knowledge)",
+  "message": "My card machine won't connect to the internet, what should I do?",
+  "response": {
+   "answer": "Only one of your terminals is offline: the T1988B (Get Clássica). It uses a chip (mobile data) and has no signal. It last contacted us 190 minutes ago. The T1988A (Get Smart) is online.\n\nWhat to try on the T1988B:\n1. **Move it** to a spot with better coverage, such as near a window or away from thick walls.\n2. **Reseat the chip.** With the machine off, open the back cover. Put the chip in the slot marked SIM1 or SIM2, metal side facing down. Close the cover, turn the machine on and wait for a 2G or 3G network to show (sources: sup-duvidas-06, sup-duvidas-05).\n3. **Run a communication test.** Press the function button (F, # or the one on your machine). Choose option 2 (maintenance), then option 1 (communication test) (source: sup-duvidas-05).\n4. **Turn it off and on again.**\n\nThe Chip Algar works anywhere with 2G/3G coverage (source: sup-get-tap-12).\n\nI can also propose a remote restart of the T1988B. It may not fix a missing signal. You would need to confirm it before anything happens. Do you want me to propose it?\n\nThe sources don't say what to do if the problem continues after these steps. If it does, I can open a case with a human agent.",
+   "intent": "troubleshoot",
+   "route": [
+    "router",
+    "records",
+    "faq"
+   ],
+   "replans": [],
+   "sources": [
+    "https://site.getnet.com.br/duvidas/",
+    "https://site.getnet.com.br/duvidas/",
+    "https://site.getnet.com.br/duvidas/get-tap/"
+   ],
+   "tool_calls": [
+    "get_terminal_status"
+   ],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "llm",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 19021,
+    "output_tokens": 1524,
+    "cost_usd": 0.038311
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "Geral (web, nunca escala)",
+  "message": "What's the euro exchange rate today?",
+  "response": {
+   "answer": "I couldn't find a euro rate dated today (11/01/2026). It's a Sunday and the market is closed.\n\nThe latest figure I found is from Pluang, dated 30/10/2026. It shows 1 EUR = 6.0275 BRL, a mid-market reference rate. Source: https://pluang.com/en/tools/currency-converter/eur-brl\n\nFor the official rate, check the Banco Central do Brasil (PTAX).",
+   "intent": "general",
+   "route": [
+    "router",
+    "faq"
+   ],
+   "replans": [],
+   "sources": [
+    "https://pluang.com/en/tools/currency-converter/brl-eur",
+    "https://pluang.com/en/tools/currency-converter/eur-brl",
+    "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=BRL"
+   ],
+   "tool_calls": [],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "llm",
+   "unsupported_numbers": [
+    "30/10/2026",
+    "6.0275"
+   ],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 27555,
+    "output_tokens": 567,
+    "cost_usd": 0.05528
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "Escrita com confirmação",
+  "message": "Quero antecipar todo o valor disponível das minhas vendas.",
+  "response": {
+   "answer": "O valor disponível para antecipar é **R$ 1.730,00**. Ele vem de três vendas no crédito: R$ 480,00, R$ 350,00 e R$ 900,00. O depósito dessas vendas está previsto para 30/11.\n\n**A antecipação ainda não foi feita.** Para seguir, você precisa confirmar a ação **A-0ca31d39**. Depois da sua confirmação, um operador precisa aprovar o pedido.\n\nAs vendas no débito e no Pix não entram na antecipação. Elas continuam previstas para 03/11.",
+   "intent": "support",
+   "route": [
+    "router",
+    "records"
+   ],
+   "replans": [],
+   "sources": [],
+   "tool_calls": [
+    "get_settlements",
+    "request_anticipation"
+   ],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": "A-0ca31d39",
+   "engine": "llm",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 13641,
+    "output_tokens": 593,
+    "cost_usd": 0.027588
+   },
+   "identity_verified": false
+  }
+ }
+]
