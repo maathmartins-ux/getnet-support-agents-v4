@@ -22,7 +22,7 @@ Crediário, Link de Pagamento, Get Conta, Get Tap). Ids: `<prefixo>-<slug>-NN` (
 | en | https://www.getnet.net/en/partners | `en-partners-01..07` | 7 | 2026-11-01T20:00:50+00:00 |
 | en | https://www.getnet.net/en/contact | `en-contact-01..01` | 1 | 2026-11-01T20:00:50+00:00 |
 | produtos | https://site.getnet.com.br/ | `prod-home-01..11` | 11 | 2026-11-01T20:01:00+00:00 |
-| produtos | https://site.getnet.com.br/todas-as-maquininhas/ | `prod-todas-as-maquininhas-01..06` | 6 | 2026-11-01T20:01:00+00:00 |
+| maquininhas | https://site.getnet.com.br/todas-as-maquininhas/ | `maq-todas-as-maquininhas-01..09`, `maq-todas-as-maquininhas-tabela-01` | 10 | 2026-11-01T20:09:52+00:00 |
 | produtos | https://site.getnet.com.br/maquininha-de-cartao/ | `prod-maquininha-de-cartao-01..06` | 6 | 2026-11-01T20:01:00+00:00 |
 | produtos | https://site.getnet.com.br/pix/ | `prod-pix-01..03` | 3 | 2026-11-01T20:01:00+00:00 |
 | produtos | https://site.getnet.com.br/pix-na-maquininha/ | `prod-pix-na-maquininha-01..05` | 5 | 2026-11-01T20:01:00+00:00 |
@@ -62,7 +62,7 @@ Crediário, Link de Pagamento, Get Conta, Get Tap). Ids: `<prefixo>-<slug>-NN` (
   pt→en (`data/glossary.json`, aplicado por `agents.expand_query` antes da busca). O `evals.run_evals`
   mede o BM25 com a pergunta crua (sem glossário), por isso a metade em inglês das perguntas pareadas pontua
   bem abaixo da metade em português.
-- **Get Clássica:** não há página de FAQ própria; aparece só em tabelas de oferta (`prod-todas-as-maquininhas-05`)
+- **Get Clássica:** não há página de FAQ própria; aparece só em tabelas de oferta (`maq-todas-as-maquininhas-06` e `maq-todas-as-maquininhas-tabela-01`: faixas de faturamento para isenção e valor de utilização, Get Clássica R$ 79,90/mês × Get Smart R$ 129,90/mês)
   e depoimentos. A comparação Clássica × Smart se apoia no FAQ da Get Smart (`sup-get-smart-08`, `-10`).
 - **Pix sem conta bancária:** nenhuma página diz literalmente "precisa (ou não) de conta bancária"; o mais
   próximo é a elegibilidade do Pix (domicílio bancário + chave, `sup-pix-09`) e o recebimento na Get Conta
@@ -76,3 +76,11 @@ Crediário, Link de Pagamento, Get Conta, Get Tap). Ids: `<prefixo>-<slug>-NN` (
   com outro id (ex.: `sup-duvidas-64` = `sup-operacional-01`); os rótulos de retrieval listam os dois quando
   ambos respondem.
 - Conteúdo de oferta (Black Friday, preços promocionais) é datado da coleta e muda sem aviso.
+
+## Tabela de maquininhas (AC-01)
+
+O ingest descarta linha repetida em muitas páginas (menu) e linha com menos de 15 caracteres. A tabela de faixas
+e preços de `todas-as-maquininhas` caía nas duas regras (células como "Get Clássica" e "R$ 79,90/mês"), e o AC-01
+respondia "não achei comparação". Correção sem mexer no motor: a página virou o grupo `maquininhas` em
+`data/sources.json`, e `maq-todas-as-maquininhas-tabela-01` é o texto visível dessa tabela, literal e na ordem da
+página (comentários HTML removidos), gravado com `app.ingest.records` (mesma URL, título, data e SHA-256).
