@@ -13,7 +13,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0  # histórico inteiro: o gitleaks varre todos os commits, não só o último
       # segredo vazado no histórico (chave de API, token): falha antes de qualquer outra etapa
