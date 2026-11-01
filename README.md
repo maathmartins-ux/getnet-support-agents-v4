@@ -23,7 +23,7 @@ Sistema multiagente que atende lojistas da Getnet num único `POST /chat` (pt ou
 
 ```bash
 cp .env.example .env                      # opcional: sem chave roda no modo offline determinístico
-AUTH_MODE=demo docker compose up -d --build
+docker compose up -d --build                # o compose já liga AUTH_MODE=demo (payload literal)
 curl -s localhost:8000/health
 
 # 1) payload LITERAL do enunciado (AUTH_MODE=demo: user_id do corpo; a resposta marca identity_verified=false)
