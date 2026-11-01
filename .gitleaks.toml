@@ -1,0 +1,14 @@
+# Varredura de segredos no CI (gitleaks). Regras padrão + exceções SÓ para os segredos de teste do kit, que são
+# falsos por construção (o container de smoke e o teste de réplicas sobem com eles). Segredo real nunca entra
+# aqui: vai no .env (ignorado pelo git) ou nas variáveis do ambiente da nuvem.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "segredos de TESTE do kit"
+paths = ['''^tests/''']
+regexes = [
+  '''check-secret-only-for-the-container-smoke''',
+  '''scale-secret-only-for-the-replica-smoke''',
+  '''test-secret''',
+]

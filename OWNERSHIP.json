@@ -1,0 +1,88 @@
+{
+  "_doc": "Posse de arquivos por frente (kit v3.7). Cada frente roda numa SESSÃO DA NUVEM própria, na branch fork/<frente>. O motor (src/app/*.py) é congelado: o desafio só muda o domínio (src/app/domain/challenge/), dados, prompts, casos e docs. Hook .claude/hooks/ownership_guard.py recusa a edição na hora; scripts/check_ownership.py recusa o merge.",
+  "frozen": [
+    "OWNERSHIP.json",
+    "docs/SPEC.md",
+    "evals/heldout_blind.jsonl",
+    "src/app/schemas.py",
+    "src/app/domain/__init__.py",
+    "src/app/domain/example.py",
+    "src/app/actions.py",
+    "src/app/agents.py",
+    "src/app/analytics.py",
+    "src/app/api.py",
+    "src/app/auth.py",
+    "src/app/config.py",
+    "src/app/grounding.py",
+    "src/app/guardrails.py",
+    "src/app/ingest.py",
+    "src/app/jsonl.py",
+    "src/app/llm.py",
+    "src/app/mcp_server.py",
+    "src/app/notify.py",
+    "src/app/observability.py",
+    "src/app/pipeline.py",
+    "src/app/rag.py",
+    "src/app/resume.py",
+    "src/app/router.py",
+    "src/app/store.py",
+    "src/app/supervisor.py",
+    "src/app/tools.py",
+    "src/app/prompts/*",
+    "tests/fixtures/**",
+    "evals/run_evals.py",
+    "evals/judge.py",
+    "scripts/*",
+    "tests/test_ingest.py"
+  ],
+  "forks": {
+    "r": [
+      "src/app/domain/challenge/flow.py",
+      "src/app/domain/challenge_prompts/router.md",
+      "src/app/domain/challenge_prompts/supervisor.md",
+      "src/app/domain/challenge_prompts/general.md",
+      "src/app/domain/challenge_prompts/guardrail.md",
+      "src/app/domain/challenge_prompts/resume.md",
+      "data/intent_examples.d/r.jsonl",
+      "tests/test_domain_router.py",
+      "tests/test_domain_supervisor.py"
+    ],
+    "k": [
+      "data/knowledge/**",
+      "data/glossary.json",
+      "evals/retrieval.d/**",
+      "src/app/domain/challenge_prompts/faq.md",
+      "docs/SOURCES.md",
+      "data/sources.json",
+      "tests/test_domain_corpus.py"
+    ],
+    "t": [
+      "src/app/domain/challenge/tools.py",
+      "data/crm/**",
+      "src/app/domain/challenge_prompts/records.md",
+      "tests/test_tools.py"
+    ],
+    "q": [
+      "evals/cases.d/**",
+      "evals/judge_calibration.d/**",
+      "data/intent_examples.d/q.jsonl",
+      "tests/test_domain_http.py",
+      "tests/test_domain_guardrails.py",
+      "docs/EVAL_STRATEGY.md",
+      "docs/THREAT_MODEL.md"
+    ],
+    "d": [
+      "docs/ARCHITECTURE.md",
+      "docs/OBSERVABILITY.md",
+      "docs/RUNBOOK.md",
+      "docs/adr/**",
+      "docs/VIDEO_SCRIPT.md",
+      "docs/video/**"
+    ],
+    "live": [
+      "evals/results/live_*.json",
+      "evals/results/judge.json",
+      "evals/results/ablation_replan_live.json"
+    ]
+  }
+}

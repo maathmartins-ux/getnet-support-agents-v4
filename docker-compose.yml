@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Desafio com payload {"message","user_id"} no enunciado: AUTH_MODE=demo (docs/adr/0001-auth-mode-demo.md).
+      AUTH_MODE: ${AUTH_MODE:-required}
+    env_file:
+      - path: .env
+        required: false

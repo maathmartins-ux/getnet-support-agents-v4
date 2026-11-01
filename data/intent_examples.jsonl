@@ -1,0 +1,15 @@
+{"text": "Qual o prazo de entrega para o interior?", "intent": "faq"}
+{"text": "Como funciona a troca de um produto?", "intent": "faq"}
+{"text": "What is the delivery time?", "intent": "faq"}
+{"text": "How do returns and exchanges work?", "intent": "faq"}
+{"text": "Quero ver o status da minha compra", "intent": "records"}
+{"text": "Minha encomenda ainda não chegou", "intent": "records"}
+{"text": "Show my recent purchases", "intent": "records"}
+{"text": "List my purchases, please", "intent": "records"}
+{"text": "Quero conversar com uma pessoa", "intent": "human_request"}
+{"text": "Me transfere para alguém da equipe", "intent": "human_request"}
+{"text": "Let me speak with a person", "intent": "human_request"}
+{"text": "Connect me with your staff", "intent": "human_request"}
+{"text": "Qual o prazo de entrega e cadê minha compra?", "intent": "multi"}
+{"text": "How do returns work and where is my purchase?", "intent": "multi"}
+{"text": "Como funciona a troca e qual o status da minha encomenda?", "intent": "multi"}

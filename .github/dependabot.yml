@@ -1,0 +1,13 @@
+# Atualização de base e dependências por PR, com o CI (check.py --docker) como portão.
+# A imagem base está fixada por digest no Dockerfile; o Dependabot propõe o digest novo.
+version: 2
+updates:
+  - package-ecosystem: docker
+    directory: /
+    schedule: {interval: weekly}
+  - package-ecosystem: pip
+    directory: /
+    schedule: {interval: weekly}
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: {interval: weekly}

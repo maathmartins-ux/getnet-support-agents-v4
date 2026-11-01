@@ -1,0 +1,11 @@
+{
+  "_doc": "Glossário pt -> en para a busca entre idiomas (agents.expand_query). Chave = termo do corpus em português; valor = como o cliente pergunta em inglês. Vale nos dois sentidos, por palavra ou expressão inteira, sem acento. O domínio troca este exemplo pelo vocabulário dele (ex.: parcela -> installment, antecipação -> anticipation).",
+  "entrega": ["delivery", "shipping", "ship"],
+  "prazo": ["deadline", "how long"],
+  "troca": ["exchange", "swap"],
+  "devolução": ["return"],
+  "reembolso": ["refund"],
+  "horário": ["hours", "opening hours", "business hours"],
+  "atendimento": ["support", "customer service"],
+  "parcela": ["installment", "installments"]
+}

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+    "httpx>=0.27",
+    "anthropic>=2.3",
+    "mcp==2.3.0",  # servidor MCP em /mcp (a vaga pede MCP); 2.x renomeou FastMCP para MCPServer
+]
+
+[project.optional-dependencies]
+# Fora da imagem padrão (requirements.lock) e do CI: só entram se o desafio medir ganho com eles.
+hybrid = ["fastembed>=0.5"]
+otel = ["opentelemetry-sdk>=1.30", "opentelemetry-exporter-otlp-proto-http>=1.30"]
+# ruff com versão exata: regras padrão mudam entre versões e o CI divergiria da máquina local.
+# opentelemetry-sdk no dev: o teste do exportador console roda no CI (sem o OTLP, que puxa protobuf).
+# pytest-xdist: suíte em 4 processos no check (medido 31/10/2026: 51 s → 38 s; roda a cada merge no relógio).
+dev = ["pytest>=8", "pytest-xdist>=3", "ruff==0.17.3", "opentelemetry-sdk>=1.30"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+# Prompts e console entram no pacote instalado (a imagem usa `pip install .`, não editável).
+app = ["prompts/*.md", "static/*.html"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+# Conjunto explícito: não depender do padrão da versão instalada.
+select = ["E", "F", "W", "I", "B", "UP"]

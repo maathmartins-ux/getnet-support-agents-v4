@@ -1,0 +1,55 @@
+# Regras de alerta do Prometheus provisionadas (feedback v2, 31/10/2026: "alertas só documentados").
+# Cada alerta exige ação humana e tem histerese (`for:`), para não oscilar: alerta barulhento é desligado
+# e deixa de proteger. Os nomes de métrica são os de GET /metrics; tests/test_alerts.py garante que existem.
+groups:
+  - name: atendimento
+    rules:
+      - alert: LatenciaAltaDoTurno
+        expr: rate(span_latency_ms_sum{span="agent"}[5m]) / rate(span_latency_ms_count{span="agent"}[5m]) > 8000
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "Agente leva mais de 8 s em média por chamada há 10 min"
+          action: "Ver llm_errors_total e o provedor; considerar effort menor ou modelo menor no papel agent"
+      - alert: ErrosDoProvedorLLM
+        expr: sum(rate(llm_errors_total[5m])) > 0.1
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "Mais de 1 erro de LLM a cada 10 s; o atendimento está caindo no caminho determinístico"
+          action: "Checar status do provedor, cota (rate_limited) e chave (auth)"
+      - alert: NumeroSemBase
+        expr: sum(increase(numeric_ungrounded_total[1h])) > 5
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "Respostas com número sem base em fonte ou ferramenta"
+          action: "Ler os traces com numeric_ungrounded no log; corrigir a fonte ou o prompt; virar caso de eval"
+      - alert: EscalonamentoAnormal
+        expr: sum(rate(handoffs_total[30m])) / sum(rate(chat_requests_total[30m])) > 0.4
+        for: 30m
+        labels: {severity: warning}
+        annotations:
+          summary: "Mais de 40% dos atendimentos indo para humano"
+          action: "GET /analytics → worst_intents; conferir base de conhecimento e portão de cobertura"
+      - alert: SLAVencido
+        expr: sum(increase(sla_escalations_total[1h])) > 0
+        for: 1m
+        labels: {severity: critical}
+        annotations:
+          summary: "Caso humano passou do SLA e foi re-escalonado"
+          action: "Abrir /operator e responder o caso de prioridade alta"
+      - alert: ContadorDeLimiteIndisponivel
+        expr: sum(increase(rate_limit_store_errors_total[5m])) > 0
+        for: 2m
+        labels: {severity: critical}
+        annotations:
+          summary: "Rate limit falhando fechado: clientes recebendo 429"
+          action: "Checar o volume do SQLite (disco cheio, permissão, lock)"
+      - alert: GastoPorHoraAlto
+        expr: sum(increase(llm_cost_usd_total[1h])) > 5
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "Mais de US$ 5 por hora em LLM"
+          action: "Ver custo por papel/modelo em /metrics e laço de tools (MAX_STEPS)"

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console do operador</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1d2330; --muted:#5b6475; --accent:#2457d6; --line:#e2e5ea; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14161b; --card:#1e2128; --ink:#e8eaee; --muted:#9aa3b2; --line:#2c313b; --accent:#5b8cff; } }
+  body { margin:0; font:15px/1.45 system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:16px; border-bottom:1px solid var(--line); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  h1 { font-size:18px; margin:0 12px 0 0; }
+  input, textarea, button, select { font:inherit; padding:8px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--ink); }
+  button { background:var(--accent); color:#fff; border:0; cursor:pointer; }
+  main { padding:16px; display:grid; gap:12px; max-width:900px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px; }
+  .meta { color:var(--muted); font-size:13px; }
+  .msg { margin:4px 0; } .msg b { text-transform:uppercase; font-size:12px; color:var(--muted); }
+  textarea { width:100%; box-sizing:border-box; min-height:64px; margin-top:8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Fila de atendimento humano</h1>
+  <input id="token" type="password" placeholder="X-Operator-Token" aria-label="Token do operador" autocomplete="off">
+  <select id="status" aria-label="Situação"><option value="open">Abertos</option><option value="answered">Respondidos</option></select>
+  <button id="load">Carregar fila</button>
+  <span id="info" class="meta" role="status"></span>
+</header>
+<main id="queue"></main>
+<script>
+// O token fica só na memória da página: nunca no HTML servido, na URL ou no localStorage.
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+async function load() {
+  const r = await fetch("/handoffs?status=" + $("status").value, { headers: { "X-Operator-Token": $("token").value } });
+  if (!r.ok) { $("info").textContent = "Erro " + r.status; return; }
+  const items = await r.json();
+  const open = $("status").value === "open";
+  $("info").textContent = items.length + " caso(s)";
+  $("queue").innerHTML = items.map((t) => `
+    <section class="card" data-id="${esc(t.id)}" data-action="${esc(t.action_id || "")}">
+      <div><b>${esc(t.id)}</b> · ${t.kind === "approval" ? "APROVAÇÃO" : "atendimento"} · prioridade: ${esc(t.priority)}${t.escalation_level ? " · SLA vencido (re-escalonado)" : ""} · motivo: ${esc(t.reason)} · usuário: ${esc(t.user_id)}</div>
+      <div class="meta">${esc(t.summary)}</div>
+      ${(t.messages || []).map((m) => `<div class="msg"><b>${esc(m.role)}</b> ${esc(m.content)}</div>`).join("")}
+      ${!open ? `<div class="msg"><b>resposta de ${esc(t.answered_by || "?")}</b> ${esc(t.answer)}</div>`
+        : t.kind === "approval" ? `<textarea placeholder="Observação (opcional)" aria-label="Observação"></textarea>
+      <button class="approve">Aprovar e executar</button> <button class="reject">Recusar</button>`
+        : `<textarea placeholder="Resposta ao usuário" aria-label="Resposta"></textarea>
+      <button class="reply">Responder e devolver à conversa</button>`}
+    </section>`).join("");
+}
+$("load").onclick = load;
+$("status").onchange = load;
+$("queue").onclick = async (e) => {
+  const kind = ["reply", "approve", "reject"].find((c) => e.target.classList.contains(c));
+  if (!kind) return;
+  const card = e.target.closest(".card");
+  const answer = card.querySelector("textarea").value.trim();
+  if (kind === "reply" && !answer) return;
+  const url = kind === "reply" ? `/handoffs/${encodeURIComponent(card.dataset.id)}/reply`
+    : `/actions/${encodeURIComponent(card.dataset.action)}/${kind}`;
+  const r = await fetch(url, { method: "POST",
+    headers: { "X-Operator-Token": $("token").value, "Content-Type": "application/json" },
+    body: JSON.stringify({ answer }) });
+  await load();
+  const done = { reply: "Respondido: a conversa do usuário já retomou com a sua resposta",
+                 approve: "Aprovado e executado", reject: "Recusado: nada foi executado" }[kind];
+  $("info").textContent = r.ok ? `${done} (${card.dataset.id})` : "Erro " + r.status;
+};
+</script>
+</body>
+</html>

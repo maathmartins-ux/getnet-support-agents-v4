@@ -1,0 +1,6 @@
+{"id": "cal-01", "split": "official", "question": "Qual o prazo de entrega?", "answer": "O prazo para capitais é de 3 a 5 dias úteis.", "source_ids": ["faq-entrega"], "human_grounded": true}
+{"id": "cal-02", "split": "official", "question": "Qual o prazo de entrega?", "answer": "Entregamos em 24 horas para todo o Brasil, com frete grátis.", "source_ids": ["faq-entrega"], "human_grounded": false}
+{"id": "cal-03", "split": "official", "question": "Posso trocar?", "answer": "Sim, em até 7 dias corridos após o recebimento, sem uso e na embalagem original.", "source_ids": ["faq-troca"], "human_grounded": true}
+{"id": "cal-04", "split": "official", "question": "Posso trocar?", "answer": "Sim, em até 30 dias, mesmo usado.", "source_ids": ["faq-troca"], "human_grounded": false}
+{"id": "cal-05", "split": "replan", "question": "Qual a capital da Mongólia?", "answer": "Encaminhei para um atendente humano (protocolo T-1a2b3c4d).", "source_ids": [], "human_grounded": true}
+{"id": "cal-06", "split": "replan", "question": "Qual a capital da Mongólia?", "answer": "A capital da Mongólia é Ulan Bator.", "source_ids": [], "human_grounded": false}

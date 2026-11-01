@@ -1,0 +1,28 @@
+# Duas réplicas da api atrás de um balanceador, com o MESMO banco (volume compartilhado, SQLite em WAL).
+# Prova (scripts/scale_smoke.py, `make scale`): a conversa continua de uma réplica para a outra e a mesma conversa
+# nunca abre dois casos de atendimento. Limite declarado: réplicas no MESMO host (o SQLite não é rede); em vários
+# hosts, Postgres atrás de `Store` (ADR 0002).
+services:
+  api:
+    image: ${SCALE_IMAGE:-app-scale}  # construída pelo scripts/scale_smoke.py (na nuvem, com o proxy do build)
+    environment:
+      AUTH_MODE: required
+      AUTH_SECRET: ${SCALE_AUTH_SECRET:-scale-secret-only-for-the-replica-smoke}
+      RATE_LIMIT_PER_MIN: "1000"
+      SLA_CHECK_SECONDS: "0"
+    volumes:
+      - appdata:/app/var
+    deploy:
+      replicas: 2
+  lb:
+    # balanceador em Python na própria imagem do app (ops/lb.py): nenhuma imagem externa para baixar
+    image: ${SCALE_IMAGE:-app-scale}
+    command: ["python", "/opt/lb.py"]
+    volumes:
+      - ./ops/lb.py:/opt/lb.py:ro
+    ports:
+      - "${SCALE_PORT:-8080}:8080"
+    depends_on:
+      - api
+volumes:
+  appdata:

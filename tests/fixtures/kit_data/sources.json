@@ -1,0 +1,5 @@
+{
+  "_doc": "Exemplo do kit: o desafio troca por data/sources.json com o domínio do enunciado.",
+  "allowed_hosts": ["loja.example.com"],
+  "groups": {"ajuda": {"prefix": "ajuda", "pages": {"entrega": "https://loja.example.com/entrega", "troca": "https://loja.example.com/troca"}}}
+}

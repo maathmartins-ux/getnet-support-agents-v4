@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+# Só leitura: o gitleaks lista os commits do PR (sem pull-requests: read, 403 "Resource not accessible by
+# integration" no evento pull_request, visto em 01/11/2026).
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # histórico inteiro: o gitleaks varre todos os commits, não só o último
+      # segredo vazado no histórico (chave de API, token): falha antes de qualquer outra etapa
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.lock && pip install --no-deps -e .
+      # Mesmo comando que roda localmente: o CI não pode ter regra que a máquina não tem.
+      - run: python scripts/check.py --docker --scale

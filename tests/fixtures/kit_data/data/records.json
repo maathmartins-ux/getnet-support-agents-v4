@@ -1,0 +1,5 @@
+{
+  "1001": {"owner": "u1", "status": "entregue", "item": "Livro A"},
+  "1002": {"owner": "u1", "status": "em separação", "item": "Livro B"},
+  "2001": {"owner": "u2", "status": "enviado", "item": "Livro C"}
+}
