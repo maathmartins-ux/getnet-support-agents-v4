@@ -1,0 +1,62 @@
+{"text": "Qual a diferença entre as maquininhas da Getnet?", "intent": "knowledge"}
+{"text": "Which card machines does Getnet offer?", "intent": "knowledge"}
+{"text": "Como funciona o Pix na maquininha?", "intent": "knowledge"}
+{"text": "Is there a monthly fee for the Get Smart?", "intent": "knowledge"}
+{"text": "Quais bandeiras de cartão a Getnet aceita?", "intent": "knowledge"}
+{"text": "Explain how the crediário works for my customers", "intent": "knowledge"}
+{"text": "A maquininha aceita pagamento por aproximação?", "intent": "knowledge"}
+{"text": "What are the fees for credit card sales?", "intent": "knowledge"}
+{"text": "Preciso de CNPJ para ter uma maquininha?", "intent": "knowledge"}
+{"text": "Can I pay in installments with the crediário?", "intent": "knowledge"}
+{"text": "O que é a antecipação de recebíveis?", "intent": "knowledge"}
+{"text": "How do I sign up as a Getnet merchant?", "intent": "knowledge"}
+{"text": "Em quantos dias úteis a venda no débito é paga?", "intent": "knowledge"}
+{"text": "Does Getnet have a tap to pay app?", "intent": "knowledge"}
+{"text": "Como gerar um link de pagamento?", "intent": "knowledge"}
+{"text": "Is there a plan without rent for the card machine?", "intent": "knowledge"}
+{"text": "A Getnet empresta dinheiro para lojista?", "intent": "knowledge"}
+{"text": "Does the Payment Link work on Instagram?", "intent": "knowledge"}
+{"text": "Quanto eu recebo amanhã?", "intent": "support"}
+{"text": "How much did I sell last week?", "intent": "support"}
+{"text": "Qual meu saldo a receber?", "intent": "support"}
+{"text": "Show my settlement schedule", "intent": "support"}
+{"text": "Quando o dinheiro das vendas de sexta vai cair na conta?", "intent": "support"}
+{"text": "When do I get paid for today's sales?", "intent": "support"}
+{"text": "Mostre minhas últimas transações", "intent": "support"}
+{"text": "List my approved transactions", "intent": "support"}
+{"text": "Quero antecipar meus recebíveis", "intent": "support"}
+{"text": "I want to advance my available balance", "intent": "support"}
+{"text": "Reinicie meu terminal", "intent": "support"}
+{"text": "Please reboot my card machine", "intent": "support"}
+{"text": "Quero contestar uma venda que não reconheço", "intent": "support"}
+{"text": "I want to dispute a charge", "intent": "support"}
+{"text": "Qual o status da minha maquininha?", "intent": "support"}
+{"text": "What is the status of my terminal?", "intent": "support"}
+{"text": "Quanto tenho disponível para antecipar hoje?", "intent": "support"}
+{"text": "How much can I anticipate right now?", "intent": "support"}
+{"text": "Minha maquininha não liga", "intent": "troubleshoot"}
+{"text": "My card machine keeps turning off", "intent": "troubleshoot"}
+{"text": "A maquininha travou na tela de venda", "intent": "troubleshoot"}
+{"text": "The terminal is frozen on the payment screen", "intent": "troubleshoot"}
+{"text": "Está dando erro ao passar o cartão", "intent": "troubleshoot"}
+{"text": "I get an error when I insert the card", "intent": "troubleshoot"}
+{"text": "A venda foi recusada no cartão do cliente", "intent": "troubleshoot"}
+{"text": "My customer's card was declined", "intent": "troubleshoot"}
+{"text": "A maquininha está sem sinal", "intent": "troubleshoot"}
+{"text": "The machine says no connection", "intent": "troubleshoot"}
+{"text": "Não consigo imprimir o comprovante", "intent": "troubleshoot"}
+{"text": "The receipt printer is not working", "intent": "troubleshoot"}
+{"text": "Vai chover em São Paulo amanhã?", "intent": "general"}
+{"text": "What's the temperature in Recife right now?", "intent": "general"}
+{"text": "Qual a cotação do dólar hoje?", "intent": "general"}
+{"text": "How much is the dollar against the real today?", "intent": "general"}
+{"text": "Quais as notícias de hoje?", "intent": "general"}
+{"text": "What are today's top headlines?", "intent": "general"}
+{"text": "Como está o clima em Curitiba?", "intent": "general"}
+{"text": "Is it going to rain in Rio this weekend?", "intent": "general"}
+{"text": "Quero falar com um atendente", "intent": "human_request"}
+{"text": "I want to talk to a human", "intent": "human_request"}
+{"text": "Me passa para uma pessoa de verdade", "intent": "human_request"}
+{"text": "Can I speak with a representative?", "intent": "human_request"}
+{"text": "Preciso de atendimento humano", "intent": "human_request"}
+{"text": "Get me a real person please", "intent": "human_request"}
