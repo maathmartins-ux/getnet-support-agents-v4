@@ -1,0 +1,8 @@
+{
+  "_doc": "Páginas do site oficial da empresa para `python -m app.ingest` (frente K). allowed_hosts = só o domínio do país do enunciado.",
+  "allowed_hosts": [],
+  "groups": {
+    "produtos": {"prefix": "prod", "pages": {}},
+    "suporte": {"prefix": "sup", "pages": {}}
+  }
+}
