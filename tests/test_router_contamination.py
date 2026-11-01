@@ -97,10 +97,23 @@ def test_detector_catches_copied_example():
 
 # --- o teste de domínio (arquivos reais do projeto) -----------------------------------------------------
 
+def _domain_rule_modules() -> list:
+    """Kit v3.7: as regras do desafio moram no domínio (app/domain/challenge/), não no motor. Audita os dois."""
+    import importlib
+    import importlib.util
+
+    mods = [router]
+    for name in ("app.domain.challenge.flow", "app.domain.challenge.tools", "app.domain.challenge"):
+        if importlib.util.find_spec(name) is not None:
+            mods.append(importlib.import_module(name))
+    return mods
+
+
 def test_router_rules_do_not_copy_heldout():
     if not HELDOUT.exists():
         pytest.skip(f"sem held-out em {HELDOUT.relative_to(ROOT)}: o domínio cria o cego no relógio")
-    hits = contaminated_rules(router_patterns(), load_heldout(HELDOUT))
+    patterns = [p for mod in _domain_rule_modules() for p in router_patterns(mod)]
+    hits = contaminated_rules(patterns, load_heldout(HELDOUT))
     assert not hits, f"regra do roteador copia o held-out (o número cego vira falso): {hits}"
 
 
