@@ -1,0 +1,686 @@
+{
+  "status": "aborted_max_usd",
+  "model": "claude-opus-5-5",
+  "live_files": [
+    "live_official.json",
+    "live_parallel.json",
+    "live_replan.json"
+  ],
+  "spent_usd": 1.005004,
+  "max_usd": 1.0,
+  "cases": 50,
+  "grounded_rate": 0.46,
+  "helpful_rate": 0.88,
+  "mean_score": 3.6,
+  "ci": {
+    "grounded_rate": {
+      "k": 23,
+      "n": 50,
+      "lo": 33.0,
+      "hi": 59.6
+    },
+    "helpful_rate": {
+      "k": 44,
+      "n": 50,
+      "lo": 76.2,
+      "hi": 94.4
+    }
+  },
+  "by_split": {
+    "official": {
+      "cases": 30,
+      "grounded_rate": 0.467,
+      "helpful_rate": 0.8,
+      "mean_score": 3.47,
+      "ci": {
+        "grounded_rate": {
+          "k": 14,
+          "n": 30,
+          "lo": 30.2,
+          "hi": 63.9
+        },
+        "helpful_rate": {
+          "k": 24,
+          "n": 30,
+          "lo": 62.7,
+          "hi": 90.5
+        }
+      }
+    },
+    "parallel": {
+      "cases": 20,
+      "grounded_rate": 0.45,
+      "helpful_rate": 1.0,
+      "mean_score": 3.8,
+      "ci": {
+        "grounded_rate": {
+          "k": 9,
+          "n": 20,
+          "lo": 25.8,
+          "hi": 65.8
+        },
+        "helpful_rate": {
+          "k": 20,
+          "n": 20,
+          "lo": 83.9,
+          "hi": 100.0
+        }
+      }
+    }
+  },
+  "calibration": {
+    "cases": 46,
+    "agreement": 0.978,
+    "cohen_kappa": 0.957,
+    "tpr": 0.957,
+    "tnr": 1.0,
+    "positives": 23,
+    "negatives": 23,
+    "ci": {
+      "agreement": {
+        "k": 45,
+        "n": 46,
+        "lo": 88.7,
+        "hi": 99.6
+      },
+      "tpr": {
+        "k": 22,
+        "n": 23,
+        "lo": 79.0,
+        "hi": 99.2
+      },
+      "tnr": {
+        "k": 23,
+        "n": 23,
+        "lo": 85.7,
+        "hi": 100.0
+      }
+    },
+    "misses": [
+      "q-cal-07"
+    ],
+    "by_split": {
+      "official": {
+        "cases": 46,
+        "agreement": 0.978,
+        "cohen_kappa": 0.957,
+        "tpr": 0.957,
+        "tnr": 1.0,
+        "positives": 23,
+        "negatives": 23,
+        "ci": {
+          "agreement": {
+            "k": 45,
+            "n": 46,
+            "lo": 88.7,
+            "hi": 99.6
+          },
+          "tpr": {
+            "k": 22,
+            "n": 23,
+            "lo": 79.0,
+            "hi": 99.2
+          },
+          "tnr": {
+            "k": 23,
+            "n": 23,
+            "lo": 85.7,
+            "hi": 100.0
+          }
+        }
+      }
+    }
+  },
+  "verdicts": [
+    {
+      "id": "official-01",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 4,
+      "reason": "All claims match the sources: the monthly fees (R$ 79,90 and R$ 129,90), the waiver thresholds (Clássica above R$ 20 mil, Smart from R$ 40 mil, either machine above R$ 80 mil) and the Voucher/Crediário exclusion. It is transparent that the sources lack feature or hardware differences and points to the Getnet site or a human agent. It answers the question only partially, since the pricing differences are covered but the functional ones are not."
+    },
+    {
+      "id": "official-02",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": false,
+      "score": 1,
+      "reason": "The sources only carry titles and URLs, with no forecast content. The specific figures in the answer (19°, no rain, light southeast wind, 40% chance of rain, low of 67°F) appear nowhere in them, so they are invented. The INMET referral is also absent from the sources. Giving made-up numbers for a weather question misleads the user."
+    },
+    {
+      "id": "official-03",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The dates, amounts and methods match the tool data: R$ 265,50 (debit and Pix) on 03/11 and R$ 480,00 (credit) on 30/11, totaling R$ 745,50, with R$ 1.730,00 available for anticipation. This answers the question. However, three claims are unsupported. No source says deposits only happen on business days. No source says an anticipation request needs customer confirmation plus an operator's approval. Calling the sales \"approved\" is also not in the data, which only shows the status \"previsto\"."
+    },
+    {
+      "id": "official-04",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Each point in the answer matches the sources: one Pix key linked to the receiving account, contracting through Portal Minha Conta or the app using the same key registered at the bank domicile, and a Pix key being the identifier of a bank account. The answer is open that the sources only imply a bank account is needed rather than stating it outright. It also notes the gap about other account types and offers to escalate to a human. This addresses the question well."
+    },
+    {
+      "id": "official-05",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The terminal details (T1988B offline, chip connection, no signal, last contact 190 min ago; T1988A online) match the tool data. The chip-insertion, communication-test and 2G/3G coverage steps match the FAQ. However, some content has no support in the sources: the advice to move the machine near a window and away from thick walls, and the offer of a remote restart, which no tool shown here provides. The answer is still useful and well targeted at the offline terminal."
+    },
+    {
+      "id": "official-06",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 4,
+      "reason": "The answer covers the question well. The definition, the D+1 to D-3 window, the Registradora authorization, the costs and the card-brand limitation all match the sources. One minor embellishment: it says \"card issuer or operator\", but the source only names the Operadora. It also generalizes \"bandeiras que habilitei\" to \"some card brands\", which is a reasonable reading."
+    },
+    {
+      "id": "official-07",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": false,
+      "score": 2,
+      "reason": "The sources contain only titles and URLs. None includes a rate value, so the figure 1.11838091 USD attributed to Ria Money Transfer is invented, as is the claim that the page shows no date. The Banco Central do Brasil recommendation also appears nowhere in the sources. The answer gives an unsupported rate rather than pointing the user to the live sources."
+    },
+    {
+      "id": "official-08",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The decline details (codes 51 and 05, amounts, terminal T1988A) and both terminal statuses match the tool data. However, the response says no troubleshooting guidance was found, yet the sources include a communication test procedure that applies to T1988B's chip with no signal. It also offers a remote restart that no tool supports. It turns the per-transaction 'contestable: false' into a general rule and adds unsourced advice about trying another card or contacting the bank. The answer is still useful overall."
+    },
+    {
+      "id": "official-09",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "The answer says customers can split a purchase into up to 48 installments on a credit card, with the maximum term and interest rate varying by card issuer. Both points match the sources exactly, and the answer directly addresses the question."
+    },
+    {
+      "id": "official-10",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim in the answer matches the sources. They state that the payment link can be sent via WhatsApp, email, SMS and social networks. They also confirm that the customer clicks the link, chooses a payment method and completes the purchase, and that the link can be customized with the product image and details. The answer directly addresses the question."
+    },
+    {
+      "id": "official-01",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 4,
+      "reason": "Every claim in the response matches the sources: the monthly fees, the revenue tiers for a free machine, and the voucher/crediário exclusion. The response also says plainly that the sources don't describe feature or hardware differences. It partially answers the question with pricing and eligibility differences and offers escalation to a human for a feature-by-feature comparison. It falls short of 5 because the actual feature difference stays unanswered."
+    },
+    {
+      "id": "official-02",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": false,
+      "score": 1,
+      "reason": "The sources contain only titles and URLs, with no forecast content. The specific low of 20°C, high of 31°C, clouds and isolated showers do not appear anywhere and are fabricated. The answer also attributes them to INMET for 02/11, but that INMET page is dated 16/10/2026 (107 days old), so it is not a valid forecast for tomorrow. Because the forecast is invented, it does not reliably answer the question."
+    },
+    {
+      "id": "official-03",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The amounts, dates and status match the tool data: R$ 745,50 total, R$ 265,50 on 03/11 (debit plus Pix), R$ 480,00 on 30/11 (credit), and R$ 1.730,00 available to anticipate. The reply also makes claims with no support in the sources or tool data. It states that Pix usually pays on the same day. It also describes an anticipation process: that it can start the request, that the user must confirm, and that an operator then approves it. It still answers the question well."
+    },
+    {
+      "id": "official-04",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim checks out against the sources: Pix is contracted using the key registered at the bank account (domicílio bancário), the key must be linked to the receiving account, and a Pix key identifies a bank account. The answer gives a direct 'yes' to the question and openly notes what the sources don't cover (whether other account types are accepted)."
+    },
+    {
+      "id": "official-05",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The terminal diagnosis matches the tool data: T1988B is offline on chip with no signal, last contact 190 min ago, not blocked, paper fine. The chip reinsertion and communication test steps also match the FAQ. However, several claims are unsupported. The advice to move the machine near a window or entrance is not in the sources. The standalone 'turn it off and on' step is not in the sources either. The remote-restart offer has no supporting tool or source. Two citation IDs also look wrong, notably 'sup-get-tap-12' for the communication test, which comes from the FAQ. The answer is still useful and directly addresses the problem."
+    },
+    {
+      "id": "official-06",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The core explanation matches the sources: credit sales, single or installment, early payout, the D+1 to D-3 window, Registradora consent, existing fees only, and the card-brand limitation. However, the closing offer is not supported by any source or tool data. Nothing shows the assistant can check the user's schedule or start an advance request, or that operator approval and user confirmation are required. The consent point is also slightly misstated: the source says the Registradora confirms the authorization, not that the authorization confirms the operation."
+    },
+    {
+      "id": "official-07",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": false,
+      "score": 1,
+      "reason": "The sources contain only titles and URLs, with no rate values. The 1.11838091 USD figure and the 'mid-market reference rate' label appear in neither the sources nor the tool data, so they look fabricated. The added BRL/PTAX remark also has no support. Giving an invented number for an exchange rate is misleading, so the response does not genuinely help."
+    },
+    {
+      "id": "official-08",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The decline details and terminal statuses match the tool data, and the reply is useful: it explains the codes and asks which terminal shows the error. However, it offers a remote restart, but no such action appears in the tool data. It also says flatly that declines can't be disputed, while the data only marks these two transactions as not contestable. The advice to try another card or contact the bank is also not in the sources."
+    },
+    {
+      "id": "official-09",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim is supported by the sources: up to 48 installments on credit card, and maximum term and interest rate varying by card issuer. The answer directly addresses the question."
+    },
+    {
+      "id": "official-10",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim in the answer is backed by the sources, which explicitly say the Payment Link can be sent via WhatsApp, social networks, email and SMS, and that the customer clicks, chooses a payment method and completes the purchase. It answers the question directly and correctly."
+    },
+    {
+      "id": "official-01",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim in the response matches the sources and tool data: the monthly fees (R$ 79,90 and R$ 129,90), the revenue tiers for a free machine, and the exclusion of Voucher and Crediário sales. It is open that the sources don't describe feature differences and offers a human agent. Given what the sources contain, this answers the question as well as possible."
+    },
+    {
+      "id": "official-02",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": false,
+      "score": 1,
+      "reason": "The sources and tool data contain only page titles and addresses, with no forecast content. The specific details (rain and thunderstorms, high of 85°, low of 66°, 60%) appear in none of them, so they look invented. The AccuWeather result is also marked as 213 days old, so it cannot back a forecast for tomorrow (November 2, 2026). The answer seems to address the question, but its forecast is unsupported and unreliable."
+    },
+    {
+      "id": "official-03",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The amounts, transaction IDs, dates (03/11 for debit and Pix, 30/11 for credit), the R$ 745,50 total, the 'previsto' status and the R$ 1.730,00 available for anticipation all match the tool data, and they fully answer the question. Two claims are unsupported, however. Calling the sales 'approved' is not in the data. The anticipation process (customer confirmation, then operator approval) is described by no source or tool result."
+    },
+    {
+      "id": "official-04",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim is backed by the sources: one Pix key linked to the receiving account, sign-up through Portal Minha Conta or the app using the key registered with the bank (domicílio bancário), and the Pix key as the identifier of a bank account. The answer is upfront that no explicit statement exists and draws a reasonable inference. It also flags the open question about other account types and offers to escalate to a human."
+    },
+    {
+      "id": "official-05",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The terminal diagnosis (T1988B offline, chip, no signal, 190 min; T1988A online on Wi-Fi) matches the tool data. The chip-insertion and communication-test steps match the sources. However, several claims are unsupported: moving the machine near a window and away from thick walls, turning it off and on, and offering a remote restart (no such tool appears in the data). The answer is still useful and well targeted at the offline terminal."
+    },
+    {
+      "id": "official-06",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "Most content matches the sources: definition, D+1 to D-3 window, Registradora authorization, no extra fees, and the brand restriction. Two parts are not supported. The answer adds \"emissor\" where the source says only \"própria Operadora\". The closing offer to check the agenda or prepare an advance request approved by an operator is not backed by any source or tool data. The answer is also in Portuguese while the question was asked in English."
+    },
+    {
+      "id": "official-07",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": false,
+      "score": 1,
+      "reason": "The sources contain only titles and URLs, with no rates at all. The figures 1.11838 USD (Ria) and 1.116 USD (Wise) are therefore invented, as is the claim that the Ria figure is the mid-market reference rate. The answer also contradicts itself: it says the sources are dated and lack timestamps, then gives the Ria figure a specific date. Presenting fabricated rates as real misleads the user."
+    },
+    {
+      "id": "official-08",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every fact matches the tool data: TX1007 (credit, R$210, code 51, insufficient balance) and TX1008 (debit, R$75, code 05, not authorized by issuer), not contestable, T1988A online on Wi-Fi with good signal, and T1988B offline with no signal and last contact 190 min ago. The suggestions to use another card or contact the bank are reasonable inferences from the decline reasons. The answer explains the cause, separates the two terminals, offers a restart only with confirmation, and asks which machine shows the error."
+    },
+    {
+      "id": "official-09",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "The answer states up to 48 installments on a credit card, with the maximum term and interest rate depending on the card issuer. Both claims come directly from the sources. It answers the question directly."
+    },
+    {
+      "id": "official-10",
+      "split": "official",
+      "source": "live_official.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim in the response is backed by the sources. They say the Payment Link can be sent through WhatsApp, SMS, email and social networks, and that the customer clicks the link, chooses a payment method and completes the purchase. The response answers the question directly."
+    },
+    {
+      "id": "parallel-01",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "Most of the answer is supported: antecipação in the app, the 'o que vou receber' > 'vendas' path, no extra app fee, the D+1 example, R$ 1.730,00 available, the three credit transactions, and débito/Pix summing to R$ 265,50. Two claims are not in the sources or tool data. First, the response states as a general rule that only credit sales can be anticipated, but the data only shows the available amount equals the credit total. Second, it says the request must be confirmed and then approved by an operator, which no source or tool result mentions. The answer still addresses both questions clearly."
+    },
+    {
+      "id": "parallel-02",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim checks out against the sources and the tool data. The Payment Link steps, sharing channels, checkout, costs and the 6-month e-commerce anticipation block all come from the sources. The deposit amounts, transactions, dates and status match the get_settlements result exactly, including the R$ 745,50 total and the R$ 205,50 debit sum. It also honestly says it can't explain the Pix date instead of making up a reason. It answers both parts of the question completely."
+    },
+    {
+      "id": "parallel-03",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "A explicação do crediário está nas fontes: parcelamento em até 48x, juros e prazo conforme o emissor, recebimento em até 2 dias úteis com taxa única e sem custo de antecipação, desconto do MDR e consulta no app ou no portal. Os valores de ontem conferem com os dados da ferramenta: total de R$ 745,50, débito R$ 205,50 em 03/11, crédito R$ 480,00 em 30/11 e Pix R$ 60,00 em 03/11. As duas perguntas foram respondidas por completo."
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The Get Smart explanation and the transaction list (IDs, dates, methods, amounts, decline codes, terminal, and the R$ 1.995,50 total) all match the sources and tool data. Saying approved transactions can be disputed and declined ones cannot is backed by the 'contestable' flags. However, the claim that 'a dispute needs your confirmation and an operator's approval' appears in neither the sources nor the tool data. The response does fully answer both parts of the question."
+    },
+    {
+      "id": "parallel-05",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "A resposta atende às duas perguntas. Os passos para receber por Pix, os meios (biometria, Get Tap, QR Code) e a variação de até um dia corrido estão nas fontes, e os valores e datas de ontem batem com os dados de get_settlements. Porém a frase final \"Os depósitos seguem dias úteis\" não aparece em nenhuma fonte nem nos dados de ferramenta; é uma afirmação sem suporte."
+    },
+    {
+      "id": "parallel-06",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every figure in the reply matches the tool data. The total is R$1,995.50, with debit at 205.50 and pix at 60 on 11/03, and credit at 1,730 on 11/30, all of which is available for anticipation. The sources do not contain debit fees, so the reply correctly declines to guess and refers the question to a human agent under ticket T-bd6cd258, which the tool confirms. It answers both parts appropriately."
+    },
+    {
+      "id": "parallel-07",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "Most of the answer matches the sources: the link-creation steps, payment methods, eligibility for individuals and companies, and costs. The two declined transactions also match the tool data (IDs, dates, amounts, codes, reasons). However, the closing line \"Transações recusadas não podem ser contestadas\" turns the per-transaction flag (contestable: false for these two) into a general rule that no source supports. Calling terminal T1988A a \"maquininha\" is also an inference. The excess fee of R$ 0,50 + MDR is presented as if it applied only to the Avançado plan, when the source states it also applies to the Básico plan. The answer still addresses both questions well."
+    },
+    {
+      "id": "parallel-08",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The Get Tap details (what it is, Android 12+ and NFC, compatibility check, how to request) match the sources. The two declined transactions (TX1007 and TX1008: dates, method, amount, terminal, code and reason) match the tool data, and the note that rates are not covered is a fair limitation. However, the general claim that \"declined transactions can't be disputed\" is not supported. The data only shows contestable: false for these two transactions, so the answer turns a specific fact into an unsourced rule."
+    },
+    {
+      "id": "parallel-01",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "Most of the answer is supported: anticipation through the app (\"o que vou receber\" > \"vendas\"), the D+1 and D-3 rules, the available R$ 1.730,00, and the three credit sales (480 + 350 + 900) all match the sources and tool data. Two claims are not grounded. First, the reason given for excluding debit and Pix (\"porque já caem em 03/11\") is the assistant's own inference, not stated anywhere. Second, the offer to prepare the request, with the promise that an operator must approve it after confirmation, describes a process that no source or tool data supports. The answer does address both questions."
+    },
+    {
+      "id": "parallel-02",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every claim in the answer appears in the sources or the tool data. The Payment Link steps match the documents. Yesterday's sales match the tool result: R$ 745,50 in total, debit R$ 205,50 (TX1001 and TX1003) and Pix R$ 60,00 (TX1005) expected on 03/11, credit R$ 480,00 (TX1002) expected on 30/11, all with status 'previsto'. The answer fully covers both parts of the question."
+    },
+    {
+      "id": "parallel-03",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "A explicação do Crediário está toda nas fontes: parcelamento em até 48x, prazo e juros que variam pelo emissor, recebimento em até 2 dias úteis em parcela única, taxa única sem custo de antecipação e consulta do MDR no app ou no Portal. Os valores de ontem batem com os dados da ferramenta: total R$ 745,50, débito 205,50, crédito 480,00 e pix 60,00, com as datas previstas corretas. A resposta atende às duas perguntas."
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 4,
+      "reason": "Every claim is supported. The Get Smart features (inventory, orders, menu, invoices, system integration, Android, kitchen/dining messaging, Getnet processing, NF-e depending on the app) match the sources. All 8 transactions, the approved total of R$ 1.995,50, the decline codes and reasons, and the dispute eligibility match the tool data. Both parts of the question are answered clearly. One minor flaw: the NF-e point is cited as 'en-restaurants-07', but it comes from the Get Smart FAQ source."
+    },
+    {
+      "id": "parallel-05",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 4,
+      "reason": "The Pix guidance (QR Code in Get Conta, card machine, biometrics/Get Tap, timing of up to one calendar day) matches the sources. Yesterday's settlement figures and dates (debit R$205.50 on 11/03, Pix R$60.00 on 11/03, credit R$480.00 on 11/30, total R$745.50) match the tool data. The answer honestly flags that a Pix payment landing on 11/03 conflicts with the 'instant' wording in the sources. The weekend hypothesis is unsupported speculation, though it is clearly marked as not coming from the data, so it costs one point."
+    },
+    {
+      "id": "parallel-06",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Every balance figure comes straight from the tool data: total R$1.995,50, debit R$205,50 on 03/11, Pix R$60 on 03/11, credit R$1.730 on 30/11, and R$1.730 available for anticipation. The sources contain no debit fee rate, so the answer correctly declines to guess one. The handoff ticket T-26ce8a38 matches the tool result. Both parts of the question are addressed."
+    },
+    {
+      "id": "parallel-07",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "Almost everything is supported. The Link de Pagamento steps, payment methods, PF/PJ eligibility and costs (Inicial, Básico, Avançado, excedente + MDR) match the sources. TX1007 and TX1008 match the tool data. The problem is the closing line, \"Transações recusadas não podem ser contestadas\". It states a general rule that no source gives. The tool only marks these two transactions as contestable: false. The answer still covers both questions fully."
+    },
+    {
+      "id": "parallel-08",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The Get Tap details (what it is, the Android 12 and NFC requirements, and the compatibility check path) match the sources. Both declined transactions (TX1007, TX1008) are reported correctly from the tool data, including date, method, amount, terminal and decline codes and reasons. The closing line asserts a general rule, 'Declined transactions can't be disputed,' that appears in no source. The data only shows contestable: false for these two transactions; the conclusion about them is supported, but the broader policy claim is an unsupported generalization."
+    },
+    {
+      "id": "parallel-01",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "Most of the answer is supported: anticipating through the app, the D+1 rule and no extra app fees come from the sources. The R$ 1.730,00 total, the three credit sales and the 30/11 date match the tool data. However, the closing claim that the order needs the customer's confirmation and an operator's approval appears in no source or tool output. The offer to prepare the order also assumes a capability not shown. Saying debit and Pix 'cannot be anticipated' is a reasonable but strong reading of the tool field. The answer covers both parts of the question."
+    },
+    {
+      "id": "parallel-02",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The Payment Link steps, sharing channels, checkout flow and costs all match the sources. Yesterday's settlement figures are correct per the tool data: debit R$205.50 on 03/11, Pix R$60.00 on 03/11, credit R$480.00 on 30/11, total R$745.50, all 'previsto'. However, the closing claim 'Deposits follow business days' appears in neither the sources nor the tool data, so it is an unsupported addition. Otherwise the answer fully addresses both questions."
+    },
+    {
+      "id": "parallel-03",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": true,
+      "helpful": true,
+      "score": 5,
+      "reason": "Todas as afirmações sobre o Crediário saem das fontes: parcelamento em até 48x, prazo e juros variáveis conforme o emissor, recebimento em até 2 dias úteis em parcela única, taxa única sem custo de antecipação e MDR consultável no App ou no Portal. Os valores de ontem (31/10) batem com os dados da ferramenta: total de R$ 745,50, débito R$ 205,50 previsto para 03/11, crédito R$ 480,00 para 30/11 e Pix R$ 60,00 para 03/11. A resposta atende às duas perguntas de forma completa e clara."
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "source": "live_parallel.json",
+      "saw_tool_data": true,
+      "saw_tool_results": true,
+      "grounded": false,
+      "helpful": true,
+      "score": 3,
+      "reason": "The Get Smart explanation matches the sources, and the transaction list (IDs, dates, amounts, statuses, decline codes, totals) matches the tool data. Saying approved transactions can be disputed and declined ones cannot is supported by the contestable flags. However, the final claim that a dispute needs the customer's confirmation and an operator's approval appears in neither the sources nor the tool data, so it is an invented process detail."
+    }
+  ]
+}

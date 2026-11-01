@@ -44,8 +44,8 @@
       "language_undetected": 0,
       "recall@3": null,
       "mrr": null,
-      "p50_ms": 20.8,
-      "p95_ms": 252.7,
+      "p50_ms": 16.3,
+      "p95_ms": 330.2,
       "cost_usd": 0.0,
       "crashes": 0,
       "ci": {
@@ -102,8 +102,8 @@
       "language_undetected": 0,
       "recall@3": null,
       "mrr": null,
-      "p50_ms": 20.8,
-      "p95_ms": 252.7,
+      "p50_ms": 16.3,
+      "p95_ms": 330.2,
       "cost_usd": 0.0,
       "crashes": 0,
       "ci": {
@@ -151,7 +151,7 @@
       "id": "replan-01",
       "split": "replan",
       "message": "A Getnet aceita pagamento em criptomoeda na maquininha Get Smart?",
-      "ms": 252.7,
+      "ms": 330.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -209,7 +209,7 @@
       "id": "replan-02",
       "split": "replan",
       "message": "Qual a taxa da Getnet para vendas no exterior em dólar australiano?",
-      "ms": 17.9,
+      "ms": 19.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -243,7 +243,7 @@
       "id": "replan-03",
       "split": "replan",
       "message": "Does Getnet offer car insurance for merchants?",
-      "ms": 21.0,
+      "ms": 20.8,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -277,7 +277,7 @@
       "id": "replan-04",
       "split": "replan",
       "message": "A Getnet tem programa de milhas para lojistas?",
-      "ms": 18.8,
+      "ms": 22.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -321,7 +321,7 @@
       "id": "replan-05",
       "split": "replan",
       "message": "Qual o telefone do gerente da minha agência do Banco do Brasil?",
-      "ms": 18.1,
+      "ms": 20.7,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -372,7 +372,7 @@
       "id": "replan-06",
       "split": "replan",
       "message": "Does Getnet sell solar panels to merchants?",
-      "ms": 17.7,
+      "ms": 16.6,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -406,7 +406,7 @@
       "id": "replan-07",
       "split": "replan",
       "message": "A Getnet financia a compra de imóveis comerciais?",
-      "ms": 21.1,
+      "ms": 15.4,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -440,7 +440,7 @@
       "id": "replan-08",
       "split": "replan",
       "message": "Qual a política da Getnet para lojistas em Marte?",
-      "ms": 16.4,
+      "ms": 13.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -474,7 +474,7 @@
       "id": "replan-09",
       "split": "replan",
       "message": "Can I use the Get Smart to print boarding passes for airlines?",
-      "ms": 23.5,
+      "ms": 14.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -508,7 +508,7 @@
       "id": "replan-10",
       "split": "replan",
       "message": "A Getnet oferece consórcio de motos?",
-      "ms": 23.1,
+      "ms": 13.7,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -542,7 +542,7 @@
       "id": "replan-11",
       "split": "replan",
       "message": "Qual o prazo de garantia estendida de geladeiras vendidas pela Getnet?",
-      "ms": 19.1,
+      "ms": 14.3,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -576,7 +576,7 @@
       "id": "replan-12",
       "split": "replan",
       "message": "Does Getnet have a loyalty program with airline miles?",
-      "ms": 20.1,
+      "ms": 15.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -610,7 +610,7 @@
       "id": "replan-13",
       "split": "replan",
       "message": "A Getnet emite certificado digital e-CNPJ para o lojista?",
-      "ms": 19.8,
+      "ms": 16.3,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -644,7 +644,7 @@
       "id": "replan-14",
       "split": "replan",
       "message": "Quanto custa o plano odontológico da Getnet para funcionários?",
-      "ms": 21.5,
+      "ms": 14.6,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -702,7 +702,7 @@
       "id": "replan-15",
       "split": "replan",
       "message": "Does Getnet provide legal advice for tax disputes?",
-      "ms": 20.8,
+      "ms": 13.1,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -746,7 +746,7 @@
       "id": "replan-16",
       "split": "replan",
       "message": "A Getnet tem maquininha que aceita cheque?",
-      "ms": 19.2,
+      "ms": 16.4,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -790,7 +790,7 @@
       "id": "replan-17",
       "split": "replan",
       "message": "Qual o regulamento do sorteio de carros da Getnet de 2019?",
-      "ms": 20.9,
+      "ms": 14.7,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -824,7 +824,7 @@
       "id": "replan-18",
       "split": "replan",
       "message": "Can Getnet mail my Get Smart to Portugal?",
-      "ms": 21.6,
+      "ms": 14.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -858,7 +858,7 @@
       "id": "replan-19",
       "split": "replan",
       "message": "A Getnet faz câmbio de euro em espécie na agência?",
-      "ms": 25.6,
+      "ms": 17.4,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -902,7 +902,7 @@
       "id": "replan-20",
       "split": "replan",
       "message": "Qual o horário de funcionamento da loja física da Getnet em Manaus?",
-      "ms": 20.1,
+      "ms": 17.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -948,7 +948,7 @@
       "id": "replan-01",
       "split": "replan",
       "message": "A Getnet aceita pagamento em criptomoeda na maquininha Get Smart?",
-      "ms": 252.7,
+      "ms": 330.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1006,7 +1006,7 @@
       "id": "replan-02",
       "split": "replan",
       "message": "Qual a taxa da Getnet para vendas no exterior em dólar australiano?",
-      "ms": 17.9,
+      "ms": 19.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1040,7 +1040,7 @@
       "id": "replan-03",
       "split": "replan",
       "message": "Does Getnet offer car insurance for merchants?",
-      "ms": 21.0,
+      "ms": 20.8,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1074,7 +1074,7 @@
       "id": "replan-04",
       "split": "replan",
       "message": "A Getnet tem programa de milhas para lojistas?",
-      "ms": 18.8,
+      "ms": 22.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1118,7 +1118,7 @@
       "id": "replan-05",
       "split": "replan",
       "message": "Qual o telefone do gerente da minha agência do Banco do Brasil?",
-      "ms": 18.1,
+      "ms": 20.7,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1169,7 +1169,7 @@
       "id": "replan-06",
       "split": "replan",
       "message": "Does Getnet sell solar panels to merchants?",
-      "ms": 17.7,
+      "ms": 16.6,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1203,7 +1203,7 @@
       "id": "replan-07",
       "split": "replan",
       "message": "A Getnet financia a compra de imóveis comerciais?",
-      "ms": 21.1,
+      "ms": 15.4,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1237,7 +1237,7 @@
       "id": "replan-08",
       "split": "replan",
       "message": "Qual a política da Getnet para lojistas em Marte?",
-      "ms": 16.4,
+      "ms": 13.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1271,7 +1271,7 @@
       "id": "replan-09",
       "split": "replan",
       "message": "Can I use the Get Smart to print boarding passes for airlines?",
-      "ms": 23.5,
+      "ms": 14.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1305,7 +1305,7 @@
       "id": "replan-10",
       "split": "replan",
       "message": "A Getnet oferece consórcio de motos?",
-      "ms": 23.1,
+      "ms": 13.7,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1339,7 +1339,7 @@
       "id": "replan-11",
       "split": "replan",
       "message": "Qual o prazo de garantia estendida de geladeiras vendidas pela Getnet?",
-      "ms": 19.1,
+      "ms": 14.3,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1373,7 +1373,7 @@
       "id": "replan-12",
       "split": "replan",
       "message": "Does Getnet have a loyalty program with airline miles?",
-      "ms": 20.1,
+      "ms": 15.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1407,7 +1407,7 @@
       "id": "replan-13",
       "split": "replan",
       "message": "A Getnet emite certificado digital e-CNPJ para o lojista?",
-      "ms": 19.8,
+      "ms": 16.3,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1441,7 +1441,7 @@
       "id": "replan-14",
       "split": "replan",
       "message": "Quanto custa o plano odontológico da Getnet para funcionários?",
-      "ms": 21.5,
+      "ms": 14.6,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1499,7 +1499,7 @@
       "id": "replan-15",
       "split": "replan",
       "message": "Does Getnet provide legal advice for tax disputes?",
-      "ms": 20.8,
+      "ms": 13.1,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1543,7 +1543,7 @@
       "id": "replan-16",
       "split": "replan",
       "message": "A Getnet tem maquininha que aceita cheque?",
-      "ms": 19.2,
+      "ms": 16.4,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1587,7 +1587,7 @@
       "id": "replan-17",
       "split": "replan",
       "message": "Qual o regulamento do sorteio de carros da Getnet de 2019?",
-      "ms": 20.9,
+      "ms": 14.7,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1621,7 +1621,7 @@
       "id": "replan-18",
       "split": "replan",
       "message": "Can Getnet mail my Get Smart to Portugal?",
-      "ms": 21.6,
+      "ms": 14.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1655,7 +1655,7 @@
       "id": "replan-19",
       "split": "replan",
       "message": "A Getnet faz câmbio de euro em espécie na agência?",
-      "ms": 25.6,
+      "ms": 17.4,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1699,7 +1699,7 @@
       "id": "replan-20",
       "split": "replan",
       "message": "Qual o horário de funcionamento da loja física da Getnet em Manaus?",
-      "ms": 20.1,
+      "ms": 17.0,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,

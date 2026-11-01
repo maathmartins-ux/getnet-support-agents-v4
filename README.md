@@ -197,8 +197,8 @@ Modo: `in-process` · provedor `offline`
 | language_undetected | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | recall@3 | — | — | — | — | — | — | — | — | — | — |
 | mrr | — | — | — | — | — | — | — | — | — | — |
-| p50_ms | 22.6 | 25.3 | 30.4 | 17.4 | 17.1 | 38.5 | 4.6 | 19.8 | 28.0 | 19.8 |
-| p95_ms | 292.6 | 51.6 | 56.8 | 23.4 | 23.9 | 51.2 | 21.7 | 29.2 | 35.7 | 42.7 |
+| p50_ms | 16.6 | 22.7 | 21.7 | 15.2 | 18.2 | 33.4 | 3.5 | 19.8 | 18.9 | 18.1 |
+| p95_ms | 268.1 | 29.9 | 28.0 | 18.5 | 39.7 | 42.2 | 19.7 | 28.9 | 24.9 | 34.1 |
 | cost_usd | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
 | crashes | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
@@ -222,6 +222,9 @@ Matriz de confusão do router (todos os splits):
 Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
 
 Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+- bm25: Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+- bm25+rerank: Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
+- hybrid: indisponível (ModuleNotFoundError: No module named 'fastembed')
 <!-- eval:end -->
 
 ### Ao vivo (LLM real, por split)
@@ -229,95 +232,97 @@ Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.6
 <!-- eval-live:begin -->
 ### Split `approval` — `live_approval.json`
 
-Provedor `anthropic` · status `aborted_max_usd` · gasto US$ 0.026346 (teto 0.0202)
+Provedor `anthropic` · status `complete` · gasto US$ 0.594322 (teto 1.5)
 
 | Métrica | approval | ALL |
 |---|---:|---:|
-| cases | 1 | 1 |
-| intent_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
-| handoff_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
-| handoff_outcome_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| cases | 24 | 24 |
+| intent_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
+| handoff_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
+| handoff_outcome_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
 | blocked_acc | — | — |
-| language_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
-| tools_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
-| pending_action_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| language_acc | 91.7 [IC95 74.2–97.7; n=24] | 91.7 [IC95 74.2–97.7; n=24] |
+| tools_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
+| pending_action_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
 | replanned_acc | — | — |
 | no_leak_acc | — | — |
-| numbers_acc | 100.0 [IC95 20.7–100.0; n=1] | 100.0 [IC95 20.7–100.0; n=1] |
+| numbers_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
 | language_undetected | 0 | 0 |
 | recall@3 | — | — |
 | mrr | — | — |
-| p50_ms | 7784.9 | 7784.9 |
-| p95_ms | 7784.9 | 7784.9 |
-| cost_usd | 0.026346 | 0.026346 |
+| p50_ms | 7701.8 | 7701.8 |
+| p95_ms | 8251.4 | 8251.4 |
+| cost_usd | 0.594322 | 0.594322 |
 | crashes | 0 | 0 |
 
-Gate (splits approval): intent 100.0% [IC95 20.7–100.0; n=1] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+Gate (splits approval): intent 100.0% [IC95 86.2–100.0; n=24] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+
+Falhas por checagem × split: language approval 2
 
 Matriz de confusão do router (todos os splits):
 
 | esperada \ obtida | support | acerto |
 |---|---:|---:|
-| support | **1** | 100% |
+| support | **24** | 100% |
 
 Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
 
-Estabilidade (3 rodadas): pass@1 100.0% [IC95 20.7–100.0; n=1] · pass^3 100.0% [IC95 20.7–100.0; n=1] · instáveis: —
+Estabilidade (3 rodadas): pass@1 91.7% [IC95 74.2–97.7; n=24] · pass^3 75.0% [IC95 40.9–92.9; n=8] · instáveis: approval-04, approval-06
 
-Ao vivo: status `aborted_max_usd` · gasto US$ 0.026346 (teto 0.0202) · erros de LLM 0
+Ao vivo: status `complete` · gasto US$ 0.594322 (teto 1.5) · erros de LLM 0
 
 Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 
 ### Split `memory` — `live_memory.json`
 
-Provedor `anthropic` · status `aborted_max_usd` · gasto US$ 0.501261 (teto 0.5215)
+Provedor `anthropic` · status `complete` · gasto US$ 1.45946 (teto 2.0)
 
 | Métrica | memory | ALL |
 |---|---:|---:|
-| cases | 12 | 12 |
-| intent_acc | 83.3 [IC95 55.2–95.3; n=12] | 83.3 [IC95 55.2–95.3; n=12] |
-| handoff_acc | 91.7 [IC95 64.6–98.5; n=12] | 91.7 [IC95 64.6–98.5; n=12] |
-| handoff_outcome_acc | 91.7 [IC95 64.6–98.5; n=12] | 91.7 [IC95 64.6–98.5; n=12] |
+| cases | 39 | 39 |
+| intent_acc | 92.3 [IC95 79.7–97.3; n=39] | 92.3 [IC95 79.7–97.3; n=39] |
+| handoff_acc | 100.0 [IC95 91.0–100.0; n=39] | 100.0 [IC95 91.0–100.0; n=39] |
+| handoff_outcome_acc | 100.0 [IC95 91.0–100.0; n=39] | 100.0 [IC95 91.0–100.0; n=39] |
 | blocked_acc | — | — |
-| language_acc | 91.7 [IC95 64.6–98.5; n=12] | 91.7 [IC95 64.6–98.5; n=12] |
-| tools_acc | 100.0 [IC95 61.0–100.0; n=6] | 100.0 [IC95 61.0–100.0; n=6] |
+| language_acc | 97.4 [IC95 86.8–99.5; n=39] | 97.4 [IC95 86.8–99.5; n=39] |
+| tools_acc | 100.0 [IC95 82.4–100.0; n=18] | 100.0 [IC95 82.4–100.0; n=18] |
 | pending_action_acc | — | — |
 | replanned_acc | — | — |
 | no_leak_acc | — | — |
-| numbers_acc | 58.3 [IC95 32.0–80.7; n=12] | 58.3 [IC95 32.0–80.7; n=12] |
+| numbers_acc | 64.1 [IC95 48.4–77.3; n=39] | 64.1 [IC95 48.4–77.3; n=39] |
 | language_undetected | 0 | 0 |
 | recall@3 | — | — |
 | mrr | — | — |
-| p50_ms | 26920.9 | 26920.9 |
-| p95_ms | 31162.9 | 31162.9 |
-| cost_usd | 0.501261 | 0.501261 |
+| p50_ms | 22087.5 | 22087.5 |
+| p95_ms | 31780.0 | 31780.0 |
+| cost_usd | 1.45946 | 1.45946 |
 | crashes | 0 | 0 |
 
-Gate (splits memory): intent 83.3% [IC95 55.2–95.3; n=12] (mínimo 90%) → **FAIL**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
+Gate (splits memory): intent 92.3% [IC95 79.7–97.3; n=39] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
 
-Falhas por checagem × split: handoff memory 1 · handoff_outcome memory 1 · intent memory 2 · language memory 1 · numbers memory 5
-Confusão de intenção (esperada → obtida): troubleshoot → support 2
+Falhas por checagem × split: intent memory 3 · language memory 1 · numbers memory 14
+Confusão de intenção (esperada → obtida): troubleshoot → support 3
 
 Matriz de confusão do router (todos os splits):
 
 | esperada \ obtida | general | knowledge | support | troubleshoot | acerto |
 |---|---:|---:|---:|---:|---:|
-| general | **4** | · | · | · | 100% |
-| knowledge | · | **2** | · | · | 100% |
-| support | · | · | **2** | · | 100% |
-| troubleshoot | · | · | 2 | **2** | 50% |
+| general | **12** | · | · | · | 100% |
+| knowledge | · | **9** | · | · | 100% |
+| support | · | · | **6** | · | 100% |
+| troubleshoot | · | · | 3 | **9** | 75% |
 
 Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
 
-Estabilidade (3 rodadas): pass@1 33.3% [IC95 13.8–60.9; n=12] · pass^3 33.3% [IC95 13.8–60.9; n=12] · instáveis: —
+Estabilidade (3 rodadas): pass@1 53.8% [IC95 38.6–68.4; n=39] · pass^3 46.2% [IC95 23.2–70.9; n=13] · instáveis: q-mem-02, q-mem-03
 
-Ao vivo: status `aborted_max_usd` · gasto US$ 0.501261 (teto 0.5215) · erros de LLM 0
+Ao vivo: status `complete` · gasto US$ 1.45946 (teto 2.0) · erros de LLM 1
 
 Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 
 ### Split `official` — `live_official.json`
 
-Provedor `anthropic` · status `complete` · gasto US$ 0.869273 (teto 3.0)
+Provedor `anthropic` · status `complete` · gasto US$ 0.848983 (teto 1.5)
 
 | Métrica | official | ALL |
 |---|---:|---:|
@@ -326,23 +331,23 @@ Provedor `anthropic` · status `complete` · gasto US$ 0.869273 (teto 3.0)
 | handoff_acc | 96.7 [IC95 83.3–99.4; n=30] | 96.7 [IC95 83.3–99.4; n=30] |
 | handoff_outcome_acc | 96.7 [IC95 83.3–99.4; n=30] | 96.7 [IC95 83.3–99.4; n=30] |
 | blocked_acc | — | — |
-| language_acc | 93.3 [IC95 78.7–98.2; n=30] | 93.3 [IC95 78.7–98.2; n=30] |
+| language_acc | 100.0 [IC95 88.6–100.0; n=30] | 100.0 [IC95 88.6–100.0; n=30] |
 | tools_acc | 100.0 [IC95 70.1–100.0; n=9] | 100.0 [IC95 70.1–100.0; n=9] |
 | pending_action_acc | — | — |
 | replanned_acc | — | — |
 | no_leak_acc | — | — |
-| numbers_acc | 66.7 [IC95 48.8–80.8; n=30] | 66.7 [IC95 48.8–80.8; n=30] |
+| numbers_acc | 80.0 [IC95 62.7–90.5; n=30] | 80.0 [IC95 62.7–90.5; n=30] |
 | language_undetected | 0 | 0 |
 | recall@3 | — | — |
 | mrr | — | — |
-| p50_ms | 9398.6 | 9398.6 |
-| p95_ms | 15445.5 | 15445.5 |
-| cost_usd | 0.869273 | 0.869273 |
+| p50_ms | 8344.1 | 8344.1 |
+| p95_ms | 15643.6 | 15643.6 |
+| cost_usd | 0.848983 | 0.848983 |
 | crashes | 0 | 0 |
 
 Gate (splits official): intent 100.0% [IC95 88.6–100.0; n=30] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
 
-Falhas por checagem × split: handoff official 1 · handoff_outcome official 1 · language official 2 · numbers official 10
+Falhas por checagem × split: handoff official 1 · handoff_outcome official 1 · numbers official 6
 
 Matriz de confusão do router (todos os splits):
 
@@ -355,15 +360,15 @@ Matriz de confusão do router (todos os splits):
 
 Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
 
-Estabilidade (3 rodadas): pass@1 60.0% [IC95 42.3–75.4; n=30] · pass^3 30.0% [IC95 10.8–60.3; n=10] · instáveis: official-01, official-03, official-05, official-06, official-08
+Estabilidade (3 rodadas): pass@1 76.7% [IC95 59.1–88.2; n=30] · pass^3 70.0% [IC95 39.7–89.2; n=10] · instáveis: official-08
 
-Ao vivo: status `complete` · gasto US$ 0.869273 (teto 3.0) · erros de LLM 0
+Ao vivo: status `complete` · gasto US$ 0.848983 (teto 1.5) · erros de LLM 0
 
 Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 
 ### Split `parallel` — `live_parallel.json`
 
-Provedor `anthropic` · status `complete` · gasto US$ 0.723621 (teto 1.2451)
+Provedor `anthropic` · status `complete` · gasto US$ 0.731228 (teto 1.5)
 
 | Métrica | parallel | ALL |
 |---|---:|---:|
@@ -372,23 +377,23 @@ Provedor `anthropic` · status `complete` · gasto US$ 0.723621 (teto 1.2451)
 | handoff_acc | 87.5 [IC95 69.0–95.7; n=24] | 87.5 [IC95 69.0–95.7; n=24] |
 | handoff_outcome_acc | 87.5 [IC95 69.0–95.7; n=24] | 87.5 [IC95 69.0–95.7; n=24] |
 | blocked_acc | — | — |
-| language_acc | 95.8 [IC95 79.8–99.3; n=24] | 95.8 [IC95 79.8–99.3; n=24] |
+| language_acc | 87.5 [IC95 69.0–95.7; n=24] | 87.5 [IC95 69.0–95.7; n=24] |
 | tools_acc | 100.0 [IC95 86.2–100.0; n=24] | 100.0 [IC95 86.2–100.0; n=24] |
 | pending_action_acc | — | — |
 | replanned_acc | — | — |
 | no_leak_acc | — | — |
-| numbers_acc | 95.8 [IC95 79.8–99.3; n=24] | 95.8 [IC95 79.8–99.3; n=24] |
+| numbers_acc | 91.7 [IC95 74.2–97.7; n=24] | 91.7 [IC95 74.2–97.7; n=24] |
 | language_undetected | 0 | 0 |
 | recall@3 | — | — |
 | mrr | — | — |
-| p50_ms | 9283.0 | 9283.0 |
-| p95_ms | 10093.7 | 10093.7 |
-| cost_usd | 0.723621 | 0.723621 |
+| p50_ms | 9211.7 | 9211.7 |
+| p95_ms | 10672.5 | 10672.5 |
+| cost_usd | 0.731228 | 0.731228 |
 | crashes | 0 | 0 |
 
 Gate (splits parallel): intent 100.0% [IC95 86.2–100.0; n=24] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
 
-Falhas por checagem × split: handoff parallel 3 · handoff_outcome parallel 3 · language parallel 1 · numbers parallel 1
+Falhas por checagem × split: handoff parallel 3 · handoff_outcome parallel 3 · language parallel 3 · numbers parallel 2
 
 Matriz de confusão do router (todos os splits):
 
@@ -398,40 +403,40 @@ Matriz de confusão do router (todos os splits):
 
 Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
 
-Estabilidade (3 rodadas): pass@1 79.2% [IC95 59.5–90.8; n=24] · pass^3 62.5% [IC95 30.6–86.3; n=8] · instáveis: parallel-01, parallel-02
+Estabilidade (3 rodadas): pass@1 66.7% [IC95 46.7–82.0; n=24] · pass^3 50.0% [IC95 21.5–78.5; n=8] · instáveis: parallel-01, parallel-02, parallel-04
 
-Ao vivo: status `complete` · gasto US$ 0.723621 (teto 1.2451) · erros de LLM 0
+Ao vivo: status `complete` · gasto US$ 0.731228 (teto 1.5) · erros de LLM 0
 
 Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 
 ### Split `replan` — `live_replan.json`
 
-Provedor `anthropic` · status `complete` · gasto US$ 0.885597 (teto 2.1307)
+Provedor `anthropic` · status `complete` · gasto US$ 0.882105 (teto 1.5)
 
 | Métrica | replan | ALL |
 |---|---:|---:|
 | cases | 60 | 60 |
 | intent_acc | 100.0 [IC95 94.0–100.0; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
-| handoff_acc | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] |
-| handoff_outcome_acc | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] |
+| handoff_acc | 93.3 [IC95 84.1–97.4; n=60] | 93.3 [IC95 84.1–97.4; n=60] |
+| handoff_outcome_acc | 93.3 [IC95 84.1–97.4; n=60] | 93.3 [IC95 84.1–97.4; n=60] |
 | blocked_acc | — | — |
 | language_acc | 100.0 [IC95 94.0–100.0; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
 | tools_acc | — | — |
 | pending_action_acc | — | — |
-| replanned_acc | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] |
+| replanned_acc | 93.3 [IC95 84.1–97.4; n=60] | 93.3 [IC95 84.1–97.4; n=60] |
 | no_leak_acc | — | — |
 | numbers_acc | 100.0 [IC95 94.0–100.0; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
 | language_undetected | 0 | 0 |
 | recall@3 | — | — |
 | mrr | — | — |
-| p50_ms | 6973.2 | 6973.2 |
-| p95_ms | 9732.5 | 9732.5 |
-| cost_usd | 0.885597 | 0.885597 |
+| p50_ms | 7100.3 | 7100.3 |
+| p95_ms | 9538.7 | 9538.7 |
+| cost_usd | 0.882105 | 0.882105 |
 | crashes | 0 | 0 |
 
 Gate (splits replan): intent 100.0% [IC95 94.0–100.0; n=60] (mínimo 90%) → **PASS**. Medidos fora do gate: hard, heldout. Isolamento: `db_per_case`.
 
-Falhas por checagem × split: handoff replan 3 · handoff_outcome replan 3 · replanned replan 3
+Falhas por checagem × split: handoff replan 4 · handoff_outcome replan 4 · replanned replan 4
 
 Matriz de confusão do router (todos os splits):
 
@@ -441,9 +446,9 @@ Matriz de confusão do router (todos os splits):
 
 Portão sem fonte: limiar efetivo 8.554 (MIN_SCORE) → responde 72.0% [IC95 58.3–82.5; n=50] dos com fonte, recusa 81.2% [IC95 57.0–93.4; n=16] dos sem fonte · recomendado 8.643 → responde 72.0% [IC95 58.3–82.5; n=50], recusa 87.5% [IC95 64.0–96.5; n=16] (50 com fonte, 16 sem; 0 sem fonte fora da conta por não chegarem ao agente de conhecimento; critério: max pos_answered com neg_refused >= 0.85; empate → menor limiar)
 
-Estabilidade (3 rodadas): pass@1 95.0% [IC95 86.3–98.3; n=60] · pass^3 90.0% [IC95 69.9–97.2; n=20] · instáveis: replan-05, replan-18
+Estabilidade (3 rodadas): pass@1 93.3% [IC95 84.1–97.4; n=60] · pass^3 90.0% [IC95 69.9–97.2; n=20] · instáveis: replan-18
 
-Ao vivo: status `complete` · gasto US$ 0.885597 (teto 2.1307) · erros de LLM 1
+Ao vivo: status `complete` · gasto US$ 0.882105 (teto 1.5) · erros de LLM 0
 
 Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.61** · hit@3 0.72 [IC95 58.3–82.5; n=50] (50 perguntas)
 <!-- eval-live:end -->
@@ -451,7 +456,16 @@ Retrieval ativo (bm25, `evals/retrieval.jsonl`): Recall@3 **0.486** · MRR **0.6
 ### Juiz LLM sobre as respostas ao vivo
 
 <!-- judge:begin -->
-_Juiz não rodado._
+Modelo `claude-opus-5-5` · status `aborted_max_usd` · arquivos live_official.json, live_parallel.json, live_replan.json · gasto US$ 1.005004
+
+| split | casos | grounded | helpful | nota média |
+|---|---:|---:|---:|---:|
+| official | 30 | 0.467 [IC95 30.2–63.9; n=30] | 0.8 [IC95 62.7–90.5; n=30] | 3.47 |
+| parallel | 20 | 0.45 [IC95 25.8–65.8; n=20] | 1.0 [IC95 83.9–100.0; n=20] | 3.8 |
+| ALL | 50 | 0.46 [IC95 33.0–59.6; n=50] | 0.88 [IC95 76.2–94.4; n=50] | 3.6 |
+
+Calibração humana: 46 rótulos · concordância **0.978** [IC95 88.7–99.6; n=46] · kappa de Cohen **0.957** · TPR 0.957 [IC95 79.0–99.2; n=23] (23 grounded) · TNR 1.0 [IC95 85.7–100.0; n=23] (23 não grounded) · discordâncias: q-cal-07
+- official: concordância 0.978 [IC95 88.7–99.6; n=46] · kappa 0.957 (46 rótulos)
 <!-- judge:end -->
 
 ### Replanejamento
@@ -460,7 +474,7 @@ _Juiz não rodado._
 | fonte | casos | replanned_acc | handoff_acc | handoff_outcome_acc | intent_acc |
 |---|---:|---:|---:|---:|---:|
 | offline | 20 | 60.0 [IC95 38.7–78.1; n=20] | 60.0 [IC95 38.7–78.1; n=20] | 60.0 [IC95 38.7–78.1; n=20] | 100.0 [IC95 83.9–100.0; n=20] |
-| ao vivo (live_replan.json) | 60 | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] | 95.0 [IC95 86.3–98.3; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
+| ao vivo (live_replan.json) | 60 | 93.3 [IC95 84.1–97.4; n=60] | 93.3 [IC95 84.1–97.4; n=60] | 93.3 [IC95 84.1–97.4; n=60] | 100.0 [IC95 94.0–100.0; n=60] |
 | offline SEM replanejamento | 20 | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 100.0 [IC95 83.9–100.0; n=20] |
 | ao vivo SEM replanejamento | 20 | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 0.0 [IC95 0.0–16.1; n=20] | 100.0 [IC95 83.9–100.0; n=20] |
 
@@ -471,7 +485,7 @@ _Juiz não rodado._
 - `replan-08` (offline): faq:no_source->escalation
 
 Ablação (offline): desfecho certo no split replan **60.0% com** × **0.0% sem** replanejamento (mesmos 20 casos).
-Ablação (ao vivo): desfecho certo no split replan **95.0% com** × **0.0% sem** replanejamento (mesmos 60 casos).
+Ablação (ao vivo): desfecho certo no split replan **93.3% com** × **0.0% sem** replanejamento (mesmos 60 casos).
 <!-- replan:end -->
 
 ## 6. Spec e rastreabilidade
@@ -518,8 +532,9 @@ Spec em [docs/SPEC.md](docs/SPEC.md), commitada antes do código. ADRs em [docs/
 | 20:06:36 | 9 | calibra MIN_SCORE 8.554 (run_evals --calibrate-gate: responde 70% com fonte, recusa 87,5% sem fonte) |
 | 20:10:59 | 13 | corpus: tabela de maquininhas (Get Clássica x Get Smart) entra no índice (AC-01) |
 | 20:14:25 | 16 | ao vivo: número com escala colada (R$ 80mil), data de hoje como evidência da web, idioma pela frase |
+| 20:17:14 | 19 | router: idioma sem ambiguidade vem da contagem de palavras; resultados ao vivo parciais; limites no README |
 
-Do primeiro ao último commit: **16 min**.
+Do primeiro ao último commit: **19 min**.
 <!-- timeline:end -->
 
 ## 8. Scaffold declarado (kit) e o que foi feito no relógio
@@ -552,14 +567,14 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `Dockerfile` | 52 | 0 | 0 | 0 |
 | `Makefile` | 27 | 0 | 0 | 0 |
 | `OWNERSHIP.json` | 88 | 1 | 0 | 1 |
-| `README.md` | 147 | 114 | 23 | 1 |
+| `README.md` | 147 | 476 | 25 | 1 |
 | `data` | 34 | 347 | 33 | 4 |
 | `data/crm` | 0 | 30 | 0 | 0 |
 | `data/intent_examples.d` | 0 | 95 | 0 | 0 |
 | `data/knowledge` | 0 | 424 | 0 | 0 |
 | `docker-compose.scale.yml` | 28 | 0 | 0 | 0 |
 | `docker-compose.yml` | 11 | 1 | 1 | 1 |
-| `docs` | 32 | 614 | 18 | 1 |
+| `docs` | 32 | 616 | 18 | 1 |
 | `docs/adr` | 42 | 215 | 0 | 0 |
 | `docs/video` | 0 | 25 | 0 | 0 |
 | `evals` | 964 | 80 | 29 | 4 |
@@ -572,11 +587,11 @@ regras do router e do supervisor) foi escrito no relógio. A medida, tirada do g
 | `requirements-hybrid.lock` | 278 | 0 | 0 | 0 |
 | `requirements.lock` | 145 | 0 | 0 | 0 |
 | `scripts` | 1668 | 1 | 1 | 2 |
-| `src/app` | 3945 | 788 | 5 | 3 |
-| `tests` | 3677 | 691 | 1 | 2 |
+| `src/app` | 3945 | 806 | 8 | 4 |
+| `tests` | 3677 | 700 | 1 | 3 |
 | `tests/fixtures` | 66 | 0 | 0 | 0 |
 
-Total: **11837** linhas do kit (commit `ab57b4e`) e **3642** escritas no relógio (24% do total). Arquivos do kit alterados no relógio: 19. Fora da conta, por serem gerados: 0 linhas em `evals/results/`.
+Total: **11837** linhas do kit (commit `ab57b4e`) e **4033** escritas no relógio (25% do total). Arquivos do kit alterados no relógio: 21. Fora da conta, por serem gerados: 55212 linhas em `evals/results/`.
 <!-- kit:end -->
 
 ## 9. Limitações e próximos passos

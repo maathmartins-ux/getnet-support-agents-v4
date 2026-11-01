@@ -3,16 +3,16 @@
   "provider": "anthropic",
   "live": true,
   "split": "approval",
-  "status": "aborted_max_usd",
-  "spent_usd": 0.026346,
-  "max_usd": 0.0202,
+  "status": "complete",
+  "spent_usd": 0.594322,
+  "max_usd": 1.5,
   "llm_errors": 0,
   "gate": 0.9,
   "intent_acc": 1.0,
   "intent_ci": {
-    "k": 1,
-    "n": 1,
-    "lo": 20.7,
+    "k": 24,
+    "n": 24,
+    "lo": 86.2,
     "hi": 100.0
   },
   "isolation": "db_per_case",
@@ -30,12 +30,12 @@
   "passed": true,
   "metrics": {
     "approval": {
-      "cases": 1,
+      "cases": 24,
       "intent_acc": 100.0,
       "handoff_acc": 100.0,
       "handoff_outcome_acc": 100.0,
       "blocked_acc": null,
-      "language_acc": 100.0,
+      "language_acc": 91.7,
       "tools_acc": 100.0,
       "pending_action_acc": 100.0,
       "replanned_acc": null,
@@ -44,62 +44,62 @@
       "language_undetected": 0,
       "recall@3": null,
       "mrr": null,
-      "p50_ms": 7784.9,
-      "p95_ms": 7784.9,
-      "cost_usd": 0.026346,
+      "p50_ms": 7701.8,
+      "p95_ms": 8251.4,
+      "cost_usd": 0.594322,
       "crashes": 0,
       "ci": {
         "intent_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "handoff_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "handoff_outcome_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "language_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
-          "hi": 100.0
+          "k": 22,
+          "n": 24,
+          "lo": 74.2,
+          "hi": 97.7
         },
         "tools_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "pending_action_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "numbers_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         }
       }
     },
     "ALL": {
-      "cases": 1,
+      "cases": 24,
       "intent_acc": 100.0,
       "handoff_acc": 100.0,
       "handoff_outcome_acc": 100.0,
       "blocked_acc": null,
-      "language_acc": 100.0,
+      "language_acc": 91.7,
       "tools_acc": 100.0,
       "pending_action_acc": 100.0,
       "replanned_acc": null,
@@ -108,51 +108,51 @@
       "language_undetected": 0,
       "recall@3": null,
       "mrr": null,
-      "p50_ms": 7784.9,
-      "p95_ms": 7784.9,
-      "cost_usd": 0.026346,
+      "p50_ms": 7701.8,
+      "p95_ms": 8251.4,
+      "cost_usd": 0.594322,
       "crashes": 0,
       "ci": {
         "intent_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "handoff_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "handoff_outcome_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "language_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
-          "hi": 100.0
+          "k": 22,
+          "n": 24,
+          "lo": 74.2,
+          "hi": 97.7
         },
         "tools_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "pending_action_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         },
         "numbers_acc": {
-          "k": 1,
-          "n": 1,
-          "lo": 20.7,
+          "k": 24,
+          "n": 24,
+          "lo": 86.2,
           "hi": 100.0
         }
       }
@@ -163,7 +163,7 @@
       "id": "approval-01",
       "split": "approval",
       "message": "Quero antecipar todo o valor disponível das minhas vendas.",
-      "ms": 7784.9,
+      "ms": 8061.2,
       "expected_intent": "support",
       "checks": {
         "intent": true,
@@ -182,7 +182,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "O valor disponível para antecipar é **R$ 1.730,00**. Ele vem de três vendas no crédito:\n- TX1002: R$ 480,00\n- TX1004: R$ 350,00\n- TX1006: R$ 900,00\n\nAs três estão previstas para 30/11. Vendas no débito e no Pix não entram na antecipação.\n\n**Ainda não antecipei nada.** Para seguir, você precisa confirmar a ação **A-f303f33a**. Depois da sua confirmação, um operador ainda precisa aprovar o pedido.",
+      "answer": "Você tem **R$ 1.730,00** disponíveis para antecipar. Esse valor vem de três vendas no crédito:\n- TX1002: R$ 480,00\n- TX1004: R$ 350,00\n- TX1006: R$ 900,00\n\nHoje, o depósito dessas vendas está previsto para 30/11. Débito e Pix não entram na antecipação.\n\n**Nada foi antecipado ainda.** Para pedir a antecipação de todo o valor, você precisa confirmar a ação **A-7355de8a**. Depois da sua confirmação, um operador precisa aprovar o pedido.",
       "source_ids": [],
       "sources": [],
       "tool_calls": [
@@ -199,49 +199,1395 @@
       ],
       "evidence": [
         "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
-        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-f303f33a\", \"risk\": \"high\", \"args\": {}}"
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-7355de8a\", \"risk\": \"high\", \"args\": {}}"
       ],
       "expected_language": "pt",
       "language_declared": "pt",
       "language_detected": "pt",
       "unsupported_numbers": [],
-      "cost_usd": 0.026346,
+      "cost_usd": 0.026564,
+      "run": 0
+    },
+    {
+      "id": "approval-02",
+      "split": "approval",
+      "message": "Please request an anticipation of my available receivables.",
+      "ms": 7800.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I've proposed anticipating the full R$ 1.730,00 available. This is your credit card sales, which are due on 30/11. I haven't done it yet.\n\n- **What you need to do:** Confirm action **A-c27fb812**.\n- **What happens next:** After you confirm, an operator still has to approve the anticipation.\n- **Not included:** Debit and Pix sales can't be anticipated. They are already due on 03/11.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {},
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-c27fb812\", \"risk\": \"high\", \"args\": {}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.02471,
+      "run": 0
+    },
+    {
+      "id": "approval-03",
+      "split": "approval",
+      "message": "Reinicie a maquininha T1988B, por favor.",
+      "ms": 7982.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Propus o reinício da maquininha T1988B (Get Clássica), mas ele ainda não foi executado. Para executar, você precisa confirmar a ação **A-2f0e6fee**.\n\n- **Estado atual:** a maquininha está offline, sem sinal no chip. O último contato foi há 190 minutos.\n- **Outros itens:** a bobina está ok e não há bloqueio.\n- **Aviso:** como ela está sem sinal, o reinício remoto pode não funcionar. Se continuar offline depois, verifique o chip e o local de uso.\n\nVocê confirma o reinício?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-2f0e6fee\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024829,
+      "run": 0
+    },
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Restart my card machine T1988B.",
+      "ms": 8491.9,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": false,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Ainda não reiniciei a T1988B. Você precisa confirmar a ação **A-50c4c294** para que o reinício seja feito.\n\nO que vi na maquininha:\n- Ela está offline e sem sinal. Usa chip.\n- O último contato foi há 190 minutos.\n- A bobina está ok e a maquininha não está bloqueada.\n\nComo ela está sem sinal, o reinício remoto pode não chegar até ela. Se ela não voltar depois do reinício, verifique o local e o sinal do chip.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-50c4c294\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024318,
+      "run": 0
+    },
+    {
+      "id": "approval-05",
+      "split": "approval",
+      "message": "Quero abrir uma contestação da transação TX1004.",
+      "ms": 7785.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A TX1004 pode ser contestada. Ela é uma venda aprovada no crédito, de R$ 350,00, feita em 30/10 na maquininha T1988A.\n\nAinda não abri a contestação. Para abrir, você precisa confirmar a ação **A-ace674b0**. Depois da sua confirmação, um operador precisa aprovar.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista solicita contestação da transação TX1004."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-ace674b0\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista solicita contestação da transação TX1004.\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.02365,
+      "run": 0
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a chargeback for transaction TX1004.",
+      "ms": 7778.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": false,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "TX1004 pode ser contestada. Foi uma venda aprovada de R$ 350,00 no crédito, em 30/10, na maquininha T1988A.\n\nAinda não abri a contestação. Para abri-la, você precisa confirmar a ação **A-48410b36**. Depois da sua confirmação, um operador precisa aprovar.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista solicitou contestação da transação TX1004."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-48410b36\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista solicitou contestação da transação TX1004.\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023463,
+      "run": 0
+    },
+    {
+      "id": "approval-07",
+      "split": "approval",
+      "message": "Antecipe R$ 500 das minhas vendas no crédito.",
+      "ms": 7099.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A antecipação de R$ 500,00 ainda não foi feita. Você tem R$ 1.730,00 disponíveis em vendas no crédito, com previsão de depósito em 30/11.\n\nPara seguir, você precisa confirmar a ação **A-a5e9d8a1**. Depois da sua confirmação, um operador ainda precisa aprovar o pedido.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {
+            "amount": 500
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-a5e9d8a1\", \"risk\": \"high\", \"args\": {\"amount\": 500}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.025427,
+      "run": 0
+    },
+    {
+      "id": "approval-08",
+      "split": "approval",
+      "message": "Quero contestar a venda TX1004, não reconheço.",
+      "ms": 6680.6,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Encontrei a venda TX1004: R$ 350,00, crédito, aprovada, feita em 30/10 na maquininha T1988A. Ela pode ser contestada.\n\nA contestação ainda **não foi aberta**. Para abri-la, você precisa confirmar a ação **A-67f1318c**. Depois da sua confirmação, um operador precisa aprovar a contestação.\n\nO motivo que será registrado é: \"Lojista não reconhece a transação.\"\n\nVocê confirma a abertura da contestação?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista não reconhece a transação."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-67f1318c\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista não reconhece a transação.\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024933,
+      "run": 0
+    },
+    {
+      "id": "approval-01",
+      "split": "approval",
+      "message": "Quero antecipar todo o valor disponível das minhas vendas.",
+      "ms": 7250.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Você tem R$ 1.730,00 disponíveis para antecipar. Esse valor vem de três vendas no crédito, que hoje têm depósito previsto para 30/11:\n- TX1002: R$ 480,00\n- TX1004: R$ 350,00\n- TX1006: R$ 900,00\n\nVendas no débito e no Pix não entram na antecipação.\n\n**A antecipação ainda não foi feita.** Para seguir, você precisa confirmar a ação **A-97a7385e**. Depois da sua confirmação, um operador precisa aprovar o pedido.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {},
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-97a7385e\", \"risk\": \"high\", \"args\": {}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.026568,
+      "run": 1
+    },
+    {
+      "id": "approval-02",
+      "split": "approval",
+      "message": "Please request an anticipation of my available receivables.",
+      "ms": 7522.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I've proposed an anticipation, but nothing has been requested yet.\n\n- **Amount:** R$ 1.730,00. This is all of your credit sales, due on 30/11 (TX1002, TX1004 and TX1006).\n- **Not included:** Debit and Pix sales. They're already due on 03/11.\n- **Next step:** Please confirm action **A-22147d00**. After you confirm, an operator still has to approve the request.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {},
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-22147d00\", \"risk\": \"high\", \"args\": {}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024944,
+      "run": 1
+    },
+    {
+      "id": "approval-03",
+      "split": "approval",
+      "message": "Reinicie a maquininha T1988B, por favor.",
+      "ms": 8214.7,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Ainda não reiniciei a T1988B. Você precisa confirmar a ação **A-a1557dd0** para que o reinício seja feito.\n\nEstado atual da maquininha:\n- **Modelo:** Get Clássica, conectada por chip.\n- **Sinal:** sem sinal. Ela está offline e o último contato foi há 190 minutos.\n- **Bobina:** ok.\n- **Bloqueio:** não está bloqueada.\n\nComo ela está offline, o reinício remoto pode não chegar até ela. Se ela não voltar depois do reinício, verifique o chip e o local onde ela está.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-a1557dd0\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.025349,
+      "run": 1
+    },
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Restart my card machine T1988B.",
+      "ms": 8079.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Your terminal T1988B (Get Clássica) is offline. I haven't restarted it yet.\n\n- It connects by chip and has no signal.\n- It last made contact 190 minutes ago.\n- The paper roll is fine, and the terminal isn't blocked.\n\n**To restart it, you need to confirm action A-2d077a2c.**\n\nThe missing signal may be the real cause, so a restart might not fix it. If the terminal is still offline afterward, check the chip's coverage or move the terminal to a spot with better signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-2d077a2c\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024382,
+      "run": 1
+    },
+    {
+      "id": "approval-05",
+      "split": "approval",
+      "message": "Quero abrir uma contestação da transação TX1004.",
+      "ms": 8251.4,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A TX1004 pode ser contestada. Ela foi aprovada em 30/10, no crédito, no valor de R$ 350,00, na maquininha T1988A.\n\nAinda não abri a contestação. Para seguir, você precisa confirmar a ação **A-e32e3259**. Depois da sua confirmação, um operador também precisa aprovar.\n\nVocê não informou um motivo para a contestação. Se quiser incluir um, me diga qual.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-e32e3259\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024286,
+      "run": 1
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a chargeback for transaction TX1004.",
+      "ms": 6812.1,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I haven't opened the chargeback yet. TX1004 is eligible for one. It was approved on 30/10 as a credit transaction for R$ 350,00.\n\nTo go ahead, you need to confirm action A-82bccef6. After you confirm, an operator has to approve it before the chargeback is opened.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista solicitou contestação da transação TX1004."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-82bccef6\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista solicitou contestação da transação TX1004.\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023203,
+      "run": 1
+    },
+    {
+      "id": "approval-07",
+      "split": "approval",
+      "message": "Antecipe R$ 500 das minhas vendas no crédito.",
+      "ms": 7526.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Você pode antecipar R$ 500,00. Ainda não fiz nada.\n\n- Seu crédito disponível para antecipar é de R$ 1.730,00. Esse valor vem de três vendas, com depósito previsto para 30/11.\n- Para seguir, você precisa confirmar a ação **A-af746e17**.\n- Depois da sua confirmação, um operador precisa aprovar o pedido.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "upcoming"
+          },
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {
+            "amount": 500
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-af746e17\", \"risk\": \"high\", \"args\": {\"amount\": 500}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.026237,
+      "run": 1
+    },
+    {
+      "id": "approval-08",
+      "split": "approval",
+      "message": "Quero contestar a venda TX1004, não reconheço.",
+      "ms": 7459.2,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A venda TX1004 pode ser contestada. Ela foi aprovada em 30/10, no crédito, no valor de R$ 350,00, na maquininha T1988A.\n\nAinda não abri a contestação. Para abri-la, você precisa confirmar a ação **A-b85cdf23**. Depois da sua confirmação, um operador precisa aprovar.\n\nO motivo registrado será: \"Lojista não reconhece a transação.\"\n\nQuer confirmar?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista não reconhece a transação."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-b85cdf23\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista não reconhece a transação.\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024649,
+      "run": 1
+    },
+    {
+      "id": "approval-01",
+      "split": "approval",
+      "message": "Quero antecipar todo o valor disponível das minhas vendas.",
+      "ms": 7701.8,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Você tem **R$ 1.730,00** disponíveis para antecipar. Esse valor vem de três vendas no crédito:\n- TX1002: R$ 480,00\n- TX1004: R$ 350,00\n- TX1006: R$ 900,00\n\nO depósito dessas vendas está previsto para 30/11. Débito e Pix não entram na antecipação.\n\n**Nada foi antecipado ainda.** Para seguir, confirme a ação **A-be0d9c31**. Depois da sua confirmação, um operador precisa aprovar o pedido.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {},
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-be0d9c31\", \"risk\": \"high\", \"args\": {}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.026398,
+      "run": 2
+    },
+    {
+      "id": "approval-02",
+      "split": "approval",
+      "message": "Please request an anticipation of my available receivables.",
+      "ms": 7622.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "You have R$ 1.730,00 available to anticipate. That is the total of your three credit sales: TX1002, TX1004 and TX1006. They are due on 30/11.\n\nI haven't requested anything yet. To go ahead, you need to confirm action **A-e5c34bc3**. After you confirm, an operator still has to approve the anticipation.\n\nDebit and Pix sales can't be anticipated. They are already due on 03/11.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {},
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-e5c34bc3\", \"risk\": \"high\", \"args\": {}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024946,
+      "run": 2
+    },
+    {
+      "id": "approval-03",
+      "split": "approval",
+      "message": "Reinicie a maquininha T1988B, por favor.",
+      "ms": 7563.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A maquininha T1988B (Get Clássica) está **offline**. Ela está sem sinal no chip e o último contato foi há 190 minutos. A bobina está ok e não há bloqueio.\n\n**Ainda não reiniciei.** Para eu reiniciar, você precisa confirmar a ação **A-dc563f28**.\n\nComo ela está sem sinal, o reinício pode não bastar para reconectá-la. Se ela continuar offline depois disso, verifique o chip e o local onde ela está.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-dc563f28\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024509,
+      "run": 2
+    },
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Restart my card machine T1988B.",
+      "ms": 7857.9,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Terminal T1988B (Get Clássica) is offline. It has no signal on its chip connection and last made contact 190 minutes ago. The paper roll is OK, and the terminal isn't blocked.\n\nI haven't restarted it yet. **You need to confirm action A-17c62238** for the restart to go ahead.\n\nA restart may not fix a missing signal. If the terminal stays offline afterward, check the chip's coverage at that location.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-17c62238\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023972,
+      "run": 2
+    },
+    {
+      "id": "approval-05",
+      "split": "approval",
+      "message": "Quero abrir uma contestação da transação TX1004.",
+      "ms": 7391.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "A TX1004 pode ser contestada. Ela foi aprovada no crédito, no valor de R$ 350,00, em 30/10, na maquininha T1988A.\n\nAinda não abri a contestação. Para abri-la, você precisa confirmar a ação **A-47ad1c00**. Depois da sua confirmação, um operador também precisa aprovar.\n\nQuer confirmar a ação?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista solicita contestação da transação TX1004."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-47ad1c00\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista solicita contestação da transação TX1004.\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023802,
+      "run": 2
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a chargeback for transaction TX1004.",
+      "ms": 7567.8,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "TX1004 is eligible for a chargeback. It's an approved credit transaction for R$ 350,00 from 30/10.\n\nI haven't opened the chargeback yet. To go ahead, you need to confirm action A-a6f1eec8. After you confirm, an operator has to approve it.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista solicitou contestação da transação TX1004."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-a6f1eec8\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista solicitou contestação da transação TX1004.\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023243,
+      "run": 2
+    },
+    {
+      "id": "approval-07",
+      "split": "approval",
+      "message": "Antecipe R$ 500 das minhas vendas no crédito.",
+      "ms": 7222.7,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Você pode antecipar R$ 500,00. Seu saldo disponível para antecipação no crédito é de R$ 1.730,00, com previsão de depósito em 30/11.\n\n**Ainda não foi feito nada.** Para seguir, confirme a ação **A-350ea19b**. Depois da sua confirmação, um operador precisa aprovar o pedido.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "request_anticipation",
+          "args": {
+            "amount": 500
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"upcoming\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1004\", \"sale_date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1006\", \"sale_date\": \"2026-10-29\", \"method\": \"credito\", \"amount\": 900.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 1730.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 1995.5, \"available_for_anticipation\": 1730.0}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-350ea19b\", \"risk\": \"high\", \"args\": {\"amount\": 500}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.025017,
+      "run": 2
+    },
+    {
+      "id": "approval-08",
+      "split": "approval",
+      "message": "Quero contestar a venda TX1004, não reconheço.",
+      "ms": 7946.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Encontrei a venda TX1004. Ela foi aprovada, no crédito, no valor de R$ 350,00, em 30/10, na maquininha T1988A. Ela pode ser contestada.\n\nPreparei a contestação com o motivo \"Lojista não reconhece a transação\". **Ainda não foi feita.**\n\n- Você precisa confirmar a ação **A-70cf54c3** para seguir.\n- Depois da sua confirmação, um operador precisa aprovar a contestação.\n\nQuer confirmar?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista não reconhece a transação."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-70cf54c3\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista não reconhece a transação.\"}}"
+      ],
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024923,
+      "run": 2
+    }
+  ],
+  "failures": [
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Restart my card machine T1988B.",
+      "ms": 8491.9,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": false,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Ainda não reiniciei a T1988B. Você precisa confirmar a ação **A-50c4c294** para que o reinício seja feito.\n\nO que vi na maquininha:\n- Ela está offline e sem sinal. Usa chip.\n- O último contato foi há 190 minutos.\n- A bobina está ok e a maquininha não está bloqueada.\n\nComo ela está sem sinal, o reinício remoto pode não chegar até ela. Se ela não voltar depois do reinício, verifique o local e o sinal do chip.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": true
+        },
+        {
+          "name": "restart_terminal",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-50c4c294\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.024318,
+      "run": 0
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a chargeback for transaction TX1004.",
+      "ms": 7778.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": false,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "TX1004 pode ser contestada. Foi uma venda aprovada de R$ 350,00 no crédito, em 30/10, na maquininha T1988A.\n\nAinda não abri a contestação. Para abri-la, você precisa confirmar a ação **A-48410b36**. Depois da sua confirmação, um operador precisa aprovar.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1004"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_chargeback",
+          "args": {
+            "transaction_id": "TX1004",
+            "reason": "Lojista solicitou contestação da transação TX1004."
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"count\": 1, \"approved_count\": 1, \"approved_total\": 350.0, \"declined_count\": 0, \"transactions\": [{\"transaction_id\": \"TX1004\", \"date\": \"2026-10-30\", \"method\": \"credito\", \"amount\": 350.0, \"status\": \"aprovada\", \"terminal_id\": \"T1988A\", \"contestable\": true}]}}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-48410b36\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1004\", \"reason\": \"Lojista solicitou contestação da transação TX1004.\"}}"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "cost_usd": 0.023463,
       "run": 0
     }
   ],
-  "failures": [],
   "stability": {
     "runs": 3,
-    "pass_at_1": 1.0,
-    "pass_hat_k": 1.0,
+    "pass_at_1": 0.9167,
+    "pass_hat_k": 0.75,
     "ci": {
       "pass_at_1": {
-        "k": 1,
-        "n": 1,
-        "lo": 20.7,
-        "hi": 100.0
+        "k": 22,
+        "n": 24,
+        "lo": 74.2,
+        "hi": 97.7
       },
       "pass_hat_k": {
-        "k": 1,
-        "n": 1,
-        "lo": 20.7,
-        "hi": 100.0
+        "k": 6,
+        "n": 8,
+        "lo": 40.9,
+        "hi": 92.9
       }
     },
-    "unstable": [],
+    "unstable": [
+      "approval-04",
+      "approval-06"
+    ],
     "by_case": {
       "approval-01": {
-        "passes": 1,
-        "runs": 1
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-02": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-03": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-04": {
+        "passes": 2,
+        "runs": 3
+      },
+      "approval-05": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-06": {
+        "passes": 2,
+        "runs": 3
+      },
+      "approval-07": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-08": {
+        "passes": 3,
+        "runs": 3
       }
     }
   },
   "failure_matrix": {
-    "by_check": {},
+    "by_check": {
+      "language": {
+        "approval": 2
+      }
+    },
     "intent_confusion": {},
     "intent_matrix": {
       "support": {
-        "support": 1
+        "support": 24
       }
     }
   },

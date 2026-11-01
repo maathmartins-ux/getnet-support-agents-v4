@@ -4,7 +4,7 @@
   "live": true,
   "split": "official",
   "status": "complete",
-  "spent_usd": 0.910497,
+  "spent_usd": 0.848983,
   "max_usd": 1.5,
   "llm_errors": 0,
   "gate": 0.9,
@@ -32,21 +32,21 @@
     "official": {
       "cases": 30,
       "intent_acc": 100.0,
-      "handoff_acc": 100.0,
-      "handoff_outcome_acc": 100.0,
+      "handoff_acc": 96.7,
+      "handoff_outcome_acc": 96.7,
       "blocked_acc": null,
-      "language_acc": 93.3,
+      "language_acc": 100.0,
       "tools_acc": 100.0,
       "pending_action_acc": null,
       "replanned_acc": null,
       "no_leak_acc": null,
-      "numbers_acc": 73.3,
+      "numbers_acc": 80.0,
       "language_undetected": 0,
       "recall@3": null,
       "mrr": null,
-      "p50_ms": 8250.9,
-      "p95_ms": 17712.8,
-      "cost_usd": 0.910497,
+      "p50_ms": 8344.1,
+      "p95_ms": 15643.6,
+      "cost_usd": 0.848983,
       "crashes": 0,
       "ci": {
         "intent_acc": {
@@ -56,22 +56,22 @@
           "hi": 100.0
         },
         "handoff_acc": {
-          "k": 30,
+          "k": 29,
           "n": 30,
-          "lo": 88.6,
-          "hi": 100.0
+          "lo": 83.3,
+          "hi": 99.4
         },
         "handoff_outcome_acc": {
+          "k": 29,
+          "n": 30,
+          "lo": 83.3,
+          "hi": 99.4
+        },
+        "language_acc": {
           "k": 30,
           "n": 30,
           "lo": 88.6,
           "hi": 100.0
-        },
-        "language_acc": {
-          "k": 28,
-          "n": 30,
-          "lo": 78.7,
-          "hi": 98.2
         },
         "tools_acc": {
           "k": 9,
@@ -80,31 +80,31 @@
           "hi": 100.0
         },
         "numbers_acc": {
-          "k": 22,
+          "k": 24,
           "n": 30,
-          "lo": 55.6,
-          "hi": 85.8
+          "lo": 62.7,
+          "hi": 90.5
         }
       }
     },
     "ALL": {
       "cases": 30,
       "intent_acc": 100.0,
-      "handoff_acc": 100.0,
-      "handoff_outcome_acc": 100.0,
+      "handoff_acc": 96.7,
+      "handoff_outcome_acc": 96.7,
       "blocked_acc": null,
-      "language_acc": 93.3,
+      "language_acc": 100.0,
       "tools_acc": 100.0,
       "pending_action_acc": null,
       "replanned_acc": null,
       "no_leak_acc": null,
-      "numbers_acc": 73.3,
+      "numbers_acc": 80.0,
       "language_undetected": 0,
       "recall@3": null,
       "mrr": null,
-      "p50_ms": 8250.9,
-      "p95_ms": 17712.8,
-      "cost_usd": 0.910497,
+      "p50_ms": 8344.1,
+      "p95_ms": 15643.6,
+      "cost_usd": 0.848983,
       "crashes": 0,
       "ci": {
         "intent_acc": {
@@ -114,22 +114,22 @@
           "hi": 100.0
         },
         "handoff_acc": {
-          "k": 30,
+          "k": 29,
           "n": 30,
-          "lo": 88.6,
-          "hi": 100.0
+          "lo": 83.3,
+          "hi": 99.4
         },
         "handoff_outcome_acc": {
+          "k": 29,
+          "n": 30,
+          "lo": 83.3,
+          "hi": 99.4
+        },
+        "language_acc": {
           "k": 30,
           "n": 30,
           "lo": 88.6,
           "hi": 100.0
-        },
-        "language_acc": {
-          "k": 28,
-          "n": 30,
-          "lo": 78.7,
-          "hi": 98.2
         },
         "tools_acc": {
           "k": 9,
@@ -138,10 +138,10 @@
           "hi": 100.0
         },
         "numbers_acc": {
-          "k": 22,
+          "k": 24,
           "n": 30,
-          "lo": 55.6,
-          "hi": 85.8
+          "lo": 62.7,
+          "hi": 90.5
         }
       }
     }
@@ -151,7 +151,7 @@
       "id": "official-01",
       "split": "official",
       "message": "What's the difference between the Get Clássica and the Get Smart?",
-      "ms": 8166.9,
+      "ms": 8976.6,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -168,11 +168,11 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "The sources I found only cover pricing. They don't describe how the two machines differ in features or hardware.\n\n- **Monthly fee:** Get Clássica costs R$ 79,90/month. Get Smart costs R$ 129,90/month. These are the fees if you don't reach the revenue thresholds.\n- **Fee waiver:** Get Clássica is free above R$ 20 mil/month in sales. Get Smart is free above R$ 40 mil/month.\n- **Above R$ 80 mil/month:** you can choose either machine.\n- **Not counted toward the waiver:** Voucher (VA/VR) and Crediário sales.\n\nSources: maq-todas-as-maquininhas-tabela-01, maq-todas-as-maquininhas-03, prod-home-08.\n\nFor a feature comparison, check the machines' pages on the Getnet website. I can also open a case with a human agent if you'd like.",
+      "answer": "Here's what the sources say. They only partly cover the comparison.\n\n- **Get Smart:** It's a smart card machine. You can control stock, place orders, close tabs, embed menus and issue invoices on the device. It can also be integrated with your establishment's system. [sup-get-smart-10]\n- **Monthly fee if you don't reach the revenue target:** Get Clássica costs R$ 79,90 per month. Get Smart costs R$ 129,90 per month. [maq-todas-as-maquininhas-tabela-01]\n- **Free rental:** Get Clássica is free above R$ 20 mil per month in sales. Get Smart is free above R$ 40 mil per month. Voucher (VA/VR) and Crediário sales don't count toward these targets. [maq-todas-as-maquininhas-tabela-01]\n\nThe sources don't describe the Get Clássica's features, so I can't give a feature-by-feature comparison. If you'd like, I can open a case with a human agent for that.",
       "source_ids": [
         "maq-todas-as-maquininhas-tabela-01",
         "maq-todas-as-maquininhas-03",
-        "prod-home-08"
+        "sup-get-smart-10"
       ],
       "sources": [
         {
@@ -186,29 +186,29 @@
           "url": "https://site.getnet.com.br/todas-as-maquininhas/"
         },
         {
-          "id": "prod-home-08",
-          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
-          "url": "https://site.getnet.com.br/"
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
         }
       ],
       "tool_calls": [],
       "evidence": [
         "Getnet | Maquininha de cartão: Melhores taxas e opções grátis: Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel Caso não atinja os faturamentos do quadro acima, segue o valor de utilização: Venda pelo celular R$ 0,00/mês Get Clássica R$ 79,90/mês Get Smart R$ 129,90/mês",
         "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Prepare seu negócio para vender mais na Black Friday com as maquininhas Getnet Aceite cartões em moedas estrangeiras Receba pagamentos pelo Pix de forma rápida e segura Conta e cartão grátis Recebimento em 2 dias úteis ESCOLHA SUA MAQUININHA Sua escolha inteligente para vender mais em 2026: Maquininha + conta integrada Getnet Onde você recebe Get Conta com cartão grátis Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel *Termos e condições Selecione para ver as taxas Acima de R$ 10 mil Acima de R$ 20 mil Acima de R$ 40 mil",
-        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Deeper Confecções Cliente Get Clássica, Get Pay, Antecipação de Vendas e Plataforma Digital As taxas são excelentes e o atendimento ao cliente é muito bom. Virgínia Arruda Loja Virgínia Arruda​ Cliente Get Pay Taxa competitiva, bom relacionamento com o cliente, transações rápidas e com segurança. Raimundo Santos Cliente Get Smart e Plataforma Digital Com atendimento personalizado, soluções diversificadas e uma plataforma robusta, conseguimos oferecer a melhor experiência aos nossos clientes."
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar."
       ],
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.016906,
+      "cost_usd": 0.017195,
       "run": 0
     },
     {
       "id": "official-02",
       "split": "official",
       "message": "What's the weather forecast in Porto Alegre tomorrow?",
-      "ms": 16442.1,
+      "ms": 15370.4,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -225,7 +225,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "I couldn't find a full forecast for tomorrow (Nov 2, 2026) in Porto Alegre. The search only returned partial data:\n\n- **Yr:** early Monday morning, Nov 2, should be about 19°, with no rain and light southeast wind.\n- **Weather Underground:** tonight (Nov 1) has scattered showers and thunderstorms, a 40% chance of rain and a low of 67°F.\n\nFor the daytime high and the conditions across the whole day, check INMET (inmet.gov.br), the official Brazilian weather service.\n\nSources: Yr (yr.no), Weather Underground (wunderground.com/hourly/br/porto-alegre).",
+      "answer": "Here's the forecast for Porto Alegre, from World Weather Online (data for Monday, 02/11/2026):\n\n- **Morning:** mist, 19°C\n- **Afternoon:** thundery outbreaks nearby, 29°C\n- **Evening:** light rain shower, 24°C\n- **Maximum:** 31°C / 88°F\n\nAccuWeather also shows rain and a thunderstorm for Monday, 11/2.\n\nThe source's data is for Monday, 02/11/2026, so check that this is the \"tomorrow\" you mean. For live updates, see:\n- https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx\n- https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
       "source_ids": [
         "https://www.wunderground.com/hourly/br/porto-alegre",
         "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1",
@@ -308,18 +308,21 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [
+        "02/11/2026",
         "19",
-        "40",
-        "67"
+        "29",
+        "31",
+        "88",
+        "45561"
       ],
-      "cost_usd": 0.075968,
+      "cost_usd": 0.076046,
       "run": 0
     },
     {
       "id": "official-03",
       "split": "official",
       "message": "When will the money from yesterday's sales be deposited?",
-      "ms": 7496.5,
+      "ms": 8589.4,
       "expected_intent": "support",
       "checks": {
         "intent": true,
@@ -327,7 +330,7 @@
         "handoff_outcome": true,
         "language": true,
         "tools": true,
-        "numbers": false
+        "numbers": true
       },
       "crash": null,
       "got_intent": "support",
@@ -337,7 +340,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Yesterday (31/10) you had 4 approved sales, totaling R$ 745,50. All four are still scheduled (\"previsto\"):\n\n| Transaction | Method | Amount | Expected deposit |\n|---|---|---|---|\n| TX1001 | Debit | R$ 120,00 | 03/11 |\n| TX1003 | Debit | R$ 85,50 | 03/11 |\n| TX1005 | Pix | R$ 60,00 | 03/11 |\n| TX1002 | Credit | R$ 480,00 | 30/11 |\n\n- **03/11:** R$ 205,50 from debit and R$ 60,00 from Pix.\n- **30/11:** R$ 480,00 from credit.\n\nDeposits only happen on business days.\n\nYou also have R$ 1.730,00 available to anticipate. I can look into that if you want. An anticipation request would need your confirmation and an operator's approval.",
+      "answer": "Yesterday's sales (31/10) total R$ 745,50. Expected deposit dates:\n\n| Transaction | Method | Amount | Expected date |\n|---|---|---|---|\n| TX1001 | Debit | R$ 120,00 | 03/11 |\n| TX1003 | Debit | R$ 85,50 | 03/11 |\n| TX1005 | Pix | R$ 60,00 | 03/11 |\n| TX1002 | Credit | R$ 480,00 | 30/11 |\n\n- **Debit:** R$ 205,50 on 03/11.\n- **Pix:** R$ 60,00 on 03/11. Pix is normally deposited the same day, but the system shows 03/11 for this sale.\n- **Credit:** R$ 480,00 on 30/11.\n\nAll of these have the status \"previsto\" (expected). I can help you request an anticipation of your credit receivables if you'd like. You would need to confirm it, and an operator would then approve it.",
       "source_ids": [],
       "sources": [],
       "tool_calls": [
@@ -355,17 +358,15 @@
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
-      "unsupported_numbers": [
-        "4"
-      ],
-      "cost_usd": 0.023059,
+      "unsupported_numbers": [],
+      "cost_usd": 0.023233,
       "run": 0
     },
     {
       "id": "official-04",
       "split": "official",
       "message": "Do I need a bank account to receive my sales via Pix?",
-      "ms": 7468.3,
+      "ms": 7364.3,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -382,47 +383,47 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "The Getnet sources don't say outright that you need a bank account, but they point that way.\n\n- To sign up for Pix at Getnet, you must provide one Pix key linked to the receiving account you want to use [sup-duvidas-79].\n- You register that key in the Portal Minha Conta or the Getnet app. It must be the same key you registered with your bank details (domicílio bancário), where you'll receive the Pix [sup-duvidas-80].\n- A Pix key is described as the identifier of your bank account [sup-pix-mais-respostas-02].\n\nThe sources don't say whether other account types, such as Get Conta, can be used. If you need a definite answer on that, I can open a case with a human agent.",
+      "answer": "The Getnet pages don't say outright that you need a bank account, but they point that way.\n\n- To sign up for Pix with Getnet, you enter a Pix key that you already registered with the bank account (*domicílio bancário*) where you'll receive your Pix [sup-duvidas-80].\n- You only need one key. It must be linked to the receiving account you want to use [sup-duvidas-79].\n- A Pix key is described as the identifier of your bank account [sup-duvidas-58].\n\nThe sources don't say whether another kind of account, such as Get Conta, can be used. I can open a case with a human agent to check that if you'd like.",
       "source_ids": [
-        "sup-duvidas-79",
         "sup-duvidas-80",
-        "sup-pix-mais-respostas-02"
+        "sup-duvidas-79",
+        "sup-duvidas-58"
       ],
       "sources": [
-        {
-          "id": "sup-duvidas-79",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
         {
           "id": "sup-duvidas-80",
           "title": "Dúvidas e Perguntas Frequentes | Getnet",
           "url": "https://site.getnet.com.br/duvidas/"
         },
         {
-          "id": "sup-pix-mais-respostas-02",
-          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
+          "id": "sup-duvidas-79",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-duvidas-58",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
         }
       ],
       "tool_calls": [],
       "evidence": [
-        "Dúvidas e Perguntas Frequentes | Getnet: Quantas chaves Pix eu devo inserir na Getnet? Quantas chaves Pix eu devo inserir na Getnet? Para contratar o produto na Getnet, é necessário informar somente uma chave de sua escolha que esteja atrelada à conta de recebimento desejada. Ou seja, caso você tenha mais de uma chave Pix cadastrada no seu domicílio bancário, escolha uma delas para informar à Getnet!",
         "Dúvidas e Perguntas Frequentes | Getnet: Como faço para contratar o Pix na Getnet? Como faço para contratar o Pix na Getnet? A partir de 16/11/20, você pode acessar um dos canais digitais Getnet (Portal Minha Conta ou Aplicativo Getnet) e fazer a contratação por lá, digitando a mesma chave que você cadastrou no seu domicílio bancário* onde receberá o Pix.",
-        "Arquivos Mais respostas sobre o Pix​ - Getnet: O que são chaves Pix? O que são chaves Pix? A chave Pix é o identificador da sua conta bancária. Existem 4 tipos de chave que serão usadas pra fazer pagamentos e transferências: - CPF ou CNPJ – se for uma empresa - Número de celular Você também pode criar uma chave aleatória, sendo um código de 32 caracteres gerado pelo Banco Central para ser vinculado à sua conta."
+        "Dúvidas e Perguntas Frequentes | Getnet: Quantas chaves Pix eu devo inserir na Getnet? Quantas chaves Pix eu devo inserir na Getnet? Para contratar o produto na Getnet, é necessário informar somente uma chave de sua escolha que esteja atrelada à conta de recebimento desejada. Ou seja, caso você tenha mais de uma chave Pix cadastrada no seu domicílio bancário, escolha uma delas para informar à Getnet!",
+        "Dúvidas e Perguntas Frequentes | Getnet: O que são chaves Pix? O que são chaves Pix? A chave Pix é o identificador da sua conta bancária. Existem 4 tipos de chave que serão usadas pra fazer pagamentos e transferências: – CPF ou CNPJ – se for uma empresa – Número de celular Você também pode criar uma chave aleatória, sendo um código de 32 caracteres gerado pelo Banco Central para ser vinculado à sua conta."
       ],
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.013867,
+      "cost_usd": 0.013572,
       "run": 0
     },
     {
       "id": "official-05",
       "split": "official",
       "message": "My card machine won't connect to the internet, what should I do?",
-      "ms": 16842.2,
+      "ms": 15643.6,
       "expected_intent": "troubleshoot",
       "checks": {
         "intent": true,
@@ -441,11 +442,11 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Your terminal T1988B (Get Clássica) is offline. It uses a chip (mobile data), has no signal, and last contacted us 190 minutes ago. Your other terminal, T1988A, is online.\n\nTry these steps on T1988B:\n1. **Move it** to a spot with better coverage, such as near a window and away from thick walls.\n2. **Check the chip.** Turn the machine off and open the back cover. The chip should be in the slot marked SIM1 or SIM2, with the metal side facing down. Close the cover, turn it on and wait for the data connection. [sup-duvidas-05]\n3. **Run a communication test.** Press the function button (F, # or your machine's equivalent), choose option 2 (maintenance), then option 1 (communication test). [sup-duvidas-05, sup-duvidas-06]\n4. **Check the coverage.** The machine is ready when the network shows as connected (2G or 3G), so you need 2G/3G coverage where it sits. This also applies to the Algar chip, which connects to several carriers. [sup-duvidas-06]\n\nI can also propose a remote restart of the terminal. Nothing has been done yet, and you would need to confirm it.\n\nIf it still has no signal after these steps, the cause is probably the chip or the mobile network in your area. In that case, contact support so the chip can be checked. I can open a case with a human agent if you'd like.",
+      "answer": "Your terminal T1988B (Get Clássica) is the one that's offline. It uses a chip (mobile data), has no signal, and last contacted us 190 minutes ago. Your other terminal, T1988A (Get Smart), is online on Wi-Fi.\n\n**What to try on T1988B:**\n1. Turn it off and on again.\n2. Turn it off, open the back cover and check that the chip is in the SIM1 or SIM2 slot with the metal side facing down. Then close the cover, turn it on and wait for the data network to connect. [sup-duvidas-05]\n3. Move it somewhere with better signal, such as near a window and away from metal or thick walls.\n4. When the display shows a network (2G or 3G), the terminal is ready. To test the connection, press the function key (F, # or the one on your machine). Then choose 2 (maintenance) and 1 (communication test). [sup-duvidas-05, sup-duvidas-06]\n\nIf it still has no signal, I can propose a remote restart of T1988B. Nothing will happen until you confirm it. Do you want me to propose it?\n\nThe Getnet site doesn't say what to do if the signal doesn't come back after these steps. It also doesn't cover the T1988B model specifically. If the restart doesn't help, I can open a case with a human agent.",
       "source_ids": [
         "sup-duvidas-05",
         "sup-duvidas-06",
-        "sup-duvidas-34"
+        "sup-get-tap-12"
       ],
       "sources": [
         {
@@ -459,9 +460,9 @@
           "url": "https://site.getnet.com.br/duvidas/"
         },
         {
-          "id": "sup-duvidas-34",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
+          "id": "sup-get-tap-12",
+          "title": "Arquivos Get Tap - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-tap/"
         }
       ],
       "tool_calls": [
@@ -475,20 +476,20 @@
         "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
         "Dúvidas e Perguntas Frequentes | Getnet: A Get Smart aceita pagamento com auxilio emergencial? A Get Smart aceita pagamento com auxilio emergencial? Sim, basta fazer o processo de pagamento com , selecionando a opção débito. Como insiro o Chip na minha máquina? Como insiro o Chip na minha máquina? Siga os passos a seguir: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:",
         "Dúvidas e Perguntas Frequentes | Getnet: • Pressione o botão função – F, # ou o da sua máquina • Selecione a opção 2 – manutenção • Selecione a opção 1 – teste de comunicação Quais os benefícios do Chip Algar? Quais os benefícios do Chip Algar? – Um único Chip que se conecta a várias operadoras – Você pode utilizar a sua máquina em qualquer local com cobertura 2G/3G – Elimina necessidade de trocas de Chip O que é o Chip Algar?",
-        "Dúvidas e Perguntas Frequentes | Getnet: . Você também pode contatar a Central de Atendimento para verificar se o seu Estabelecimento está habilitado para operar com a modalidade. Caso a modalidade esteja habilitada, mas a opção Crediário ainda não esteja disponível em sua máquina, é importante realizar uma transação de adquirência (bandeiras Mastercard, Visa, Elo e Amex) ou proceder com a inicialização do terminal (Suporte > Bandeiras > Funções Técnicas > Inicialização). A taxa de desconto do Crediário é parte integrante do seu contrato de Adesão ao Sistema Getnet e pode ser consultada no Portal do Cliente e/ou no Aplicativo Getnet Brasil. Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)?"
+        "Arquivos Get Tap - Getnet: É preciso ter acesso a internet para utilizar o Get Tap? É preciso ter acesso a internet para utilizar o Get Tap? Sim, para utilizar o Get Tap é necessário ter conexão com a internet. Quantos Get Tap posso ter? Quantos Get Tap posso ter? A quantidade máxima está sujeita a avaliação, porém cada perfil poderá ter apenas um dispositivo/celular com o Get Tap."
       ],
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.037641,
+      "cost_usd": 0.035796,
       "run": 0
     },
     {
       "id": "official-06",
       "split": "official",
       "message": "How does receivables advance (antecipação) work with Getnet?",
-      "ms": 8031.1,
+      "ms": 8013.3,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -505,7 +506,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Receivables advance (antecipação de vendas) lets you receive money from credit sales before the normal settlement date. This covers sales paid in full or in installments [1].\n\n- **Timing:** You can advance a schedule from D+1 (one business day after the sale) until D-3 (three business days before it settles) [2].\n- **Authorization:** Under the new rules, you must authorize Getnet to consult your schedule at the Registradora. The Registradora confirms the authorization and the operation [3].\n- **Costs:** There are no extra charges beyond the existing ones: rental, MDR and the advance fee (taxa de antecipação) [3]. The sources don't state the fee amount.\n- **Limitation:** Sales from some card brands can't be advanced through Getnet. For those, you have to go to the card issuer or operator [2].\n\nSources: sup-duvidas-12 [1], sup-antecipacao-de-vendas-10 [2], sup-antecipacao-de-vendas-09 [3]",
+      "answer": "Here is how receivables advance (antecipação) works with Getnet:\n\n- **What it does:** You receive money from credit sales early. This covers both single-payment and installment sales. You don't have to wait for the normal settlement period. [sup-duvidas-12]\n- **When you can advance:** A schedule can be advanced from D+1 (one business day after the sale) up to D-3 (three business days before it settles). [sup-antecipacao-de-vendas-10]\n- **Authorization:** Under the new rules, you must authorize Getnet to query your schedule at the Registradora. The Registradora confirms the authorization and the operation. [sup-antecipacao-de-vendas-09]\n- **Costs:** There are no extra charges beyond the existing ones: rental, MDR and the antecipação fee. The sources I found don't give the fee amount. [sup-antecipacao-de-vendas-09]\n- **Limitation:** Sales from some card brands can't be advanced through Getnet. For those, you have to go directly to the card issuer or operator. [sup-antecipacao-de-vendas-10]",
       "source_ids": [
         "sup-duvidas-12",
         "sup-antecipacao-de-vendas-10",
@@ -538,14 +539,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.016035,
+      "cost_usd": 0.016185,
       "run": 0
     },
     {
       "id": "official-07",
       "split": "official",
       "message": "What's the euro exchange rate today?",
-      "ms": 14498.3,
+      "ms": 13518.2,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -562,7 +563,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "According to Ria Money Transfer, 1.00 EUR = 1.11838091 USD. The page calls this \"today's rate\" but shows no explicit date, so I can't confirm it's current.\n\nFor the official rate in Brazilian reais, check the Banco Central do Brasil. Exchange rates change often, so check a live source before you transact.\n\nSource: https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+      "answer": "Here are the euro rates against the US dollar:\n\n- **Ria Money Transfer:** 1 EUR = 1.11838091 USD. The page was listed as updated today (01/11/2026).\n- **Wise:** €1 = 1.116 USD. The page gave no clear timestamp.\n\nThese are reference rates, not the rate you would get on a transaction. I didn't find a euro-to-real rate. For the official one, check the Banco Central do Brasil (PTAX).\n\nSources: [Ria](https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1) and [Wise](https://wise.com/us/currency-converter/eur-to-usd-rate)",
       "source_ids": [
         "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
         "https://wise.com/us/currency-converter/eur-to-usd-rate",
@@ -638,21 +639,22 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [
-        "1.11838091"
+        "1.11838091",
+        "1.116"
       ],
-      "cost_usd": 0.057146,
+      "cost_usd": 0.05687,
       "run": 0
     },
     {
       "id": "official-08",
       "split": "official",
       "message": "My card machine is showing a transaction decline error.",
-      "ms": 12218.5,
+      "ms": 13247.7,
       "expected_intent": "troubleshoot",
       "checks": {
         "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
+        "handoff": false,
+        "handoff_outcome": false,
         "language": true,
         "tools": true,
         "numbers": true
@@ -662,31 +664,34 @@
       "route": [
         "router",
         "records",
-        "faq"
+        "faq",
+        "escalation"
       ],
-      "replans": [],
+      "replans": [
+        "faq->escalation (plano: [])"
+      ],
       "engine": "llm",
-      "answer": "I found two declined transactions on your account, and one of your terminals is offline.\n\n**Declines (terminal T1988A, 01/11):**\n- **TX1007:** R$ 210,00 on credit. It was declined with code 51 because the cardholder had insufficient balance.\n- **TX1008:** R$ 75,00 on debit. It was declined with code 05 because the issuer did not authorize it.\n\nBoth declines came from the card or the issuer. The machine did not cause them. A declined transaction can't be disputed. The customer can try another card or payment method, or contact their bank.\n\n**Terminals:**\n- **T1988A (Get Smart):** It is online and working normally.\n- **T1988B (Get Clássica):** It is offline with no chip signal. Its last contact was 190 minutes ago. This one may be showing the error.\n\nI found no troubleshooting guidance for this error on the Getnet site, so I can't add any manual steps.\n\nWhich machine is showing the error? If it's T1988B, I can propose a remote restart. Nothing will happen until you confirm it.",
+      "answer": "Here is what I found in your account:\n\n- **T1988A, 01/11:** Two transactions were declined, and neither was caused by the machine. The terminal is online.\n  - TX1007 (credit, R$ 210,00): code 51, insufficient balance on the cardholder's side.\n  - TX1008 (debit, R$ 75,00): code 05, the issuing bank did not authorize it.\n  - Customers can try another card or contact their bank.\n- **T1988B (Get Clássica):** It is offline with no chip signal, and its last contact was 190 minutes ago. If your error is on this machine, the cause is the connection, not a card decline.\n- **Restart:** I can propose a restart of T1988B. Nothing has been done yet, and you would need to confirm it. Do you want me to propose it?\n\nI found no Getnet source with troubleshooting steps for this error. I opened a case with a human agent (ticket T-7e3b6bae), and the reply will appear in this conversation.",
       "source_ids": [
-        "sup-duvidas-06",
-        "sup-duvidas-05",
-        "en-in-person-payments-03"
+        "en-in-person-payments-03",
+        "maq-todas-as-maquininhas-tabela-01",
+        "en-restaurants-07"
       ],
       "sources": [
-        {
-          "id": "sup-duvidas-06",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-duvidas-05",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
         {
           "id": "en-in-person-payments-03",
           "title": "In-person Payments",
           "url": "https://www.getnet.net/en/our-solutions/in-person-payments"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-tabela-01",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "en-restaurants-07",
+          "title": "Restaurants",
+          "url": "https://www.getnet.net/en/your-business/industries/restaurants"
         }
       ],
       "tool_calls": [
@@ -706,22 +711,23 @@
       "evidence": [
         "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
         "{\"ok\": true, \"data\": {\"count\": 2, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
-        "Dúvidas e Perguntas Frequentes | Getnet: • Pressione o botão função – F, # ou o da sua máquina • Selecione a opção 2 – manutenção • Selecione a opção 1 – teste de comunicação Quais os benefícios do Chip Algar? Quais os benefícios do Chip Algar? – Um único Chip que se conecta a várias operadoras – Você pode utilizar a sua máquina em qualquer local com cobertura 2G/3G – Elimina necessidade de trocas de Chip O que é o Chip Algar?",
-        "Dúvidas e Perguntas Frequentes | Getnet: A Get Smart aceita pagamento com auxilio emergencial? A Get Smart aceita pagamento com auxilio emergencial? Sim, basta fazer o processo de pagamento com , selecionando a opção débito. Como insiro o Chip na minha máquina? Como insiro o Chip na minha máquina? Siga os passos a seguir: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:",
-        "In-person Payments: Some of the advantages include: All our terminals comply with PCI security standards to make your transactions secure Get paid anywhere in your business in order to offer more comfort and a seanless experience IIt's reliadble, intuitive and allows you to start selling fast. Acceot chip card, magnetic stripe, contactless and mobiile payments The basic POS for your sales."
+        "In-person Payments: Some of the advantages include: All our terminals comply with PCI security standards to make your transactions secure Get paid anywhere in your business in order to offer more comfort and a seanless experience IIt's reliadble, intuitive and allows you to start selling fast. Acceot chip card, magnetic stripe, contactless and mobiile payments The basic POS for your sales.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátis: Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel Caso não atinja os faturamentos do quadro acima, segue o valor de utilização: Venda pelo celular R$ 0,00/mês Get Clássica R$ 79,90/mês Get Smart R$ 129,90/mês",
+        "Restaurants: Meet your new front-of house favourite Get Smart POS is more than a card machine. It's a mobile, all-in-one device that lets you take payments, track sales and manage your business from the palm of your hand. Get Smart POS is more than a card machine. Tailored for table service life Accepts all payment methods Major cards, mobile wallets, contactless and QR payments.",
+        "I've handed this to a human agent (ticket T-7e3b6bae). The reply will show up in this conversation."
       ],
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.032816,
+      "cost_usd": 0.037566,
       "run": 0
     },
     {
       "id": "official-09",
       "split": "official",
       "message": "How many installments can I split a sale into with the crediário?",
-      "ms": 5468.1,
+      "ms": 5254.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -738,7 +744,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "With Crediário, your customer can split a purchase into up to 48 installments on their credit card. The maximum term and the installment interest rate vary by card issuer.\n\nSources: prod-crediario-01, prod-crediario-02, prod-crediario-03",
+      "answer": "With Crediário, your customer can split a purchase into up to 48 installments on their credit card. The maximum term and the installment interest rate depend on the card issuer.\n\nSources: prod-crediario-01, prod-crediario-02, prod-crediario-03.",
       "source_ids": [
         "prod-crediario-01",
         "prod-crediario-03",
@@ -771,14 +777,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.01134,
+      "cost_usd": 0.011156,
       "run": 0
     },
     {
       "id": "official-10",
       "split": "official",
       "message": "Can I sell through WhatsApp using the Payment Link?",
-      "ms": 5996.4,
+      "ms": 5813.5,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -795,7 +801,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Yes, you can sell through WhatsApp with the Payment Link (Link de Pagamento). You send the link to your customer on WhatsApp, and they open it, choose a payment method and complete the purchase. You can also send it by email, SMS or social networks. You can customize the link with the product image and details.\n\nSources: en-online-payments-02, sup-link-de-pagamento-12, prod-link-de-pagamento-01.",
+      "answer": "Yes, you can sell through WhatsApp with Getnet's Link de Pagamento (Payment Link).\n\n- You can send the link to customers through WhatsApp, SMS, email or social media. The customer clicks the link, chooses a payment method and completes the purchase. [en-online-payments-02, sup-link-de-pagamento-12]\n- You can customize the link with the product image and add several products to the same cart. [prod-link-de-pagamento-01]",
       "source_ids": [
         "en-online-payments-02",
         "sup-link-de-pagamento-12",
@@ -828,14 +834,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.012858,
+      "cost_usd": 0.013043,
       "run": 0
     },
     {
       "id": "official-01",
       "split": "official",
       "message": "What's the difference between the Get Clássica and the Get Smart?",
-      "ms": 7837.9,
+      "ms": 7801.1,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -852,7 +858,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "The sources I found don't describe how the two machines differ in features or hardware. They only cover pricing and rental waivers.\n\n- **Monthly fee, if you don't hit the revenue thresholds:** Get Clássica is R$ 79,90/month. Get Smart is R$ 129,90/month. [maq-todas-as-maquininhas-tabela-01]\n- **Free machine by monthly revenue:**\n  - Above R$ 20 mil, you get a Get Clássica.\n  - Above R$ 40 mil, you get a Get Clássica or a Get Smart.\n  - Above R$ 80 mil, you also get a Get Clássica or a Get Smart. [maq-todas-as-maquininhas-03, prod-home-08]\n- **Revenue that doesn't count:** Voucher (VA/VR) and Crediário sales don't count toward the revenue needed to waive the rental fee.\n\nI can open a case with a human agent if you want a feature-by-feature comparison.",
+      "answer": "The sources I found only compare the two machines on rental fees. They don't describe features or hardware.\n\n- **Monthly fee if you don't reach the revenue thresholds:** Get Clássica costs R$ 79,90/month. Get Smart costs R$ 129,90/month.\n- **Fee waiver:**\n  - Above R$ 20 mil/month in sales, the Get Clássica is free.\n  - Above R$ 40 mil/month, you can choose either the Get Clássica or the Get Smart for free.\n  - The same applies above R$ 80 mil/month.\n- **Revenue that doesn't count:** Voucher (VA/VR) and Crediário sales don't count toward these thresholds.\n\nSources: maq-todas-as-maquininhas-tabela-01, maq-todas-as-maquininhas-03, prod-home-08.\n\nI can open a case with a human agent if you want a comparison of features and hardware.",
       "source_ids": [
         "maq-todas-as-maquininhas-tabela-01",
         "maq-todas-as-maquininhas-03",
@@ -885,14 +891,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.016912,
+      "cost_usd": 0.016402,
       "run": 1
     },
     {
       "id": "official-02",
       "split": "official",
       "message": "What's the weather forecast in Porto Alegre tomorrow?",
-      "ms": 10809.9,
+      "ms": 12111.6,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -909,7 +915,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Tomorrow in Porto Alegre (Monday, 02/11/2026), INMET forecasts a low of 20°C and a high of 31°C. Expect many clouds in the morning with a chance of isolated rain. The afternoon should also be cloudy, with isolated showers.\n\nSource: INMET (https://previsao.inmet.gov.br/4314902)",
+      "answer": "Here is the forecast for Porto Alegre tomorrow (Monday, 02/11/2026), according to INMET:\n\n- **Temperature:** minimum 20°C, maximum 31°C.\n- **Morning:** many clouds, with a chance of isolated rain.\n- **Afternoon:** many clouds, with isolated showers.\n\nSource: https://previsao.inmet.gov.br/4314902",
       "source_ids": [
         "https://previsao.inmet.gov.br/4314902",
         "https://metsul.com/previsao/rs/porto-alegre/",
@@ -990,14 +996,14 @@
         "31",
         "4314902"
       ],
-      "cost_usd": 0.054178,
+      "cost_usd": 0.054328,
       "run": 1
     },
     {
       "id": "official-03",
       "split": "official",
       "message": "When will the money from yesterday's sales be deposited?",
-      "ms": 7703.9,
+      "ms": 7305.5,
       "expected_intent": "support",
       "checks": {
         "intent": true,
@@ -1005,7 +1011,7 @@
         "handoff_outcome": true,
         "language": true,
         "tools": true,
-        "numbers": false
+        "numbers": true
       },
       "crash": null,
       "got_intent": "support",
@@ -1015,7 +1021,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Your sales from yesterday (31/10) total R$ 745,50. Every item is still marked \"previsto\" (expected). The deposits are scheduled like this:\n\n- **03/11:** R$ 265,50. This is R$ 205,50 from debit (TX1001 and TX1003) plus R$ 60,00 from Pix (TX1005).\n- **30/11:** R$ 480,00 from credit (TX1002).\n\nPix usually pays on the same day, but the system shows 03/11 for TX1005.\n\nYou also have R$ 1.730,00 available to anticipate. If you want to do that, I can start the request. You would need to confirm it, and an operator would then approve it.",
+      "answer": "Yesterday's sales (31/10) total R$ 745,50. These are the expected deposit dates:\n\n- **Debit:** R$ 205,50 (TX1001 and TX1003) on 03/11.\n- **Pix:** R$ 60,00 (TX1005) on 03/11. The system shows Pix on 03/11 too, not the same day.\n- **Credit:** R$ 480,00 (TX1002) on 30/11.\n\nAll of these are still marked \"previsto\" (expected). Deposits follow business days.\n\nYou also have R$ 1.730,00 available to anticipate. I can help with that if you want. A request to anticipate needs your confirmation and an operator's approval.",
       "source_ids": [],
       "sources": [],
       "tool_calls": [
@@ -1033,17 +1039,15 @@
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
-      "unsupported_numbers": [
-        "265,50"
-      ],
-      "cost_usd": 0.022213,
+      "unsupported_numbers": [],
+      "cost_usd": 0.022215,
       "run": 1
     },
     {
       "id": "official-04",
       "split": "official",
       "message": "Do I need a bank account to receive my sales via Pix?",
-      "ms": 8041.9,
+      "ms": 6844.6,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1060,47 +1064,47 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Yes. Based on the Getnet support pages, you need a bank account with a registered Pix key.\n\n- When you contract Pix with Getnet, you enter the key you registered at the bank account (domicílio bancário) where you'll receive Pix [sup-duvidas-80].\n- That key must be linked to the receiving account you want to use [sup-duvidas-79].\n- A Pix key identifies your bank account [sup-duvidas-58].\n\nThe sources don't say whether other kinds of accounts are accepted.\n\nSources: sup-duvidas-80, sup-duvidas-79, sup-duvidas-58",
+      "answer": "The sources don't say outright whether a bank account is mandatory. They do point toward yes.\n\n- To sign up for Pix at Getnet, you give one Pix key linked to the receiving account you want to use (sup-duvidas-79).\n- You register that key, tied to the bank account (domicílio bancário) where you'll receive the Pix, in the Portal Minha Conta or the Getnet app (sup-duvidas-80).\n- A Pix key is the identifier of a bank account (sup-pix-mais-respostas-02).\n\nThe sources also don't say whether a Get Conta account could serve as that receiving account. If you want a definite answer on that, I can open a case with a human agent.",
       "source_ids": [
-        "sup-duvidas-80",
         "sup-duvidas-79",
-        "sup-duvidas-58"
+        "sup-duvidas-80",
+        "sup-pix-mais-respostas-02"
       ],
       "sources": [
-        {
-          "id": "sup-duvidas-80",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
         {
           "id": "sup-duvidas-79",
           "title": "Dúvidas e Perguntas Frequentes | Getnet",
           "url": "https://site.getnet.com.br/duvidas/"
         },
         {
-          "id": "sup-duvidas-58",
+          "id": "sup-duvidas-80",
           "title": "Dúvidas e Perguntas Frequentes | Getnet",
           "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-pix-mais-respostas-02",
+          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
         }
       ],
       "tool_calls": [],
       "evidence": [
-        "Dúvidas e Perguntas Frequentes | Getnet: Como faço para contratar o Pix na Getnet? Como faço para contratar o Pix na Getnet? A partir de 16/11/20, você pode acessar um dos canais digitais Getnet (Portal Minha Conta ou Aplicativo Getnet) e fazer a contratação por lá, digitando a mesma chave que você cadastrou no seu domicílio bancário* onde receberá o Pix.",
         "Dúvidas e Perguntas Frequentes | Getnet: Quantas chaves Pix eu devo inserir na Getnet? Quantas chaves Pix eu devo inserir na Getnet? Para contratar o produto na Getnet, é necessário informar somente uma chave de sua escolha que esteja atrelada à conta de recebimento desejada. Ou seja, caso você tenha mais de uma chave Pix cadastrada no seu domicílio bancário, escolha uma delas para informar à Getnet!",
-        "Dúvidas e Perguntas Frequentes | Getnet: O que são chaves Pix? O que são chaves Pix? A chave Pix é o identificador da sua conta bancária. Existem 4 tipos de chave que serão usadas pra fazer pagamentos e transferências: – CPF ou CNPJ – se for uma empresa – Número de celular Você também pode criar uma chave aleatória, sendo um código de 32 caracteres gerado pelo Banco Central para ser vinculado à sua conta."
+        "Dúvidas e Perguntas Frequentes | Getnet: Como faço para contratar o Pix na Getnet? Como faço para contratar o Pix na Getnet? A partir de 16/11/20, você pode acessar um dos canais digitais Getnet (Portal Minha Conta ou Aplicativo Getnet) e fazer a contratação por lá, digitando a mesma chave que você cadastrou no seu domicílio bancário* onde receberá o Pix.",
+        "Arquivos Mais respostas sobre o Pix​ - Getnet: O que são chaves Pix? O que são chaves Pix? A chave Pix é o identificador da sua conta bancária. Existem 4 tipos de chave que serão usadas pra fazer pagamentos e transferências: - CPF ou CNPJ – se for uma empresa - Número de celular Você também pode criar uma chave aleatória, sendo um código de 32 caracteres gerado pelo Banco Central para ser vinculado à sua conta."
       ],
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.015976,
+      "cost_usd": 0.013603,
       "run": 1
     },
     {
       "id": "official-05",
       "split": "official",
       "message": "My card machine won't connect to the internet, what should I do?",
-      "ms": 17712.8,
+      "ms": 14559.0,
       "expected_intent": "troubleshoot",
       "checks": {
         "intent": true,
@@ -1119,7 +1123,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Your Get Clássica (T1988B) is offline. It uses a chip (mobile data), shows no signal, and last connected 190 minutes ago. Your other machine, the Get Smart (T1988A), is online on Wi-Fi. T1988B isn't blocked and its paper roll is fine, so the likely cause is missing chip signal.\n\n**What to try on T1988B:**\n1. Move it somewhere with better coverage, such as near a window or the entrance.\n2. Reseat the chip. With the machine off, open the back cover and put the chip in the SIM1 or SIM2 slot, metal side down. Close the cover, turn the machine on, and wait for the data network to connect. A 2G or 3G network on the screen means it's ready (sources: sup-duvidas-06, sup-duvidas-05).\n3. Turn the machine off and on again.\n4. Run a communication test. Press the function button (F, # or the equivalent on your machine), then choose 2 (maintenance), then 1 (communication test) (source: sup-get-tap-12).\n\nThe sources don't cover any other fixes for a machine that still has no signal.\n\nI can also set up a remote restart for T1988B. You would need to confirm it, and nothing has been done yet. Do you want me to set it up?",
+      "answer": "Your Get Clássica machine (T1988B) is offline. It uses a chip (mobile data), has no signal, and last connected 190 minutes ago. Your other machine, T1988A (Get Smart), is online on Wi-Fi.\n\n**What to try on T1988B:**\n1. Move it to a spot with better mobile coverage, away from thick walls and metal.\n2. Turn it off and on again.\n3. With the machine off, open the back cover and check the chip. It goes in the slot marked SIM1 or SIM2, metal side facing down. Close the cover, turn the machine on, and wait for the network (2G or 3G) to connect.\n4. Run a communication test. Press the function button (F, # or the one on your machine), choose option 2 (maintenance), then option 1 (communication test).\n\nThe sources I found don't say what to do if the test fails or the signal doesn't come back. They also have nothing specific to the Get Clássica. (Sources: sup-duvidas-06, sup-duvidas-05, sup-get-tap-12.)\n\nI can also propose a remote restart of T1988B. A restart may not fix a lack of signal. If you want it, you would need to confirm it, and nothing has been done yet. If the problem continues, I can open a case with a human agent.",
       "source_ids": [
         "sup-duvidas-06",
         "sup-duvidas-05",
@@ -1159,14 +1163,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.039364,
+      "cost_usd": 0.035326,
       "run": 1
     },
     {
       "id": "official-06",
       "split": "official",
       "message": "How does receivables advance (antecipação) work with Getnet?",
-      "ms": 8250.9,
+      "ms": 8344.1,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1183,7 +1187,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Receivables advance (antecipação) lets you get the money from credit sales early. This covers both single-payment and installment sales. You don't have to wait for the standard settlement period. [sup-duvidas-12]\n\n- **Eligibility window:** a sale can be advanced from D+1 (one business day after the sale) until D-3 (three business days before it settles into your account). [sup-antecipacao-de-vendas-10]\n- **Consent:** under the new rules, you must authorize Getnet to query your schedule at the Registradora. That authorization confirms the query and the operation. [sup-antecipacao-de-vendas-09]\n- **Costs:** there are no extra charges beyond the existing ones: rental, MDR and the advance fee. [sup-antecipacao-de-vendas-09]\n- **Limitation:** sales from some card brands can't be advanced through Getnet. For those, you have to go through the brand's own Operadora. [sup-antecipacao-de-vendas-10]\n\nI can check your own schedule or start an advance request if you'd like. An operator would need to approve the request, and you would need to confirm it.",
+      "answer": "Getnet's sales advance (antecipação de vendas) lets you receive credit sale amounts early. This covers both single-payment and installment sales. You don't have to wait for the normal settlement period [sup-duvidas-12].\n\n- **Timing:** You can advance a sale from D+1 (one business day after the sale). You can do it up to D-3 (three business days before the scheduled settlement) [sup-antecipacao-de-vendas-10].\n- **Authorization:** Under the new rules, you must consent to Getnet querying your schedule at the Registradora. The Registradora confirms the authorization and the operation [sup-antecipacao-de-vendas-09].\n- **Costs:** There are no charges beyond the existing ones. Those are rental, MDR and the advance fee (taxa de antecipação) [sup-antecipacao-de-vendas-09].\n- **Card brands:** Some brands can't be advanced through Getnet. For those, you have to go directly to the card issuer or operator [sup-antecipacao-de-vendas-10].\n\nThe sources don't say which brands are affected or what the advance fee is.",
       "source_ids": [
         "sup-duvidas-12",
         "sup-antecipacao-de-vendas-10",
@@ -1216,14 +1220,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.016104,
+      "cost_usd": 0.017217,
       "run": 1
     },
     {
       "id": "official-07",
       "split": "official",
       "message": "What's the euro exchange rate today?",
-      "ms": 13906.2,
+      "ms": 13481.1,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -1240,7 +1244,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "According to Ria Money Transfer, on 11/01/2026, 1.00 EUR = 1.11838091 USD. This is the mid-market reference rate. The rate changes during the day, so it may have moved since then.\n\nI didn't find a euro-to-real (BRL) rate. For the official BRL rate, check the Banco Central do Brasil (PTAX).\n\nSource: https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+      "answer": "Today (11/01/2026), Ria Money Transfer lists 1.00 EUR = 1.11838091 USD, which is the mid-market reference rate. Wise shows a similar figure of €1 = 1.116 USD.\n\nI didn't find a euro-to-real (BRL) rate. For the official Brazilian rate, check the Banco Central do Brasil (PTAX).\n\nSources:\n- Ria Money Transfer: https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1\n- Wise: https://wise.com/us/currency-converter/eur-to-usd-rate",
       "source_ids": [
         "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
         "https://wise.com/us/currency-converter/eur-to-usd-rate",
@@ -1316,16 +1320,17 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [
-        "1.11838091"
+        "1.11838091",
+        "1.116"
       ],
-      "cost_usd": 0.055758,
+      "cost_usd": 0.05638,
       "run": 1
     },
     {
       "id": "official-08",
       "split": "official",
       "message": "My card machine is showing a transaction decline error.",
-      "ms": 13329.4,
+      "ms": 11699.7,
       "expected_intent": "troubleshoot",
       "checks": {
         "intent": true,
@@ -1344,27 +1349,27 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "I found two recent declines on your account, and one of your terminals is offline. I couldn't find a Getnet source for the decline codes, so the code explanations below come from your records, not the website.\n\n**Recent declines (both on terminal T1988A):**\n- **TX1007:** credit, R$ 210,00, on 01/11. Code 51: insufficient funds on the cardholder's account.\n- **TX1008:** debit, R$ 75,00, on 01/11. Code 05: not authorized by the issuer.\n\nThe card issuer's bank declined both. They don't point to a fault in the terminal. The customer can try another card or contact their bank. Declines can't be disputed.\n\n**Terminals:**\n- **T1988A (Get Smart):** online, Wi-Fi signal OK, last contact 2 minutes ago, paper roll OK.\n- **T1988B (Get Clássica):** offline, no chip signal, last contact 190 minutes ago. If the error appeared on this one, the likely cause is the connection.\n\nWhich terminal is showing the error? If it's T1988B, I can propose a remote restart. You would need to confirm it before anything happens.",
+      "answer": "Here's what I found on your account. I have no Getnet manual for this error.\n\n**Terminal T1988A** (online, good Wi-Fi) had two declines on 01/11:\n- **TX1007:** credit, R$ 210,00. Code 51, insufficient balance on the cardholder's account.\n- **TX1008:** debit, R$ 75,00. Code 05, not authorized by the issuer.\n\nThese declines came from the cards or issuers, not from a fault in your machine. Ask those customers to try another card or call their bank.\n\n**Terminal T1988B** (Get Clássica) is offline. It has no chip signal and last contacted us 190 minutes ago. If your error came from this machine, the cause is probably the connection and not a card decline.\n\nWhich machine showed the error? If it was T1988B, I can propose a restart. You would need to confirm it before anything happens. Nothing has been done yet.",
       "source_ids": [
-        "en-in-person-payments-03",
-        "en-restaurants-07",
-        "en-value-added-solutions-05"
+        "sup-duvidas-05",
+        "prod-home-02",
+        "maq-todas-as-maquininhas-tabela-01"
       ],
       "sources": [
         {
-          "id": "en-in-person-payments-03",
-          "title": "In-person Payments",
-          "url": "https://www.getnet.net/en/our-solutions/in-person-payments"
+          "id": "sup-duvidas-05",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
         },
         {
-          "id": "en-restaurants-07",
-          "title": "Restaurants",
-          "url": "https://www.getnet.net/en/your-business/industries/restaurants"
+          "id": "prod-home-02",
+          "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000",
+          "url": "https://site.getnet.com.br/"
         },
         {
-          "id": "en-value-added-solutions-05",
-          "title": "Getnet - Value added services",
-          "url": "https://www.getnet.net/en/our-solutions/value-added-solutions"
+          "id": "maq-todas-as-maquininhas-tabela-01",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
         }
       ],
       "tool_calls": [
@@ -1384,22 +1389,22 @@
       "evidence": [
         "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
         "{\"ok\": true, \"data\": {\"count\": 2, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
-        "In-person Payments: Some of the advantages include: All our terminals comply with PCI security standards to make your transactions secure Get paid anywhere in your business in order to offer more comfort and a seanless experience IIt's reliadble, intuitive and allows you to start selling fast. Acceot chip card, magnetic stripe, contactless and mobiile payments The basic POS for your sales.",
-        "Restaurants: Meet your new front-of house favourite Get Smart POS is more than a card machine. It's a mobile, all-in-one device that lets you take payments, track sales and manage your business from the palm of your hand. Get Smart POS is more than a card machine. Tailored for table service life Accepts all payment methods Major cards, mobile wallets, contactless and QR payments.",
-        "Getnet - Value added services: More value for our merchants Provides the peace of mind of covering the loss of incomes if you can not operate. With just one contract all the merchant POS in every store are covered. Allow your international customers to pay in their card currency wherever they may be. An additional layer of security for online credit and debit card transactions."
+        "Dúvidas e Perguntas Frequentes | Getnet: A Get Smart aceita pagamento com auxilio emergencial? A Get Smart aceita pagamento com auxilio emergencial? Sim, basta fazer o processo de pagamento com , selecionando a opção débito. Como insiro o Chip na minha máquina? Como insiro o Chip na minha máquina? Siga os passos a seguir: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:",
+        "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Maquininha + conta integrada Getnet Recomendado para PF ou CNPJ que querem alavancar seus negócios vendendo mais sem pagar aluguel Onde você recebe Get Conta com cartão grátis Venda o quanto quiser de graça pelo celular 12x R$ 9,90 ou 118,80 à vista | Get Mini 12x R$ 7,90 ou 94,80 à vista | Get Clássica *Termos e condições Taxa única para as bandeiras Condições válidas para recebimento na Get Conta Caso não atinja os faturamentos do quadro acima, segue o valor de utilização:",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátis: Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel Caso não atinja os faturamentos do quadro acima, segue o valor de utilização: Venda pelo celular R$ 0,00/mês Get Clássica R$ 79,90/mês Get Smart R$ 129,90/mês"
       ],
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.03309,
+      "cost_usd": 0.032925,
       "run": 1
     },
     {
       "id": "official-09",
       "split": "official",
       "message": "How many installments can I split a sale into with the crediário?",
-      "ms": 5278.8,
+      "ms": 5434.2,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1449,14 +1454,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.011146,
+      "cost_usd": 0.01135,
       "run": 1
     },
     {
       "id": "official-10",
       "split": "official",
       "message": "Can I sell through WhatsApp using the Payment Link?",
-      "ms": 5611.0,
+      "ms": 5883.9,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1473,7 +1478,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Yes, you can sell through WhatsApp with the Getnet Payment Link (Link de Pagamento). You send the link to your customer on WhatsApp. You can also send it by SMS, email or social networks. The customer clicks the link, chooses a payment method and completes the purchase.\n\nSources: en-online-payments-02, sup-link-de-pagamento-12, prod-link-de-pagamento-01.",
+      "answer": "Yes, you can sell through WhatsApp with the Getnet Payment Link (Link de Pagamento). You send the link to your customer on WhatsApp, SMS, email or social networks. The customer clicks it, chooses a payment method and completes the purchase.\n\nSources: en-online-payments-02, sup-link-de-pagamento-12, prod-link-de-pagamento-01.",
       "source_ids": [
         "en-online-payments-02",
         "sup-link-de-pagamento-12",
@@ -1506,14 +1511,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.012675,
+      "cost_usd": 0.012604,
       "run": 1
     },
     {
       "id": "official-01",
       "split": "official",
       "message": "What's the difference between the Get Clássica and the Get Smart?",
-      "ms": 8359.7,
+      "ms": 8086.8,
       "expected_intent": "knowledge",
       "checks": {
         "intent": true,
@@ -1530,7 +1535,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "The sources I found don't describe how the two machines differ in features, screen or connectivity. They only cover rental fees and the revenue needed to waive them.\n\n- **Monthly fee, if you don't reach the revenue thresholds:** Get Clássica is R$ 79,90 and Get Smart is R$ 129,90.\n- **Free machine by monthly revenue:**\n  - Above R$ 20 mil, you get a Get Clássica.\n  - Above R$ 40 mil, you can choose a Get Clássica or a Get Smart.\n  - The same applies above R$ 80 mil.\n- **Sales that don't count toward the waiver:** Voucher (VA/VR) and Crediário.\n\nI can open a case with a human agent if you want a full feature comparison.\n\nSources: maq-todas-as-maquininhas-tabela-01, maq-todas-as-maquininhas-03, prod-home-08.",
+      "answer": "The sources I found don't describe feature or hardware differences between the Get Clássica and the Get Smart. They only cover rental fees:\n\n- **Monthly fee** if you don't reach the sales thresholds: Get Clássica is R$ 79,90 and Get Smart is R$ 129,90 [1].\n- **Rental waiver:** the Get Clássica is free above R$ 20mil in monthly sales. Either machine is free above R$ 40mil [1].\n- **Sales that don't count** toward the waiver: Voucher (VA/VR) and Crediário [1].\n\nHardware, features and rates for each model aren't in the sources, so I can't compare them. I can open a case with a human agent if you'd like that comparison.\n\nSources: maq-todas-as-maquininhas-tabela-01, maq-todas-as-maquininhas-03, prod-home-08",
       "source_ids": [
         "maq-todas-as-maquininhas-tabela-01",
         "maq-todas-as-maquininhas-03",
@@ -1563,351 +1568,14 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [],
-      "cost_usd": 0.016772,
+      "cost_usd": 0.016804,
       "run": 2
     },
     {
       "id": "official-02",
       "split": "official",
       "message": "What's the weather forecast in Porto Alegre tomorrow?",
-      "ms": 19086.9,
-      "expected_intent": "general",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": false,
-        "numbers": false
-      },
-      "crash": null,
-      "got_intent": "general",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Segundo a AccuWeather, a previsão para Porto Alegre na segunda-feira, 11/02/2026, é de alguma chuva e trovoada, com máxima de 85° e mínima de 66°. A página não informa a unidade das temperaturas e eu não fiz conversão. O mesmo resultado menciona 60%, mas não diz de que se trata. Presumo que seja a chance de chuva, mas isso não está confirmado.\n\nPara alertas oficiais, consulte o INMET.\n\nFontes: https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
-      "source_ids": [
-        "https://www.wunderground.com/hourly/br/porto-alegre",
-        "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1",
-        "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
-        "https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx",
-        "https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
-        "https://www.theweathernetwork.com/en/city/br/rio-grande-do-sul/porto-alegre/14-days",
-        "https://www.theweather.com/porto-alegre-in-brazil-c12931.htm",
-        "https://www.timeanddate.com/weather/brazil/porto-alegre",
-        "https://weather.metoffice.gov.uk/forecast/6fet4jp",
-        "https://weather.metoffice.gov.uk/observations/6fet769mq"
-      ],
-      "sources": [
-        {
-          "id": "https://www.wunderground.com/hourly/br/porto-alegre",
-          "title": "Porto Alegre, BR Hourly Weather Forecast",
-          "url": "https://www.wunderground.com/hourly/br/porto-alegre"
-        },
-        {
-          "id": "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1",
-          "title": "Yr - Porto Alegre - Hourly weather forecast",
-          "url": "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1"
-        },
-        {
-          "id": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
-          "title": "Weather Forecast and Prayer Timings for Monday, November 2, 2026",
-          "url": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881"
-        },
-        {
-          "id": "https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx",
-          "title": "Porto Alegre Weather - Rio Grande do Sul, BR",
-          "url": "https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx"
-        },
-        {
-          "id": "https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
-          "title": "Porto Alegre, Rio Grande Do Sul, Brazil Weather Forecast",
-          "url": "https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561"
-        },
-        {
-          "id": "https://www.theweathernetwork.com/en/city/br/rio-grande-do-sul/porto-alegre/14-days",
-          "title": "Porto Alegre, RS, BR 14 Days Weather - The Weather Network",
-          "url": "https://www.theweathernetwork.com/en/city/br/rio-grande-do-sul/porto-alegre/14-days"
-        },
-        {
-          "id": "https://www.theweather.com/porto-alegre-in-brazil-c12931.htm",
-          "title": "Porto Alegre, RS Weather 14 days - Meteored US",
-          "url": "https://www.theweather.com/porto-alegre-in-brazil-c12931.htm"
-        },
-        {
-          "id": "https://www.timeanddate.com/weather/brazil/porto-alegre",
-          "title": "porto alegre",
-          "url": "https://www.timeanddate.com/weather/brazil/porto-alegre"
-        },
-        {
-          "id": "https://weather.metoffice.gov.uk/forecast/6fet4jp",
-          "title": "Porto Alegre (Brazil) weather",
-          "url": "https://weather.metoffice.gov.uk/forecast/6fet4jp"
-        },
-        {
-          "id": "https://weather.metoffice.gov.uk/observations/6fet769mq",
-          "title": "Porto Alegre International (Brazil) last 24 hours weather",
-          "url": "https://weather.metoffice.gov.uk/observations/6fet769mq"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Porto Alegre, BR Hourly Weather Forecast (s/ data)",
-        "Yr - Porto Alegre - Hourly weather forecast (s/ data)",
-        "Weather Forecast and Prayer Timings for Monday, November 2, 2026 (0 days ago)",
-        "Porto Alegre Weather - Rio Grande do Sul, BR (2062 days ago)",
-        "Porto Alegre, Rio Grande Do Sul, Brazil Weather Forecast (213 days ago)",
-        "Porto Alegre, RS, BR 14 Days Weather - The Weather Network (s/ data)",
-        "Porto Alegre, RS Weather 14 days - Meteored US (s/ data)",
-        "porto alegre (s/ data)",
-        "Porto Alegre (Brazil) weather (s/ data)",
-        "Porto Alegre International (Brazil) last 24 hours weather (s/ data)",
-        "Hoje é 2026-11-01 (Sunday)"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "pt",
-      "unsupported_numbers": [
-        "11/02/2026",
-        "85",
-        "66",
-        "60",
-        "45561"
-      ],
-      "cost_usd": 0.11325,
-      "run": 2
-    },
-    {
-      "id": "official-03",
-      "split": "official",
-      "message": "When will the money from yesterday's sales be deposited?",
-      "ms": 7890.4,
-      "expected_intent": "support",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "tools": true,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "support",
-      "route": [
-        "router",
-        "records"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Yesterday (31/10) you had four approved sales, totaling R$ 745,50. This is when each one is expected to be deposited:\n\n- **Debit:** R$ 205,50 (TX1001 and TX1003) on 03/11.\n- **Pix:** R$ 60,00 (TX1005) on 03/11.\n- **Credit:** R$ 480,00 (TX1002) on 30/11.\n\nAll of these are still marked \"previsto\" (expected).\n\nYou also have R$ 1.730,00 available to anticipate. If you want to request an anticipation, you would need to confirm it, and an operator would then have to approve it.\n\nSource: your account records.",
-      "source_ids": [],
-      "sources": [],
-      "tool_calls": [
-        {
-          "name": "get_settlements",
-          "args": {
-            "period": "yesterday"
-          },
-          "ok": true
-        }
-      ],
-      "evidence": [
-        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"yesterday\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 480.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 745.5, \"available_for_anticipation\": 1730.0}}"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [],
-      "cost_usd": 0.022007,
-      "run": 2
-    },
-    {
-      "id": "official-04",
-      "split": "official",
-      "message": "Do I need a bank account to receive my sales via Pix?",
-      "ms": 6833.4,
-      "expected_intent": "knowledge",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "knowledge",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "I didn't find an explicit statement that a bank account is required. The Getnet material does point that way:\n\n- To sign up for Pix with Getnet, you provide one Pix key linked to the receiving account you want to use [sup-duvidas-79].\n- You register it in the Portal Minha Conta or the Getnet app. You enter the same key you registered with your bank details (domicílio bancário), which is where you'll receive the Pix [sup-duvidas-80].\n- A Pix key is described as the identifier of your bank account [sup-pix-mais-respostas-02].\n\nThe material doesn't say whether other account types, such as Get Conta, are accepted. If you need that confirmed, I can open a case with a human agent.",
-      "source_ids": [
-        "sup-duvidas-79",
-        "sup-duvidas-80",
-        "sup-pix-mais-respostas-02"
-      ],
-      "sources": [
-        {
-          "id": "sup-duvidas-79",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-duvidas-80",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-pix-mais-respostas-02",
-          "title": "Arquivos Mais respostas sobre o Pix​ - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/pix-mais-respostas/"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Dúvidas e Perguntas Frequentes | Getnet: Quantas chaves Pix eu devo inserir na Getnet? Quantas chaves Pix eu devo inserir na Getnet? Para contratar o produto na Getnet, é necessário informar somente uma chave de sua escolha que esteja atrelada à conta de recebimento desejada. Ou seja, caso você tenha mais de uma chave Pix cadastrada no seu domicílio bancário, escolha uma delas para informar à Getnet!",
-        "Dúvidas e Perguntas Frequentes | Getnet: Como faço para contratar o Pix na Getnet? Como faço para contratar o Pix na Getnet? A partir de 16/11/20, você pode acessar um dos canais digitais Getnet (Portal Minha Conta ou Aplicativo Getnet) e fazer a contratação por lá, digitando a mesma chave que você cadastrou no seu domicílio bancário* onde receberá o Pix.",
-        "Arquivos Mais respostas sobre o Pix​ - Getnet: O que são chaves Pix? O que são chaves Pix? A chave Pix é o identificador da sua conta bancária. Existem 4 tipos de chave que serão usadas pra fazer pagamentos e transferências: - CPF ou CNPJ – se for uma empresa - Número de celular Você também pode criar uma chave aleatória, sendo um código de 32 caracteres gerado pelo Banco Central para ser vinculado à sua conta."
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [],
-      "cost_usd": 0.013835,
-      "run": 2
-    },
-    {
-      "id": "official-05",
-      "split": "official",
-      "message": "My card machine won't connect to the internet, what should I do?",
-      "ms": 16699.5,
-      "expected_intent": "troubleshoot",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "tools": true,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "troubleshoot",
-      "route": [
-        "router",
-        "records",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Your terminal T1988B (Get Clássica) is the one that's offline. It uses a chip (mobile data), has no signal, and last contacted us 190 minutes ago. Your other terminal, T1988A (Get Smart), is online on Wi-Fi.\n\n**What to try on T1988B:**\n1. Move it to a spot with better coverage, such as near a window and away from thick walls. The Algar chip needs 2G/3G coverage to work (sources: sup-duvidas-06, sup-duvidas-05, sup-duvidas-03).\n2. Check the chip. Turn the machine off and open the back cover. Insert the chip in the SIM1 or SIM2 slot with the metal side down. Close the cover, turn the machine on and wait for the data network to connect. When it shows 2G or 3G connected, it's ready (sup-duvidas-05).\n3. Run a communication test. Press the function button (F, # or the one on your machine), then choose 2 (maintenance), then 1 (communication test) (sup-duvidas-06).\n4. Turn it off and on again.\n\nI can also propose a remote restart for T1988B. Nothing has been done yet, and you would need to confirm it first.\n\nIf it still has no signal after these steps, the cause is probably the chip or the network coverage at your location. In that case, contact support to check the chip. I can open a case with a human agent if you'd like.",
-      "source_ids": [
-        "sup-duvidas-06",
-        "sup-duvidas-05",
-        "sup-duvidas-03"
-      ],
-      "sources": [
-        {
-          "id": "sup-duvidas-06",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-duvidas-05",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-duvidas-03",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        }
-      ],
-      "tool_calls": [
-        {
-          "name": "get_terminal_status",
-          "args": {},
-          "ok": true
-        }
-      ],
-      "evidence": [
-        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
-        "Dúvidas e Perguntas Frequentes | Getnet: • Pressione o botão função – F, # ou o da sua máquina • Selecione a opção 2 – manutenção • Selecione a opção 1 – teste de comunicação Quais os benefícios do Chip Algar? Quais os benefícios do Chip Algar? – Um único Chip que se conecta a várias operadoras – Você pode utilizar a sua máquina em qualquer local com cobertura 2G/3G – Elimina necessidade de trocas de Chip O que é o Chip Algar?",
-        "Dúvidas e Perguntas Frequentes | Getnet: A Get Smart aceita pagamento com auxilio emergencial? A Get Smart aceita pagamento com auxilio emergencial? Sim, basta fazer o processo de pagamento com , selecionando a opção débito. Como insiro o Chip na minha máquina? Como insiro o Chip na minha máquina? Siga os passos a seguir: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:",
-        "Dúvidas e Perguntas Frequentes | Getnet: Se ocorrerem duas (02) vendas idênticas no mesmo estabelecimento e no período de 5 minutos (mesmo cartão, bandeira, valor), a segunda será cancelada automaticamente. Caso seja necessário repetir uma transação, deve-se aguardar 5 minutos ou informar um valor diferente. Como proceder para que minha bateria da Get Smart se mantenha com uma boa duração?"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [],
-      "cost_usd": 0.038756,
-      "run": 2
-    },
-    {
-      "id": "official-06",
-      "split": "official",
-      "message": "How does receivables advance (antecipação) work with Getnet?",
-      "ms": 9375.2,
-      "expected_intent": "knowledge",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": false,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "knowledge",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Veja como funciona a antecipação na Getnet:\n\n- **O que é:** você recebe antes o valor das vendas no crédito, à vista ou parceladas. Não precisa esperar o prazo normal de liquidação (sup-duvidas-12).\n- **Quando dá para antecipar:** a agenda de vendas fica disponível de D+1 (um dia útil após a venda) até D-3 (três dias úteis antes da data em que ela cairia na sua conta) (sup-antecipacao-de-vendas-10).\n- **Autorização:** pelas novas regras, você precisa autorizar a Getnet a consultar sua agenda na Registradora. A Registradora confirma a autorização, a consulta e a operação (sup-antecipacao-de-vendas-09).\n- **Custos:** não há cobrança extra além das que já existem, como aluguel, MDR e a taxa de antecipação (sup-antecipacao-de-vendas-09). As fontes não informam o valor da taxa de antecipação.\n- **Bandeiras:** vendas de algumas bandeiras que você habilitou não podem ser antecipadas pela Getnet. Nesses casos, a antecipação é feita direto com o emissor ou a operadora do cartão (sup-antecipacao-de-vendas-10). As fontes não dizem quais são essas bandeiras.\n\nPosso consultar a sua agenda ou preparar um pedido de antecipação. Nesse caso, você teria que confirmar o pedido e um operador o aprovaria.",
-      "source_ids": [
-        "sup-duvidas-12",
-        "sup-antecipacao-de-vendas-10",
-        "sup-antecipacao-de-vendas-09"
-      ],
-      "sources": [
-        {
-          "id": "sup-duvidas-12",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-antecipacao-de-vendas-10",
-          "title": "Arquivos antecipação de vendas - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
-        },
-        {
-          "id": "sup-antecipacao-de-vendas-09",
-          "title": "Arquivos antecipação de vendas - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Dúvidas e Perguntas Frequentes | Getnet: antecipação de vendas O que é antecipação de vendas? O que é antecipação de vendas? O cliente pode receber antecipadamente os valores das vendas realizadas na função de crédito, sejam à vista ou parceladas. Ou seja, o cliente, não precisará aguardar até o prazo de compensação para receber em sua conta o valor das vendas realizadas na maquininha.",
-        "Arquivos antecipação de vendas - Getnet: É possível antecipar vendas das bandeiras que habilitei? Não é possível antecipar vendas destas bandeiras através da Getnet, somente com a própria Operadora. Qual o prazo para os valores serem lançados em conta? Qual o prazo para os valores serem lançados em conta? Uma agenda fica disponível para antecipação entre D+1 (um dia útil após a data da venda), e até D-3 (três dias úteis antes da liquidação da agenda, ou seja, antes de o valor ser lançado na conta do Cliente).",
-        "Arquivos antecipação de vendas - Getnet: O que mudou na Antecipação? O que mudou na Antecipação? Agora, com as novas regras, para a Getnet ter acesso a informação de agenda disponível para negociação, você precisa autorizar/consentir que a Credenciadora (Getnet) possa consultar a sua agenda na Registradora. A Registradora confirmará a autorização/consentimento e confirmará a consulta e operação. Você não terá nenhuma cobrança a mais, somente as que já existem, como: aluguel, MDR, taxa de antecipação É possível antecipar vendas das bandeiras que habilitei?"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "pt",
-      "unsupported_numbers": [],
-      "cost_usd": 0.018103,
-      "run": 2
-    },
-    {
-      "id": "official-07",
-      "split": "official",
-      "message": "What's the euro exchange rate today?",
-      "ms": 13572.3,
+      "ms": 11613.6,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -1924,559 +1592,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "I couldn't find a live euro rate. The sources I found are dated and aren't timestamped.\n\n- **Ria Money Transfer:** 1 EUR = 1.11838 USD, dated 11/01/2026. This is the mid-market reference rate.\n- **Wise:** 1 EUR = 1.116 USD.\n\nThese figures may have changed since they were posted. I found no euro-to-real (BRL) rate. For that one, check the Banco Central do Brasil's official PTAX rate.\n\nSources:\n- https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1\n- https://wise.com/us/currency-converter/eur-to-usd-rate",
-      "source_ids": [
-        "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
-        "https://wise.com/us/currency-converter/eur-to-usd-rate",
-        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
-        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
-        "https://www.investing.com/currencies/eur-usd",
-        "https://wise.com/us/currency-converter/usd-to-eur-rate",
-        "https://www.eurochange.co.uk/travel-money/exchange-rates",
-        "https://www.x-rates.com/table/?from=EUR&amount=1",
-        "https://ckan.tradingeconomics.com/150-euro-to-us"
-      ],
-      "sources": [
-        {
-          "id": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
-          "title": "Euro to US Dollar Exchange Rate Today",
-          "url": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1"
-        },
-        {
-          "id": "https://wise.com/us/currency-converter/eur-to-usd-rate",
-          "title": "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise",
-          "url": "https://wise.com/us/currency-converter/eur-to-usd-rate"
-        },
-        {
-          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
-          "title": "1 USD to EUR - US Dollars to Euros Exchange Rate",
-          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR"
-        },
-        {
-          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
-          "title": "1 EUR to USD - Euros to US Dollars Exchange Rate",
-          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD"
-        },
-        {
-          "id": "https://www.investing.com/currencies/eur-usd",
-          "title": "EUR USD",
-          "url": "https://www.investing.com/currencies/eur-usd"
-        },
-        {
-          "id": "https://wise.com/us/currency-converter/usd-to-eur-rate",
-          "title": "USD to EUR - Convert US dollars to Euros",
-          "url": "https://wise.com/us/currency-converter/usd-to-eur-rate"
-        },
-        {
-          "id": "https://www.eurochange.co.uk/travel-money/exchange-rates",
-          "title": "Foreign Currency Exchange Rates",
-          "url": "https://www.eurochange.co.uk/travel-money/exchange-rates"
-        },
-        {
-          "id": "https://www.x-rates.com/table/?from=EUR&amount=1",
-          "title": "Currency Exchange Table (Euro - EUR) - X-Rates",
-          "url": "https://www.x-rates.com/table/?from=EUR&amount=1"
-        },
-        {
-          "id": "https://ckan.tradingeconomics.com/150-euro-to-us",
-          "title": "150 Euro to US Dollars: Today's Exchange Rate Revealed",
-          "url": "https://ckan.tradingeconomics.com/150-euro-to-us"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Euro to US Dollar Exchange Rate Today (0 days ago)",
-        "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise (846 days ago)",
-        "1 USD to EUR - US Dollars to Euros Exchange Rate (6374 days ago)",
-        "1 EUR to USD - Euros to US Dollars Exchange Rate (6374 days ago)",
-        "EUR USD (89 days ago)",
-        "USD to EUR - Convert US dollars to Euros (15 days ago)",
-        "Foreign Currency Exchange Rates (446 days ago)",
-        "Currency Exchange Table (Euro - EUR) - X-Rates (304 days ago)",
-        "150 Euro to US Dollars: Today's Exchange Rate Revealed (s/ data)",
-        "Hoje é 2026-11-01 (Sunday)"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [
-        "1.11838",
-        "1.116"
-      ],
-      "cost_usd": 0.05692,
-      "run": 2
-    },
-    {
-      "id": "official-08",
-      "split": "official",
-      "message": "My card machine is showing a transaction decline error.",
-      "ms": 12857.5,
-      "expected_intent": "troubleshoot",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "tools": true,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "troubleshoot",
-      "route": [
-        "router",
-        "records",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Here is what I found on your account:\n\n**Declined transactions (terminal T1988A, 01/11):**\n- **TX1007:** credit, R$ 210,00. Code 51, insufficient balance on the cardholder's card. The customer should use another card or payment method.\n- **TX1008:** debit, R$ 75,00. Code 05, the issuer did not authorize it. The customer should contact their bank or try another card.\n\nYour machine did not cause either decline. The card issuer did. You can't dispute declined transactions. T1988A is online with good Wi-Fi signal.\n\n**Terminal T1988B (Get Clássica):** It is offline, with no chip signal. Its last contact was 190 minutes ago. If the error is on this machine, the cause is the connection, not the card.\n\nI can propose a restart of T1988B, but it only happens if you confirm. I found no manual guidance on this in the Getnet site sources.\n\nWhich machine shows the error, and do you want me to propose the restart?",
-      "source_ids": [
-        "en-in-person-payments-03",
-        "en-restaurants-07",
-        "en-restaurants-09"
-      ],
-      "sources": [
-        {
-          "id": "en-in-person-payments-03",
-          "title": "In-person Payments",
-          "url": "https://www.getnet.net/en/our-solutions/in-person-payments"
-        },
-        {
-          "id": "en-restaurants-07",
-          "title": "Restaurants",
-          "url": "https://www.getnet.net/en/your-business/industries/restaurants"
-        },
-        {
-          "id": "en-restaurants-09",
-          "title": "Restaurants",
-          "url": "https://www.getnet.net/en/your-business/industries/restaurants"
-        }
-      ],
-      "tool_calls": [
-        {
-          "name": "get_terminal_status",
-          "args": {},
-          "ok": true
-        },
-        {
-          "name": "get_transactions",
-          "args": {
-            "status": "recusada"
-          },
-          "ok": true
-        }
-      ],
-      "evidence": [
-        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
-        "{\"ok\": true, \"data\": {\"count\": 2, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
-        "In-person Payments: Some of the advantages include: All our terminals comply with PCI security standards to make your transactions secure Get paid anywhere in your business in order to offer more comfort and a seanless experience IIt's reliadble, intuitive and allows you to start selling fast. Acceot chip card, magnetic stripe, contactless and mobiile payments The basic POS for your sales.",
-        "Restaurants: Meet your new front-of house favourite Get Smart POS is more than a card machine. It's a mobile, all-in-one device that lets you take payments, track sales and manage your business from the palm of your hand. Get Smart POS is more than a card machine. Tailored for table service life Accepts all payment methods Major cards, mobile wallets, contactless and QR payments.",
-        "Restaurants: Access real time transaction And shift ready tools to track busy hours and table turnover Expand your business with Getnet Get up in days, not weeks. Keep cash flow predictable Track sales in real time, forecast demand and plan with confidence. Reliable & secure 99.99% uptime and top-tier security standards."
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [],
-      "cost_usd": 0.032018,
-      "run": 2
-    },
-    {
-      "id": "official-09",
-      "split": "official",
-      "message": "How many installments can I split a sale into with the crediário?",
-      "ms": 5084.4,
-      "expected_intent": "knowledge",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "knowledge",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "With Crediário, your customer can split a purchase into up to 48 installments on a credit card. The maximum term and the interest rate depend on the card issuer.\n\nSources: prod-crediario-03, prod-crediario-01, prod-crediario-02.",
-      "source_ids": [
-        "prod-crediario-03",
-        "prod-crediario-01",
-        "prod-crediario-02"
-      ],
-      "sources": [
-        {
-          "id": "prod-crediario-03",
-          "title": "Crediário - Getnet",
-          "url": "https://site.getnet.com.br/crediario/"
-        },
-        {
-          "id": "prod-crediario-01",
-          "title": "Crediário - Getnet",
-          "url": "https://site.getnet.com.br/crediario/"
-        },
-        {
-          "id": "prod-crediario-02",
-          "title": "Crediário - Getnet",
-          "url": "https://site.getnet.com.br/crediario/"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Crediário - Getnet: para o seu cliente para o seu cliente Com o Crediário, ele pode parcelar em até 48 vezes² no cartão de crédito com taxas que cabem no bolso. Você oferece mais comodidade e poder de compra. ¹ Consulte a taxa de desconto (MDR) no Aplicativo Getnet Brasil ou no Portal do cliente ²As taxas de juros podem variar de acordo com o emissor do cartão.",
-        "Crediário - Getnet: Uma opção de pagamento diferenciado com possibilidade de parcelamento em até 48x* para seus clientes. Faça uma Simulação: com o valor de todas as parcelas e encargos antes da venda para oferecer transparência ao seu cliente Aumente o Movimento: no seu estabelecimento oferecendo mais opções de pagamento aos seus clientes Maior poder de compra:",
-        "Crediário - Getnet: para o seu cliente Receba o valor total de suas vendas: em até 2 dias úteis com taxa única e sem custo de antecipação Ofereça parcelamento: em até 48x* para o seu cliente. *O prazo máximo e a taxa de juros do parcelamento variam de acordo com o emissor do cartão mais vendas para você, mais vantagens para o seu cliente para o seu negócio para o seu negócio O Crediário é mais uma opção de pagamento que você pode oferecer para vender mais. E você recebe o valor da venda em até 2 dias úteis e com taxa única¹, aumentando seu capital de giro!"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [],
-      "cost_usd": 0.011197,
-      "run": 2
-    },
-    {
-      "id": "official-10",
-      "split": "official",
-      "message": "Can I sell through WhatsApp using the Payment Link?",
-      "ms": 5731.1,
-      "expected_intent": "knowledge",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "knowledge",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Yes, you can sell through WhatsApp with the Payment Link (Link de Pagamento). You can send the link to customers on WhatsApp, SMS, email or social networks. The customer clicks the link, chooses a payment method and completes the purchase.\n\nSources: en-online-payments-02, sup-link-de-pagamento-12, prod-link-de-pagamento-01.",
-      "source_ids": [
-        "en-online-payments-02",
-        "sup-link-de-pagamento-12",
-        "prod-link-de-pagamento-01"
-      ],
-      "sources": [
-        {
-          "id": "en-online-payments-02",
-          "title": "Getnet - Online Payments",
-          "url": "https://www.getnet.net/en/our-solutions/online-payments"
-        },
-        {
-          "id": "sup-link-de-pagamento-12",
-          "title": "Arquivos Link de pagamento - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
-        },
-        {
-          "id": "prod-link-de-pagamento-01",
-          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
-          "url": "https://site.getnet.com.br/link-de-pagamento/"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Getnet - Online Payments: Make sales using WhatsApp, SMS or your preferred social network. With security and anti-fraud tolos. Customizable link with product details. Choose the payment method: debit or credit. Create payment links and sell anywhere. Online payment solutions for your eCommerce store. Modular: Include a seamless and easy to plug-in payment module on your ecommerce.",
-        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente",
-        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Insira diversos produtos no mesmo carrinho Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [],
-      "cost_usd": 0.012587,
-      "run": 2
-    }
-  ],
-  "failures": [
-    {
-      "id": "official-02",
-      "split": "official",
-      "message": "What's the weather forecast in Porto Alegre tomorrow?",
-      "ms": 16442.1,
-      "expected_intent": "general",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "numbers": false
-      },
-      "crash": null,
-      "got_intent": "general",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "I couldn't find a full forecast for tomorrow (Nov 2, 2026) in Porto Alegre. The search only returned partial data:\n\n- **Yr:** early Monday morning, Nov 2, should be about 19°, with no rain and light southeast wind.\n- **Weather Underground:** tonight (Nov 1) has scattered showers and thunderstorms, a 40% chance of rain and a low of 67°F.\n\nFor the daytime high and the conditions across the whole day, check INMET (inmet.gov.br), the official Brazilian weather service.\n\nSources: Yr (yr.no), Weather Underground (wunderground.com/hourly/br/porto-alegre).",
-      "source_ids": [
-        "https://www.wunderground.com/hourly/br/porto-alegre",
-        "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1",
-        "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
-        "https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx",
-        "https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
-        "https://www.theweathernetwork.com/en/city/br/rio-grande-do-sul/porto-alegre/14-days",
-        "https://www.theweather.com/porto-alegre-in-brazil-c12931.htm",
-        "https://www.timeanddate.com/weather/brazil/porto-alegre",
-        "https://weather.metoffice.gov.uk/forecast/6fet4jp",
-        "https://weather.metoffice.gov.uk/observations/6fet769mq"
-      ],
-      "sources": [
-        {
-          "id": "https://www.wunderground.com/hourly/br/porto-alegre",
-          "title": "Porto Alegre, BR Hourly Weather Forecast",
-          "url": "https://www.wunderground.com/hourly/br/porto-alegre"
-        },
-        {
-          "id": "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1",
-          "title": "Yr - Porto Alegre - Hourly weather forecast",
-          "url": "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1"
-        },
-        {
-          "id": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881",
-          "title": "Weather Forecast and Prayer Timings for Monday, November 2, 2026",
-          "url": "https://www.deccanchronicle.com/lifestyle/astrology/weather-forecast-and-prayer-timings-for-monday-november-2-2026-2000881"
-        },
-        {
-          "id": "https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx",
-          "title": "Porto Alegre Weather - Rio Grande do Sul, BR",
-          "url": "https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx"
-        },
-        {
-          "id": "https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
-          "title": "Porto Alegre, Rio Grande Do Sul, Brazil Weather Forecast",
-          "url": "https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561"
-        },
-        {
-          "id": "https://www.theweathernetwork.com/en/city/br/rio-grande-do-sul/porto-alegre/14-days",
-          "title": "Porto Alegre, RS, BR 14 Days Weather - The Weather Network",
-          "url": "https://www.theweathernetwork.com/en/city/br/rio-grande-do-sul/porto-alegre/14-days"
-        },
-        {
-          "id": "https://www.theweather.com/porto-alegre-in-brazil-c12931.htm",
-          "title": "Porto Alegre, RS Weather 14 days - Meteored US",
-          "url": "https://www.theweather.com/porto-alegre-in-brazil-c12931.htm"
-        },
-        {
-          "id": "https://www.timeanddate.com/weather/brazil/porto-alegre",
-          "title": "porto alegre",
-          "url": "https://www.timeanddate.com/weather/brazil/porto-alegre"
-        },
-        {
-          "id": "https://weather.metoffice.gov.uk/forecast/6fet4jp",
-          "title": "Porto Alegre (Brazil) weather",
-          "url": "https://weather.metoffice.gov.uk/forecast/6fet4jp"
-        },
-        {
-          "id": "https://weather.metoffice.gov.uk/observations/6fet769mq",
-          "title": "Porto Alegre International (Brazil) last 24 hours weather",
-          "url": "https://weather.metoffice.gov.uk/observations/6fet769mq"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Porto Alegre, BR Hourly Weather Forecast (s/ data)",
-        "Yr - Porto Alegre - Hourly weather forecast (s/ data)",
-        "Weather Forecast and Prayer Timings for Monday, November 2, 2026 (0 days ago)",
-        "Porto Alegre Weather - Rio Grande do Sul, BR (2062 days ago)",
-        "Porto Alegre, Rio Grande Do Sul, Brazil Weather Forecast (213 days ago)",
-        "Porto Alegre, RS, BR 14 Days Weather - The Weather Network (s/ data)",
-        "Porto Alegre, RS Weather 14 days - Meteored US (s/ data)",
-        "porto alegre (s/ data)",
-        "Porto Alegre (Brazil) weather (s/ data)",
-        "Porto Alegre International (Brazil) last 24 hours weather (s/ data)",
-        "Hoje é 2026-11-01 (Sunday)"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [
-        "19",
-        "40",
-        "67"
-      ],
-      "cost_usd": 0.075968,
-      "run": 0
-    },
-    {
-      "id": "official-03",
-      "split": "official",
-      "message": "When will the money from yesterday's sales be deposited?",
-      "ms": 7496.5,
-      "expected_intent": "support",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "tools": true,
-        "numbers": false
-      },
-      "crash": null,
-      "got_intent": "support",
-      "route": [
-        "router",
-        "records"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Yesterday (31/10) you had 4 approved sales, totaling R$ 745,50. All four are still scheduled (\"previsto\"):\n\n| Transaction | Method | Amount | Expected deposit |\n|---|---|---|---|\n| TX1001 | Debit | R$ 120,00 | 03/11 |\n| TX1003 | Debit | R$ 85,50 | 03/11 |\n| TX1005 | Pix | R$ 60,00 | 03/11 |\n| TX1002 | Credit | R$ 480,00 | 30/11 |\n\n- **03/11:** R$ 205,50 from debit and R$ 60,00 from Pix.\n- **30/11:** R$ 480,00 from credit.\n\nDeposits only happen on business days.\n\nYou also have R$ 1.730,00 available to anticipate. I can look into that if you want. An anticipation request would need your confirmation and an operator's approval.",
-      "source_ids": [],
-      "sources": [],
-      "tool_calls": [
-        {
-          "name": "get_settlements",
-          "args": {
-            "period": "yesterday"
-          },
-          "ok": true
-        }
-      ],
-      "evidence": [
-        "{\"ok\": true, \"data\": {\"today\": \"2026-11-01\", \"period\": \"yesterday\", \"items\": [{\"transaction_id\": \"TX1001\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 120.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1002\", \"sale_date\": \"2026-10-31\", \"method\": \"credito\", \"amount\": 480.0, \"expected_date\": \"2026-11-30\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1003\", \"sale_date\": \"2026-10-31\", \"method\": \"debito\", \"amount\": 85.5, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}, {\"transaction_id\": \"TX1005\", \"sale_date\": \"2026-10-31\", \"method\": \"pix\", \"amount\": 60.0, \"expected_date\": \"2026-11-03\", \"status\": \"previsto\"}], \"by_method\": {\"debito\": {\"amount\": 205.5, \"expected_dates\": [\"2026-11-03\"]}, \"credito\": {\"amount\": 480.0, \"expected_dates\": [\"2026-11-30\"]}, \"pix\": {\"amount\": 60.0, \"expected_dates\": [\"2026-11-03\"]}}, \"total\": 745.5, \"available_for_anticipation\": 1730.0}}"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [
-        "4"
-      ],
-      "cost_usd": 0.023059,
-      "run": 0
-    },
-    {
-      "id": "official-07",
-      "split": "official",
-      "message": "What's the euro exchange rate today?",
-      "ms": 14498.3,
-      "expected_intent": "general",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "numbers": false
-      },
-      "crash": null,
-      "got_intent": "general",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "According to Ria Money Transfer, 1.00 EUR = 1.11838091 USD. The page calls this \"today's rate\" but shows no explicit date, so I can't confirm it's current.\n\nFor the official rate in Brazilian reais, check the Banco Central do Brasil. Exchange rates change often, so check a live source before you transact.\n\nSource: https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
-      "source_ids": [
-        "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
-        "https://wise.com/us/currency-converter/eur-to-usd-rate",
-        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
-        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
-        "https://www.investing.com/currencies/eur-usd",
-        "https://wise.com/us/currency-converter/usd-to-eur-rate",
-        "https://www.eurochange.co.uk/travel-money/exchange-rates",
-        "https://www.x-rates.com/table/?from=EUR&amount=1",
-        "https://ckan.tradingeconomics.com/150-euro-to-us"
-      ],
-      "sources": [
-        {
-          "id": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
-          "title": "Euro to US Dollar Exchange Rate Today",
-          "url": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1"
-        },
-        {
-          "id": "https://wise.com/us/currency-converter/eur-to-usd-rate",
-          "title": "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise",
-          "url": "https://wise.com/us/currency-converter/eur-to-usd-rate"
-        },
-        {
-          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
-          "title": "1 USD to EUR - US Dollars to Euros Exchange Rate",
-          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR"
-        },
-        {
-          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
-          "title": "1 EUR to USD - Euros to US Dollars Exchange Rate",
-          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD"
-        },
-        {
-          "id": "https://www.investing.com/currencies/eur-usd",
-          "title": "EUR USD",
-          "url": "https://www.investing.com/currencies/eur-usd"
-        },
-        {
-          "id": "https://wise.com/us/currency-converter/usd-to-eur-rate",
-          "title": "USD to EUR - Convert US dollars to Euros",
-          "url": "https://wise.com/us/currency-converter/usd-to-eur-rate"
-        },
-        {
-          "id": "https://www.eurochange.co.uk/travel-money/exchange-rates",
-          "title": "Foreign Currency Exchange Rates",
-          "url": "https://www.eurochange.co.uk/travel-money/exchange-rates"
-        },
-        {
-          "id": "https://www.x-rates.com/table/?from=EUR&amount=1",
-          "title": "Currency Exchange Table (Euro - EUR) - X-Rates",
-          "url": "https://www.x-rates.com/table/?from=EUR&amount=1"
-        },
-        {
-          "id": "https://ckan.tradingeconomics.com/150-euro-to-us",
-          "title": "150 Euro to US Dollars: Today's Exchange Rate Revealed",
-          "url": "https://ckan.tradingeconomics.com/150-euro-to-us"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Euro to US Dollar Exchange Rate Today (0 days ago)",
-        "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise (846 days ago)",
-        "1 USD to EUR - US Dollars to Euros Exchange Rate (6374 days ago)",
-        "1 EUR to USD - Euros to US Dollars Exchange Rate (6374 days ago)",
-        "EUR USD (89 days ago)",
-        "USD to EUR - Convert US dollars to Euros (15 days ago)",
-        "Foreign Currency Exchange Rates (446 days ago)",
-        "Currency Exchange Table (Euro - EUR) - X-Rates (304 days ago)",
-        "150 Euro to US Dollars: Today's Exchange Rate Revealed (s/ data)",
-        "Hoje é 2026-11-01 (Sunday)"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "en",
-      "unsupported_numbers": [
-        "1.11838091"
-      ],
-      "cost_usd": 0.057146,
-      "run": 0
-    },
-    {
-      "id": "official-02",
-      "split": "official",
-      "message": "What's the weather forecast in Porto Alegre tomorrow?",
-      "ms": 10809.9,
-      "expected_intent": "general",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": true,
-        "numbers": false
-      },
-      "crash": null,
-      "got_intent": "general",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Tomorrow in Porto Alegre (Monday, 02/11/2026), INMET forecasts a low of 20°C and a high of 31°C. Expect many clouds in the morning with a chance of isolated rain. The afternoon should also be cloudy, with isolated showers.\n\nSource: INMET (https://previsao.inmet.gov.br/4314902)",
+      "answer": "According to INMET, Porto Alegre's forecast for Monday, 02/11/2026 is:\n\n- **Temperature:** minimum 20°C, maximum 31°C.\n- **Morning:** cloudy, with a chance of isolated rain.\n- **Afternoon:** cloudy, with isolated showers.\n\nSource: https://previsao.inmet.gov.br/4314902",
       "source_ids": [
         "https://previsao.inmet.gov.br/4314902",
         "https://metsul.com/previsao/rs/porto-alegre/",
@@ -2558,13 +1674,13 @@
         "4314902"
       ],
       "cost_usd": 0.054178,
-      "run": 1
+      "run": 2
     },
     {
       "id": "official-03",
       "split": "official",
       "message": "When will the money from yesterday's sales be deposited?",
-      "ms": 7703.9,
+      "ms": 7487.9,
       "expected_intent": "support",
       "checks": {
         "intent": true,
@@ -2572,7 +1688,7 @@
         "handoff_outcome": true,
         "language": true,
         "tools": true,
-        "numbers": false
+        "numbers": true
       },
       "crash": null,
       "got_intent": "support",
@@ -2582,7 +1698,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Your sales from yesterday (31/10) total R$ 745,50. Every item is still marked \"previsto\" (expected). The deposits are scheduled like this:\n\n- **03/11:** R$ 265,50. This is R$ 205,50 from debit (TX1001 and TX1003) plus R$ 60,00 from Pix (TX1005).\n- **30/11:** R$ 480,00 from credit (TX1002).\n\nPix usually pays on the same day, but the system shows 03/11 for TX1005.\n\nYou also have R$ 1.730,00 available to anticipate. If you want to do that, I can start the request. You would need to confirm it, and an operator would then approve it.",
+      "answer": "Yesterday's sales (31/10) total R$ 745,50. Expected deposit dates:\n\n- **Debit:** R$ 205,50 (TX1001 and TX1003) on 03/11.\n- **Pix:** R$ 60,00 (TX1005) on 03/11. The schedule shows 03/11 for this sale, not the same day.\n- **Credit:** R$ 480,00 (TX1002) on 30/11.\n\nAll of these are still marked \"previsto\" (expected).\n\nYou have R$ 1.730,00 available to anticipate. If you want to anticipate, tell me and I can start a request. You would have to confirm it, and an operator would then approve it.",
       "source_ids": [],
       "sources": [],
       "tool_calls": [
@@ -2600,17 +1716,195 @@
       "expected_language": "en",
       "language_declared": "en",
       "language_detected": "en",
-      "unsupported_numbers": [
-        "265,50"
+      "unsupported_numbers": [],
+      "cost_usd": 0.022391,
+      "run": 2
+    },
+    {
+      "id": "official-04",
+      "split": "official",
+      "message": "Do I need a bank account to receive my sales via Pix?",
+      "ms": 6626.3,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
       ],
-      "cost_usd": 0.022213,
-      "run": 1
+      "replans": [],
+      "engine": "llm",
+      "answer": "Probably yes, but the sources don't say so outright.\n\n- To sign up for Pix with Getnet, you enter a Pix key that you already registered with your bank account (*domicílio bancário*). That is where you receive the Pix payments [sup-duvidas-80].\n- The key must be linked to the receiving account you want to use [sup-duvidas-79].\n- A Pix key is the identifier of a bank account [sup-duvidas-58].\n\nThe sources don't say whether a bank account is strictly required. They also don't say whether other account types, such as Get Conta, are accepted. I can open a case with a human agent to confirm if you'd like.",
+      "source_ids": [
+        "sup-duvidas-80",
+        "sup-duvidas-79",
+        "sup-duvidas-58"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-80",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-duvidas-79",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-duvidas-58",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dúvidas e Perguntas Frequentes | Getnet: Como faço para contratar o Pix na Getnet? Como faço para contratar o Pix na Getnet? A partir de 16/11/20, você pode acessar um dos canais digitais Getnet (Portal Minha Conta ou Aplicativo Getnet) e fazer a contratação por lá, digitando a mesma chave que você cadastrou no seu domicílio bancário* onde receberá o Pix.",
+        "Dúvidas e Perguntas Frequentes | Getnet: Quantas chaves Pix eu devo inserir na Getnet? Quantas chaves Pix eu devo inserir na Getnet? Para contratar o produto na Getnet, é necessário informar somente uma chave de sua escolha que esteja atrelada à conta de recebimento desejada. Ou seja, caso você tenha mais de uma chave Pix cadastrada no seu domicílio bancário, escolha uma delas para informar à Getnet!",
+        "Dúvidas e Perguntas Frequentes | Getnet: O que são chaves Pix? O que são chaves Pix? A chave Pix é o identificador da sua conta bancária. Existem 4 tipos de chave que serão usadas pra fazer pagamentos e transferências: – CPF ou CNPJ – se for uma empresa – Número de celular Você também pode criar uma chave aleatória, sendo um código de 32 caracteres gerado pelo Banco Central para ser vinculado à sua conta."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.013379,
+      "run": 2
+    },
+    {
+      "id": "official-05",
+      "split": "official",
+      "message": "My card machine won't connect to the internet, what should I do?",
+      "ms": 17366.4,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Of your two terminals, only the T1988B (Get Clássica) is offline. It uses a mobile data chip, has no signal, and last connected 190 minutes ago. The T1988A (Get Smart) is working normally on Wi-Fi.\n\n**What to try on the T1988B:**\n1. Move it to a spot with better coverage, such as near a window and away from thick walls.\n2. Turn it off and open the back cover. Put the chip in the SIM1 or SIM2 slot with the metal side facing down. Close the cover and turn it on. Wait for the data network to connect. When it shows 2G or 3G, it's ready to use. (sup-duvidas-05)\n3. Run a communication test. Press the function button (F, # or the one on your machine), then choose option 2 (maintenance), then option 1 (communication test). (sup-duvidas-06)\n\nThe Algar chip works anywhere with 2G/3G coverage. (sup-duvidas-06)\n\nThe sources don't say what to do if the terminal stays offline after these steps. If that happens, I can open a case with a human agent.\n\nI can also propose a remote restart of the T1988B. It would only happen if you confirm it. Do you want me to propose it?",
+      "source_ids": [
+        "sup-duvidas-06",
+        "sup-duvidas-05",
+        "sup-get-tap-12"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-06",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-duvidas-05",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-get-tap-12",
+          "title": "Arquivos Get Tap - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-tap/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "Dúvidas e Perguntas Frequentes | Getnet: • Pressione o botão função – F, # ou o da sua máquina • Selecione a opção 2 – manutenção • Selecione a opção 1 – teste de comunicação Quais os benefícios do Chip Algar? Quais os benefícios do Chip Algar? – Um único Chip que se conecta a várias operadoras – Você pode utilizar a sua máquina em qualquer local com cobertura 2G/3G – Elimina necessidade de trocas de Chip O que é o Chip Algar?",
+        "Dúvidas e Perguntas Frequentes | Getnet: A Get Smart aceita pagamento com auxilio emergencial? A Get Smart aceita pagamento com auxilio emergencial? Sim, basta fazer o processo de pagamento com , selecionando a opção débito. Como insiro o Chip na minha máquina? Como insiro o Chip na minha máquina? Siga os passos a seguir: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:",
+        "Arquivos Get Tap - Getnet: É preciso ter acesso a internet para utilizar o Get Tap? É preciso ter acesso a internet para utilizar o Get Tap? Sim, para utilizar o Get Tap é necessário ter conexão com a internet. Quantos Get Tap posso ter? Quantos Get Tap posso ter? A quantidade máxima está sujeita a avaliação, porém cada perfil poderá ter apenas um dispositivo/celular com o Get Tap."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.038413,
+      "run": 2
+    },
+    {
+      "id": "official-06",
+      "split": "official",
+      "message": "How does receivables advance (antecipação) work with Getnet?",
+      "ms": 7546.8,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Receivables advance (antecipação de vendas) lets you receive credit sale amounts early. This covers sales paid in full or in installments. You don't have to wait for the normal settlement period. [sup-duvidas-12]\n\n- **Timing:** You can advance a schedule from D+1 (one business day after the sale) up to D-3 (three business days before it settles). [sup-antecipacao-de-vendas-10]\n- **Authorization:** Under the new rules, you must authorize Getnet to query your schedule at the Registradora (registry). This confirms your consent and the operation. [sup-antecipacao-de-vendas-09]\n- **Costs:** There are no extra charges beyond the existing ones, such as rental, MDR and the advance fee. [sup-antecipacao-de-vendas-09]\n- **Limitation:** Sales from some card brands can't be advanced through Getnet. For those, you have to go to the card issuer/operator. [sup-antecipacao-de-vendas-10]\n\nThe sources don't say which brands are affected or what the advance fee is.",
+      "source_ids": [
+        "sup-duvidas-12",
+        "sup-antecipacao-de-vendas-10",
+        "sup-antecipacao-de-vendas-09"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-12",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-antecipacao-de-vendas-10",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        },
+        {
+          "id": "sup-antecipacao-de-vendas-09",
+          "title": "Arquivos antecipação de vendas - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Dúvidas e Perguntas Frequentes | Getnet: antecipação de vendas O que é antecipação de vendas? O que é antecipação de vendas? O cliente pode receber antecipadamente os valores das vendas realizadas na função de crédito, sejam à vista ou parceladas. Ou seja, o cliente, não precisará aguardar até o prazo de compensação para receber em sua conta o valor das vendas realizadas na maquininha.",
+        "Arquivos antecipação de vendas - Getnet: É possível antecipar vendas das bandeiras que habilitei? Não é possível antecipar vendas destas bandeiras através da Getnet, somente com a própria Operadora. Qual o prazo para os valores serem lançados em conta? Qual o prazo para os valores serem lançados em conta? Uma agenda fica disponível para antecipação entre D+1 (um dia útil após a data da venda), e até D-3 (três dias úteis antes da liquidação da agenda, ou seja, antes de o valor ser lançado na conta do Cliente).",
+        "Arquivos antecipação de vendas - Getnet: O que mudou na Antecipação? O que mudou na Antecipação? Agora, com as novas regras, para a Getnet ter acesso a informação de agenda disponível para negociação, você precisa autorizar/consentir que a Credenciadora (Getnet) possa consultar a sua agenda na Registradora. A Registradora confirmará a autorização/consentimento e confirmará a consulta e operação. Você não terá nenhuma cobrança a mais, somente as que já existem, como: aluguel, MDR, taxa de antecipação É possível antecipar vendas das bandeiras que habilitei?"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.016349,
+      "run": 2
     },
     {
       "id": "official-07",
       "split": "official",
       "message": "What's the euro exchange rate today?",
-      "ms": 13906.2,
+      "ms": 12997.2,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -2627,7 +1921,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "According to Ria Money Transfer, on 11/01/2026, 1.00 EUR = 1.11838091 USD. This is the mid-market reference rate. The rate changes during the day, so it may have moved since then.\n\nI didn't find a euro-to-real (BRL) rate. For the official BRL rate, check the Banco Central do Brasil (PTAX).\n\nSource: https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+      "answer": "I can't confirm today's exact rate. These are the figures the sources gave:\n\n- **Ria Money Transfer:** 1 EUR = 1.11838091 USD, dated 11/01/2026.\n- **Wise:** 1 EUR = 1.116 USD.\n\nNeither page showed a timestamp, so use these as reference rates only. For the official rate against the Brazilian real, check the Banco Central do Brasil.\n\nSources:\n- https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1\n- https://wise.com/us/currency-converter/eur-to-usd-rate",
       "source_ids": [
         "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
         "https://wise.com/us/currency-converter/eur-to-usd-rate",
@@ -2703,22 +1997,213 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [
-        "1.11838091"
+        "1.11838091",
+        "1.116"
       ],
-      "cost_usd": 0.055758,
-      "run": 1
+      "cost_usd": 0.056342,
+      "run": 2
     },
+    {
+      "id": "official-08",
+      "split": "official",
+      "message": "My card machine is showing a transaction decline error.",
+      "ms": 12755.7,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Here's what I found for your account:\n\n**Declined transactions (terminal T1988A, 01/11):**\n- **TX1007:** Credit, R$ 210,00. Code 51, insufficient balance.\n- **TX1008:** Debit, R$ 75,00. Code 05, the issuer did not authorize it.\n\nThe card issuer caused both declines, not the machine. The customer should try another card or contact their bank. Declined transactions can't be contested.\n\n**Terminals:**\n- **T1988A (Get Smart):** Online with good signal.\n- **T1988B (Get Clássica):** Offline. It has no chip signal and last made contact 190 minutes ago. If your error is on this one, the lost connection is probably the cause.\n\nI can propose a restart of T1988B, but nothing happens until you confirm. Do you want me to do that?\n\nI couldn't find an official troubleshooting guide for this error on the Getnet site. If the problem continues, I can open a case with a human agent.",
+      "source_ids": [
+        "sup-duvidas-06",
+        "sup-operacional-01",
+        "sup-duvidas-64"
+      ],
+      "sources": [
+        {
+          "id": "sup-duvidas-06",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        },
+        {
+          "id": "sup-operacional-01",
+          "title": "Arquivos operacional - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/operacional/"
+        },
+        {
+          "id": "sup-duvidas-64",
+          "title": "Dúvidas e Perguntas Frequentes | Getnet",
+          "url": "https://site.getnet.com.br/duvidas/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "get_transactions",
+          "args": {
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": true, \"data\": {\"count\": 2, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
+        "Dúvidas e Perguntas Frequentes | Getnet: • Pressione o botão função – F, # ou o da sua máquina • Selecione a opção 2 – manutenção • Selecione a opção 1 – teste de comunicação Quais os benefícios do Chip Algar? Quais os benefícios do Chip Algar? – Um único Chip que se conecta a várias operadoras – Você pode utilizar a sua máquina em qualquer local com cobertura 2G/3G – Elimina necessidade de trocas de Chip O que é o Chip Algar?",
+        "Arquivos operacional - Getnet: Como ligo ou desligo minha máquina? Como ligo ou desligo minha máquina? Confira o modelo da sua maquininha e siga as instruções como mostra abaixo: LIGAR: Pressione a tecla verde DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR: Pressione a tecla “ ” (seta para cima) DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR E DESLIGAR: Conecte na tomada para ligar e retire da tomada para desligar LIGAR: Pressione a tecla verde durante 5 segundos DESLIGAR: Pressione a tecla vermelha durante 5 segundos O que é Chargeback?",
+        "Dúvidas e Perguntas Frequentes | Getnet: Como ligo ou desligo minha máquina? Como ligo ou desligo minha máquina? Confira o modelo da sua maquininha e siga as instruções como mostra abaixo: LIGAR: Pressione a tecla verde DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR: Pressione a tecla “ ” (seta para cima) DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR E DESLIGAR:"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.032679,
+      "run": 2
+    },
+    {
+      "id": "official-09",
+      "split": "official",
+      "message": "How many installments can I split a sale into with the crediário?",
+      "ms": 5644.9,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "With Crediário, your customer can split a purchase into up to 48 installments on a credit card [prod-crediario-03].\n\n- The maximum term and the installment interest rate depend on the card issuer [prod-crediario-02].\n- You still receive the full sale amount within 2 business days, with a single fee [prod-crediario-02].\n\nSources: prod-crediario-03, prod-crediario-02",
+      "source_ids": [
+        "prod-crediario-03",
+        "prod-crediario-02",
+        "prod-crediario-01"
+      ],
+      "sources": [
+        {
+          "id": "prod-crediario-03",
+          "title": "Crediário - Getnet",
+          "url": "https://site.getnet.com.br/crediario/"
+        },
+        {
+          "id": "prod-crediario-02",
+          "title": "Crediário - Getnet",
+          "url": "https://site.getnet.com.br/crediario/"
+        },
+        {
+          "id": "prod-crediario-01",
+          "title": "Crediário - Getnet",
+          "url": "https://site.getnet.com.br/crediario/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Crediário - Getnet: para o seu cliente para o seu cliente Com o Crediário, ele pode parcelar em até 48 vezes² no cartão de crédito com taxas que cabem no bolso. Você oferece mais comodidade e poder de compra. ¹ Consulte a taxa de desconto (MDR) no Aplicativo Getnet Brasil ou no Portal do cliente ²As taxas de juros podem variar de acordo com o emissor do cartão.",
+        "Crediário - Getnet: para o seu cliente Receba o valor total de suas vendas: em até 2 dias úteis com taxa única e sem custo de antecipação Ofereça parcelamento: em até 48x* para o seu cliente. *O prazo máximo e a taxa de juros do parcelamento variam de acordo com o emissor do cartão mais vendas para você, mais vantagens para o seu cliente para o seu negócio para o seu negócio O Crediário é mais uma opção de pagamento que você pode oferecer para vender mais. E você recebe o valor da venda em até 2 dias úteis e com taxa única¹, aumentando seu capital de giro!",
+        "Crediário - Getnet: Uma opção de pagamento diferenciado com possibilidade de parcelamento em até 48x* para seus clientes. Faça uma Simulação: com o valor de todas as parcelas e encargos antes da venda para oferecer transparência ao seu cliente Aumente o Movimento: no seu estabelecimento oferecendo mais opções de pagamento aos seus clientes Maior poder de compra:"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.011956,
+      "run": 2
+    },
+    {
+      "id": "official-10",
+      "split": "official",
+      "message": "Can I sell through WhatsApp using the Payment Link?",
+      "ms": 6519.0,
+      "expected_intent": "knowledge",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "knowledge",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Yes, you can sell through WhatsApp with the Getnet Payment Link (Link de Pagamento).\n\n- You can send the link to customers through WhatsApp, social networks, email and SMS (source: sup-link-de-pagamento-12).\n- The customer clicks the link, chooses a payment method and completes the purchase (source: sup-link-de-pagamento-12).\n- Getnet also describes selling through WhatsApp or your preferred social network. The link has anti-fraud security and can be customized with product details (sources: en-online-payments-02, prod-link-de-pagamento-01).",
+      "source_ids": [
+        "en-online-payments-02",
+        "sup-link-de-pagamento-12",
+        "prod-link-de-pagamento-01"
+      ],
+      "sources": [
+        {
+          "id": "en-online-payments-02",
+          "title": "Getnet - Online Payments",
+          "url": "https://www.getnet.net/en/our-solutions/online-payments"
+        },
+        {
+          "id": "sup-link-de-pagamento-12",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-de-pagamento-01",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Getnet - Online Payments: Make sales using WhatsApp, SMS or your preferred social network. With security and anti-fraud tolos. Customizable link with product details. Choose the payment method: debit or credit. Create payment links and sell anywhere. Online payment solutions for your eCommerce store. Modular: Include a seamless and easy to plug-in payment module on your ecommerce.",
+        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Insira diversos produtos no mesmo carrinho Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.01348,
+      "run": 2
+    }
+  ],
+  "failures": [
     {
       "id": "official-02",
       "split": "official",
       "message": "What's the weather forecast in Porto Alegre tomorrow?",
-      "ms": 19086.9,
+      "ms": 15370.4,
       "expected_intent": "general",
       "checks": {
         "intent": true,
         "handoff": true,
         "handoff_outcome": true,
-        "language": false,
+        "language": true,
         "numbers": false
       },
       "crash": null,
@@ -2729,7 +2214,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "Segundo a AccuWeather, a previsão para Porto Alegre na segunda-feira, 11/02/2026, é de alguma chuva e trovoada, com máxima de 85° e mínima de 66°. A página não informa a unidade das temperaturas e eu não fiz conversão. O mesmo resultado menciona 60%, mas não diz de que se trata. Presumo que seja a chance de chuva, mas isso não está confirmado.\n\nPara alertas oficiais, consulte o INMET.\n\nFontes: https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
+      "answer": "Here's the forecast for Porto Alegre, from World Weather Online (data for Monday, 02/11/2026):\n\n- **Morning:** mist, 19°C\n- **Afternoon:** thundery outbreaks nearby, 29°C\n- **Evening:** light rain shower, 24°C\n- **Maximum:** 31°C / 88°F\n\nAccuWeather also shows rain and a thunderstorm for Monday, 11/2.\n\nThe source's data is for Monday, 02/11/2026, so check that this is the \"tomorrow\" you mean. For live updates, see:\n- https://www.worldweatheronline.com/porto-alegre-weather/rio-grande-do-sul/br.aspx\n- https://www.accuweather.com/en/br/porto-alegre/45561/weather-forecast/45561",
       "source_ids": [
         "https://www.wunderground.com/hourly/br/porto-alegre",
         "https://www.yr.no/en/forecast/hourly-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre?i=1",
@@ -2810,79 +2295,23 @@
       ],
       "expected_language": "en",
       "language_declared": "en",
-      "language_detected": "pt",
+      "language_detected": "en",
       "unsupported_numbers": [
-        "11/02/2026",
-        "85",
-        "66",
-        "60",
+        "02/11/2026",
+        "19",
+        "29",
+        "31",
+        "88",
         "45561"
       ],
-      "cost_usd": 0.11325,
-      "run": 2
-    },
-    {
-      "id": "official-06",
-      "split": "official",
-      "message": "How does receivables advance (antecipação) work with Getnet?",
-      "ms": 9375.2,
-      "expected_intent": "knowledge",
-      "checks": {
-        "intent": true,
-        "handoff": true,
-        "handoff_outcome": true,
-        "language": false,
-        "numbers": true
-      },
-      "crash": null,
-      "got_intent": "knowledge",
-      "route": [
-        "router",
-        "faq"
-      ],
-      "replans": [],
-      "engine": "llm",
-      "answer": "Veja como funciona a antecipação na Getnet:\n\n- **O que é:** você recebe antes o valor das vendas no crédito, à vista ou parceladas. Não precisa esperar o prazo normal de liquidação (sup-duvidas-12).\n- **Quando dá para antecipar:** a agenda de vendas fica disponível de D+1 (um dia útil após a venda) até D-3 (três dias úteis antes da data em que ela cairia na sua conta) (sup-antecipacao-de-vendas-10).\n- **Autorização:** pelas novas regras, você precisa autorizar a Getnet a consultar sua agenda na Registradora. A Registradora confirma a autorização, a consulta e a operação (sup-antecipacao-de-vendas-09).\n- **Custos:** não há cobrança extra além das que já existem, como aluguel, MDR e a taxa de antecipação (sup-antecipacao-de-vendas-09). As fontes não informam o valor da taxa de antecipação.\n- **Bandeiras:** vendas de algumas bandeiras que você habilitou não podem ser antecipadas pela Getnet. Nesses casos, a antecipação é feita direto com o emissor ou a operadora do cartão (sup-antecipacao-de-vendas-10). As fontes não dizem quais são essas bandeiras.\n\nPosso consultar a sua agenda ou preparar um pedido de antecipação. Nesse caso, você teria que confirmar o pedido e um operador o aprovaria.",
-      "source_ids": [
-        "sup-duvidas-12",
-        "sup-antecipacao-de-vendas-10",
-        "sup-antecipacao-de-vendas-09"
-      ],
-      "sources": [
-        {
-          "id": "sup-duvidas-12",
-          "title": "Dúvidas e Perguntas Frequentes | Getnet",
-          "url": "https://site.getnet.com.br/duvidas/"
-        },
-        {
-          "id": "sup-antecipacao-de-vendas-10",
-          "title": "Arquivos antecipação de vendas - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
-        },
-        {
-          "id": "sup-antecipacao-de-vendas-09",
-          "title": "Arquivos antecipação de vendas - Getnet",
-          "url": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/"
-        }
-      ],
-      "tool_calls": [],
-      "evidence": [
-        "Dúvidas e Perguntas Frequentes | Getnet: antecipação de vendas O que é antecipação de vendas? O que é antecipação de vendas? O cliente pode receber antecipadamente os valores das vendas realizadas na função de crédito, sejam à vista ou parceladas. Ou seja, o cliente, não precisará aguardar até o prazo de compensação para receber em sua conta o valor das vendas realizadas na maquininha.",
-        "Arquivos antecipação de vendas - Getnet: É possível antecipar vendas das bandeiras que habilitei? Não é possível antecipar vendas destas bandeiras através da Getnet, somente com a própria Operadora. Qual o prazo para os valores serem lançados em conta? Qual o prazo para os valores serem lançados em conta? Uma agenda fica disponível para antecipação entre D+1 (um dia útil após a data da venda), e até D-3 (três dias úteis antes da liquidação da agenda, ou seja, antes de o valor ser lançado na conta do Cliente).",
-        "Arquivos antecipação de vendas - Getnet: O que mudou na Antecipação? O que mudou na Antecipação? Agora, com as novas regras, para a Getnet ter acesso a informação de agenda disponível para negociação, você precisa autorizar/consentir que a Credenciadora (Getnet) possa consultar a sua agenda na Registradora. A Registradora confirmará a autorização/consentimento e confirmará a consulta e operação. Você não terá nenhuma cobrança a mais, somente as que já existem, como: aluguel, MDR, taxa de antecipação É possível antecipar vendas das bandeiras que habilitei?"
-      ],
-      "expected_language": "en",
-      "language_declared": "en",
-      "language_detected": "pt",
-      "unsupported_numbers": [],
-      "cost_usd": 0.018103,
-      "run": 2
+      "cost_usd": 0.076046,
+      "run": 0
     },
     {
       "id": "official-07",
       "split": "official",
       "message": "What's the euro exchange rate today?",
-      "ms": 13572.3,
+      "ms": 13518.2,
       "expected_intent": "general",
       "checks": {
         "intent": true,
@@ -2899,7 +2328,7 @@
       ],
       "replans": [],
       "engine": "llm",
-      "answer": "I couldn't find a live euro rate. The sources I found are dated and aren't timestamped.\n\n- **Ria Money Transfer:** 1 EUR = 1.11838 USD, dated 11/01/2026. This is the mid-market reference rate.\n- **Wise:** 1 EUR = 1.116 USD.\n\nThese figures may have changed since they were posted. I found no euro-to-real (BRL) rate. For that one, check the Banco Central do Brasil's official PTAX rate.\n\nSources:\n- https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1\n- https://wise.com/us/currency-converter/eur-to-usd-rate",
+      "answer": "Here are the euro rates against the US dollar:\n\n- **Ria Money Transfer:** 1 EUR = 1.11838091 USD. The page was listed as updated today (01/11/2026).\n- **Wise:** €1 = 1.116 USD. The page gave no clear timestamp.\n\nThese are reference rates, not the rate you would get on a transaction. I didn't find a euro-to-real rate. For the official one, check the Banco Central do Brasil (PTAX).\n\nSources: [Ria](https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1) and [Wise](https://wise.com/us/currency-converter/eur-to-usd-rate)",
       "source_ids": [
         "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
         "https://wise.com/us/currency-converter/eur-to-usd-rate",
@@ -2975,34 +2404,527 @@
       "language_declared": "en",
       "language_detected": "en",
       "unsupported_numbers": [
-        "1.11838",
+        "1.11838091",
         "1.116"
       ],
-      "cost_usd": 0.05692,
+      "cost_usd": 0.05687,
+      "run": 0
+    },
+    {
+      "id": "official-08",
+      "split": "official",
+      "message": "My card machine is showing a transaction decline error.",
+      "ms": 13247.7,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "tools": true,
+        "numbers": true
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records",
+        "faq",
+        "escalation"
+      ],
+      "replans": [
+        "faq->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "Here is what I found in your account:\n\n- **T1988A, 01/11:** Two transactions were declined, and neither was caused by the machine. The terminal is online.\n  - TX1007 (credit, R$ 210,00): code 51, insufficient balance on the cardholder's side.\n  - TX1008 (debit, R$ 75,00): code 05, the issuing bank did not authorize it.\n  - Customers can try another card or contact their bank.\n- **T1988B (Get Clássica):** It is offline with no chip signal, and its last contact was 190 minutes ago. If your error is on this machine, the cause is the connection, not a card decline.\n- **Restart:** I can propose a restart of T1988B. Nothing has been done yet, and you would need to confirm it. Do you want me to propose it?\n\nI found no Getnet source with troubleshooting steps for this error. I opened a case with a human agent (ticket T-7e3b6bae), and the reply will appear in this conversation.",
+      "source_ids": [
+        "en-in-person-payments-03",
+        "maq-todas-as-maquininhas-tabela-01",
+        "en-restaurants-07"
+      ],
+      "sources": [
+        {
+          "id": "en-in-person-payments-03",
+          "title": "In-person Payments",
+          "url": "https://www.getnet.net/en/our-solutions/in-person-payments"
+        },
+        {
+          "id": "maq-todas-as-maquininhas-tabela-01",
+          "title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátis",
+          "url": "https://site.getnet.com.br/todas-as-maquininhas/"
+        },
+        {
+          "id": "en-restaurants-07",
+          "title": "Restaurants",
+          "url": "https://www.getnet.net/en/your-business/industries/restaurants"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        },
+        {
+          "name": "get_transactions",
+          "args": {
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"wifi\", \"signal\": \"ok\", \"online\": true, \"last_contact_min\": 2, \"paper_roll\": \"ok\", \"blocked\": false}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"signal\": \"sem_sinal\", \"online\": false, \"last_contact_min\": 190, \"paper_roll\": \"ok\", \"blocked\": false}]}}",
+        "{\"ok\": true, \"data\": {\"count\": 2, \"approved_count\": 0, \"approved_total\": 0, \"declined_count\": 2, \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-01\", \"method\": \"credito\", \"amount\": 210.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"51\", \"decline_reason\": \"saldo insuficiente do portador\", \"contestable\": false}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-01\", \"method\": \"debito\", \"amount\": 75.0, \"status\": \"recusada\", \"terminal_id\": \"T1988A\", \"decline_code\": \"05\", \"decline_reason\": \"não autorizada pelo emissor\", \"contestable\": false}]}}",
+        "In-person Payments: Some of the advantages include: All our terminals comply with PCI security standards to make your transactions secure Get paid anywhere in your business in order to offer more comfort and a seanless experience IIt's reliadble, intuitive and allows you to start selling fast. Acceot chip card, magnetic stripe, contactless and mobiile payments The basic POS for your sales.",
+        "Getnet | Maquininha de cartão: Melhores taxas e opções grátis: Vendendo você ganha máquina grátis Venda o quanto quiser de graça pelo celular Acima de R$ 20mil por mês | Get Clássica Acima de R$ 40mil por mês | Get Clássica ou Get Smart Acima de R$ 80mil por mês | Get Clássica ou Get Smart *As modalidades de Voucher (VA/VR), Crediário não compõem faturamento para isenção do aluguel Caso não atinja os faturamentos do quadro acima, segue o valor de utilização: Venda pelo celular R$ 0,00/mês Get Clássica R$ 79,90/mês Get Smart R$ 129,90/mês",
+        "Restaurants: Meet your new front-of house favourite Get Smart POS is more than a card machine. It's a mobile, all-in-one device that lets you take payments, track sales and manage your business from the palm of your hand. Get Smart POS is more than a card machine. Tailored for table service life Accepts all payment methods Major cards, mobile wallets, contactless and QR payments.",
+        "I've handed this to a human agent (ticket T-7e3b6bae). The reply will show up in this conversation."
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "cost_usd": 0.037566,
+      "run": 0
+    },
+    {
+      "id": "official-02",
+      "split": "official",
+      "message": "What's the weather forecast in Porto Alegre tomorrow?",
+      "ms": 12111.6,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Here is the forecast for Porto Alegre tomorrow (Monday, 02/11/2026), according to INMET:\n\n- **Temperature:** minimum 20°C, maximum 31°C.\n- **Morning:** many clouds, with a chance of isolated rain.\n- **Afternoon:** many clouds, with isolated showers.\n\nSource: https://previsao.inmet.gov.br/4314902",
+      "source_ids": [
+        "https://previsao.inmet.gov.br/4314902",
+        "https://metsul.com/previsao/rs/porto-alegre/",
+        "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/363/portoalegre-rs",
+        "https://www.meteored.com.br/porto-alegre.htm",
+        "https://www.accuweather.com/pt/br/porto-alegre/45561/weather-forecast/45561",
+        "https://en.wikipedia.org/wiki/2026_Campeonato_Ga%C3%BAcho",
+        "https://en.wikipedia.org/wiki/Porto_Alegre_do_Tocantins",
+        "https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Melo",
+        "https://en.wikipedia.org/wiki/Porto_Alegre_do_Norte_Airport"
+      ],
+      "sources": [
+        {
+          "id": "https://previsao.inmet.gov.br/4314902",
+          "title": "Porto Alegre, RS - 16/10/2026 - INMET :: Previsão",
+          "url": "https://previsao.inmet.gov.br/4314902"
+        },
+        {
+          "id": "https://metsul.com/previsao/rs/porto-alegre/",
+          "title": "Previsão do tempo para dez dias em Porto Alegre (RS)",
+          "url": "https://metsul.com/previsao/rs/porto-alegre/"
+        },
+        {
+          "id": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/363/portoalegre-rs",
+          "title": "Clima e Previsão do Tempo para 15 Dias em Porto Alegre (RS)",
+          "url": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/363/portoalegre-rs"
+        },
+        {
+          "id": "https://www.meteored.com.br/porto-alegre.htm",
+          "title": "Previsão do tempo Porto Alegre RS. 14 dias - Meteored Brasil",
+          "url": "https://www.meteored.com.br/porto-alegre.htm"
+        },
+        {
+          "id": "https://www.accuweather.com/pt/br/porto-alegre/45561/weather-forecast/45561",
+          "title": "Previsão meteorológica de 3 dias em Porto Alegre, Rio Grande do Sul, Brasil",
+          "url": "https://www.accuweather.com/pt/br/porto-alegre/45561/weather-forecast/45561"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/2026_Campeonato_Ga%C3%BAcho",
+          "title": "2026 Campeonato Ga%C3%BAcho",
+          "url": "https://en.wikipedia.org/wiki/2026_Campeonato_Ga%C3%BAcho"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Tocantins",
+          "title": "Porto Alegre do Tocantins",
+          "url": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Tocantins"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Melo",
+          "title": "Sebasti%C3%A3o Melo",
+          "url": "https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Melo"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Norte_Airport",
+          "title": "Porto Alegre do Norte Airport",
+          "url": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Norte_Airport"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Porto Alegre, RS - 16/10/2026 - INMET :: Previsão (107 days ago)",
+        "Previsão do tempo para dez dias em Porto Alegre (RS) (1296 days ago)",
+        "Clima e Previsão do Tempo para 15 Dias em Porto Alegre (RS) (730 days ago)",
+        "Previsão do tempo Porto Alegre RS. 14 dias - Meteored Brasil (23 days ago)",
+        "Previsão meteorológica de 3 dias em Porto Alegre, Rio Grande do Sul, Brasil (s/ data)",
+        "2026 Campeonato Ga%C3%BAcho (s/ data)",
+        "Porto Alegre do Tocantins (s/ data)",
+        "Sebasti%C3%A3o Melo (s/ data)",
+        "Porto Alegre do Norte Airport (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "02/11/2026",
+        "20",
+        "31",
+        "4314902"
+      ],
+      "cost_usd": 0.054328,
+      "run": 1
+    },
+    {
+      "id": "official-07",
+      "split": "official",
+      "message": "What's the euro exchange rate today?",
+      "ms": 13481.1,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "Today (11/01/2026), Ria Money Transfer lists 1.00 EUR = 1.11838091 USD, which is the mid-market reference rate. Wise shows a similar figure of €1 = 1.116 USD.\n\nI didn't find a euro-to-real (BRL) rate. For the official Brazilian rate, check the Banco Central do Brasil (PTAX).\n\nSources:\n- Ria Money Transfer: https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1\n- Wise: https://wise.com/us/currency-converter/eur-to-usd-rate",
+      "source_ids": [
+        "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+        "https://wise.com/us/currency-converter/eur-to-usd-rate",
+        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
+        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
+        "https://www.investing.com/currencies/eur-usd",
+        "https://wise.com/us/currency-converter/usd-to-eur-rate",
+        "https://www.eurochange.co.uk/travel-money/exchange-rates",
+        "https://www.x-rates.com/table/?from=EUR&amount=1",
+        "https://ckan.tradingeconomics.com/150-euro-to-us"
+      ],
+      "sources": [
+        {
+          "id": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+          "title": "Euro to US Dollar Exchange Rate Today",
+          "url": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1"
+        },
+        {
+          "id": "https://wise.com/us/currency-converter/eur-to-usd-rate",
+          "title": "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise",
+          "url": "https://wise.com/us/currency-converter/eur-to-usd-rate"
+        },
+        {
+          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
+          "title": "1 USD to EUR - US Dollars to Euros Exchange Rate",
+          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR"
+        },
+        {
+          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
+          "title": "1 EUR to USD - Euros to US Dollars Exchange Rate",
+          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD"
+        },
+        {
+          "id": "https://www.investing.com/currencies/eur-usd",
+          "title": "EUR USD",
+          "url": "https://www.investing.com/currencies/eur-usd"
+        },
+        {
+          "id": "https://wise.com/us/currency-converter/usd-to-eur-rate",
+          "title": "USD to EUR - Convert US dollars to Euros",
+          "url": "https://wise.com/us/currency-converter/usd-to-eur-rate"
+        },
+        {
+          "id": "https://www.eurochange.co.uk/travel-money/exchange-rates",
+          "title": "Foreign Currency Exchange Rates",
+          "url": "https://www.eurochange.co.uk/travel-money/exchange-rates"
+        },
+        {
+          "id": "https://www.x-rates.com/table/?from=EUR&amount=1",
+          "title": "Currency Exchange Table (Euro - EUR) - X-Rates",
+          "url": "https://www.x-rates.com/table/?from=EUR&amount=1"
+        },
+        {
+          "id": "https://ckan.tradingeconomics.com/150-euro-to-us",
+          "title": "150 Euro to US Dollars: Today's Exchange Rate Revealed",
+          "url": "https://ckan.tradingeconomics.com/150-euro-to-us"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Euro to US Dollar Exchange Rate Today (0 days ago)",
+        "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise (846 days ago)",
+        "1 USD to EUR - US Dollars to Euros Exchange Rate (6374 days ago)",
+        "1 EUR to USD - Euros to US Dollars Exchange Rate (6374 days ago)",
+        "EUR USD (89 days ago)",
+        "USD to EUR - Convert US dollars to Euros (15 days ago)",
+        "Foreign Currency Exchange Rates (446 days ago)",
+        "Currency Exchange Table (Euro - EUR) - X-Rates (304 days ago)",
+        "150 Euro to US Dollars: Today's Exchange Rate Revealed (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "1.11838091",
+        "1.116"
+      ],
+      "cost_usd": 0.05638,
+      "run": 1
+    },
+    {
+      "id": "official-02",
+      "split": "official",
+      "message": "What's the weather forecast in Porto Alegre tomorrow?",
+      "ms": 11613.6,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "According to INMET, Porto Alegre's forecast for Monday, 02/11/2026 is:\n\n- **Temperature:** minimum 20°C, maximum 31°C.\n- **Morning:** cloudy, with a chance of isolated rain.\n- **Afternoon:** cloudy, with isolated showers.\n\nSource: https://previsao.inmet.gov.br/4314902",
+      "source_ids": [
+        "https://previsao.inmet.gov.br/4314902",
+        "https://metsul.com/previsao/rs/porto-alegre/",
+        "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/363/portoalegre-rs",
+        "https://www.meteored.com.br/porto-alegre.htm",
+        "https://www.accuweather.com/pt/br/porto-alegre/45561/weather-forecast/45561",
+        "https://en.wikipedia.org/wiki/2026_Campeonato_Ga%C3%BAcho",
+        "https://en.wikipedia.org/wiki/Porto_Alegre_do_Tocantins",
+        "https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Melo",
+        "https://en.wikipedia.org/wiki/Porto_Alegre_do_Norte_Airport"
+      ],
+      "sources": [
+        {
+          "id": "https://previsao.inmet.gov.br/4314902",
+          "title": "Porto Alegre, RS - 16/10/2026 - INMET :: Previsão",
+          "url": "https://previsao.inmet.gov.br/4314902"
+        },
+        {
+          "id": "https://metsul.com/previsao/rs/porto-alegre/",
+          "title": "Previsão do tempo para dez dias em Porto Alegre (RS)",
+          "url": "https://metsul.com/previsao/rs/porto-alegre/"
+        },
+        {
+          "id": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/363/portoalegre-rs",
+          "title": "Clima e Previsão do Tempo para 15 Dias em Porto Alegre (RS)",
+          "url": "https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/363/portoalegre-rs"
+        },
+        {
+          "id": "https://www.meteored.com.br/porto-alegre.htm",
+          "title": "Previsão do tempo Porto Alegre RS. 14 dias - Meteored Brasil",
+          "url": "https://www.meteored.com.br/porto-alegre.htm"
+        },
+        {
+          "id": "https://www.accuweather.com/pt/br/porto-alegre/45561/weather-forecast/45561",
+          "title": "Previsão meteorológica de 3 dias em Porto Alegre, Rio Grande do Sul, Brasil",
+          "url": "https://www.accuweather.com/pt/br/porto-alegre/45561/weather-forecast/45561"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/2026_Campeonato_Ga%C3%BAcho",
+          "title": "2026 Campeonato Ga%C3%BAcho",
+          "url": "https://en.wikipedia.org/wiki/2026_Campeonato_Ga%C3%BAcho"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Tocantins",
+          "title": "Porto Alegre do Tocantins",
+          "url": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Tocantins"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Melo",
+          "title": "Sebasti%C3%A3o Melo",
+          "url": "https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Melo"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Norte_Airport",
+          "title": "Porto Alegre do Norte Airport",
+          "url": "https://en.wikipedia.org/wiki/Porto_Alegre_do_Norte_Airport"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Porto Alegre, RS - 16/10/2026 - INMET :: Previsão (107 days ago)",
+        "Previsão do tempo para dez dias em Porto Alegre (RS) (1296 days ago)",
+        "Clima e Previsão do Tempo para 15 Dias em Porto Alegre (RS) (730 days ago)",
+        "Previsão do tempo Porto Alegre RS. 14 dias - Meteored Brasil (23 days ago)",
+        "Previsão meteorológica de 3 dias em Porto Alegre, Rio Grande do Sul, Brasil (s/ data)",
+        "2026 Campeonato Ga%C3%BAcho (s/ data)",
+        "Porto Alegre do Tocantins (s/ data)",
+        "Sebasti%C3%A3o Melo (s/ data)",
+        "Porto Alegre do Norte Airport (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "02/11/2026",
+        "20",
+        "31",
+        "4314902"
+      ],
+      "cost_usd": 0.054178,
+      "run": 2
+    },
+    {
+      "id": "official-07",
+      "split": "official",
+      "message": "What's the euro exchange rate today?",
+      "ms": 12997.2,
+      "expected_intent": "general",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": false
+      },
+      "crash": null,
+      "got_intent": "general",
+      "route": [
+        "router",
+        "faq"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "I can't confirm today's exact rate. These are the figures the sources gave:\n\n- **Ria Money Transfer:** 1 EUR = 1.11838091 USD, dated 11/01/2026.\n- **Wise:** 1 EUR = 1.116 USD.\n\nNeither page showed a timestamp, so use these as reference rates only. For the official rate against the Brazilian real, check the Banco Central do Brasil.\n\nSources:\n- https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1\n- https://wise.com/us/currency-converter/eur-to-usd-rate",
+      "source_ids": [
+        "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+        "https://wise.com/us/currency-converter/eur-to-usd-rate",
+        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
+        "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
+        "https://www.investing.com/currencies/eur-usd",
+        "https://wise.com/us/currency-converter/usd-to-eur-rate",
+        "https://www.eurochange.co.uk/travel-money/exchange-rates",
+        "https://www.x-rates.com/table/?from=EUR&amount=1",
+        "https://ckan.tradingeconomics.com/150-euro-to-us"
+      ],
+      "sources": [
+        {
+          "id": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1",
+          "title": "Euro to US Dollar Exchange Rate Today",
+          "url": "https://www.riamoneytransfer.com/en-us/rates-conversion/?From=EUR&To=USD&Amount=1"
+        },
+        {
+          "id": "https://wise.com/us/currency-converter/eur-to-usd-rate",
+          "title": "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise",
+          "url": "https://wise.com/us/currency-converter/eur-to-usd-rate"
+        },
+        {
+          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR",
+          "title": "1 USD to EUR - US Dollars to Euros Exchange Rate",
+          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=USD&To=EUR"
+        },
+        {
+          "id": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD",
+          "title": "1 EUR to USD - Euros to US Dollars Exchange Rate",
+          "url": "https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=EUR&To=USD"
+        },
+        {
+          "id": "https://www.investing.com/currencies/eur-usd",
+          "title": "EUR USD",
+          "url": "https://www.investing.com/currencies/eur-usd"
+        },
+        {
+          "id": "https://wise.com/us/currency-converter/usd-to-eur-rate",
+          "title": "USD to EUR - Convert US dollars to Euros",
+          "url": "https://wise.com/us/currency-converter/usd-to-eur-rate"
+        },
+        {
+          "id": "https://www.eurochange.co.uk/travel-money/exchange-rates",
+          "title": "Foreign Currency Exchange Rates",
+          "url": "https://www.eurochange.co.uk/travel-money/exchange-rates"
+        },
+        {
+          "id": "https://www.x-rates.com/table/?from=EUR&amount=1",
+          "title": "Currency Exchange Table (Euro - EUR) - X-Rates",
+          "url": "https://www.x-rates.com/table/?from=EUR&amount=1"
+        },
+        {
+          "id": "https://ckan.tradingeconomics.com/150-euro-to-us",
+          "title": "150 Euro to US Dollars: Today's Exchange Rate Revealed",
+          "url": "https://ckan.tradingeconomics.com/150-euro-to-us"
+        }
+      ],
+      "tool_calls": [],
+      "evidence": [
+        "Euro to US Dollar Exchange Rate Today (0 days ago)",
+        "Euros to US dollars Exchange Rate. Convert EUR/USD - Wise (846 days ago)",
+        "1 USD to EUR - US Dollars to Euros Exchange Rate (6374 days ago)",
+        "1 EUR to USD - Euros to US Dollars Exchange Rate (6374 days ago)",
+        "EUR USD (89 days ago)",
+        "USD to EUR - Convert US dollars to Euros (15 days ago)",
+        "Foreign Currency Exchange Rates (446 days ago)",
+        "Currency Exchange Table (Euro - EUR) - X-Rates (304 days ago)",
+        "150 Euro to US Dollars: Today's Exchange Rate Revealed (s/ data)",
+        "Hoje é 2026-11-01 (Sunday)"
+      ],
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [
+        "1.11838091",
+        "1.116"
+      ],
+      "cost_usd": 0.056342,
       "run": 2
     }
   ],
   "stability": {
     "runs": 3,
-    "pass_at_1": 0.7,
-    "pass_hat_k": 0.6,
+    "pass_at_1": 0.7667,
+    "pass_hat_k": 0.7,
     "ci": {
       "pass_at_1": {
-        "k": 21,
+        "k": 23,
         "n": 30,
-        "lo": 52.1,
-        "hi": 83.3
+        "lo": 59.1,
+        "hi": 88.2
       },
       "pass_hat_k": {
-        "k": 6,
+        "k": 7,
         "n": 10,
-        "lo": 31.3,
-        "hi": 83.2
+        "lo": 39.7,
+        "hi": 89.2
       }
     },
     "unstable": [
-      "official-03",
-      "official-06"
+      "official-08"
     ],
     "by_case": {
       "official-01": {
@@ -3014,7 +2936,7 @@
         "runs": 3
       },
       "official-03": {
-        "passes": 1,
+        "passes": 3,
         "runs": 3
       },
       "official-04": {
@@ -3026,7 +2948,7 @@
         "runs": 3
       },
       "official-06": {
-        "passes": 2,
+        "passes": 3,
         "runs": 3
       },
       "official-07": {
@@ -3034,7 +2956,7 @@
         "runs": 3
       },
       "official-08": {
-        "passes": 3,
+        "passes": 2,
         "runs": 3
       },
       "official-09": {
@@ -3050,10 +2972,13 @@
   "failure_matrix": {
     "by_check": {
       "numbers": {
-        "official": 8
+        "official": 6
       },
-      "language": {
-        "official": 2
+      "handoff": {
+        "official": 1
+      },
+      "handoff_outcome": {
+        "official": 1
       }
     },
     "intent_confusion": {},
