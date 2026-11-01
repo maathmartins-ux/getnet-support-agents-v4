@@ -1,8 +1,57 @@
 {
-  "_doc": "Páginas do site oficial da empresa para `python -m app.ingest` (frente K). allowed_hosts = só o domínio do país do enunciado.",
-  "allowed_hosts": [],
+  "_doc": "Páginas do site oficial para `python -m app.ingest` (frente K). en = fonte indicada no enunciado (www.getnet.net/en); produtos/suporte = site.getnet.com.br (Brasil) para os cenários.",
+  "allowed_hosts": ["www.getnet.net", "site.getnet.com.br"],
   "groups": {
-    "produtos": {"prefix": "prod", "pages": {}},
-    "suporte": {"prefix": "sup", "pages": {}}
+    "en": {"prefix": "en", "pages": {
+      "home": "https://www.getnet.net/en",
+      "in-person-payments": "https://www.getnet.net/en/our-solutions/in-person-payments",
+      "online-payments": "https://www.getnet.net/en/our-solutions/online-payments",
+      "omnichannel": "https://www.getnet.net/en/our-solutions/omnichannel",
+      "value-added-solutions": "https://www.getnet.net/en/our-solutions/value-added-solutions",
+      "agentic-commerce": "https://www.getnet.net/en/our-solutions/agentic-commerce",
+      "large-enterprises": "https://www.getnet.net/en/your-business/large-enterprises",
+      "restaurants": "https://www.getnet.net/en/your-business/industries/restaurants",
+      "travel": "https://www.getnet.net/en/your-business/industries/travel",
+      "health-and-beauty": "https://www.getnet.net/en/your-business/industries/health-and-beauty",
+      "about-us": "https://www.getnet.net/en/corporate/about-us",
+      "developers": "https://www.getnet.net/en/developers",
+      "partners": "https://www.getnet.net/en/partners",
+      "contact": "https://www.getnet.net/en/contact"
+    }},
+    "produtos": {"prefix": "prod", "pages": {
+      "home": "https://site.getnet.com.br/",
+      "todas-as-maquininhas": "https://site.getnet.com.br/todas-as-maquininhas/",
+      "maquininha-de-cartao": "https://site.getnet.com.br/maquininha-de-cartao/",
+      "pix": "https://site.getnet.com.br/pix/",
+      "pix-na-maquininha": "https://site.getnet.com.br/pix-na-maquininha/",
+      "antecipacao": "https://site.getnet.com.br/antecipacao/",
+      "crediario": "https://site.getnet.com.br/crediario/",
+      "link-de-pagamento": "https://site.getnet.com.br/link-de-pagamento/",
+      "vender-pelo-whatsapp": "https://site.getnet.com.br/vender-pelo-whatsapp/",
+      "taxas": "https://site.getnet.com.br/taxas/",
+      "conta-digital": "https://site.getnet.com.br/conta-digital/",
+      "get-tap": "https://site.getnet.com.br/get-tap/",
+      "chargeback": "https://site.getnet.com.br/chargeback/"
+    }},
+    "suporte": {"prefix": "sup", "pages": {
+      "duvidas": "https://site.getnet.com.br/duvidas/",
+      "operacional": "https://site.getnet.com.br/duvidas/operacional/",
+      "aluguel": "https://site.getnet.com.br/duvidas/aluguel/",
+      "aluguel-zero": "https://site.getnet.com.br/duvidas/aluguel-zero/",
+      "get-smart": "https://site.getnet.com.br/duvidas/get-smart/",
+      "get-tap": "https://site.getnet.com.br/duvidas/get-tap/",
+      "pix": "https://site.getnet.com.br/duvidas/pix/",
+      "pix-mais-respostas": "https://site.getnet.com.br/duvidas/pix-mais-respostas/",
+      "parcelado": "https://site.getnet.com.br/duvidas/parcelado/",
+      "antecipacao-de-vendas": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/",
+      "crediario": "https://site.getnet.com.br/duvidas/crediario/",
+      "link-de-pagamento": "https://site.getnet.com.br/duvidas/link-de-pagamento/",
+      "taxas": "https://site.getnet.com.br/duvidas/taxas/",
+      "get-conta": "https://site.getnet.com.br/duvidas/get-conta/",
+      "cancelamento": "https://site.getnet.com.br/duvidas/cancelamento-descredenciamento/",
+      "app-getnet": "https://site.getnet.com.br/duvidas/app-getnet/",
+      "bandeiras": "https://site.getnet.com.br/duvidas/bandeiras/",
+      "pre-autorizacao": "https://site.getnet.com.br/duvidas/pre-autorizacao/"
+    }}
   }
 }

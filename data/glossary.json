@@ -1,3 +1,273 @@
 {
-  "_doc": "Glossário pt -> en do DESAFIO (agents.expand_query): chave = termo do corpus em português; valor = como o cliente pergunta em inglês. Preenchido pela frente K."
+  "_doc": "Glossário pt -> en do DESAFIO (agents.expand_query): chave = termo do corpus em português; valor = como o cliente pergunta em inglês. Preenchido pela frente K a partir de data/knowledge.",
+  "antecipação": [
+    "advance",
+    "anticipation",
+    "early payment",
+    "prepayment"
+  ],
+  "antecipar": [
+    "advance",
+    "anticipate",
+    "get paid early"
+  ],
+  "antecipação de recebíveis": [
+    "receivables advance"
+  ],
+  "parcelas": [
+    "installments",
+    "instalments"
+  ],
+  "parcelar": [
+    "split",
+    "pay in installments"
+  ],
+  "parcelamento": [
+    "installment plan",
+    "installments"
+  ],
+  "parcelado": [
+    "installment"
+  ],
+  "recebíveis": [
+    "receivables"
+  ],
+  "Link de Pagamento": [
+    "Payment Link",
+    "pay link"
+  ],
+  "conta bancária": [
+    "bank account"
+  ],
+  "conta digital": [
+    "digital account"
+  ],
+  "depósito": [
+    "deposit",
+    "deposited"
+  ],
+  "recebimento": [
+    "payout",
+    "receive",
+    "settlement"
+  ],
+  "recusa": [
+    "decline",
+    "declined",
+    "refused"
+  ],
+  "recusada": [
+    "declined",
+    "denied"
+  ],
+  "taxas": [
+    "fees",
+    "rates",
+    "charges"
+  ],
+  "aluguel": [
+    "rent",
+    "rental",
+    "monthly fee"
+  ],
+  "isenção": [
+    "waiver",
+    "exemption"
+  ],
+  "juros": [
+    "interest"
+  ],
+  "cartão de crédito": [
+    "credit card"
+  ],
+  "aproximação": [
+    "contactless",
+    "tap",
+    "NFC"
+  ],
+  "chave Pix": [
+    "Pix key"
+  ],
+  "chaves Pix": [
+    "Pix keys"
+  ],
+  "QR Code": [
+    "QR code"
+  ],
+  "cancelamento": [
+    "cancellation",
+    "cancel",
+    "refund"
+  ],
+  "estorno": [
+    "chargeback",
+    "reversal",
+    "refund"
+  ],
+  "chargeback": [
+    "dispute",
+    "contested charge"
+  ],
+  "contestação": [
+    "dispute",
+    "contest"
+  ],
+  "bateria": [
+    "battery"
+  ],
+  "bobina": [
+    "paper roll",
+    "receipt paper"
+  ],
+  "conexão": [
+    "connection",
+    "connect"
+  ],
+  "Wi-Fi": [
+    "wifi",
+    "wireless"
+  ],
+  "bandeiras": [
+    "card brands",
+    "card networks"
+  ],
+  "comprovante": [
+    "receipt"
+  ],
+  "lojista": [
+    "merchant",
+    "shop owner"
+  ],
+  "dias úteis": [
+    "business days",
+    "working days"
+  ],
+  "domicílio bancário": [
+    "settlement bank account",
+    "bank domicile"
+  ],
+  "descredenciamento": [
+    "account closure",
+    "termination"
+  ],
+  "Central de Atendimento": [
+    "customer service",
+    "call center",
+    "support line"
+  ],
+  "Portal do Cliente": [
+    "customer portal"
+  ],
+  "loja virtual": [
+    "online store",
+    "e-commerce"
+  ],
+  "pré-autorização": [
+    "pre-authorization"
+  ],
+  "sem aluguel": [
+    "no rent",
+    "no monthly fee"
+  ],
+  "Pix na maquininha": [
+    "Pix on the card machine"
+  ],
+  "ligar": [
+    "turn on",
+    "on"
+  ],
+  "desligar": [
+    "turn off",
+    "off"
+  ],
+  "requisitos": [
+    "requirements"
+  ],
+  "site": [
+    "website"
+  ],
+  "formas de pagamento": [
+    "payment methods"
+  ],
+  "prazo": [
+    "how long"
+  ],
+  "quanto tempo": [
+    "how long"
+  ],
+  "cadastrar": [
+    "register"
+  ],
+  "quantas": [
+    "how many"
+  ],
+  "custa": [
+    "cost",
+    "costs"
+  ],
+  "custos": [
+    "cost",
+    "costs"
+  ],
+  "canais": [
+    "channels"
+  ],
+  "requisitos mínimos": [
+    "requirements"
+  ],
+  "vantagens": [
+    "benefits",
+    "advantages"
+  ],
+  "benefícios": [
+    "benefits"
+  ],
+  "cancelar": [
+    "cancel"
+  ],
+  "dias anteriores": [
+    "previous day"
+  ],
+  "tarifa": [
+    "fee",
+    "fees"
+  ],
+  "diferenciais": [
+    "different",
+    "differ"
+  ],
+  "conta": [
+    "account"
+  ],
+  "pagamentos online": [
+    "online payments"
+  ],
+  "chaves": [
+    "keys"
+  ],
+  "cartão": [
+    "card"
+  ],
+  "Pix Saque": [
+    "Pix withdrawal"
+  ],
+  "liquidação": [
+    "settlement"
+  ],
+  "lançamentos futuros": [
+    "future receivables"
+  ],
+  "duplicada": [
+    "duplicate",
+    "duplicated"
+  ],
+  "nota fiscal": [
+    "invoice"
+  ],
+  "Crediário": [
+    "installment credit"
+  ],
+  "máquina de cartão": [
+    "card machine"
+  ]
 }

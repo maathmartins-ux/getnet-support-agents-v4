@@ -1,0 +1,66 @@
+{"question": "Quais as diferenças entre a maquininha Get Clássica e a Get Smart?", "relevant": ["sup-get-smart-10", "sup-get-smart-08", "en-restaurants-07", "prod-todas-as-maquininhas-05"]}
+{"question": "How do the Get Clássica and Get Smart card machines differ?", "relevant": ["sup-get-smart-10", "sup-get-smart-08", "en-restaurants-07", "prod-todas-as-maquininhas-05"]}
+{"question": "O que a Get Smart faz de diferente de uma máquina de cartão comum?", "relevant": ["sup-get-smart-08", "sup-get-smart-10", "en-restaurants-07"]}
+{"question": "What makes the Get Smart different from a regular card machine?", "relevant": ["sup-get-smart-08", "sup-get-smart-10", "en-restaurants-07"]}
+{"question": "Para receber por Pix preciso ter conta em banco?", "relevant": ["sup-pix-09", "sup-get-conta-05", "prod-pix-na-maquininha-03"]}
+{"question": "To get paid through Pix, is a bank account required?", "relevant": ["sup-pix-09", "sup-get-conta-05", "prod-pix-na-maquininha-03"]}
+{"question": "Como funciona o Pix na maquininha da Getnet?", "relevant": ["prod-pix-na-maquininha-03", "sup-duvidas-82", "prod-pix-na-maquininha-04"]}
+{"question": "How does Pix on the Getnet card machine work?", "relevant": ["prod-pix-na-maquininha-03", "sup-duvidas-82", "prod-pix-na-maquininha-04"]}
+{"question": "Quantas chaves Pix preciso cadastrar na Getnet?", "relevant": ["sup-duvidas-79", "sup-duvidas-78"]}
+{"question": "How many Pix keys do I have to register with Getnet?", "relevant": ["sup-duvidas-79", "sup-duvidas-78"]}
+{"question": "Existe tarifa para fazer Pix pela Get Conta?", "relevant": ["sup-pix-mais-respostas-19"]}
+{"question": "Are there fees for Pix transfers using the Get Conta?", "relevant": ["sup-pix-mais-respostas-19"]}
+{"question": "O que é a antecipação de vendas e como ela funciona?", "relevant": ["sup-duvidas-12", "sup-duvidas-15", "sup-antecipacao-de-vendas-15"]}
+{"question": "What is the sales advance and how does it work at Getnet?", "relevant": ["sup-duvidas-12", "sup-duvidas-15", "sup-antecipacao-de-vendas-15"]}
+{"question": "Por quais canais consigo antecipar minhas vendas?", "relevant": ["sup-antecipacao-de-vendas-14", "sup-antecipacao-de-vendas-15", "sup-app-getnet-05"]}
+{"question": "Which channels can I use to anticipate my sales?", "relevant": ["sup-antecipacao-de-vendas-14", "sup-antecipacao-de-vendas-15", "sup-app-getnet-05"]}
+{"question": "Em até quantas vezes o cliente parcela no Crediário?", "relevant": ["prod-crediario-03", "sup-crediario-03", "sup-duvidas-35"]}
+{"question": "With the Crediário, up to how many installments can the shopper pay?", "relevant": ["prod-crediario-03", "sup-crediario-03", "sup-duvidas-35"]}
+{"question": "Em quanto tempo recebo as vendas feitas no Crediário?", "relevant": ["prod-crediario-10", "sup-duvidas-37", "prod-crediario-02"]}
+{"question": "How long until I receive the money from Crediário sales?", "relevant": ["prod-crediario-10", "sup-duvidas-37", "prod-crediario-02"]}
+{"question": "Dá pra mandar o Link de Pagamento pelo WhatsApp?", "relevant": ["sup-link-de-pagamento-12", "en-online-payments-02"]}
+{"question": "Is it possible to send the Payment Link over WhatsApp?", "relevant": ["sup-link-de-pagamento-12", "en-online-payments-02"]}
+{"question": "Quais formas de pagamento o Link de Pagamento aceita?", "relevant": ["sup-link-de-pagamento-10", "sup-link-de-pagamento-09"]}
+{"question": "Which payment methods does the Payment Link accept?", "relevant": ["sup-link-de-pagamento-10", "sup-link-de-pagamento-09"]}
+{"question": "Quanto custa o Link de Pagamento?", "relevant": ["sup-link-de-pagamento-08", "sup-link-de-pagamento-12"]}
+{"question": "How much does the Payment Link cost?", "relevant": ["sup-link-de-pagamento-08", "sup-link-de-pagamento-12"]}
+{"question": "Preciso ter um site para usar o Link de Pagamento?", "relevant": ["sup-link-de-pagamento-07"]}
+{"question": "Do I need an active website to use the Payment Link?", "relevant": ["sup-link-de-pagamento-07"]}
+{"question": "O que é o Get Tap e como ele funciona?", "relevant": ["sup-get-tap-01", "sup-duvidas-43", "en-in-person-payments-06"]}
+{"question": "What is Get Tap and how does it work?", "relevant": ["sup-get-tap-01", "sup-duvidas-43", "en-in-person-payments-06"]}
+{"question": "Quais os requisitos do celular para usar o Get Tap?", "relevant": ["sup-get-tap-04", "sup-duvidas-47", "sup-duvidas-44"]}
+{"question": "What phone requirements are there to use Get Tap?", "relevant": ["sup-get-tap-04", "sup-duvidas-47", "sup-duvidas-44"]}
+{"question": "Preciso de internet para vender com o Get Tap?", "relevant": ["sup-get-tap-12"]}
+{"question": "Does Get Tap need an internet connection to sell?", "relevant": ["sup-get-tap-12"]}
+{"question": "O que é chargeback e quando ele acontece?", "relevant": ["sup-operacional-02", "prod-chargeback-02", "prod-chargeback-03"]}
+{"question": "What is a chargeback and when does it happen?", "relevant": ["sup-operacional-02", "prod-chargeback-02", "prod-chargeback-03"]}
+{"question": "Como ligar ou desligar minha maquininha?", "relevant": ["sup-operacional-01", "sup-duvidas-64", "sup-duvidas-65"]}
+{"question": "How do I turn my card machine on or off?", "relevant": ["sup-operacional-01", "sup-duvidas-64", "sup-duvidas-65"]}
+{"question": "Como cancelar uma venda da Get Smart feita em outro dia?", "relevant": ["sup-get-smart-01", "sup-duvidas-02"]}
+{"question": "How can I cancel a Get Smart sale made on a previous day?", "relevant": ["sup-get-smart-01", "sup-duvidas-02"]}
+{"question": "Como faço a bateria da Get Smart durar mais?", "relevant": ["sup-get-smart-03", "sup-duvidas-04"]}
+{"question": "How do I keep the Get Smart battery lasting longer?", "relevant": ["sup-get-smart-03", "sup-duvidas-04"]}
+{"question": "O que é a Get Conta e quais as vantagens?", "relevant": ["sup-duvidas-40", "prod-conta-digital-01", "sup-duvidas-41"]}
+{"question": "What is the Get Conta digital account and what are its benefits?", "relevant": ["sup-duvidas-40", "prod-conta-digital-01", "sup-duvidas-41"]}
+{"question": "Quais são as taxas da Loja Virtual?", "relevant": ["sup-taxas-01", "sup-duvidas-98", "sup-taxas-07"]}
+{"question": "What are the online store (Loja Virtual) fees?", "relevant": ["sup-taxas-01", "sup-duvidas-98", "sup-taxas-07"]}
+{"question": "Como funciona o desconto no aluguel da maquininha?", "relevant": ["sup-aluguel-07", "sup-duvidas-10", "prod-get-tap-06"]}
+{"question": "How does the card machine rent discount work?", "relevant": ["sup-aluguel-07", "sup-duvidas-10", "prod-get-tap-06"]}
+{"question": "Quais soluções de pagamento online a Getnet oferece?", "relevant": ["en-online-payments-01", "en-online-payments-02", "en-online-payments-03"]}
+{"question": "What online payment solutions does Getnet offer?", "relevant": ["en-online-payments-01", "en-online-payments-02", "en-online-payments-03"]}
+{"question": "A Getnet faz seguro de carro?", "relevant": []}
+{"question": "A Getnet vende passagens aéreas?", "relevant": []}
+{"question": "Posso comprar criptomoeda pela Getnet?", "relevant": []}
+{"question": "A Getnet oferece financiamento imobiliário?", "relevant": []}
+{"question": "Vai chover em Curitiba amanhã?", "relevant": []}
+{"question": "A Getnet tem plano de saúde para lojistas?", "relevant": []}
+{"question": "Posso pedir delivery de comida pela Getnet?", "relevant": []}
+{"question": "A Getnet oferece consórcio de motos?", "relevant": []}
+{"question": "Does Getnet sell car insurance?", "relevant": []}
+{"question": "Can I book flights through Getnet?", "relevant": []}
+{"question": "Can I buy bitcoin with Getnet?", "relevant": []}
+{"question": "Does Getnet offer home mortgages?", "relevant": []}
+{"question": "How much is one euro worth in reais right now?", "relevant": []}
+{"question": "Does Getnet provide health insurance plans?", "relevant": []}
+{"question": "Can I order food delivery from Getnet?", "relevant": []}
+{"question": "Does Getnet run a motorcycle consortium?", "relevant": []}
