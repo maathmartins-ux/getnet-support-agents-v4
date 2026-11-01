@@ -20,7 +20,7 @@ from .observability import METRICS
 
 _INJECTION = re.compile(
     r"ignore (all |the |your )?(previous|above|prior)? ?(instructions|rules)"
-    r"|ignor[ea] (as |suas )?(instru[cç][oõ]es|regras)"
+    r"|ignor(e|a|ar|em) (as |suas |todas as )?(instru[cç][oõ]es|regras)"
     r"|esque[cç]a (as |suas |todas as )?(regras|instru[cç][oõ]es)|forget (your|all|the) (rules|instructions)"
     r"|system prompt|prompt do sistema|you are now|voc[eê] agora [eé]|jailbreak"
     # "modo desenvolvedor" só como ORDEM: o site da Getnet tem "evite o modo desenvolvedor" (v3: trecho real
@@ -30,9 +30,16 @@ _INJECTION = re.compile(
     r"|\b(in|em|no) (developer mode|modo (de )?desenvolvedor)\b(?! (do|of) (aparelho|celular|phone|android))",
     re.IGNORECASE,
 )
-_OTHER_USER = re.compile(r"\b(dados|pedidos?|registros?|data|orders?|records?)\b.{0,40}"
-                         r"\b(d[oa] outr[oa] (cliente|usu[aá]rio|pessoa)|of (another|other) (customer|user))\b"
-                         r"|\b(outro cliente|outro usu[aá]rio|another customer|another user)\b", re.IGNORECASE)
+_OTHER_USER = re.compile(r"\b(dados|pedidos?|registros?|data|orders?|records?|vendas|transa[cç][oõ]es|recebimentos"
+                         r"|saldo"
+                         r"|sales|transactions|balance|settlements)\b.{0,40}"
+                         r"\b(d[oa] outr[oa] (cliente|usu[aá]rio|pessoa|lojista|loja|estabelecimento)"
+                         r"|of (another|other) (customer|user|merchant|store))\b"
+                         r"|\b(outro cliente|outro usu[aá]rio|outro lojista|outra loja|another customer|another user"
+                         r"|another merchant|other merchants?)\b"
+                         # id de lojista na mensagem: a identidade vem do token, nunca do texto (o pipeline compara)
+                         r"|\b(dados|vendas|transa[cç][oõ]es|recebimentos|saldo|extrato|data|sales|transactions)\b"
+                         r".{0,30}\b(do|da|de|of|for)\s+(cliente|client|lojista|merchant)\s?\d{3,}", re.IGNORECASE)
 # Disfarces que passavam pela regex (referência pública do case, 31/10/2026): zero-width, letras espaçadas
 # ("i g n o r e", "s-y-s-t-e-m"), l33t ("1gn0re") e full-width (o NFKC resolve). Só a CÓPIA é desofuscada;
 # o texto que segue para agente e LLM continua o original mascarado.

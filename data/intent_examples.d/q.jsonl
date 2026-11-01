@@ -9,7 +9,7 @@
 {"text": "Quanto vendi no crédito esta semana?", "intent": "support"}
 {"text": "Show my approved transactions from today.", "intent": "support"}
 {"text": "Qual o saldo disponível para antecipar?", "intent": "support"}
-{"text": "How much do I have scheduled to receive next week?", "intent": "support"}
+{"text": "What amount is due to land in my account over the coming days?", "intent": "support"}
 {"text": "Quero antecipar os meus recebíveis de crédito.", "intent": "support"}
 {"text": "List my sales from the day before yesterday.", "intent": "support"}
 {"text": "Quero contestar a venda TX1004.", "intent": "support"}
@@ -24,7 +24,7 @@
 {"text": "Qual a previsão de chuva para São Paulo no sábado?", "intent": "general"}
 {"text": "How much is the US dollar in reais?", "intent": "general"}
 {"text": "Qual a capital do Paraná?", "intent": "general"}
-{"text": "Quero falar com um atendente.", "intent": "human_request"}
+{"text": "Preciso conversar com uma pessoa do suporte", "intent": "human_request"}
 {"text": "Transfer me to a real person.", "intent": "human_request"}
 {"text": "Me passa para alguém do suporte humano.", "intent": "human_request"}
 {"text": "Can I talk to an operator?", "intent": "human_request"}

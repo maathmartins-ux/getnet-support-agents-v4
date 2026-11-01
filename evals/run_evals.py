@@ -455,6 +455,12 @@ def stability(rows: list[dict], runs: int) -> dict:
             "by_case": by_case}
 
 
+def _agent_query(question: str) -> str:
+    from app.agents import expand_query
+
+    return expand_query(question)
+
+
 def retrieval_metrics(path: Path | None = None, retriever=None) -> dict | None:
     """Recall@3, MRR e hit@3 sobre perguntas rotuladas olhando a fonte, independentes do router."""
     from app.jsonl import family, read_family
@@ -470,7 +476,9 @@ def retrieval_metrics(path: Path | None = None, retriever=None) -> dict | None:
     rows = [r for r in all_rows if r["relevant"]]  # negativos (sem fonte) medem o portão, não o recall
     rec, rr, hit = [], [], []
     for r in rows:
-        got = [h.doc.id for h in retriever.search(r["question"], k=K)]
+        # mesma consulta que o agente faz: pergunta + glossário pt↔en (agents.expand_query); sem isso o número
+        # media um buscador que o sistema não usa (v4: Recall@3 0,32 cru × 0,48 expandido no mesmo corpus)
+        got = [h.doc.id for h in retriever.search(_agent_query(r["question"]), k=K)]
         rec.append(recall_at_k(got, r["relevant"], K))
         rr.append(reciprocal_rank(got, r["relevant"]))
         hit.append(bool(set(got) & set(r["relevant"])))
@@ -522,7 +530,7 @@ def calibrate_gate(path: Path | None = None, retriever=None) -> dict | None:
         return {"status": "needs_negatives", "positives": len(pos), "negatives": len(neg),
                 "excluded_negatives": excluded, "current": current, "current_source": _threshold_source()}
     retriever = retriever or get_retriever(rerank=False)  # mede o base: rerank só no comparativo (custo fora do teto)
-    found = {r["question"]: retriever.search(r["question"], k=K) for r in pos + neg}
+    found = {r["question"]: retriever.search(_agent_query(r["question"]), k=K) for r in pos + neg}
     candidates = sorted({round(h.bm25, 3) for hits in found.values() for h in hits} | {MIN_SCORE, 0.0, current})
     table = []
     for t in candidates:
