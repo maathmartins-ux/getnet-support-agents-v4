@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0  # histórico inteiro: o gitleaks varre todos os commits, não só o último
       # segredo vazado no histórico (chave de API, token): falha antes de qualquer outra etapa
-      - uses: gitleaks/gitleaks-action@v2
+      - uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v5
