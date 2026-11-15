@@ -22,7 +22,7 @@ otel = ["opentelemetry-sdk>=1.30", "opentelemetry-exporter-otlp-proto-http>=1.30
 # ruff com versão exata: regras padrão mudam entre versões e o CI divergiria da máquina local.
 # opentelemetry-sdk no dev: o teste do exportador console roda no CI (sem o OTLP, que puxa protobuf).
 # pytest-xdist: suíte em 4 processos no check (medido 31/10/2026: 51 s → 38 s; roda a cada merge no relógio).
-dev = ["pytest>=8", "pytest-xdist>=3", "ruff==0.17.3", "opentelemetry-sdk>=1.30"]
+dev = ["pytest>=8", "pytest-xdist>=3", "ruff==0.17.4", "opentelemetry-sdk>=1.30"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
